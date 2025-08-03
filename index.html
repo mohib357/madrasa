@@ -24,6 +24,7 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-50 scroll-smooth">
   <!-- Header -->
   <header class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
@@ -265,8 +266,8 @@
       </div>
     </div>
   </section>
-<!-- Notice Board -->
-<section id="notices" class="py-16 bg-white">
+  <!-- Notice Board -->
+  <!-- <section id="notices" class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold text-center text-green-900 mb-12">নোটিশ বোর্ড</h2>
     <div class="max-w-4xl mx-auto">
@@ -280,9 +281,23 @@
       </div>
     </div>
   </div>
-</section>
- 
-<!-- Gallery -->
+</section> -->
+  <section id="notices" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-green-900 mb-12">নোটিশ বোর্ড</h2>
+      <div class="max-w-4xl mx-auto">
+        <div id="notice-container">
+          <p class="text-center text-gray-600">নোটিশ লোড হচ্ছে...</p>
+        </div>
+        <div class="text-center mt-8">
+          <button class="text-green-700 hover:text-green-800 font-semibold">
+            সকল নোটিশ দেখুন <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Gallery -->
   <section id="gallery" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-green-900 mb-12">গ্যালারি</h2>
@@ -535,63 +550,238 @@
     });
   </script>
   <!-- এই স্ক্রিপ্টটি </body> ট্যাগের আগে যোগ করুন -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // ধাপ ২ থেকে পাওয়া আপনার গুগল শীটের .csv লিঙ্কটি এখানে পেস্ট করুন
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
-    
-    // নোটিশ দেখানোর জন্য কন্টেইনারটি সিলেক্ট করুন
-    const noticeContainer = document.getElementById('notice-container');
-    
-    // গুগল শীট থেকে ডেটা আনা হচ্ছে
-    fetch(sheetURL)
-      .then(response => response.text())
-      .then(data => {
-        // লোডিং বার্তাটি মুছে দিন
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const noticeContainer = document.getElementById('notice-container');
+
+      // টেস্ট ডেটা (এটি দিয়ে চেক করুন কোডটি কাজ করছে কিনা)
+      const testData = `তারিখ,শিরোনাম,বিবরণ,Status
+"০৩ আগষ্ট, ২০২৫","১ম সাময়িক পরীক্ষার বন্ধের তারিখ","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
+"১০ নভেম্বর, ২০২৩","নতুন ভর্তির বিজ্ঞপ্তি","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
+"০৫ নভেম্বর, ২০২৩","শীতকালীন ছুটির নোটিশ","আগামী ২০শে ডিসেম্বর থেকে ৫ই জানুয়ারি পর্যন্ত শীতকালীন ছুটি থাকবে।",hide`;
+
+      // টেস্ট ডেটা ব্যবহার করতে চাইলে true সেট করুন, Google Sheets ব্যবহার করতে চাইলে false সেট করুন
+      const useTestData = false;
+
+      if (useTestData) {
+        console.log("Using test data");
+        processNotices(testData);
+      } else {
+        // Google Sheets লিংক
+        const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+
+        console.log("Fetching notices from:", sheetURL);
+
+        fetch(sheetURL)
+          .then(response => {
+            console.log("Response status:", response.status);
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text();
+          })
+          .then(data => {
+            console.log("Received raw data:", data);
+            processNotices(data);
+          })
+          .catch(error => {
+            console.error('Error fetching notices:', error);
+            noticeContainer.innerHTML = '<p class="text-center text-red-500">নোটিশ লোড করা সম্ভব হয়নি।</p>';
+          });
+      }
+
+      function processNotices(data) {
         noticeContainer.innerHTML = '';
-        
-        // প্রতিটি সারিকে আলাদা করা হচ্ছে, প্রথম সারি (হেডার) বাদ দেওয়া হয়েছে
-        const rows = data.trim().split('\n').slice(1);
-        
-        if (rows.length === 0) {
+
+        // উন্নত CSV পার্সিং ফাংশন
+        function parseCSV(text) {
+          const lines = [];
+          let currentLine = '';
+          let inQuotes = false;
+
+          for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+
+            if (char === '"') {
+              inQuotes = !inQuotes;
+            } else if (char === '\n' && !inQuotes) {
+              lines.push(currentLine);
+              currentLine = '';
+            } else {
+              currentLine += char;
+            }
+          }
+
+          // শেষ লাইন যোগ করা
+          if (currentLine.trim() !== '') {
+            lines.push(currentLine);
+          }
+
+          return lines;
+        }
+
+        const rows = parseCSV(data);
+        console.log("Total rows:", rows.length);
+
+        if (rows.length <= 1) {
           noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
           return;
         }
-        
-        rows.forEach(row => {
-          // কমা দ্বারা ডেটা কলামগুলো আলাদা করা হচ্ছে
-          const columns = row.split(',');
-          
-          // নিশ্চিত করুন যে কমপক্ষে ৩টি কলাম আছে
-          if (columns.length >= 3) {
-            const noticeDate = columns[0].trim().replace(/"/g, '');
-            const noticeTitle = columns[1].trim().replace(/"/g, '');
-            const noticeDescription = columns[2].trim().replace(/"/g, '');
-            
-            // প্রতিটি নোটিশের জন্য HTML কাঠামো তৈরি করা হচ্ছে
-            const noticeCard = `
-              <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer">
-                <div class="flex justify-between items-start flex-col sm:flex-row">
-                  <div>
-                    <h3 class="text-lg font-semibold text-green-800">${noticeTitle}</h3>
-                    <p class="text-gray-600 mt-1">${noticeDescription}</p>
-                  </div>
-                  <span class="text-sm text-gray-500 mt-2 sm:mt-0">${noticeDate}</span>
-                </div>
-              </div>
-            `;
-            
-            // তৈরি করা HTML কাঠামোটি কন্টেইনারে যোগ করা হচ্ছে
-            noticeContainer.innerHTML += noticeCard;
+
+        // সব নোটিশ একটি অ্যারেতে রাখা হচ্ছে
+        const notices = [];
+
+        // প্রথম সারি হেডার, তাই সেটি বাদ দেওয়া হচ্ছে
+        for (let i = 1; i < rows.length; i++) {
+          const row = rows[i];
+          console.log("Processing row", i, ":", row);
+
+          // CSV পার্সিং উন্নত করা হচ্ছে
+          const columns = [];
+          let currentColumn = '';
+          let inQuotes = false;
+
+          for (let j = 0; j < row.length; j++) {
+            const char = row[j];
+
+            if (char === '"') {
+              inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+              columns.push(currentColumn.trim());
+              currentColumn = '';
+            } else {
+              currentColumn += char;
+            }
           }
+          columns.push(currentColumn.trim());
+
+          console.log("Row", i, "columns:", columns);
+
+          // নিশ্চিত করুন যে কমপক্ষে ৪টি কলাম আছে (Status কলাম যোগ করার পর)
+          if (columns.length >= 4) {
+            const noticeDate = columns[0].replace(/^"|"$/g, '');
+            const noticeTitle = columns[1].replace(/^"|"$/g, '');
+            const noticeDescription = columns[2].replace(/^"|"$/g, '');
+            const noticeStatus = columns[3].replace(/^"|"$/g, '').toLowerCase();
+
+            console.log("Processing notice:", { noticeDate, noticeTitle, noticeDescription, noticeStatus });
+
+            // শুধুমাত্র "show" চিহ্নিত নোটিশগুলো নেওয়া হচ্ছে
+            if (noticeStatus === 'show') {
+              notices.push({
+                date: noticeDate,
+                title: noticeTitle,
+                description: noticeDescription
+              });
+              console.log("Added notice:", noticeTitle);
+            }
+          }
+        }
+
+        console.log("Filtered notices:", notices);
+
+        // নোটিশগুলো উল্টা ক্রমে সাজানো হচ্ছে (নিচের থেকে উপরে)
+        notices.reverse();
+
+        // সর্বোচ্চ ৫টি নোটিশ দেখানো হচ্ছে
+        const maxNotices = Math.min(notices.length, 5);
+
+        if (maxNotices === 0) {
+          noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
+          return;
+        }
+
+        for (let i = 0; i < maxNotices; i++) {
+          const notice = notices[i];
+
+          // বিবরণের প্রথম ১০০ অক্ষর নেওয়া হচ্ছে
+          const shortDescription = notice.description.length > 100
+            ? notice.description.substring(0, 100) + '...'
+            : notice.description;
+
+          // লাইন ব্রেক সংরক্ষণ করার জন্য ফাংশন
+          function preserveLineBreaks(text) {
+            return text.replace(/\n/g, '<br>');
+          }
+
+          const noticeCard = `
+          <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer notice-card" 
+               data-full-description="${notice.description.replace(/"/g, '&quot;')}"
+               data-title="${notice.title.replace(/"/g, '&quot;')}"
+               data-date="${notice.date}">
+            <div class="flex justify-between items-start flex-col sm:flex-row">
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-green-800">${notice.title}</h3>
+                <p class="text-gray-600 mt-1 notice-short-description">${shortDescription}</p>
+              </div>
+              <span class="text-sm text-gray-500 mt-2 sm:mt-0 sm:ml-4">${notice.date}</span>
+            </div>
+          </div>
+        `;
+
+          noticeContainer.innerHTML += noticeCard;
+        }
+
+        // নোটিশ কার্ডে ক্লিক ইভেন্ট যোগ করা হচ্ছে
+        document.querySelectorAll('.notice-card').forEach(card => {
+          card.addEventListener('click', function () {
+            const title = this.getAttribute('data-title');
+            const fullDescription = this.getAttribute('data-full-description');
+            const date = this.getAttribute('data-date');
+
+            // লাইন ব্রেক সংরক্ষণ করার জন্য ফাংশন
+            function preserveLineBreaks(text) {
+              return text.replace(/\n/g, '<br>');
+            }
+
+            // পপআপ তৈরি করা হচ্ছে
+            const popup = document.createElement('div');
+            popup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            popup.innerHTML = `
+            <div class="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-green-800">${title}</h3>
+                <button class="close-popup text-gray-500 hover:text-gray-700">
+                  <i class="fas fa-times text-xl"></i>
+                </button>
+              </div>
+              <p class="text-gray-600 mb-2">${date}</p>
+              <p class="text-gray-700 whitespace-pre-line">${preserveLineBreaks(fullDescription)}</p>
+            </div>
+          `;
+
+            document.body.appendChild(popup);
+
+            // পপআপ বন্ধ করার ইভেন্ট
+            popup.addEventListener('click', function (e) {
+              if (e.target === popup || e.target.classList.contains('close-popup') || e.target.classList.contains('fa-times')) {
+                document.body.removeChild(popup);
+              }
+            });
+          });
+
+          // হভার ইফেক্ট যোগ করা হচ্ছে
+          const shortDescription = card.querySelector('.notice-short-description');
+          const fullDescription = card.getAttribute('data-full-description');
+
+          card.addEventListener('mouseenter', function () {
+            // হভারে লাইন ব্রেক সংরক্ষণ করা হচ্ছে
+            function preserveLineBreaks(text) {
+              return text.replace(/\n/g, '<br>');
+            }
+            shortDescription.innerHTML = preserveLineBreaks(fullDescription);
+          });
+
+          card.addEventListener('mouseleave', function () {
+            const originalText = fullDescription.length > 100
+              ? fullDescription.substring(0, 100) + '...'
+              : fullDescription;
+            shortDescription.textContent = originalText;
+          });
         });
-      })
-      .catch(error => {
-        console.error('Error fetching notices:', error);
-        noticeContainer.innerHTML = '<p class="text-center text-red-500">নোটিশ লোড করা সম্ভব হয়নি।</p>';
-      });
-  });
-</script>
+      }
+    });
+  </script>
 </body>
 
 </html>
