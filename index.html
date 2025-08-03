@@ -534,12 +534,12 @@
       });
     });
   </script>
-  <!-- এই স্ক্রিপ্টটি </body> ট্যাগের আগে যোগ করুন -->
+  <!-- Notice Load From google sheet -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const noticeContainer = document.getElementById('notice-container');
 
-      // টেস্ট ডেটা (এটি দিয়ে চেক করুন কোডটি কাজ করছে কিনা)
+      // Test Deta
       const testData = `তারিখ,শিরোনাম,বিবরণ,Status
               "০৩ আগষ্ট, ২০২৫","১ম সাময়িক পরীক্ষার বন্ধের তারিখ","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
               "১০ নভেম্বর, ২০২৩","নতুন ভর্তির বিজ্ঞপ্তি","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
@@ -664,8 +664,8 @@
         // নোটিশগুলো উল্টা ক্রমে সাজানো হচ্ছে (নিচের থেকে উপরে)
         notices.reverse();
 
-        // সর্বোচ্চ ৫টি নোটিশ দেখানো হচ্ছে
-        const maxNotices = Math.min(notices.length, 5);
+        // সর্বোচ্চ ৩টি নোটিশ দেখানো হচ্ছে
+        const maxNotices = Math.min(notices.length, 3);
 
         if (maxNotices === 0) {
           noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
