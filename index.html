@@ -26,13 +26,13 @@
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
+
   <!-- Header -->
   <header class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
         <div class="flex items-center space-x-4">
           <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-            <!-- <i class="fas fa-mosque text-green-800 text-2xl"></i> -->
             <img src="images/markajul quran logo.png" alt="Madrasa Logo" class="w-full h-full">
           </div>
           <div>
@@ -54,6 +54,7 @@
         </button>
       </div>
     </div>
+
     <!-- Mobile Menu -->
     <nav id="mobile-menu" class="hidden md:hidden bg-green-900 px-4 py-4">
       <a href="#home" class="block py-2 hover:text-green-300">হোম</a>
@@ -266,22 +267,24 @@
       </div>
     </div>
   </section>
+
   <!-- Notice Board -->
   <section id="notices" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-green-900 mb-12">নোটিশ বোর্ড</h2>
+      <h2 class="text-4xl font-bold text-center text-green-900 mb-12">নোটিশ বোর্ড</h2>
       <div class="max-w-4xl mx-auto">
         <div id="notice-container">
           <p class="text-center text-gray-600">নোটিশ লোড হচ্ছে...</p>
         </div>
         <div class="text-center mt-8">
-          <button class="text-green-700 hover:text-green-800 font-semibold">
+          <button id="view-all-notices" class="text-green-700 hover:text-green-800 font-semibold">
             সকল নোটিশ দেখুন <i class="fas fa-arrow-right ml-2"></i>
           </button>
         </div>
       </div>
     </div>
   </section>
+
   <!-- Gallery -->
   <section id="gallery" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -406,9 +409,7 @@
           <div>
             <div class="bg-green-50 rounded-lg p-6">
               <h3 class="text-xl font-semibold text-green-800 mb-4">দ্রুত বার্তা পাঠান</h3>
-
               <form action="https://formsubmit.co/markazulquran.info@gmail.com" method="POST" class="space-y-4">
-
                 <div>
                   <input type="text" name="নাম" placeholder="আপনার নাম" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
@@ -425,11 +426,8 @@
                   <textarea name="বার্তা" rows="4" placeholder="আপনার বার্তা" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"></textarea>
                 </div>
-
                 <input type="hidden" name="_next" value="https://mohib357.github.io/madrasa/thanks.html">
-
                 <input type="hidden" name="_captcha" value="false">
-
                 <button type="submit"
                   class="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800 transition">
                   বার্তা পাঠান
@@ -437,32 +435,6 @@
               </form>
             </div>
           </div>
-          <!-- <div class="bg-green-50 rounded-lg p-6">
-            <h3 class="text-xl font-semibold text-green-800 mb-4">দ্রুত বার্তা পাঠান</h3>
-            <form class="space-y-4">
-              <div>
-                <input type="text" placeholder="আপনার নাম"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-              </div>
-              <div>
-                <input type="email" placeholder="ইমেইল ঠিকানা"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-              </div>
-              <div>
-                <input type="tel" placeholder="ফোন নম্বর"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500">
-              </div>
-              <div>
-                <textarea rows="4" placeholder="আপনার বার্তা"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500"></textarea>
-              </div>
-              <button type="submit"
-                class="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800 transition">
-                বার্তা পাঠান
-              </button>
-            </form>
-          </div>
-        </div> -->
         </div>
       </div>
   </section>
@@ -473,9 +445,7 @@
       <div class="text-center">
         <div class="flex justify-center mb-4">
           <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-            <!-- <i class="fas fa-mosque text-green-900 text-2xl"></i> -->
             <img src="images/markajul quran logo.png" alt="মাদ্রাসার লোগো" class="w-15 h-15 rounded-full shadow-lg">
-
           </div>
         </div>
         <h3 class="text-xl font-semibold mb-2">আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন মারকাযুল কুরআন মাদরাসা</h3>
@@ -492,7 +462,6 @@
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
@@ -507,6 +476,7 @@
             behavior: 'smooth',
             block: 'start'
           });
+
           // Close mobile menu if open
           mobileMenu.classList.add('hidden');
         }
@@ -517,7 +487,6 @@
     window.addEventListener('scroll', () => {
       let current = '';
       const sections = document.querySelectorAll('section');
-
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -534,6 +503,7 @@
       });
     });
   </script>
+
   <!-- Notice Load From google sheet -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -545,7 +515,7 @@
               "১০ নভেম্বর, ২০২৩","নতুন ভর্তির বিজ্ঞপ্তি","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
               "০৫ নভেম্বর, ২০২৩","শীতকালীন ছুটির নোটিশ","আগামী ২০শে ডিসেম্বর থেকে ৫ই জানুয়ারি পর্যন্ত শীতকালীন ছুটি থাকবে।",hide`;
 
-      // টেস্ট ডেটা ব্যবহার করতে চাইলে true সেট করুন, Google Sheets ব্যবহার করতে চাইলে false সেট করুন
+      // true for test data, false for Google Sheet Data
       const useTestData = false;
 
       if (useTestData) {
@@ -578,7 +548,7 @@
       function processNotices(data) {
         noticeContainer.innerHTML = '';
 
-        // উন্নত CSV পার্সিং ফাংশন
+        // CSV parsing functions
         function parseCSV(text) {
           const rows = [];
           let currentRow = [];
@@ -629,16 +599,16 @@
           return;
         }
 
-        // সব নোটিশ একটি অ্যারেতে রাখা হচ্ছে
+        // Keeping all notices in an array
         const notices = [];
         const headers = rows[0].map(h => h.trim().toLowerCase());
 
-        // প্রথম সারি হেডার, তাই সেটি বাদ দেওয়া হচ্ছে
+        // The first row is a header, so it is being omitted
         for (let i = 1; i < rows.length; i++) {
           const row = rows[i];
           console.log("Processing row", i, ":", row);
 
-          // নিশ্চিত করুন যে কমপক্ষে ৪টি কলাম আছে (Status কলাম সহ)
+          // Make sure there are at least 4 columns (including the Status column)
           if (row.length >= 4) {
             const noticeDate = row[0].trim();
             const noticeTitle = row[1].trim();
@@ -647,7 +617,7 @@
 
             console.log("Processing notice:", { noticeDate, noticeTitle, noticeDescription, noticeStatus });
 
-            // শুধুমাত্র "show" চিহ্নিত নোটিশগুলো নেওয়া হচ্ছে
+            // Only notices marked "show" are being retrieved
             if (noticeStatus === 'show') {
               notices.push({
                 date: noticeDate,
@@ -661,10 +631,10 @@
 
         console.log("Filtered notices:", notices);
 
-        // নোটিশগুলো উল্টা ক্রমে সাজানো হচ্ছে (নিচের থেকে উপরে)
+        // Notices are being sorted in reverse order (bottom to top)
         notices.reverse();
 
-        // সর্বোচ্চ ৩টি নোটিশ দেখানো হচ্ছে
+        // Showing a maximum of 3 notices.
         const maxNotices = Math.min(notices.length, 3);
 
         if (maxNotices === 0) {
@@ -675,7 +645,7 @@
         for (let i = 0; i < maxNotices; i++) {
           const notice = notices[i];
 
-          // বিবরণের প্রথম ১০০ অক্ষর নেওয়া হচ্ছে
+          // Taking the first 100 characters of the description
           const shortDescription = notice.description.length > 100
             ? notice.description.substring(0, 100) + '...'
             : notice.description;
@@ -698,14 +668,14 @@
           noticeContainer.innerHTML += noticeCard;
         }
 
-        // নোটিশ কার্ডে ক্লিক ইভেন্ট যোগ করা হচ্ছে
+        // Adding click events to notice cards
         document.querySelectorAll('.notice-card').forEach(card => {
           card.addEventListener('click', function () {
             const title = decodeURIComponent(this.getAttribute('data-title'));
             const fullDescription = decodeURIComponent(this.getAttribute('data-full-description'));
             const date = decodeURIComponent(this.getAttribute('data-date'));
 
-            // পপআপ তৈরি করা হচ্ছে
+            // Creating popup
             const popup = document.createElement('div');
             popup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
             popup.innerHTML = `
@@ -723,7 +693,7 @@
 
             document.body.appendChild(popup);
 
-            // পপআপ বন্ধ করার ইভেন্ট
+            // Popup close event
             popup.addEventListener('click', function (e) {
               if (e.target === popup || e.target.classList.contains('close-popup') || e.target.classList.contains('fa-times')) {
                 document.body.removeChild(popup);
@@ -731,7 +701,7 @@
             });
           });
 
-          // হভার ইফেক্ট যোগ করা হচ্ছে
+          // Adding hover effect
           const shortDescription = card.querySelector('.notice-short-description');
           const fullDescription = decodeURIComponent(card.getAttribute('data-full-description'));
 
@@ -749,6 +719,14 @@
       }
     });
   </script>
+
+  <script>
+    document.getElementById('view-all-notices').addEventListener('click', function () {
+      // এটি নতুন একটি উইন্ডো খুলবে
+      window.open('all-notices.html', '_blank', 'width=900,height=600');
+    });
+  </script>
+
 </body>
 
 </html>
