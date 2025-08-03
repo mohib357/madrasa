@@ -735,9 +735,9 @@
           const shortDescription = card.querySelector('.notice-short-description');
           const fullDescription = decodeURIComponent(card.getAttribute('data-full-description'));
 
-          card.addEventListener('mouseenter', function () {
-            shortDescription.textContent = fullDescription;
-          });
+          // card.addEventListener('mouseenter', function () {
+          //   shortDescription.textContent = fullDescription;
+          // });
 
           card.addEventListener('mouseleave', function () {
             const originalText = fullDescription.length > 100
