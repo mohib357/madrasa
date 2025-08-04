@@ -722,189 +722,118 @@
 <script>
 document.getElementById('view-all-notices').addEventListener('click', function(e) {
   e.preventDefault();
-  
-  // পপআপ তৈরি করা
-  const popup = document.createElement('div');
-  popup.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 overflow-y-auto';
-  popup.innerHTML = `
-    <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
-      <div class="flex justify-between items-center mb-6">
-        <h3 class="text-2xl font-bold text-green-800">সকল নোটিশ</h3>
-        <button class="close-popup text-gray-500 hover:text-gray-700 text-2xl">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div id="all-notices-container">
-        <div class="flex justify-center items-center py-8">
-          <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-700"></div>
-        </div>
-      </div>
+
+  // একটি লোডিং পপ-আপ তৈরি করা এবং দেখানো
+  const loadingPopup = document.createElement('div');
+  loadingPopup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+  loadingPopup.innerHTML = `
+    <div class="bg-white rounded-lg p-6 shadow-lg flex items-center space-x-4">
+      <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-700"></div>
+      <p class="text-gray-700">লোড হচ্ছে...</p>
     </div>
   `;
-  
-  document.body.appendChild(popup);
-  
-  // বডির স্ক্রলিং বন্ধ করা
+  document.body.appendChild(loadingPopup);
   document.body.style.overflow = 'hidden';
-  
-  // পপআপ বন্ধ করার ফাংশন
-  function closePopup() {
-    document.body.removeChild(popup);
-    document.body.style.overflow = 'auto';
-  }
-  
-  // ক্লোজ বাটনে ক্লিক করলে পপআপ বন্ধ হবে
-  popup.querySelector('.close-popup').addEventListener('click', closePopup);
-  
-  // পপআপের বাইরে ক্লিক করলে পপআপ বন্ধ হবে
-  popup.addEventListener('click', function(e) {
-    if (e.target === popup) {
-      closePopup();
-    }
-  });
-  
-  // সকল নোটিশ লোড করা
-  const allNoticesContainer = popup.querySelector('#all-notices-container');
-  
-  // Test Data
-  const testData = `তারিখ,শিরোনাম,বিবরণ,Status
-          "০৩ আগষ্ট, ২০২৫","১ম সাময়িক পরীক্ষার বন্ধের তারিখ","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
-          "১০ নভেম্বর, ২০২৩","নতুন ভর্তির বিজ্ঞপ্তি","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
-          "০৫ নভেম্বর, ২০২৩","শীতকালীন ছুটির নোটিশ","আগামী ২০শে ডিসেম্বর থেকে ৫ই জানুয়ারি পর্যন্ত শীতকালীন ছুটি থাকবে।",show
-          "১৫ অক্টোবর, ২০২৩","বার্ষিক মিলাদ মাহফিল","আগামী ২৫শে অক্টোবর বাদ এশা বার্ষিক মিলাদ মাহফিল অনুষ্ঠিত হবে। সকলকে উপস্থিত থাকার জন্য অনুরোধ করা হলো।",show
-          "২০ সেপ্টেম্বর, ২০২৩","শিক্ষক নিয়োগ বিজ্ঞপ্তি","মাদরাসায় শূন্যপদে শিক্ষক নিয়োগ দেওয়া হবে। আগ্রহী প্রার্থীদের আবেদনপত্র জমা দেওয়ার জন্য অনুরোধ করা হলো।",show`;
-  
-  // true for test data, false for Google Sheet Data
-  const useTestData = false;
-  
-  if (useTestData) {
-    processAllNotices(testData);
-  } else {
-    // Google Sheets লিংক
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
-    
-    fetch(sheetURL)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then(data => {
-        processAllNotices(data);
-      })
-      .catch(error => {
-        console.error('Error fetching notices:', error);
-        allNoticesContainer.innerHTML = '<p class="text-center text-red-500">নোটিশ লোড করা সম্ভব হয়নি।</p>';
-      });
-  }
-  
-  function processAllNotices(data) {
-    allNoticesContainer.innerHTML = '';
-    
-    // CSV parsing functions
-    function parseCSV(text) {
-      const rows = [];
-      let currentRow = [];
-      let currentField = '';
-      let inQuotes = false;
-      let quoteChar = '"';
-      
-      for (let i = 0; i < text.length; i++) {
-        const char = text[i];
-        
-        if (char === quoteChar) {
-          if (inQuotes && text[i + 1] === quoteChar) {
-            // Escaped quote
-            currentField += quoteChar;
-            i++;
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === ',' && !inQuotes) {
-          // End of field
-          currentRow.push(currentField);
-          currentField = '';
-        } else if (char === '\n' && !inQuotes) {
-          // End of row
-          currentRow.push(currentField);
-          rows.push(currentRow);
-          currentRow = [];
-          currentField = '';
+
+  // CSV পার্সিং ফাংশন
+  function parseCSV(text) {
+    const rows = [];
+    let currentRow = [];
+    let currentField = '';
+    let inQuotes = false;
+    let quoteChar = '"';
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (char === quoteChar) {
+        if (inQuotes && text[i + 1] === quoteChar) {
+          currentField += quoteChar;
+          i++;
         } else {
-          currentField += char;
+          inQuotes = !inQuotes;
         }
-      }
-      
-      // Add last row if any
-      if (currentField !== '' || currentRow.length > 0) {
-        currentRow.push(currentField);
+      } else if (char === ',' && !inQuotes) {
+        currentRow.push(currentField.trim());
+        currentField = '';
+      } else if (char === '\n' && !inQuotes) {
+        currentRow.push(currentField.trim());
         rows.push(currentRow);
+        currentRow = [];
+        currentField = '';
+      } else {
+        currentField += char;
       }
-      
-      return rows;
     }
-    
-    const rows = parseCSV(data);
-    
-    if (rows.length <= 1) {
-      allNoticesContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
-      return;
+    if (currentField !== '' || currentRow.length > 0) {
+      currentRow.push(currentField.trim());
+      rows.push(currentRow);
     }
+    return rows;
+  }
+  
+  // শুধুমাত্র একটি বার্তা দেখানোর জন্য ছোট পপ-আপ
+  function showMessagePopup(message) {
+    const popup = document.createElement('div');
+    popup.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4';
+    popup.innerHTML = `
+      <div class="bg-white rounded-lg p-8 shadow-xl text-center max-w-sm w-full">
+        <p class="text-xl text-gray-800 mb-6">${message}</p>
+        <button class="close-popup bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">বন্ধ করুন</button>
+      </div>
+    `;
+    document.body.appendChild(popup);
     
-    // Keeping all notices in an array
-    const notices = [];
-    const headers = rows[0].map(h => h.trim().toLowerCase());
-    
-    // The first row is a header, so it is being omitted
-    for (let i = 1; i < rows.length; i++) {
-      const row = rows[i];
-      
-      // Make sure there are at least 4 columns (including the Status column)
-      if (row.length >= 4) {
-        const noticeDate = row[0].trim();
-        const noticeTitle = row[1].trim();
-        const noticeDescription = row[2].trim();
-        const noticeStatus = row[3].trim().toLowerCase();
-        
-        // Only notices marked "show" are being retrieved
-        if (noticeStatus === 'show') {
-          notices.push({
-            date: noticeDate,
-            title: noticeTitle,
-            description: noticeDescription
-          });
-        }
+    function close() {
+      if(document.body.contains(popup)) {
+        document.body.removeChild(popup);
       }
     }
     
-    // Notices are being sorted in reverse order (bottom to top)
-    notices.reverse();
-    
-    if (notices.length === 0) {
-      allNoticesContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
-      return;
+    popup.querySelector('.close-popup').addEventListener('click', close);
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        close();
+      }
+    });
+  }
+
+  // সকল নোটিশ দেখানোর জন্য বড় পপ-আপ
+  function showAllNoticesPopup(notices) {
+    const popup = document.createElement('div');
+    popup.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 overflow-y-auto';
+    popup.innerHTML = `
+      <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+        <div class="flex justify-between items-center mb-6 sticky top-0 bg-white py-4 border-b">
+          <h3 class="text-2xl font-bold text-green-800">সকল নোটিশ</h3>
+          <button class="close-popup text-gray-500 hover:text-gray-700 text-2xl">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div id="all-notices-container"></div>
+      </div>
+    `;
+    document.body.appendChild(popup);
+
+    function close() {
+      document.body.removeChild(popup);
     }
+
+    popup.querySelector('.close-popup').addEventListener('click', close);
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        close();
+      }
+    });
+
+    const allNoticesContainer = popup.querySelector('#all-notices-container');
     
-    // Display all notices
+    notices.reverse(); // সর্বশেষ নোটিশ প্রথমে দেখানোর জন্য
+
     notices.forEach(notice => {
-      // HTML এনটিটি এস্কেপ করা
-      const escapeHTML = (str) => {
-        return str
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      };
-      
-      // নিউলাইন ক্যারেক্টারকে <br> ট্যাগে রূপান্তর করা
-      const formatDescription = (desc) => {
-        return escapeHTML(desc).replace(/\n/g, '<br>');
-      };
-      
+      const escapeHTML = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+      const formatDescription = (desc) => escapeHTML(desc).replace(/\n/g, '<br>');
+
       const noticeCard = `
-        <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition">
+        <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-md transition">
           <div class="flex justify-between items-start flex-col sm:flex-row">
             <div class="flex-1">
               <h3 class="text-lg font-semibold text-green-800">${escapeHTML(notice.title)}</h3>
@@ -914,9 +843,59 @@ document.getElementById('view-all-notices').addEventListener('click', function(e
           </div>
         </div>
       `;
-      
       allNoticesContainer.innerHTML += noticeCard;
     });
+  }
+
+  // ডেটা প্রসেসিং ফাংশন
+  function processData(data) {
+    const rows = parseCSV(data);
+    const notices = [];
+    if (rows.length > 1) {
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        if (row.length >= 4 && row[3].trim().toLowerCase() === 'show') {
+          notices.push({
+            date: row[0],
+            title: row[1],
+            description: row[2]
+          });
+        }
+      }
+    }
+    
+    // মূল লজিক: নোটিশ সংখ্যা পরীক্ষা করা
+    if (notices.length <= 3) {
+      showMessagePopup('বর্তমানে আর কোন নোটিশ নেই।');
+    } else {
+      showAllNoticesPopup(notices);
+    }
+  }
+  
+  // গুগল শিট থেকে ডেটা আনা
+  const useTestData = false;
+  if (useTestData) {
+      // টেস্ট ডেটা এখানে যোগ করতে পারেন
+      document.body.removeChild(loadingPopup);
+      document.body.style.overflow = 'auto';
+  } else {
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    fetch(sheetURL)
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(data => {
+        document.body.removeChild(loadingPopup);
+        document.body.style.overflow = 'auto';
+        processData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching notices:', error);
+        document.body.removeChild(loadingPopup);
+        document.body.style.overflow = 'auto';
+        showMessagePopup('ত্রুটির কারণে নোটিশ আনা সম্ভব হয়নি।');
+      });
   }
 });
 </script>
