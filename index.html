@@ -26,7 +26,6 @@
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
-
   <!-- Header -->
   <header class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
@@ -54,7 +53,6 @@
         </button>
       </div>
     </div>
-
     <!-- Mobile Menu -->
     <nav id="mobile-menu" class="hidden md:hidden bg-green-900 px-4 py-4">
       <a href="#home" class="block py-2 hover:text-green-300">হোম</a>
@@ -66,7 +64,6 @@
       <a href="#contact" class="block py-2 hover:text-green-300">যোগাযোগ</a>
     </nav>
   </header>
-
   <!-- Hero Section -->
   <section id="home" class="hero-pattern py-20">
     <div class="container mx-auto px-4">
@@ -86,7 +83,6 @@
       </div>
     </div>
   </section>
-
   <!-- Quick Stats -->
   <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
@@ -114,7 +110,6 @@
       </div>
     </div>
   </section>
-
   <!-- About Section -->
   <section id="about" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -154,7 +149,6 @@
       </div>
     </div>
   </section>
-
   <!-- Academic Programs -->
   <section id="programs" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -174,7 +168,6 @@
             <li><i class="fas fa-angle-right text-green-600 mr-2"></i>সুবিধা: হোস্টেল ব্যবস্থা</li>
           </ul>
         </div>
-
         <div class="bg-green-50 rounded-lg p-6 hover:shadow-lg transition">
           <div class="text-center mb-4">
             <i class="fas fa-book-open text-5xl text-green-700"></i>
@@ -189,7 +182,6 @@
             <li><i class="fas fa-angle-right text-green-600 mr-2"></i>ফাজিল (ডিগ্রী)</li>
           </ul>
         </div>
-
         <div class="bg-green-50 rounded-lg p-6 hover:shadow-lg transition">
           <div class="text-center mb-4">
             <i class="fas fa-laptop text-5xl text-green-700"></i>
@@ -207,7 +199,6 @@
       </div>
     </div>
   </section>
-
   <!-- Admission Section -->
   <section id="admission" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -267,7 +258,6 @@
       </div>
     </div>
   </section>
-
   <!-- Notice Board -->
   <section id="notices" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -284,7 +274,6 @@
       </div>
     </div>
   </section>
-
   <!-- Gallery -->
   <section id="gallery" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -341,7 +330,6 @@
       </div>
     </div>
   </section>
-
   <!-- Contact Section -->
   <section id="contact" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -438,7 +426,6 @@
         </div>
       </div>
   </section>
-
   <!-- Footer -->
   <footer class="bg-green-900 text-white py-8">
     <div class="container mx-auto px-4">
@@ -457,7 +444,6 @@
       </div>
     </div>
   </footer>
-
   <script>
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -465,7 +451,6 @@
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -476,13 +461,11 @@
             behavior: 'smooth',
             block: 'start'
           });
-
           // Close mobile menu if open
           mobileMenu.classList.add('hidden');
         }
       });
     });
-
     // Add active class to navigation items on scroll
     window.addEventListener('scroll', () => {
       let current = '';
@@ -494,7 +477,6 @@
           current = section.getAttribute('id');
         }
       });
-
       document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('text-green-300');
         if (link.getAttribute('href').slice(1) === current) {
@@ -503,30 +485,24 @@
       });
     });
   </script>
-
   <!-- Notice Load From google sheet -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const noticeContainer = document.getElementById('notice-container');
-
       // Test Deta
       const testData = `তারিখ,শিরোনাম,বিবরণ,Status
-              "০৩ আগষ্ট, ২০২৫","১ম সাময়িক পরীক্ষার বন্ধের তারিখ","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
-              "১০ নভেম্বর, ২০২৩","নতুন ভর্তির বিজ্ঞপ্তি","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
+              "০৩ আগষ্ট, ২০২৫","<span style='color:red;'>জরুরী ঘোষণা</span>","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
+              "১০ নভেম্বর, ২০২৩","<strong>নতুন ভর্তির বিজ্ঞপ্তি</strong>","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
               "০৫ নভেম্বর, ২০২৩","শীতকালীন ছুটির নোটিশ","আগামী ২০শে ডিসেম্বর থেকে ৫ই জানুয়ারি পর্যন্ত শীতকালীন ছুটি থাকবে।",hide`;
-
       // true for test data, false for Google Sheet Data
       const useTestData = false;
-
       if (useTestData) {
         console.log("Using test data");
         processNotices(testData);
       } else {
         // Google Sheets লিংক
         const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
-
         console.log("Fetching notices from:", sheetURL);
-
         fetch(sheetURL)
           .then(response => {
             console.log("Response status:", response.status);
@@ -545,9 +521,14 @@
           });
       }
 
+      // টেক্সট ফরম্যাটিং ফাংশন
+      function formatText(text) {
+        // নিউলাইন ক্যারেক্টারকে <br> ট্যাগে রূপান্তর করা
+        return text.replace(/\n/g, '<br>');
+      }
+
       function processNotices(data) {
         noticeContainer.innerHTML = '';
-
         // CSV parsing functions
         function parseCSV(text) {
           const rows = [];
@@ -555,10 +536,8 @@
           let currentField = '';
           let inQuotes = false;
           let quoteChar = '"';
-
           for (let i = 0; i < text.length; i++) {
             const char = text[i];
-
             if (char === quoteChar) {
               if (inQuotes && text[i + 1] === quoteChar) {
                 // Escaped quote
@@ -581,42 +560,33 @@
               currentField += char;
             }
           }
-
           // Add last row if any
           if (currentField !== '' || currentRow.length > 0) {
             currentRow.push(currentField);
             rows.push(currentRow);
           }
-
           return rows;
         }
-
         const rows = parseCSV(data);
         console.log("Total rows:", rows.length);
-
         if (rows.length <= 1) {
           noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
           return;
         }
-
         // Keeping all notices in an array
         const notices = [];
         const headers = rows[0].map(h => h.trim().toLowerCase());
-
         // The first row is a header, so it is being omitted
         for (let i = 1; i < rows.length; i++) {
           const row = rows[i];
           console.log("Processing row", i, ":", row);
-
           // Make sure there are at least 4 columns (including the Status column)
           if (row.length >= 4) {
             const noticeDate = row[0].trim();
             const noticeTitle = row[1].trim();
             const noticeDescription = row[2].trim();
             const noticeStatus = row[3].trim().toLowerCase();
-
             console.log("Processing notice:", { noticeDate, noticeTitle, noticeDescription, noticeStatus });
-
             // Only notices marked "show" are being retrieved
             if (noticeStatus === 'show') {
               notices.push({
@@ -628,28 +598,21 @@
             }
           }
         }
-
         console.log("Filtered notices:", notices);
-
         // Notices are being sorted in reverse order (bottom to top)
         notices.reverse();
-
         // Showing a maximum of 3 notices.
         const maxNotices = Math.min(notices.length, 3);
-
         if (maxNotices === 0) {
           noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
           return;
         }
-
         for (let i = 0; i < maxNotices; i++) {
           const notice = notices[i];
-
           // Taking the first 100 characters of the description
           const shortDescription = notice.description.length > 100
             ? notice.description.substring(0, 100) + '...'
             : notice.description;
-
           const noticeCard = `
           <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer notice-card" 
                data-full-description="${encodeURIComponent(notice.description)}"
@@ -664,35 +627,30 @@
             </div>
           </div>
         `;
-
           noticeContainer.innerHTML += noticeCard;
         }
-
         // Adding click events to notice cards
         document.querySelectorAll('.notice-card').forEach(card => {
           card.addEventListener('click', function () {
             const title = decodeURIComponent(this.getAttribute('data-title'));
             const fullDescription = decodeURIComponent(this.getAttribute('data-full-description'));
             const date = decodeURIComponent(this.getAttribute('data-date'));
-
             // Creating popup
             const popup = document.createElement('div');
             popup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
             popup.innerHTML = `
             <div class="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-bold text-green-800">${title.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</h3>
+                <h3 class="text-xl font-bold text-green-800">${title}</h3>
                 <button class="close-popup text-gray-500 hover:text-gray-700">
                   <i class="fas fa-times text-xl"></i>
                 </button>
               </div>
-              <p class="text-gray-600 mb-2">${date.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
-              <p class="text-gray-700 whitespace-pre-line">${fullDescription.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')}</p>
+              <p class="text-gray-600 mb-2">${date}</p>
+              <div class="text-gray-700">${formatText(fullDescription)}</div>
             </div>
           `;
-
             document.body.appendChild(popup);
-
             // Popup close event
             popup.addEventListener('click', function (e) {
               if (e.target === popup || e.target.classList.contains('close-popup') || e.target.classList.contains('fa-times')) {
@@ -700,15 +658,12 @@
               }
             });
           });
-
           // Adding hover effect
           const shortDescription = card.querySelector('.notice-short-description');
           const fullDescription = decodeURIComponent(card.getAttribute('data-full-description'));
-
           // card.addEventListener('mouseenter', function () {
           //   shortDescription.textContent = fullDescription;
           // });
-
           card.addEventListener('mouseleave', function () {
             const originalText = fullDescription.length > 90
               ? fullDescription.substring(0, 90) + '.....'
@@ -722,7 +677,6 @@
   <script>
     document.getElementById('view-all-notices').addEventListener('click', function (e) {
       e.preventDefault();
-
       // একটি লোডিং পপ-আপ তৈরি করা এবং দেখানো
       const loadingPopup = document.createElement('div');
       loadingPopup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
@@ -734,7 +688,6 @@
   `;
       document.body.appendChild(loadingPopup);
       document.body.style.overflow = 'hidden';
-
       // CSV পার্সিং ফাংশন
       function parseCSV(text) {
         const rows = [];
@@ -769,7 +722,6 @@
         }
         return rows;
       }
-
       // শুধুমাত্র একটি বার্তা দেখানোর জন্য ছোট পপ-আপ
       function showMessagePopup(message) {
         const popup = document.createElement('div');
@@ -781,13 +733,11 @@
       </div>
     `;
         document.body.appendChild(popup);
-
         function close() {
           if (document.body.contains(popup)) {
             document.body.removeChild(popup);
           }
         }
-
         popup.querySelector('.close-popup').addEventListener('click', close);
         popup.addEventListener('click', function (e) {
           if (e.target === popup) {
@@ -795,7 +745,6 @@
           }
         });
       }
-
       // সকল নোটিশ দেখানোর জন্য বড় পপ-আপ
       function showAllNoticesPopup(notices) {
         const popup = document.createElement('div');
@@ -812,41 +761,38 @@
       </div>
     `;
         document.body.appendChild(popup);
-
         function close() {
           document.body.removeChild(popup);
         }
-
         popup.querySelector('.close-popup').addEventListener('click', close);
         popup.addEventListener('click', function (e) {
           if (e.target === popup) {
             close();
           }
         });
-
         const allNoticesContainer = popup.querySelector('#all-notices-container');
-
         notices.reverse(); // সর্বশেষ নোটিশ প্রথমে দেখানোর জন্য
-
         notices.forEach(notice => {
-          const escapeHTML = (str) => str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-          const formatDescription = (desc) => escapeHTML(desc).replace(/\n/g, '<br>');
+          // টেক্সট ফরম্যাটিং ফাংশন
+          function formatText(text) {
+            // নিউলাইন ক্যারেক্টারকে <br> ট্যাগে রূপান্তর করা
+            return text.replace(/\n/g, '<br>');
+          }
 
           const noticeCard = `
         <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-md transition">
           <div class="flex justify-between items-start flex-col sm:flex-row">
             <div class="flex-1">
-              <h3 class="text-lg font-semibold text-green-800">${escapeHTML(notice.title)}</h3>
-              <p class="text-gray-700 mt-2 whitespace-pre-line">${formatDescription(notice.description)}</p>
+              <h3 class="text-lg font-semibold text-green-800">${notice.title}</h3>
+              <div class="text-gray-700 mt-2">${formatText(notice.description)}</div>
             </div>
-            <span class="text-sm text-gray-500 mt-2 sm:mt-0 sm:ml-4 whitespace-nowrap">${escapeHTML(notice.date)}</span>
+            <span class="text-sm text-gray-500 mt-2 sm:mt-0 sm:ml-4 whitespace-nowrap">${notice.date}</span>
           </div>
         </div>
       `;
           allNoticesContainer.innerHTML += noticeCard;
         });
       }
-
       // ডেটা প্রসেসিং ফাংশন
       function processData(data) {
         const rows = parseCSV(data);
@@ -863,7 +809,6 @@
             }
           }
         }
-
         // মূল লজিক: নোটিশ সংখ্যা পরীক্ষা করা
         if (notices.length <= 3) {
           showMessagePopup('বর্তমানে আর কোন নোটিশ নেই।');
@@ -871,7 +816,6 @@
           showAllNoticesPopup(notices);
         }
       }
-
       // গুগল শিট থেকে ডেটা আনা
       const useTestData = false;
       if (useTestData) {
