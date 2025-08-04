@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>নোটিশ বোর্ড - Google Sheets API</title>
+  <style>
+    body { font-family: "Noto Sans Bengali", sans-serif; background: #f9fafb; padding: 20px; }
+    .notice { background: #e6f4ea; border-left: 5px solid #22c55e; padding: 15px; margin-bottom: 12px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+    .title { font-weight: 700; font-size: 1.2em; color: #166534; }
+    .date { font-size: 0.9em; color: #4b5563; margin-bottom: 8px; }
+    .desc { white-space: pre-line; color: #374151; }
+  </style>
+</head>
+<body>
+  <h1>মাদরাসার নোটিশ বোর্ড</h1>
+  <div id="notice-container">লোড হচ্ছে...</div>
+
+  <script>
+    const apiKey = 'AIzaSyAfkY1ydrFny8mckVT70HZi5tEpOKt_pPY';
+    const sheetId = '1vuo0-vLccUsEYl2dKU38b26luUnxor-k7zi9uRevOdE';
+    const range = 'Sheet1!A2:D100'; // তোমার ডেটা রেঞ্জ (প্রয়োজন অনুযায়ী পরিবর্তন করবে)
+
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const rows = data.values;
+        const container = document.getElementById('notice-container');
+        container.innerHTML = '';
+
+        if (!rows || rows.length === 0) {
+          container.innerHTML = '<p>কোনো নোটিশ পাওয়া যায়নি।</p>';
+          return;
+        }
+
+        // ধরো ডাটা কলাম: তারিখ | শিরোনাম | বিবরণ | Status
+        rows.forEach(row => {
+          const [date, title, description, status] = row;
+          if ((status || '').toLowerCase() !== 'show') return; // show ছাড়া skip
+
+          const div = document.createElement('div');
+          div.className = 'notice';
+          div.innerHTML = `
+            <div class="title">${title || 'নামহীন নোটিশ'}</div>
+            <div class="date">তারিখ: ${date || ''}</div>
+            <div class="desc">${description || ''}</div>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error('Error fetching sheet:', err);
+        document.getElementById('notice-container').innerHTML = '<p>ডেটা লোড করতে সমস্যা হয়েছে।</p>';
+      });
+  </script>
+</body>
+</html>
