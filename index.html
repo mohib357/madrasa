@@ -8,25 +8,13 @@
   <link rel="shortcut icon" href="images/markajul quran logo.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
-
-    body {
-      font-family: 'Noto Sans Bengali', sans-serif;
-    }
-
-    .hero-pattern {
-      background-color: #f3f4f6;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2315630d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .scroll-smooth {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-50 scroll-smooth">
+
   <!-- Header -->
   <header class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
@@ -43,7 +31,7 @@
         <nav class="hidden md:flex space-x-6">
           <a href="#home" class="hover:text-green-300 transition">হোম</a>
           <a href="#about" class="hover:text-green-300 transition">আমাদের সম্পর্কে</a>
-          <a href="#programs" class="hover:text-green-300 transition">একাডেমিক</a>
+          <a href="#programs" class="hover:text-green-300 transition">শাখা ও বিভাগ</a>
           <a href="#admission" class="hover:text-green-300 transition">ভর্তি</a>
           <a href="#notices" class="hover:text-green-300 transition">নোটিশ</a>
           <a href="#gallery" class="hover:text-green-300 transition">গ্যালারি</a>
@@ -54,17 +42,197 @@
         </button>
       </div>
     </div>
+
     <!-- Mobile Menu -->
     <nav id="mobile-menu" class="hidden md:hidden bg-green-900 px-4 py-4">
       <a href="#home" class="block py-2 hover:text-green-300">হোম</a>
       <a href="#about" class="block py-2 hover:text-green-300">আমাদের সম্পর্কে</a>
-      <a href="#programs" class="block py-2 hover:text-green-300">একাডেমিক</a>
+      <a href="#programs" class="block py-2 hover:text-green-300">শাখা ও বিভাগ</a>
       <a href="#admission" class="block py-2 hover:text-green-300">ভর্তি</a>
       <a href="#notices" class="block py-2 hover:text-green-300">নোটিশ</a>
       <a href="#gallery" class="block py-2 hover:text-green-300">গ্যালারি</a>
       <a href="#contact" class="block py-2 hover:text-green-300">যোগাযোগ</a>
     </nav>
   </header>
+
+  <!-- Slider Carousel -->
+  <section class="bg-cover bg-center" style="background-image: url('images/bg.gif');">
+    <div class="w-full py-10 px-8 lg:px-40">
+      <div
+        class="carousel-container relative w-full lg:h-[460px] bg-white shadow-[8px_8px_10px_#2A7B9B,8px_8px_10px_#57C785,8px_8px_10px_#EDDD53] overflow-hidden rounded-2xl">
+        <div class="carousel-wrapper w-full h-full">
+
+          <!-- slide 1 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/1.jpg" class="w-full h-full object-cover" alt="Slide 1" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 2 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/2.jpg" class="w-full h-full object-cover" alt="Slide 2" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 3 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/3.jpg" class="w-full h-full object-cover" alt="Slide 3" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 4 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/4.jpg" class="w-full h-full object-cover" alt="Slide 4" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 5 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/6.jpg" class="w-full h-full object-cover" alt="Slide 5" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 6 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/7.jpg" class="w-full h-full object-cover" alt="Slide 6" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 7 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/8.jpg" class="w-full h-full object-cover" alt="Slide 7" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 8 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/9.jpg" class="w-full h-full object-cover" alt="Slide 8" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 9 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/10.jpg" class="w-full h-full object-cover" alt="Slide 9" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+          <!-- slide 10 -->
+          <div class="carousel-item w-full h-full absolute top-0 left-0">
+            <img src="images/11.jpg" class="w-full h-full object-cover" alt="Slide 10" />
+            <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
+              <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">কিন্ডারগার্টেন শাখা</h1>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="flex justify-center w-full py-4 gap-3" id="carousel-dots">
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const items = document.querySelectorAll('.carousel-item');
+      const dotsContainer = document.getElementById('carousel-dots');
+      const totalItems = items.length;
+      let currentIndex = 0;
+      let slideInterval;
+      const slideDuration = 5000; // প্রতিটি স্লাইড কতক্ষণ দেখাবে (5000ms = 5 সেকেন্ড)
+
+      // বিভিন্ন ট্রানজিশন ইফেক্ট
+      const effects = [
+        { enter: 'enter-from-right', exit: 'exit-to-left' },
+        { enter: 'enter-from-left', exit: 'exit-to-right' },
+        { enter: 'enter-from-bottom', exit: 'exit-to-top' },
+        { enter: 'enter-from-top', exit: 'exit-to-bottom' },
+        { enter: 'enter-zoom-in', exit: 'exit-zoom-out' },
+      ];
+
+      // রুট এলিমেন্ট থেকে CSS ভ্যারিয়েবলের মান পড়া
+      const rootStyles = getComputedStyle(document.documentElement);
+      const activeColor = rootStyles.getPropertyValue('--dot-active-color').trim();
+      const inactiveColor = rootStyles.getPropertyValue('--dot-inactive-color').trim();
+
+      // Create dots dynamically
+      for (let i = 0; i < totalItems; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-300');
+        dot.style.backgroundColor = inactiveColor;
+        dot.addEventListener('click', () => {
+          if (i === currentIndex) return;
+          goToSlide(i);
+          resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+      }
+      const dots = dotsContainer.querySelectorAll('button');
+      function updateDots() {
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.style.backgroundColor = activeColor;
+          } else {
+            dot.style.backgroundColor = inactiveColor;
+          }
+        });
+      }
+      function goToSlide(newIndex) {
+        const oldIndex = currentIndex;
+        if (oldIndex === newIndex) return;
+        const effect = effects[Math.floor(Math.random() * effects.length)];
+        const currentItem = items[oldIndex];
+        const newItem = items[newIndex];
+        newItem.classList.add(effect.enter);
+        requestAnimationFrame(() => {
+          currentItem.classList.add(effect.exit);
+          currentItem.classList.remove('active');
+          newItem.classList.add('active');
+          newItem.classList.remove(effect.enter);
+        });
+        const transitionDuration = parseFloat(rootStyles.getPropertyValue('--carousel-transition-duration')) || 1000;
+        setTimeout(() => {
+          currentItem.classList.remove(effect.exit);
+        }, transitionDuration);
+        currentIndex = newIndex;
+        updateDots();
+      }
+      function nextSlide() {
+        let nextIndex;
+        do {
+          nextIndex = Math.floor(Math.random() * totalItems);
+        } while (nextIndex === currentIndex);
+        goToSlide(nextIndex);
+      }
+      function startInterval() {
+        slideInterval = setInterval(nextSlide, slideDuration);
+      }
+      function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+      }
+      items[0].classList.add('active');
+      updateDots();
+      startInterval();
+    });
+  </script>
+
   <!-- Hero Section -->
   <section id="home" class="hero-pattern py-20">
     <div class="container mx-auto px-4">
@@ -84,6 +252,7 @@
       </div>
     </div>
   </section>
+
   <!-- Quick Stats -->
   <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
@@ -111,6 +280,7 @@
       </div>
     </div>
   </section>
+
   <!-- About Section -->
   <section id="about" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -150,6 +320,7 @@
       </div>
     </div>
   </section>
+
   <!-- Academic Programs -->
   <section id="programs" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -200,6 +371,7 @@
       </div>
     </div>
   </section>
+
   <!-- Admission Section -->
   <section id="admission" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -259,6 +431,7 @@
       </div>
     </div>
   </section>
+
   <!-- Notice Board -->
   <section id="notices" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -275,6 +448,7 @@
       </div>
     </div>
   </section>
+
   <!-- Gallery -->
   <section id="gallery" class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
@@ -331,6 +505,7 @@
       </div>
     </div>
   </section>
+
   <!-- Contact Section -->
   <section id="contact" class="py-16 bg-white">
     <div class="container mx-auto px-4">
@@ -427,6 +602,7 @@
         </div>
       </div>
   </section>
+
   <!-- Footer -->
   <footer class="bg-green-900 text-white py-8">
     <div class="container mx-auto px-4">
@@ -446,12 +622,14 @@
     </div>
   </footer>
   <script>
+
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -462,11 +640,13 @@
             behavior: 'smooth',
             block: 'start'
           });
+
           // Close mobile menu if open
           mobileMenu.classList.add('hidden');
         }
       });
     });
+
     // Add active class to navigation items on scroll
     window.addEventListener('scroll', () => {
       let current = '';
@@ -486,17 +666,21 @@
       });
     });
   </script>
+
   <!-- Notice Load From google sheet -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const noticeContainer = document.getElementById('notice-container');
+
       // Test Deta
       const testData = `তারিখ,শিরোনাম,বিবরণ,Status
               "০৩ আগষ্ট, ২০২৫","<span style='color:red;'>জরুরী ঘোষণা</span>","আগামী ৯ আগষ্ট থেকে ১ম সাময়িক পরীক্ষার বন্ধ শুরু হবে। সকল শিক্ষার্থীকে পরীক্ষার প্রস্তুতি নেওয়ার অনুরোধ করা হলো।",show
               "১০ নভেম্বর, ২০২৩","<strong>নতুন ভর্তির বিজ্ঞপ্তি</strong>","২০২৪ শিক্ষাবর্ষে ভর্তি শুরু হয়েছে। আগ্রহী ছাত্র-ছাত্রীদের অফিস থেকে ভর্তি ফরম সংগ্রহ করতে হবে।",show
               "০৫ নভেম্বর, ২০২৩","শীতকালীন ছুটির নোটিশ","আগামী ২০শে ডিসেম্বর থেকে ৫ই জানুয়ারি পর্যন্ত শীতকালীন ছুটি থাকবে।",hide`;
+
       // true for test data, false for Google Sheet Data
       const useTestData = false;
+
       if (useTestData) {
         console.log("Using test data");
         processNotices(testData);
@@ -527,9 +711,9 @@
         // নিউলাইন ক্যারেক্টারকে <br> ট্যাগে রূপান্তর করা
         return text.replace(/\n/g, '<br>');
       }
-
       function processNotices(data) {
         noticeContainer.innerHTML = '';
+
         // CSV parsing functions
         function parseCSV(text) {
           const rows = [];
@@ -541,18 +725,15 @@
             const char = text[i];
             if (char === quoteChar) {
               if (inQuotes && text[i + 1] === quoteChar) {
-                // Escaped quote
                 currentField += quoteChar;
                 i++;
               } else {
                 inQuotes = !inQuotes;
               }
             } else if (char === ',' && !inQuotes) {
-              // End of field
               currentRow.push(currentField);
               currentField = '';
             } else if (char === '\n' && !inQuotes) {
-              // End of row
               currentRow.push(currentField);
               rows.push(currentRow);
               currentRow = [];
@@ -561,7 +742,6 @@
               currentField += char;
             }
           }
-          // Add last row if any
           if (currentField !== '' || currentRow.length > 0) {
             currentRow.push(currentField);
             rows.push(currentRow);
@@ -574,6 +754,7 @@
           noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
           return;
         }
+
         // Keeping all notices in an array
         const notices = [];
         const headers = rows[0].map(h => h.trim().toLowerCase());
@@ -678,6 +859,7 @@
   <script>
     document.getElementById('view-all-notices').addEventListener('click', function (e) {
       e.preventDefault();
+
       // একটি লোডিং পপ-আপ তৈরি করা এবং দেখানো
       const loadingPopup = document.createElement('div');
       loadingPopup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
@@ -689,6 +871,7 @@
   `;
       document.body.appendChild(loadingPopup);
       document.body.style.overflow = 'hidden';
+
       // CSV পার্সিং ফাংশন
       function parseCSV(text) {
         const rows = [];
@@ -723,6 +906,7 @@
         }
         return rows;
       }
+
       // শুধুমাত্র একটি বার্তা দেখানোর জন্য ছোট পপ-আপ
       function showMessagePopup(message) {
         const popup = document.createElement('div');
@@ -746,6 +930,7 @@
           }
         });
       }
+
       // সকল নোটিশ দেখানোর জন্য বড় পপ-আপ
       function showAllNoticesPopup(notices) {
         const popup = document.createElement('div');
@@ -779,7 +964,6 @@
             // নিউলাইন ক্যারেক্টারকে <br> ট্যাগে রূপান্তর করা
             return text.replace(/\n/g, '<br>');
           }
-
           const noticeCard = `
         <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-md transition">
           <div class="flex justify-between items-start flex-col sm:flex-row">
@@ -817,6 +1001,7 @@
           showAllNoticesPopup(notices);
         }
       }
+
       // গুগল শিট থেকে ডেটা আনা
       const useTestData = false;
       if (useTestData) {

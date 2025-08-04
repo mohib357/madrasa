@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+.hero-pattern {
+    background-color: #f3f4f6;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2315630d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.scroll-smooth {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* ট্রানজিশনের ধরণ (স্মুথনেস) */
+    --carousel-transition-duration: 1000ms;
+    --carousel-timing-function: ease-in-out;
+
+    /* ডটের রঙ (এখানে পরিবর্তন করুন) */
+    --dot-inactive-color: #d1d5db;
+    --dot-active-color: #15803d;
+}
+
+.carousel-item {
+    transition: transform var(--carousel-transition-duration) var(--carousel-timing-function),
+        opacity var(--carousel-transition-duration) var(--carousel-timing-function);
+    opacity: 0;
+    transform: scale(1);
+}
+
+.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+    z-index: 10;
+}
+
+/* === বিভিন্ন এনিমেশন ইফেক্টের জন্য ক্লাস === */
+.carousel-item.enter-from-right {
+    transform: translateX(100%);
+}
+
+.carousel-item.exit-to-left {
+    transform: translateX(-100%);
+}
+
+.carousel-item.enter-from-left {
+    transform: translateX(-100%);
+}
+
+.carousel-item.exit-to-right {
+    transform: translateX(100%);
+}
+
+.carousel-item.enter-from-bottom {
+    transform: translateY(100%);
+}
+
+.carousel-item.exit-to-top {
+    transform: translateY(-100%);
+}
+
+.carousel-item.enter-from-top {
+    transform: translateY(-100%);
+}
+
+.carousel-item.exit-to-bottom {
+    transform: translateY(100%);
+}
+
+.carousel-item.enter-zoom-in {
+    transform: scale(0.5);
+}
+
+.carousel-item.exit-zoom-out {
+    transform: scale(1.5);
+}
