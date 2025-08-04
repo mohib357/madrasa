@@ -13,11 +13,11 @@ body {
     scroll-behavior: smooth;
 }
 
-/* আপনার আগের কোড... */
 :root {
     /* ট্রানজিশনের ধরণ (স্মুথনেস) */
     --carousel-transition-duration: 1000ms;
     --carousel-timing-function: ease-in-out;
+
     /* ডটের রঙ (এখানে পরিবর্তন করুন) */
     --dot-inactive-color: #d1d5db;
     --dot-active-color: #15803d;
@@ -32,7 +32,6 @@ body {
         opacity var(--carousel-transition-duration) var(--carousel-timing-function);
     opacity: 0;
     transform: scale(1);
-    /* 3D ইফেক্টের জন্য এই লাইনটি জরুরি */
     transform-style: preserve-3d;
 }
 
@@ -42,7 +41,6 @@ body {
     z-index: 10;
 }
 
-/* === আগের এনিমেশন ইফেক্টের ক্লাস === */
 .carousel-item.enter-from-right {
     transform: translateX(100%);
 }
@@ -83,12 +81,6 @@ body {
     transform: scale(1.5);
 }
 
-
-/* ======================================================== */
-/* === নতুন ১০+ ট্রানজিশন ইফেক্ট এখানে যুক্ত করা হলো === */
-/* ======================================================== */
-
-/* 1. Cross Fade (Only Opacity) */
 .carousel-item.enter-fade {
     opacity: 0;
 }
@@ -97,7 +89,6 @@ body {
     opacity: 0;
 }
 
-/* 2. Rotate + Scale In/Out */
 .carousel-item.enter-rotate-scale {
     transform: scale(0.3) rotate(-360deg);
 }
@@ -107,7 +98,6 @@ body {
     opacity: 0;
 }
 
-/* 3. Horizontal 3D Flip (ডান দিক থেকে ফ্লিপ হবে) */
 .carousel-item.enter-flip-right {
     transform: rotateY(-180deg);
 }
@@ -116,7 +106,6 @@ body {
     transform: rotateY(180deg);
 }
 
-/* 4. Vertical 3D Flip (নিচ থেকে ফ্লিপ হবে) */
 .carousel-item.enter-flip-down {
     transform: rotateX(180deg);
 }
@@ -125,7 +114,6 @@ body {
     transform: rotateX(-180deg);
 }
 
-/* 5. Diagonal Slide (উপরের বাম কর্নার থেকে আসবে) */
 .carousel-item.enter-from-top-left {
     transform: translate(-100%, -100%);
 }
@@ -134,7 +122,6 @@ body {
     transform: translate(100%, 100%);
 }
 
-/* 6. Diagonal Slide (নিচের ডান কর্নার থেকে আসবে) */
 .carousel-item.enter-from-bottom-right {
     transform: translate(100%, 100%);
 }
@@ -143,7 +130,6 @@ body {
     transform: translate(-100%, -100%);
 }
 
-/* 7. Skew Effect (একটু বাঁকা হয়ে আসবে) */
 .carousel-item.enter-skew {
     transform: skewX(-45deg) translateX(-150%);
     opacity: 0;
@@ -154,7 +140,6 @@ body {
     opacity: 0;
 }
 
-/* 8. Soft Zoom In/Out */
 .carousel-item.enter-soft-zoom {
     transform: scale(1.2);
 }
@@ -164,7 +149,6 @@ body {
     opacity: 0;
 }
 
-/* 9. "Newspaper" Zoom Effect */
 .carousel-item.enter-newspaper {
     transform: scale(0.1) rotate(360deg);
 }
@@ -174,7 +158,6 @@ body {
     opacity: 0;
 }
 
-/* 10. Slide and Bounce */
 .carousel-item.enter-bounce-right {
     animation: bounceInRight var(--carousel-transition-duration) ease-in-out;
 }
