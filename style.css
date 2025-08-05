@@ -196,3 +196,77 @@ body {
         opacity: 0;
     }
 }
+
+/* ==== Gallery Thumbnail Animations ==== */
+
+/* প্রতিটি থাম্বনেইলের প্রাথমিক অবস্থা */
+.gallery-thumbnail {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* থাম্বনেইল দেখানোর জন্য ক্লাস */
+.gallery-thumbnail.enter {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* থাম্বনেইল সরানোর জন্য ক্লাস */
+.gallery-thumbnail.exit {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+
+/* ==== Lightbox Image Sizing ==== */
+
+/* Mobile Devices */
+.lightbox .lb-image {
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+}
+
+/* Tablet Devices */
+@media (min-width: 768px) {
+    .lightbox .lb-image {
+        max-width: 700px !important;
+        max-height: 650px !important;
+    }
+}
+
+/* Desktop Devices */
+@media (min-width: 1025px) {
+    .lightbox .lb-image {
+        max-width: 950px !important;
+        max-height: 700px !important;
+    }
+}
+
+/* Universal styles for the lightbox image and its container */
+.lightbox .lb-image {
+    border-radius: 8px;
+    /* ছবিতে সামান্য গোলাকার বর্ডার */
+}
+
+/* এই স্টাইলটি নিশ্চিত করবে যে ছবিটি কন্টেইনারের মধ্যে তার অনুপাত ঠিক রেখে ফিট হবে */
+.lightbox .lb-image img {
+    object-fit: contain !important;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ==== Lightbox Transition/Animation Preparation ==== */
+/* এই ক্লাসগুলো লাইটবক্সের ছবির অ্যানিমেশনের জন্য প্রস্তুত করবে */
+.lb-image.carousel-item {
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    opacity: 0;
+    transform: scale(1);
+    transform-style: preserve-3d;
+}
+
+.lb-image.carousel-item.active {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1) rotateY(0) rotateX(0);
+}

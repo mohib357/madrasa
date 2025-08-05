@@ -1,6 +1,6 @@
 [
     {
-        "image": "images/1.jpg",
+        "image": "images/1.png",
         "caption": "কিন্ডারগার্টেন শাখা"
     },
     {
@@ -42,5 +42,9 @@
     {
         "image": "images/madrasa bulding.jpg",
         "caption": "মাদরাসা ভবন"
+    },
+    {
+        "image": "images/মাদরাসা.png",
+        "caption": "প্যাড"
     }
 ]
