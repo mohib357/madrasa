@@ -1,32 +1,45 @@
+/* Importing 'Noto Sans Bengali' from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
 
+/* Setting Bengali font as default for body */
 body {
     font-family: 'Noto Sans Bengali', sans-serif;
 }
 
+/* Light patterned background for hero section */
 .hero-pattern {
     background-color: #f3f4f6;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2315630d' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Enables smooth scrolling */
 .scroll-smooth {
     scroll-behavior: smooth;
 }
 
+/* Controls transition speed, animation smoothness, and dot colors */
 :root {
-    /* ট্রানজিশনের ধরণ (স্মুথনেস) */
+    /* Duration of slide animation */
     --carousel-transition-duration: 1000ms;
+
+    /* Easing style for smoother animation */
     --carousel-timing-function: ease-in-out;
 
-    /* ডটের রঙ (এখানে পরিবর্তন করুন) */
+    /* Color of inactive navigation dots */
     --dot-inactive-color: #d1d5db;
+
+    /* Color of active navigation dot */
     --dot-active-color: #15803d;
 }
 
+/* === Carousel Animation === */
+
+/* Perspective for 3D effect */
 .has-perspective {
     perspective: 1200px;
 }
 
+/* Base style for each carousel item */
 .carousel-item {
     transition: transform var(--carousel-transition-duration) var(--carousel-timing-function),
         opacity var(--carousel-transition-duration) var(--carousel-timing-function);
@@ -35,12 +48,14 @@ body {
     transform-style: preserve-3d;
 }
 
+/* Active (visible) slide style */
 .carousel-item.active {
     opacity: 1;
     transform: translateX(0) translateY(0) scale(1) rotateY(0) rotateX(0);
     z-index: 10;
 }
 
+/* Slide entry/exit transitions (set via JavaScript) */
 .carousel-item.enter-from-right {
     transform: translateX(100%);
 }
@@ -158,6 +173,7 @@ body {
     opacity: 0;
 }
 
+/* Bounce animation classes */
 .carousel-item.enter-bounce-right {
     animation: bounceInRight var(--carousel-transition-duration) ease-in-out;
 }
@@ -166,6 +182,10 @@ body {
     animation: bounceOutLeft var(--carousel-transition-duration) ease-in-out;
 }
 
+
+/* === Bounce Keyframes === */
+
+/* Bounce in from right */
 @keyframes bounceInRight {
     0% {
         transform: translateX(100%);
@@ -186,6 +206,7 @@ body {
     }
 }
 
+/* Bounce out to left */
 @keyframes bounceOutLeft {
     20% {
         transform: translateX(10%);
@@ -197,37 +218,40 @@ body {
     }
 }
 
-/* ==== Gallery Thumbnail Animations ==== */
 
-/* প্রতিটি থাম্বনেইলের প্রাথমিক অবস্থা */
+/* === Gallery Thumbnail Animation === */
+
+/* Initial state of thumbnails */
 .gallery-thumbnail {
     opacity: 0;
     transform: scale(0.95);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* থাম্বনেইল দেখানোর জন্য ক্লাস */
+/* Show thumbnail */
 .gallery-thumbnail.enter {
     opacity: 1;
     transform: scale(1);
 }
 
-/* থাম্বনেইল সরানোর জন্য ক্লাস */
+/* Hide thumbnail */
 .gallery-thumbnail.exit {
     opacity: 0;
     transform: scale(0.95);
 }
 
 
-/* ==== Lightbox Image Sizing ==== */
+/* === Lightbox Styles === */
 
-/* Mobile Devices */
+/* --- Lightbox sizes for devices --- */
+
+/* Mobile */
 .lightbox .lb-image {
     max-width: 90vw !important;
     max-height: 80vh !important;
 }
 
-/* Tablet Devices */
+/* Tablet */
 @media (min-width: 768px) {
     .lightbox .lb-image {
         max-width: 700px !important;
@@ -235,7 +259,7 @@ body {
     }
 }
 
-/* Desktop Devices */
+/* Desktop */
 @media (min-width: 1025px) {
     .lightbox .lb-image {
         max-width: 950px !important;
@@ -243,13 +267,14 @@ body {
     }
 }
 
-/* Universal styles for the lightbox image and its container */
+/* --- Lightbox image style --- */
+
+/* Rounded image border */
 .lightbox .lb-image {
     border-radius: 8px;
-    /* ছবিতে সামান্য গোলাকার বর্ডার */
 }
 
-/* এই স্টাইলটি নিশ্চিত করবে যে ছবিটি কন্টেইনারের মধ্যে তার অনুপাত ঠিক রেখে ফিট হবে */
+/* Image fits container while maintaining aspect ratio */
 .lightbox .lb-image img {
     object-fit: contain !important;
     width: 100%;
@@ -257,8 +282,8 @@ body {
 }
 
 
-/* ==== Lightbox Transition/Animation Preparation ==== */
-/* এই ক্লাসগুলো লাইটবক্সের ছবির অ্যানিমেশনের জন্য প্রস্তুত করবে */
+/* --- Lightbox animation transitions --- */
+
 .lb-image.carousel-item {
     transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
     opacity: 0;
@@ -270,6 +295,11 @@ body {
     opacity: 1;
     transform: translateX(0) translateY(0) scale(1) rotateY(0) rotateX(0);
 }
+
+
+/* === Other Custom Styles === */
+
+/* Background image for slider */
 .slider-background {
-  background-image: url('../images/bg.gif');
+    background-image: url('../images/bg.gif');
 }
