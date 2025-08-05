@@ -270,3 +270,6 @@ body {
     opacity: 1;
     transform: translateX(0) translateY(0) scale(1) rotateY(0) rotateX(0);
 }
+.slider-background {
+  background-image: url('../images/bg.gif');
+}
