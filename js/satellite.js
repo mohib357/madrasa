@@ -1,6 +1,17 @@
+// js/satellite.js
+
+/**
+ * This script creates a moving particle background animation on an HTML5 canvas.
+ * It features particles (satellites) that move and connect with lines based on proximity,
+ * and also interact with the user's mouse.
+ */
+
+
+// --- Canvas & Context Setup ---
 const canvas = document.getElementById('satelliteCanvas');
 const ctx = canvas.getContext('2d');
 
+// Set canvas to fill the entire window.
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -8,6 +19,7 @@ canvas.height = window.innerHeight;
 // CONFIGURATION - Change these values to customize the animation
 // ===================================================================
 const config = {
+    // --- Particle Settings ---
     numberOfSatellites: 50,        // The total number of satellites on screen.
     satelliteColor: '0, 255, 255',  // The RGB color of the satellites.
     satelliteBaseSize: .5,          // The minimum size of a satellite.
@@ -18,6 +30,7 @@ const config = {
     useSatelliteImage: false,               // true = use image, false = use circles.
     satelliteImageSrc: 'images/1.png',      // Example image URL.
 
+    // --- Mouse Interaction Settings ---
     mouseInteractionRadius: 100,    // The radius around the mouse to connect with satellites.
     mouseNodeSize: 0,               // The size of the circle that follows the mouse.
     mouseNodeColor: '255, 255, 0',  // The RGB color of the mouse node.
@@ -30,10 +43,11 @@ const config = {
 // END OF CONFIGURATION
 // ===================================================================
 
+// --- Global State & Image Loading ---
 let satellites = [];
 let mouse = { x: null, y: null, radius: config.mouseInteractionRadius };
 
-// --- Image setup for satellites ---
+// Preload the satellite image if configured.
 let satelliteImg = null;
 // Load the image only if useSatelliteImage is true and a source is provided.
 if (config.useSatelliteImage && config.satelliteImageSrc) {
@@ -60,6 +74,11 @@ window.addEventListener('resize', () => {
     init();
 });
 
+// --- Satellite Class Definition ---
+
+/**
+ * Blueprint for creating each individual particle (satellite).
+ */
 class Satellite {
     constructor() {
         this.x = Math.random() * canvas.width;
@@ -94,6 +113,11 @@ class Satellite {
     }
 }
 
+// --- Core Animation Functions ---
+
+/**
+ * Clears and creates the initial set of satellites.
+ */
 function init() {
     satellites = [];
     for (let i = 0; i < config.numberOfSatellites; i++) {
