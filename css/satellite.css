@@ -1,0 +1,9 @@
+#satelliteCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; /* সবকিছুর উপরে আনার জন্য -1 থেকে 999 করা হয়েছে */
+    pointer-events: none; /* এটি নিশ্চিত করে যেন নীচের লিঙ্কে ক্লিক করা যায় */
+}
