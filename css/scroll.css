@@ -62,3 +62,7 @@
 
 You can change the direction ('to right') and add as many color hex codes as you want.
 */
+#scrolling-notice-container {
+    position: sticky;
+    z-index: 40; /* z-index হেডারের (50) চেয়ে কম রাখুন */
+}

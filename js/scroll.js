@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+// উদ্দেশ্য: নোটিশ বারকে হেডারের নিচে সঠিকভাবে অবস্থান করানো
+    const header = document.querySelector('header');
+    const noticeContainer = document.getElementById('scrolling-notice-container');
+
+    function adjustNoticeBarPosition() {
+        const headerHeight = header.offsetHeight;
+        noticeContainer.style.top = `${headerHeight}px`;
+    }
+
+    // পেজ লোড এবং স্ক্রিন সাইজ পরিবর্তন করার সময় পজিশন ঠিক করুন
+    adjustNoticeBarPosition();
+    window.addEventListener('resize', adjustNoticeBarPosition);
+    // ### নতুন কোড শেষ ###
+
     // Your Google Sheet URL
     const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
 
