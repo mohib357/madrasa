@@ -1,114 +1,150 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const notices = [
-        {
-            title: "প্রতিষ্ঠাতা পরিচালকের গুরুত্বপূর্ণ বার্তা",
-            date: "২০ জুলাই, ২০২৪",
-            details: `
-                এতদ্বারা মাদরাসার সকল ছাত্র, শিক্ষক ও কর্মচারীদের অবগতির জন্য জানানো যাচ্ছে যে,
-                আসন্ন ঈদুল আযহা উপলক্ষে মাদরাসার সকল কার্যক্রম আগামী <b>২২ জুলাই, ২০২৪</b> থেকে <b>২৮ জুলাই, ২০২৪</b> পর্যন্ত বন্ধ থাকবে।
-                <div>২৯ জুলাই, ২০২৪ থেকে যথারীতি সকল কার্যক্রম শুরু হবে।</div>
-                <p>সকলকে ঈদের শুভেচ্ছা।</p>
-            `
-        },
-        {
-            title: "ভর্তি পরীক্ষার ফলাফল",
-            date: "১৮ জুলাই, ২০২৪",
-            details: "২০২৪-২৫ শিক্ষাবর্ষের ভর্তি পরীক্ষার ফলাফল প্রকাশ করা হয়েছে। বিস্তারিত জানতে নোটিশ বোর্ডে দেখুন অথবা <a href='#' class='text-cyan-400 hover:underline'>এখানে ক্লিক করুন</a>।"
-        },
-        {
-            title: "অভিভাবক সমাবেশ",
-            date: "১৫ জুলাই, ২০২৪",
-            details: "<i>আগামী ২৫ জুলাই, ২০২৪</i> তারিখে একটি অভিভাবক সমাবেশ অনুষ্ঠিত হবে। সকল অভিভাবককে উপস্থিত থাকার জন্য অনুরোধ করা হচ্ছে।"
-        },
-        {
-            title: "লাইব্রেরী কার্ড বিতরণ",
-            date: "১২ জুলাই, ২০২৪",
-            details: "নতুন ছাত্রদের জন্য লাইব্রেরী কার্ড বিতরণ চলছে। নিজ নিজ বিভাগ থেকে কার্ড সংগ্রহ করার জন্য বলা হলো।"
-        }
-    ];
-
-    const noticeContainer = document.getElementById('scrolling-notice-container');
+    const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    const scrollingContainer = document.getElementById('scrolling-notice-container');
     const scrollingWrapper = document.getElementById('scrolling-wrapper');
     const scrollingContent = document.getElementById('scrolling-content');
     const fixedNotice = document.getElementById('fixed-notice');
     const fixedTitle = document.getElementById('fixed-title');
     const fixedDate = document.getElementById('fixed-date');
 
-    // নোটিশ না থাকলে স্ক্রলারটি দেখাবে না
-    if (!notices || notices.length === 0) {
-        return;
-    }
-
-    // কন্টেইনারগুলো দৃশ্যমান করুন
-    noticeContainer.classList.remove('hidden');
-    fixedNotice.classList.remove('hidden');
-
-    let currentIndex = -1;
-    let animationFrameId;
-
-    /**
-     * এই ফাংশনটি নোটিশের বিবরণ থেকে লাইন ব্রেক (<br>) এবং 
-     * p, div এর মতো ব্লক-লেভেল ট্যাগ সরিয়ে দেয়, কিন্তু b, i, a এর মতো 
-     * ইনলাইন ট্যাগ ঠিক রাখে।
-     * @param {string} html - নোটিশের বিবরণ
-     * @returns {string} - এক লাইনে প্রদর্শনের জন্য পরিচ্ছন্ন টেক্সট
-     */
-    function sanitizeDetails(html) {
-        if (!html) return '';
-        // <br> এবং অন্যান্য ব্লক-লেভেল ট্যাগকে একটি স্পেস দিয়ে প্রতিস্থাপন করুন
-        const blockTagsRegex = /<\/?(div|p|h[1-6]|ul|ol|li|blockquote|section|article|header|footer|br)[^>]*>/gi;
-        // একাধিক স্পেসকে একটি মাত্র স্পেসে পরিণত করুন
-        return html.replace(blockTagsRegex, ' ').replace(/\s\s+/g, ' ').trim();
-    }
-
-    /**
-     * পরবর্তী নোটিশ দেখানোর জন্য মূল ফাংশন
-     */
-    function showNextNotice() {
-        // আগের অ্যানিমেশন ফ্রেম বাতিল করুন যাতে কোনো ওভারল্যাপ না হয়
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
+    // CSV ডেটা পার্স করার জন্য নির্ভরযোগ্য ফাংশন
+    function parseFinalCSV(csv) {
+        const result = [];
+        let headers = []; let field = ''; let inQuotes = false; let row = [];
+        csv = csv.trim() + '\n';
+        for (let i = 0; i < csv.length; i++) {
+            const char = csv[i];
+            if (inQuotes) {
+                if (char === '"') {
+                    if (i + 1 < csv.length && csv[i + 1] === '"') { field += '"'; i++; }
+                    else { inQuotes = false; }
+                } else { field += char; }
+            } else {
+                if (char === '"') { inQuotes = true; }
+                else if (char === ',') { row.push(field); field = ''; }
+                else if (char === '\n' || char === '\r') {
+                    row.push(field); field = '';
+                    if (headers.length === 0) { headers = row.map(h => h.trim()); }
+                    else if (row.length === headers.length) {
+                        const obj = {};
+                        headers.forEach((header, index) => { obj[header] = row[index]; });
+                        result.push(obj);
+                    }
+                    row = [];
+                    if (char === '\r' && i + 1 < csv.length && csv[i + 1] === '\n') { i++; }
+                } else { field += char; }
+            }
         }
+        return result;
+    }
 
-        // ইনডেক্স বাড়ান এবং শেষে পৌঁছালে আবার প্রথম থেকে শুরু করুন
-        currentIndex = (currentIndex + 1) % notices.length;
-        const currentNotice = notices[currentIndex];
+    // HTML ট্যাগ রিমুভ করার ফাংশন
+    function stripHtmlTags(html) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    }
 
-        // ধাপ ১: নতুন নোটিশ শুরু হওয়ার মুহূর্তে স্থির শিরোনাম এবং তারিখ আপডেট করুন
-        fixedTitle.textContent = currentNotice.title;
-        fixedDate.textContent = currentNotice.date;
-
-        // ধাপ ২: নোটিশের বিবরণকে এক লাইনের জন্য প্রস্তুত করুন
-        const sanitizedDetails = sanitizeDetails(currentNotice.details);
-        scrollingContent.innerHTML = sanitizedDetails;
-
-        // ধাপ ৩: স্ক্রলিং শুরু করার জন্য অবস্থান রিসেট করুন
-        const wrapperWidth = scrollingWrapper.offsetWidth;
-        let position = wrapperWidth; // ডান দিক থেকে শুরু হবে
-
-        // অ্যানিমেশন লুপ
-        function animate() {
-            position -= 1; // স্ক্রলের গতি
-
-            scrollingContent.style.transform = `translateX(${position}px)`;
-
-            const contentRect = scrollingContent.getBoundingClientRect();
-            const wrapperRect = scrollingWrapper.getBoundingClientRect();
-
-            // নোটিশের ডান প্রান্ত কন্টেইনারের বাম প্রান্ত অতিক্রম করেছে কিনা তা পরীক্ষা করুন
-            if (contentRect.right < wrapperRect.left) {
-                // যদি নোটিশটি পুরোপুরি স্ক্রিনের বাইরে চলে যায়, তবে পরেরটি দেখান
-                showNextNotice();
-                return; // বর্তমান অ্যানিমেশন লুপ বন্ধ করুন
+    async function loadScrollingNotices() {
+        try {
+            const response = await fetch(googleSheetURL, { cache: 'no-cache' });
+            if (!response.ok) throw new Error('নেটওয়ার্ক সমস্যা');
+            const csvData = await response.text();
+            if (!csvData.trim()) throw new Error('কোনো ডেটা পাওয়া যায়নি');
+            const allNotices = parseFinalCSV(csvData);
+            const activeNotices = allNotices.filter(n => n && n.Status && n.Status.trim().toLowerCase() === 'show');
+            const scrollingNotices = activeNotices.filter(n => n.Type && n.Type.trim().toLowerCase() === 'scrolling');
+            
+            // যদি কোনো স্ক্রলিং নোটিশ না থাকে, তাহলে কিছুই দেখাবে না
+            if (scrollingNotices.length === 0) {
+                scrollingContainer.style.display = 'none'; // পুরো সেকশনটি লুকিয়ে ফেলুন
+                return;
             }
 
-            animationFrameId = requestAnimationFrame(animate);
-        }
+            // স্ক্রলিং কন্টেন্ট তৈরি করুন
+            let scrollingText = '';
+            
+            // প্রথম নোটিশের জন্য শুধু বিবরণ
+            if (scrollingNotices.length > 0) {
+                const firstNotice = scrollingNotices[0];
+                const description = firstNotice['বিবরণ'] ? `<span class="notice-description">${firstNotice['বিবরণ']}</span>` : '';
+                scrollingText += description;
+            }
+            
+            // অন্যান্য নোটিশের জন্য শিরোনাম, তারিখ এবং বিবরণ
+            for (let i = 1; i < scrollingNotices.length; i++) {
+                const notice = scrollingNotices[i];
+                const title = notice['শিরোনাম'] ? `<span class="focus-title mx-2 title-element" data-title="${stripHtmlTags(notice['শিরোনাম'])}" data-date="${notice['তারিখ'] || ''}">${notice['শিরোনাম']}</span>` : '';
+                const date = notice['তারিখ'] ? `<span class="text-gray-400 text-sm mx-1">[${notice['তারিখ']}]</span>` : '';
+                const description = notice['বিবরণ'] ? `<span class="notice-description">- ${notice['বিবরণ']}</span>` : '';
+                
+                if (i > 1) {
+                    scrollingText += `<span class="notice-divider">||</span>`;
+                }
+                
+                scrollingText += `${date} ${title} ${description}`;
+            }
 
-        // অ্যানিমেশন শুরু করুন
-        animationFrameId = requestAnimationFrame(animate);
+            // নির্বিঘ্ন অ্যানিমেশনের জন্য টেক্সটটি ডুপ্লিকেট করুন
+            scrollingContent.innerHTML = scrollingText + scrollingText;
+            
+            // প্রথম নোটিশের শিরোনাম এবং তারিখ স্থির অবস্থানে সেট করুন
+            if (scrollingNotices.length > 0) {
+                const firstNotice = scrollingNotices[0];
+                // HTML ট্যাগ ছাড়া শিরোনাম সেট করুন
+                fixedTitle.innerHTML = firstNotice['শিরোনাম'] || '';
+                fixedDate.textContent = firstNotice['তারিখ'] || '';
+                fixedNotice.classList.remove('hidden');
+            }
+            
+            // অ্যানিমেশন চালু করুন এবং সেকশনটি দৃশ্যমান করুন
+            scrollingContent.classList.add('animate-marquee');
+            scrollingContainer.classList.remove('hidden');
+            
+            // মাউস হোভারে অ্যানিমেশন থামানোর ব্যবস্থা
+            scrollingWrapper.addEventListener('mouseenter', () => scrollingContent.classList.add('paused'));
+            scrollingWrapper.addEventListener('mouseleave', () => scrollingContent.classList.remove('paused'));
+            
+            // প্রতিটি নোটিশের জন্য শিরোনাম পরিবর্তন করার মেকানিজম
+            const titleElements = document.querySelectorAll('.title-element');
+            
+            // প্রতিটি শিরোনাম এলিমেন্টের জন্য একটি অবজারভার তৈরি করুন
+            const observerOptions = {
+                root: scrollingWrapper,
+                rootMargin: '0px',
+                threshold: [0.5]
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // যখন একটি শিরোনাম মাঝখানে আসে, তখন তা স্থির করুন
+                        const title = entry.target.getAttribute('data-title');
+                        const date = entry.target.getAttribute('data-date');
+                        
+                        if (title) {
+                            fixedTitle.innerHTML = title;
+                            fixedDate.textContent = date;
+                            
+                            // অ্যানিমেশন রিসেট করুন
+                            fixedNotice.style.animation = 'none';
+                            setTimeout(() => {
+                                fixedNotice.style.animation = 'slideInFromRight 0.5s ease-out forwards';
+                            }, 10);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // প্রতিটি শিরোনাম এলিমেন্টের জন্য অবজারভার সেট করুন
+            titleElements.forEach(element => {
+                observer.observe(element);
+            });
+        } catch (error) {
+            console.error("স্ক্রলিং নোটিশ লোড করতে সমস্যা:", error.message);
+            scrollingContainer.style.display = 'none'; // কোনো সমস্যা হলেও সেকশনটি লুকিয়ে ফেলুন
+        }
     }
 
-    // নোটিশ দেখানো শুরু করুন
-    showNextNotice();
+    loadScrollingNotices();
 });
