@@ -21,18 +21,23 @@
 .scrolling-details {
     padding-left: 1rem;
     white-space: nowrap;
+
     /* CHANGE DETAILS COLOR: Modify this hex value */
-    color: #e2e8f0;
-    /* e.g., #ffffff for white */
-    /* CHANGE DETAILS FONT SIZE: Add a 'font-size' property here */
-    /* font-size: 1.1rem; */
+    color: #ffffff;
+
+    /* CHANGE DETAILS FONT SIZE */
+    font-size: 1.1rem;
 }
 
 /* This is the fixed notice area on the left */
 #fixed-notice {
+
     /* CHANGE PINNED HEADER BG: Modify this rgba value. The '0.95' is for opacity. */
-    background-color: rgba(30, 41, 59, 0.95);
-    border-right: 1px solid #334155;
+    background: linear-gradient(rgb(1, 40, 236), rgba(255, 255, 255, 0)),
+        url('../images/bg-color.png');
+    background-size: cover;
+    background-position: center;
+    border-right: 2px solid #29f605a9;
 }
 
 /* This is for the animated title (both scrolling and fixed) */
@@ -41,8 +46,8 @@
     display: inline-block;
     /* CHANGE TITLE FONT SIZE AND COLOR: The base styles are in index.html (text-xl, font-bold).
        You can override them here for more control. */
-    /* font-size: 1.25rem; */
-    /* color: white; */
+    font-size: 1.25rem;
+    color: rgb(5, 215, 33);
 }
 
 /* This is the animation for the title's color and size pulse */
@@ -51,14 +56,14 @@
     /* CHANGE FOCUS COLORS: Modify these two hex values for the animation */
     0%,
     100% {
-        color: #facc15;
+        color: #09f27d;
         transform: scale(1);
     }
 
     /* First color */
     50% {
-        color: #f87171;
-        transform: scale(1.05);
+        color: #ffffff;
+        transform: scale(1.08);
     }
 
     /* Second color */
@@ -79,4 +84,14 @@ You can change the direction ('to right') and add as many color hex codes as you
     position: sticky;
     z-index: 40;
     /* z-index হেডারের (50) চেয়ে কম রাখুন */
+}
+
+.bg-color {
+    background: linear-gradient(rgb(0, 0, 0)rgba(4, 26, 171, 0)),
+        url('');
+    background-size: cover;
+    background-size: 120% auto;
+    /* দুই পাশে zoom in */
+    background-position: center;
+    border-right: 1px solid #29f605a9;
 }
