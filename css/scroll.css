@@ -22,7 +22,8 @@
     padding-left: 1rem;
     white-space: nowrap;
     /* CHANGE DETAILS COLOR: Modify this hex value */
-    color: #e2e8f0; /* e.g., #ffffff for white */
+    color: #e2e8f0;
+    /* e.g., #ffffff for white */
     /* CHANGE DETAILS FONT SIZE: Add a 'font-size' property here */
     /* font-size: 1.1rem; */
 }
@@ -46,9 +47,21 @@
 
 /* This is the animation for the title's color and size pulse */
 @keyframes focus {
+
     /* CHANGE FOCUS COLORS: Modify these two hex values for the animation */
-    0%, 100% { color: #facc15; transform: scale(1); } /* First color */
-    50% { color: #f87171; transform: scale(1.05); }   /* Second color */
+    0%,
+    100% {
+        color: #facc15;
+        transform: scale(1);
+    }
+
+    /* First color */
+    50% {
+        color: #f87171;
+        transform: scale(1.05);
+    }
+
+    /* Second color */
 }
 
 /* HOW TO USE A GRADIENT BACKGROUND (3-4 colors) */
@@ -64,5 +77,6 @@ You can change the direction ('to right') and add as many color hex codes as you
 */
 #scrolling-notice-container {
     position: sticky;
-    z-index: 40; /* z-index হেডারের (50) চেয়ে কম রাখুন */
+    z-index: 40;
+    /* z-index হেডারের (50) চেয়ে কম রাখুন */
 }

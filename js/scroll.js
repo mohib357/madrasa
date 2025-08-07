@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// উদ্দেশ্য: নোটিশ বারকে হেডারের নিচে সঠিকভাবে অবস্থান করানো
+    // উদ্দেশ্য: নোটিশ বারকে হেডারের নিচে সঠিকভাবে অবস্থান করানো
     // মোবাইলের জন্য নতুন এবং নির্ভরযোগ্য কোড
-function adjustNoticeBarPosition() {
-    const header = document.querySelector('header');
-    const noticeContainer = document.getElementById('scrolling-notice-container');
-    
-    if (header && noticeContainer) {
-        const headerHeight = header.offsetHeight;
-        noticeContainer.style.top = `${headerHeight}px`;
-    }
-}
+    function adjustNoticeBarPosition() {
+        const header = document.querySelector('header');
+        const noticeContainer = document.getElementById('scrolling-notice-container');
 
-// 'load' ইভেন্ট পেজের সবকিছু লোড হওয়ার পর কাজ করে
-window.addEventListener('load', adjustNoticeBarPosition);
-// স্ক্রিন রিসাইজ হলেও পজিশন ঠিক থাকবে
-window.addEventListener('resize', adjustNoticeBarPosition);
+        if (header && noticeContainer) {
+            const headerHeight = header.offsetHeight;
+            noticeContainer.style.top = `${headerHeight}px`;
+        }
+    }
+
+    // 'load' ইভেন্ট পেজের সবকিছু লোড হওয়ার পর কাজ করে
+    window.addEventListener('load', adjustNoticeBarPosition);
+    // স্ক্রিন রিসাইজ হলেও পজিশন ঠিক থাকবে
+    window.addEventListener('resize', adjustNoticeBarPosition);
     // ### নতুন কোড শেষ ###
 
     // Your Google Sheet URL
