@@ -6,142 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>সকল নোটিশ</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* A simple style for the popup close button */
+    .close-popup {
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-gray-50">
 
-  <section class="py-16">
+  <section class="py-12 sm:py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center text-green-900 mb-12">নোটিশ বোর্ড</h2>
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-center text-green-900">নোটিশ বোর্ড</h1>
+        <a href="index.html" class="inline-block mt-4 text-green-700 hover:text-green-900 transition">
+          <i class="fas fa-arrow-left mr-2"></i>হোম পেজে ফিরে যান
+        </a>
+      </div>
+
       <div class="max-w-4xl mx-auto">
         <div id="notice-container">
-          <p class="text-center text-gray-600">নোটিশ লোড হচ্ছে...</p>
+          <p class="text-center text-gray-600 text-lg">
+            <i class="fas fa-spinner fa-spin mr-2"></i>নোটিশ লোড হচ্ছে...
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const noticeContainer = document.getElementById('notice-container');
-      const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
-
-      fetch(sheetURL)
-        .then(response => {
-          if (!response.ok) throw new Error('Network issue');
-          return response.text();
-        })
-        .then(data => {
-          processNotices(data);
-        })
-        .catch(error => {
-          noticeContainer.innerHTML = '<p class="text-center text-red-500">নোটিশ লোড করা সম্ভব হয়নি।</p>';
-        });
-
-      function parseCSV(text) {
-        const rows = [];
-        let currentRow = [], currentField = '', inQuotes = false;
-
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i];
-          if (char === '"') {
-            inQuotes = !inQuotes || text[i + 1] === '"';
-            if (text[i + 1] === '"') i++;
-          } else if (char === ',' && !inQuotes) {
-            currentRow.push(currentField);
-            currentField = '';
-          } else if (char === '\n' && !inQuotes) {
-            currentRow.push(currentField);
-            rows.push(currentRow);
-            currentRow = [];
-            currentField = '';
-          } else {
-            currentField += char;
-          }
-        }
-        if (currentField || currentRow.length) {
-          currentRow.push(currentField);
-          rows.push(currentRow);
-        }
-        return rows;
-      }
-
-      function processNotices(data) {
-        noticeContainer.innerHTML = '';
-        const rows = parseCSV(data);
-        if (rows.length <= 1) {
-          noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
-          return;
-        }
-
-        const notices = [];
-        for (let i = 1; i < rows.length; i++) {
-          const [date, title, description, status] = rows[i];
-          if (status?.trim().toLowerCase() === 'show') {
-            notices.push({ date: date.trim(), title: title.trim(), description: description.trim() });
-          }
-        }
-
-        notices.reverse();
-
-        if (!notices.length) {
-          noticeContainer.innerHTML = '<p class="text-center text-gray-600">কোনো নোটিশ পাওয়া যায়নি।</p>';
-          return;
-        }
-
-        notices.forEach(notice => {
-          const shortDescription = notice.description.length > 100
-            ? notice.description.substring(0, 100) + '...'
-            : notice.description;
-
-          const noticeCard = `
-            <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer notice-card" 
-                 data-full-description="${encodeURIComponent(notice.description)}"
-                 data-title="${encodeURIComponent(notice.title)}"
-                 data-date="${encodeURIComponent(notice.date)}">
-              <div class="flex justify-between items-start flex-col sm:flex-row">
-                <div class="flex-1">
-                  <h3 class="text-lg font-semibold text-green-800">${notice.title}</h3>
-                  <p class="text-gray-600 mt-1 notice-short-description">${shortDescription}</p>
-                </div>
-                <span class="text-sm text-gray-500 mt-2 sm:mt-0 sm:ml-4">${notice.date}</span>
-              </div>
-            </div>
-          `;
-          noticeContainer.innerHTML += noticeCard;
-        });
-
-        document.querySelectorAll('.notice-card').forEach(card => {
-          card.addEventListener('click', function () {
-            const title = decodeURIComponent(this.getAttribute('data-title'));
-            const fullDescription = decodeURIComponent(this.getAttribute('data-full-description'));
-            const date = decodeURIComponent(this.getAttribute('data-date'));
-
-            const popup = document.createElement('div');
-            popup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
-            popup.innerHTML = `
-              <div class="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-                <div class="flex justify-between items-start mb-4">
-                  <h3 class="text-xl font-bold text-green-800">${title}</h3>
-                  <button class="close-popup text-gray-500 hover:text-gray-700"><i class="fas fa-times text-xl"></i></button>
-                </div>
-                <p class="text-gray-600 mb-2">${date}</p>
-                <p class="text-gray-700 whitespace-pre-line">${fullDescription.replace(/\n/g, '<br>')}</p>
-              </div>
-            `;
-            document.body.appendChild(popup);
-
-            popup.addEventListener('click', function (e) {
-              if (e.target === popup || e.target.classList.contains('close-popup') || e.target.classList.contains('fa-times')) {
-                document.body.removeChild(popup);
-              }
-            });
-          });
-        });
-      }
-    });
-  </script>
+  <script src="js/all-notices.js"></script>
 </body>
 
 </html>
