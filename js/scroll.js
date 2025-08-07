@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // আপনার দেওয়া গুগল শীটের লিংক
     const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+
+    // HTML এলিমেন্ট নির্বাচন
     const scrollingContainer = document.getElementById('scrolling-notice-container');
     const scrollingWrapper = document.getElementById('scrolling-wrapper');
     const scrollingContent = document.getElementById('scrolling-content');
@@ -7,7 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fixedTitle = document.getElementById('fixed-title');
     const fixedDate = document.getElementById('fixed-date');
 
-    // CSV ডেটা পার্স করার জন্য নির্ভরযোগ্য ফাংশন
+    let allNotices = [];
+    let currentIndex = -1;
+    let animationFrameId = null;
+    let isPaused = false; // ১ নম্বর সমস্যার সমাধান: নতুন ফ্ল্যাগ
+
+    // আপনার দেওয়া CSV পার্সার
     function parseFinalCSV(csv) {
         const result = [];
         let headers = []; let field = ''; let inQuotes = false; let row = [];
@@ -38,113 +46,96 @@ document.addEventListener('DOMContentLoaded', () => {
         return result;
     }
 
-    // HTML ট্যাগ রিমুভ করার ফাংশন
-    function stripHtmlTags(html) {
-        const tmp = document.createElement('div');
-        tmp.innerHTML = html;
-        return tmp.textContent || tmp.innerText || '';
+    // ২ নম্বর সমস্যার সমাধান: নতুন ফাংশন যা ইনলাইন HTML ঠিক রাখে
+    function renderInlineHtml(html) {
+        if (!html) return '';
+        // শুধুমাত্র ব্লক-লেভেল ট্যাগ এবং br ট্যাগকে স্পেস দিয়ে রিপ্লেস করুন
+        const blockTagsRegex = /<\/?(div|p|h[1-6]|ul|ol|li|blockquote|section|article|header|footer|br)[^>]*>/gi;
+        // একাধিক স্পেসকে একটিতে পরিণত করুন
+        const sanitizedHtml = html.replace(blockTagsRegex, ' ').replace(/\s\s+/g, ' ').trim();
+        return sanitizedHtml;
     }
 
-    async function loadScrollingNotices() {
+    async function initializeScroller() {
         try {
             const response = await fetch(googleSheetURL, { cache: 'no-cache' });
-            if (!response.ok) throw new Error('নেটওয়ার্ক সমস্যা');
+            if (!response.ok) throw new Error('Network response was not ok');
             const csvData = await response.text();
-            if (!csvData.trim()) throw new Error('কোনো ডেটা পাওয়া যায়নি');
-            const allNotices = parseFinalCSV(csvData);
-            const activeNotices = allNotices.filter(n => n && n.Status && n.Status.trim().toLowerCase() === 'show');
-            const scrollingNotices = activeNotices.filter(n => n.Type && n.Type.trim().toLowerCase() === 'scrolling');
-            
-            // যদি কোনো স্ক্রলিং নোটিশ না থাকে, তাহলে কিছুই দেখাবে না
-            if (scrollingNotices.length === 0) {
-                scrollingContainer.style.display = 'none'; // পুরো সেকশনটি লুকিয়ে ফেলুন
-                return;
-            }
 
-            // স্ক্রলিং কন্টেন্ট তৈরি করুন
-            let scrollingText = '';
-            
-            // প্রথম নোটিশের জন্য শুধু বিবরণ
-            if (scrollingNotices.length > 0) {
-                const firstNotice = scrollingNotices[0];
-                const description = firstNotice['বিবরণ'] ? `<span class="notice-description">${firstNotice['বিবরণ']}</span>` : '';
-                scrollingText += description;
-            }
-            
-            // অন্যান্য নোটিশের জন্য শিরোনাম, তারিখ এবং বিবরণ
-            for (let i = 1; i < scrollingNotices.length; i++) {
-                const notice = scrollingNotices[i];
-                const title = notice['শিরোনাম'] ? `<span class="focus-title mx-2 title-element" data-title="${stripHtmlTags(notice['শিরোনাম'])}" data-date="${notice['তারিখ'] || ''}">${notice['শিরোনাম']}</span>` : '';
-                const date = notice['তারিখ'] ? `<span class="text-gray-400 text-sm mx-1">[${notice['তারিখ']}]</span>` : '';
-                const description = notice['বিবরণ'] ? `<span class="notice-description">- ${notice['বিবরণ']}</span>` : '';
-                
-                if (i > 1) {
-                    scrollingText += `<span class="notice-divider">||</span>`;
-                }
-                
-                scrollingText += `${date} ${title} ${description}`;
-            }
+            const noticesFromSheet = parseFinalCSV(csvData);
+            allNotices = noticesFromSheet.filter(n => n && n.Status && n.Status.trim().toLowerCase() === 'show' && n.Type && n.Type.trim().toLowerCase() === 'scrolling');
 
-            // নির্বিঘ্ন অ্যানিমেশনের জন্য টেক্সটটি ডুপ্লিকেট করুন
-            scrollingContent.innerHTML = scrollingText + scrollingText;
-            
-            // প্রথম নোটিশের শিরোনাম এবং তারিখ স্থির অবস্থানে সেট করুন
-            if (scrollingNotices.length > 0) {
-                const firstNotice = scrollingNotices[0];
-                // HTML ট্যাগ ছাড়া শিরোনাম সেট করুন
-                fixedTitle.innerHTML = firstNotice['শিরোনাম'] || '';
-                fixedDate.textContent = firstNotice['তারিখ'] || '';
-                fixedNotice.classList.remove('hidden');
+            if (allNotices.length > 0) {
+                scrollingContainer.classList.remove('hidden');
+
+                // ১ নম্বর সমস্যার সমাধান: mouseenter এবং mouseleave ইভেন্ট আপডেট করা হয়েছে
+                scrollingWrapper.addEventListener('mouseenter', () => { isPaused = true; });
+                scrollingWrapper.addEventListener('mouseleave', () => { isPaused = false; });
+
+                showNextNotice();
+            } else {
+                scrollingContainer.style.display = 'none';
             }
-            
-            // অ্যানিমেশন চালু করুন এবং সেকশনটি দৃশ্যমান করুন
-            scrollingContent.classList.add('animate-marquee');
-            scrollingContainer.classList.remove('hidden');
-            
-            // মাউস হোভারে অ্যানিমেশন থামানোর ব্যবস্থা
-            scrollingWrapper.addEventListener('mouseenter', () => scrollingContent.classList.add('paused'));
-            scrollingWrapper.addEventListener('mouseleave', () => scrollingContent.classList.remove('paused'));
-            
-            // প্রতিটি নোটিশের জন্য শিরোনাম পরিবর্তন করার মেকানিজম
-            const titleElements = document.querySelectorAll('.title-element');
-            
-            // প্রতিটি শিরোনাম এলিমেন্টের জন্য একটি অবজারভার তৈরি করুন
-            const observerOptions = {
-                root: scrollingWrapper,
-                rootMargin: '0px',
-                threshold: [0.5]
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // যখন একটি শিরোনাম মাঝখানে আসে, তখন তা স্থির করুন
-                        const title = entry.target.getAttribute('data-title');
-                        const date = entry.target.getAttribute('data-date');
-                        
-                        if (title) {
-                            fixedTitle.innerHTML = title;
-                            fixedDate.textContent = date;
-                            
-                            // অ্যানিমেশন রিসেট করুন
-                            fixedNotice.style.animation = 'none';
-                            setTimeout(() => {
-                                fixedNotice.style.animation = 'slideInFromRight 0.5s ease-out forwards';
-                            }, 10);
-                        }
-                    }
-                });
-            }, observerOptions);
-            
-            // প্রতিটি শিরোনাম এলিমেন্টের জন্য অবজারভার সেট করুন
-            titleElements.forEach(element => {
-                observer.observe(element);
-            });
         } catch (error) {
-            console.error("স্ক্রলিং নোটিশ লোড করতে সমস্যা:", error.message);
-            scrollingContainer.style.display = 'none'; // কোনো সমস্যা হলেও সেকশনটি লুকিয়ে ফেলুন
+            console.error("Scroller initialization failed:", error);
+            scrollingContainer.style.display = 'none';
         }
     }
 
-    loadScrollingNotices();
+    function showNextNotice() {
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        scrollingContent.innerHTML = '';
+        fixedNotice.classList.add('hidden');
+
+        currentIndex = (currentIndex + 1) % allNotices.length;
+        const notice = allNotices[currentIndex];
+
+        const scrollingItem = document.createElement('div');
+        scrollingItem.className = 'scrolling-item';
+
+        // ২ নম্বর সমস্যার সমাধান: নতুন ফাংশন `renderInlineHtml` ব্যবহার করা হয়েছে
+        scrollingItem.innerHTML = `
+            <div class="scrolling-header">
+                <span class="focus-title">${notice['শিরোনাম'] || ''}</span>
+                <span class="text-gray-400 text-sm">${notice['তারিখ'] || ''}</span>
+            </div>
+            <div class="scrolling-details">${renderInlineHtml(notice['বিবরণ'])}</div>
+        `;
+        scrollingContent.appendChild(scrollingItem);
+
+        const headerElement = scrollingItem.querySelector('.scrolling-header');
+        let position = scrollingWrapper.offsetWidth;
+        let isPinned = false;
+
+        function animate() {
+            // ১ নম্বর সমস্যার সমাধান: 'isPaused' ফ্ল্যাগ চেক করা হচ্ছে
+            if (!isPaused) {
+                position -= 1;
+                scrollingItem.style.transform = `translateX(${position}px)`;
+
+                const wrapperRect = scrollingWrapper.getBoundingClientRect();
+                const headerRect = headerElement.getBoundingClientRect();
+
+                if (!isPinned && headerRect.left <= wrapperRect.left) {
+                    isPinned = true;
+                    fixedTitle.innerHTML = notice['শিরোনাম'] || '';
+                    fixedDate.textContent = notice['তারিখ'] || '';
+                    fixedNotice.classList.remove('hidden');
+                    headerElement.style.visibility = 'hidden';
+                }
+
+                const itemRect = scrollingItem.getBoundingClientRect();
+                if (itemRect.right < wrapperRect.left) {
+                    showNextNotice();
+                    return;
+                }
+            }
+
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
+
+    initializeScroller();
 });

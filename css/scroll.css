@@ -1,68 +1,56 @@
-/* marquee keyframes */
-@keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+/* scroll.css */
+
+/* চলন্ত আইটেমের জন্য স্টাইল, যা JS দ্বারা তৈরি হবে */
+.scrolling-item {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    /* JS এর মাধ্যমে অবস্থান নিয়ন্ত্রণের জন্য */
+    height: 100%;
+    width: max-content;
+    /* কন্টেন্ট অনুযায়ী প্রস্থ */
 }
 
-/* শিরোনাম ফোকাস করার keyframes */
-@keyframes focus {
-    0%, 100% { color: #facc15; /* yellow-400 */ transform: scale(1); }
-    50% { color: #f87171; /* red-400 */ transform: scale(1.05); }
+/* চলন্ত আইটেমের ভেতরের শিরোনামের স্টাইল */
+.scrolling-header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    flex-shrink: 0;
 }
 
-/* শিরোনাম ডান থেকে বামে আসার অ্যানিমেশন */
-@keyframes slideInFromRight {
-    0% { transform: translateX(100%); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
+/* চলন্ত আইটেমের ভেতরের বিবরণের স্টাইল */
+.scrolling-details {
+    padding-left: 1rem;
+    white-space: nowrap;
+    color: #e2e8f0;
+    /* slate-200 */
 }
 
-.animate-marquee {
-    animation: marquee 50s linear infinite;
+/* বাম পাশে স্থিরভাবে দেখানো শিরোনামের জন্য স্টাইল */
+#fixed-notice {
+    background-color: rgba(30, 41, 59, 0.95);
+    /* bg-slate-800 with opacity */
+    border-right: 1px solid #334155;
+    /* border-slate-700 */
 }
 
-.paused {
-    animation-play-state: paused;
-}
-
+/* শিরোনামের জন্য ফোকাস অ্যানিমেশন */
 .focus-title {
     animation: focus 2s ease-in-out infinite;
-    display: inline-block; /* transform কাজ করার জন্য */
+    display: inline-block;
 }
 
-/* নতুন স্টাইলস */
-#fixed-notice {
-    background-color: rgba(30, 54, 59, 0.9); /* bg-slate-800 with opacity */
-    border-right: 1px solid #334155; /* border-slate-700 */
-    padding-right: 20px;
-    animation: slideInFromRight 0.5s ease-out forwards;
-}
+@keyframes focus {
 
-#scrolling-content {
-    padding-left: 300px; /* স্থির শিরোনামের জন্য জায়গা করে দেওয়া */
-}
+    0%,
+    100% {
+        color: #facc15;
+        transform: scale(1);
+    }
 
-#fixed-title {
-    white-space: nowrap;
-    max-width: 250px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* স্ক্রলিং বিবরণের জন্য নতুন স্টাইল */
-.notice-description {
-    color: #e2e8f0; /* slate-200 */
-    font-size: 1rem;
-    margin-left: 8px;
-}
-
-/* স্ক্রলিং বিভাজকের জন্য স্টাইল */
-.notice-divider {
-    color: #f70e5c; /* teal-400 */
-    font-weight: bold;
-    margin: 0 16px;
-}
-
-/* শিরোনাম এলিমেন্টের জন্য স্টাইল */
-.title-element {
-    position: relative;
+    50% {
+        color: #f87171;
+        transform: scale(1.05);
+    }
 }
