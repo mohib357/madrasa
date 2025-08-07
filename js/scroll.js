@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // আপনার দেওয়া গুগল শীটের লিংক
+    // Your Google Sheet URL
     const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
 
-    // HTML এলিমেন্ট নির্বাচন
+    // HTML element selection
     const scrollingContainer = document.getElementById('scrolling-notice-container');
     const scrollingWrapper = document.getElementById('scrolling-wrapper');
     const scrollingContent = document.getElementById('scrolling-content');
@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let allNotices = [];
     let currentIndex = -1;
     let animationFrameId = null;
-    let isPaused = false; // ১ নম্বর সমস্যার সমাধান: নতুন ফ্ল্যাগ
+    let isPaused = false;
 
-    // আপনার দেওয়া CSV পার্সার
+    // CSV Parser
     function parseFinalCSV(csv) {
         const result = [];
         let headers = []; let field = ''; let inQuotes = false; let row = [];
@@ -46,12 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return result;
     }
 
-    // ২ নম্বর সমস্যার সমাধান: নতুন ফাংশন যা ইনলাইন HTML ঠিক রাখে
+    // Function to render inline HTML while removing block-level tags
     function renderInlineHtml(html) {
         if (!html) return '';
-        // শুধুমাত্র ব্লক-লেভেল ট্যাগ এবং br ট্যাগকে স্পেস দিয়ে রিপ্লেস করুন
         const blockTagsRegex = /<\/?(div|p|h[1-6]|ul|ol|li|blockquote|section|article|header|footer|br)[^>]*>/gi;
-        // একাধিক স্পেসকে একটিতে পরিণত করুন
         const sanitizedHtml = html.replace(blockTagsRegex, ' ').replace(/\s\s+/g, ' ').trim();
         return sanitizedHtml;
     }
@@ -68,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (allNotices.length > 0) {
                 scrollingContainer.classList.remove('hidden');
 
-                // ১ নম্বর সমস্যার সমাধান: mouseenter এবং mouseleave ইভেন্ট আপডেট করা হয়েছে
                 scrollingWrapper.addEventListener('mouseenter', () => { isPaused = true; });
                 scrollingWrapper.addEventListener('mouseleave', () => { isPaused = false; });
 
@@ -93,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollingItem = document.createElement('div');
         scrollingItem.className = 'scrolling-item';
 
-        // ২ নম্বর সমস্যার সমাধান: নতুন ফাংশন `renderInlineHtml` ব্যবহার করা হয়েছে
+        // The HTML structure is built here, but styled by scroll.css
         scrollingItem.innerHTML = `
             <div class="scrolling-header">
                 <span class="focus-title">${notice['শিরোনাম'] || ''}</span>
@@ -108,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let isPinned = false;
 
         function animate() {
-            // ১ নম্বর সমস্যার সমাধান: 'isPaused' ফ্ল্যাগ চেক করা হচ্ছে
             if (!isPaused) {
                 position -= 1;
                 scrollingItem.style.transform = `translateX(${position}px)`;
@@ -116,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const wrapperRect = scrollingWrapper.getBoundingClientRect();
                 const headerRect = headerElement.getBoundingClientRect();
 
-                if (!isPinned && headerRect.left <= wrapperRect.left) {
+                if (!isPinned && headerRect.left <= wrapperRect.left && window.innerWidth > 640) {
                     isPinned = true;
                     fixedTitle.innerHTML = notice['শিরোনাম'] || '';
                     fixedDate.textContent = notice['তারিখ'] || '';

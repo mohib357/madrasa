@@ -1,17 +1,15 @@
 /* scroll.css */
 
-/* চলন্ত আইটেমের জন্য স্টাইল, যা JS দ্বারা তৈরি হবে */
+/* This is the item created by JS that scrolls */
 .scrolling-item {
     display: flex;
     align-items: center;
     position: absolute;
-    /* JS এর মাধ্যমে অবস্থান নিয়ন্ত্রণের জন্য */
     height: 100%;
     width: max-content;
-    /* কন্টেন্ট অনুযায়ী প্রস্থ */
 }
 
-/* চলন্ত আইটেমের ভেতরের শিরোনামের স্টাইল */
+/* This is the header part (title, date) inside the scrolling item */
 .scrolling-header {
     display: flex;
     flex-direction: column;
@@ -19,38 +17,48 @@
     flex-shrink: 0;
 }
 
-/* চলন্ত আইটেমের ভেতরের বিবরণের স্টাইল */
+/* This is the details part inside the scrolling item */
 .scrolling-details {
     padding-left: 1rem;
     white-space: nowrap;
-    color: #e2e8f0;
-    /* slate-200 */
+    /* CHANGE DETAILS COLOR: Modify this hex value */
+    color: #e2e8f0; /* e.g., #ffffff for white */
+    /* CHANGE DETAILS FONT SIZE: Add a 'font-size' property here */
+    /* font-size: 1.1rem; */
 }
 
-/* বাম পাশে স্থিরভাবে দেখানো শিরোনামের জন্য স্টাইল */
+/* This is the fixed notice area on the left */
 #fixed-notice {
+    /* CHANGE PINNED HEADER BG: Modify this rgba value. The '0.95' is for opacity. */
     background-color: rgba(30, 41, 59, 0.95);
-    /* bg-slate-800 with opacity */
     border-right: 1px solid #334155;
-    /* border-slate-700 */
 }
 
-/* শিরোনামের জন্য ফোকাস অ্যানিমেশন */
+/* This is for the animated title (both scrolling and fixed) */
 .focus-title {
     animation: focus 2s ease-in-out infinite;
     display: inline-block;
+    /* CHANGE TITLE FONT SIZE AND COLOR: The base styles are in index.html (text-xl, font-bold).
+       You can override them here for more control. */
+    /* font-size: 1.25rem; */
+    /* color: white; */
 }
 
+/* This is the animation for the title's color and size pulse */
 @keyframes focus {
-
-    0%,
-    100% {
-        color: #facc15;
-        transform: scale(1);
-    }
-
-    50% {
-        color: #f87171;
-        transform: scale(1.05);
-    }
+    /* CHANGE FOCUS COLORS: Modify these two hex values for the animation */
+    0%, 100% { color: #facc15; transform: scale(1); } /* First color */
+    50% { color: #f87171; transform: scale(1.05); }   /* Second color */
 }
+
+/* HOW TO USE A GRADIENT BACKGROUND (3-4 colors) */
+/*
+1. In index.html, REMOVE the 'bg-slate-800' class from 'scrolling-notice-container'.
+2. Add the following CSS rule to this file.
+
+#scrolling-notice-container {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+You can change the direction ('to right') and add as many color hex codes as you want.
+*/
