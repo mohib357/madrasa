@@ -303,3 +303,12 @@ body {
 .slider-background {
     background-image: url('../images/bg.gif');
 }
+
+logo-container {
+    align-items: center;
+    gap: .5rem;
+}
+
+logo-container>img {
+    width: 100px;
+}
