@@ -138,9 +138,16 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i < maxNotices; i++) {
       const notice = notices[i];
       // Taking the first 100 characters of the description
-      const shortDescription = notice.description.length > 100
-        ? notice.description.substring(0, 100) + '...'
-        : notice.description;
+      // --- নতুন কোড ---
+      // প্রথমে বিবরণ থেকে সকল HTML ট্যাগ ও লাইন ব্রেক মুছে ফেলা হচ্ছে
+      const plainText = notice.description
+        .replace(/<[^>]*>/g, '') // সকল HTML ট্যাগ মুছে ফেলে
+        .replace(/(\r\n|\n|\r)/gm, " "); // সকল প্রকার লাইন ব্রেক মুছে স্পেস যোগ করে
+
+      // এখন পরিষ্কার প্লেইন টেক্সটটিকে ছোট করা হচ্ছে
+      const shortDescription = plainText.trim().length > 100
+        ? plainText.trim().substring(0, 100) + '...'
+        : plainText.trim();
       const noticeCard = `
           <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer notice-card" 
                data-full-description="${encodeURIComponent(notice.description)}"
@@ -202,8 +209,8 @@ document.addEventListener('DOMContentLoaded', function () {
           .replace(/\s\s+/g, ' '); // একাধিক স্পেসকে একটি স্পেসে পরিণত করা
 
         // ধাপ ২: এক লাইনে পরিণত হওয়া HTML টিকে ছোট করুন
-        const shortHtml = singleLineHtml.trim().length > 90
-          ? singleLineHtml.trim().substring(0, 90) + '...'
+        const shortHtml = singleLineHtml.trim().length > 100
+          ? singleLineHtml.trim().substring(0, 100) + '...'
           : singleLineHtml.trim();
 
         // ধাপ ৩: চূড়ান্ত HTML টি দেখান
