@@ -139,15 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
       const notice = notices[i];
       // Taking the first 100 characters of the description
       // --- নতুন কোড ---
-      // প্রথমে বিবরণ থেকে সকল HTML ট্যাগ ও লাইন ব্রেক মুছে ফেলা হচ্ছে
-      const plainText = notice.description
-        .replace(/<[^>]*>/g, '') // সকল HTML ট্যাগ মুছে ফেলে
-        .replace(/(\r\n|\n|\r)/gm, " "); // সকল প্রকার লাইন ব্রেক মুছে স্পেস যোগ করে
+      // --- নতুন এবং চূড়ান্ত কোড ---
+      // ধাপ ১: শুধুমাত্র লাইন ব্রেক তৈরি করে এমন ট্যাগ ও ক্যারেক্টারকে স্পেস দিয়ে প্রতিস্থাপন করুন
+      const singleLineHtml = notice.description
+        .replace(/(<br\s*\/?>|<p>|<\/p>|<div>|<\/div>|<h2>|<\/h2>|<ul>|<\/ul>|<li>|<\/li>|\r\n|\n|\r)/gm, " ")
+        .replace(/\s\s+/g, ' '); // একাধিক স্পেসকে একটি স্পেসে পরিণত করা
 
-      // এখন পরিষ্কার প্লেইন টেক্সটটিকে ছোট করা হচ্ছে
-      const shortDescription = plainText.trim().length > 100
-        ? plainText.trim().substring(0, 100) + '...'
-        : plainText.trim();
+      // ধাপ ২: এক লাইনে পরিণত হওয়া HTML টিকে ছোট করুন
+      const shortDescription = singleLineHtml.trim().substring(0, 100) + '...';
+
+      // এখানে substring ব্যবহার করার কারণে ১০০ অক্ষরের বেশি দেওয়া হয়েছে যাতে ট্যাগসহ লেখাটি ভালোভাবে আসে।
+      // প্রয়োজনে 150 সংখ্যাটি বাড়িয়ে বা কমিয়ে দেখতে পারেন।
       const noticeCard = `
           <div class="bg-green-50 rounded-lg p-6 mb-4 hover:shadow-lg transition cursor-pointer notice-card" 
                data-full-description="${encodeURIComponent(notice.description)}"
