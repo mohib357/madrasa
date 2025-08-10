@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     const item = document.createElement('div');
     item.className = 'carousel-item w-full h-full absolute top-0 left-0';
     item.innerHTML = `
-        <img src="${data.image}" alt="${data.caption}" class="w-full h-full object-cover" loading="lazy" />
-        <div class="absolute top-3 left-3 p-3 bg-green-800/50 rounded-2xl">
-          <h1 class="text-white text-xl font-semibold drop-shadow-[3px_3px_0_black]">${data.caption}</h1>
-        </div>
-        `;
+    <img src="${data.image}" alt="${data.caption}" class="w-full h-full object-cover" loading="lazy" />
+    <div class="absolute top-2 left-2 p-2 md:top-3 md:left-3 md:p-3 bg-green-800/50 rounded-xl md:rounded-2xl">
+        <h1 class="text-white text-base md:text-lg lg:text-xl font-semibold drop-shadow-[2px_2px_0_black]">${data.caption}</h1>
+    </div>
+`;
     wrapper.appendChild(item);
   });
   const items = document.querySelectorAll('.carousel-item');
@@ -128,4 +128,14 @@ document.addEventListener('DOMContentLoaded', async function () {
   items[0].classList.add('active');
   updateDots();
   startInterval();
+
+  // ===================================================================
+  // --- নতুন কোড: ছোট ডিভাইসে স্লাইডার দেখানো নিশ্চিত করা ---
+  // ===================================================================
+  // এই কোডটি CSS-এর display:none সমস্যা ওভাররাইড করবে
+  if (wrapper) {
+    wrapper.style.display = 'block';
+    wrapper.style.position = 'relative'; // স্লাইডারের জন্য এটি জরুরি
+    wrapper.style.overflow = 'hidden';   // আইটেমগুলোকে কন্টেইনারের বাইরে যেতে বাধা দেবে
+  }
 });
