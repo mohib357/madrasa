@@ -193,10 +193,21 @@ document.addEventListener('DOMContentLoaded', function () {
       //   shortDescription.textContent = fullDescription;
       // });
       card.addEventListener('mouseleave', function () {
-        const originalText = fullDescription.length > 90
-          ? fullDescription.substring(0, 90) + '.....'
-          : fullDescription;
-        shortDescription.textContent = originalText;
+        const fullDescription = decodeURIComponent(card.getAttribute('data-full-description'));
+        const shortDescription = card.querySelector('.notice-short-description');
+
+        // ধাপ ১: শুধুমাত্র লাইন ব্রেক তৈরি করে এমন ট্যাগ ও ক্যারেক্টারকে স্পেস দিয়ে প্রতিস্থাপন করুন
+        const singleLineHtml = fullDescription
+          .replace(/(<br\s*\/?>|<p>|<\/p>|<div>|<\/div>|\r\n|\n|\r)/gm, " ") // লাইন ব্রেক ট্যাগ ও ক্যারেক্টারকে স্পেসে পরিণত করা
+          .replace(/\s\s+/g, ' '); // একাধিক স্পেসকে একটি স্পেসে পরিণত করা
+
+        // ধাপ ২: এক লাইনে পরিণত হওয়া HTML টিকে ছোট করুন
+        const shortHtml = singleLineHtml.trim().length > 90
+          ? singleLineHtml.trim().substring(0, 90) + '...'
+          : singleLineHtml.trim();
+
+        // ধাপ ৩: চূড়ান্ত HTML টি দেখান
+        shortDescription.innerHTML = shortHtml;
       });
     });
   }
