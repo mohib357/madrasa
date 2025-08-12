@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অভিজ্ঞতা - মাদ্রাসা</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .achievement-card {
+            transition: transform 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background: #e5e7eb;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #10b981;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 55%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-green-700 text-white py-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold">মাদ্রাসা</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">আমাদের অভিজ্ঞতা</h2>
+
+        <div class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-green-700 mb-4">প্রতিষ্ঠানের ইতিহাস</h3>
+                <p class="text-gray-700 mb-4">আমাদের মাদ্রাসা প্রতিষ্ঠিত হয়েছিল ২০১০ সালে। গত ১০+ বছর ধরে আমরা
+                    শিক্ষার্থীদের গুণগত শিক্ষা প্রদান করে আসছি। আমাদের লক্ষ্য হলো শিক্ষার্থীদের আধুনিক শিক্ষার পাশাপাশি
+                    ইসলামিক শিক্ষা প্রদান করা।</p>
+                <p class="text-gray-700">আমরা বিশ্বাস করি যে, শিক্ষা হলো মানুষের জীবনের সবচেয়ে গুরুত্বপূর্ণ অংশ। তাই
+                    আমরা শিক্ষার্থীদের সর্বোত্তম শিক্ষা প্রদানের জন্য সর্বদা চেষ্টা করে যাচ্ছি।</p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-green-800 mb-6">অর্জনসমূহ</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <!-- অর্জন কার্ড ১ -->
+            <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                <div class="mb-4">
+                    <i class="fas fa-award text-4xl text-yellow-500 mb-2"></i>
+                    <h3 class="text-xl font-bold">শ্রেষ্ঠ শিক্ষা প্রতিষ্ঠান</h3>
+                    <p class="text-gray-600">২০১৮ সালে জাতীয় পর্যায়ে শ্রেষ্ঠ শিক্ষা প্রতিষ্ঠানের পুরস্কার লাভ</p>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">জাতীয় পুরস্কার</span>
+                    <button class="text-green-700 hover:text-green-900"
+                        onclick="showAchievementDetails('শ্রেষ্ঠ শিক্ষা প্রতিষ্ঠান')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- অর্জন কার্ড ২ -->
+            <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                <div class="mb-4">
+                    <i class="fas fa-trophy text-4xl text-blue-500 mb-2"></i>
+                    <h3 class="text-xl font-bold">ক্রীড়া প্রতিযোগিতা</h3>
+                    <p class="text-gray-600">আন্তঃমাদ্রাসা ক্রীড়া প্রতিযোগিতায় চ্যাম্পিয়ন হওয়া</p>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ক্রীড়া অর্জন</span>
+                    <button class="text-green-700 hover:text-green-900"
+                        onclick="showAchievementDetails('ক্রীড়া প্রতিযোগিতা')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- অর্জন কার্ড ৩ -->
+            <div class="achievement-card bg-white rounded-lg shadow-lg p-6">
+                <div class="mb-4">
+                    <i class="fas fa-medal text-4xl text-purple-500 mb-2"></i>
+                    <h3 class="text-xl font-bold">শিক্ষার্থীদের সাফল্য</h3>
+                    <p class="text-gray-600">শতভাগ শিক্ষার্থী বৃত্তি পরীক্ষায় উত্তীর্ণ</p>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">একাডেমিক অর্জন</span>
+                    <button class="text-green-700 hover:text-green-900"
+                        onclick="showAchievementDetails('শিক্ষার্থীদের সাফল্য')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- আরও অর্জন কার্ড যোগ করা যেতে পারে -->
+        </div>
+
+        <h3 class="text-2xl font-bold text-green-800 mb-6">সময়রেখা</h3>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০১০</h4>
+                    <p class="text-gray-700">মাদ্রাসা প্রতিষ্ঠিত হয়</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০১২</h4>
+                    <p class="text-gray-700">নিজস্ব ভবন নির্মাণ সম্পন্ন</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০১৫</h4>
+                    <p class="text-gray-700">আধুনিক শিক্ষা কার্যক্রম চালু</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০১৮</h4>
+                    <p class="text-gray-700">জাতীয় পর্যায়ে শ্রেষ্ঠ শিক্ষা প্রতিষ্ঠান নির্বাচিত</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০২০</h4>
+                    <p class="text-gray-700">অনলাইন শিক্ষা কার্যক্রম চালু</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4 class="text-xl font-bold text-green-700">২০২৩</h4>
+                    <p class="text-gray-700">নতুন একাডেমিক ভবন উদ্বোধন</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- অর্জনের বিস্তারিত তথ্য পপআপ -->
+    <div id="achievementModal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold" id="achievementName">অর্জনের নাম</h3>
+                <button onclick="closeAchievementModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <p class="mb-2"><strong>বছর:</strong> <span id="achievementYear">২০১৮</span></p>
+                <p class="mb-2"><strong>বিবরণ:</strong> <span id="achievementDescription">জাতীয় পর্যায়ে শ্রেষ্ঠ শিক্ষা
+                        প্রতিষ্ঠান হিসেবে পুরস্কার লাভ।</span></p>
+                <p class="mb-2"><strong>প্রদানকারী:</strong> <span id="achievementProvider">শিক্ষা মন্ত্রণালয়</span>
+                </p>
+                <p class="mb-2"><strong>গুরুত্ব:</strong> <span id="achievementImportance">এই পুরস্কারটি আমাদের শিক্ষা
+                        মানের স্বীকৃতি হিসেবে গুরুত্বপূর্ণ।</span></p>
+            </div>
+            <div class="text-center">
+                <button onclick="closeAchievementModal()"
+                    class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAchievementDetails(name) {
+            // এখানে অর্জনের নাম অনুযায়ী তথ্য লোড করা যেতে পারে
+            document.getElementById('achievementName').textContent = name;
+            document.getElementById('achievementModal').classList.remove('hidden');
+        }
+
+        function closeAchievementModal() {
+            document.getElementById('achievementModal').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

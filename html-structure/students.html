@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষার্থী - মাদ্রাসা</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .student-card {
+            transition: transform 0.3s;
+        }
+
+        .student-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-green-700 text-white py-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold">মাদ্রাসা</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-green-800 mb-6">শিক্ষার্থীদের তালিকা</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- শিক্ষার্থী কার্ড ১ -->
+            <div class="student-card bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="শিক্ষার্থী"
+                        class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h3 class="text-xl font-bold">মোহাম্মদ আলী</h3>
+                        <p class="text-gray-600">ক্লাস: ১০ম</p>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">মেধাবী শিক্ষার্থী</span>
+                    <button class="text-green-700 hover:text-green-900" onclick="showStudentDetails('মোহাম্মদ আলী')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- শিক্ষার্থী কার্ড ২ -->
+            <div class="student-card bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="শিক্ষার্থী"
+                        class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h3 class="text-xl font-bold">ফাতেমা বেগম</h3>
+                        <p class="text-gray-600">ক্লাস: ৯ম</p>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ক্রীড়াবিদ</span>
+                    <button class="text-green-700 hover:text-green-900" onclick="showStudentDetails('ফাতেমা বেগম')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- শিক্ষার্থী কার্ড ৩ -->
+            <div class="student-card bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="শিক্ষার্থী"
+                        class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h3 class="text-xl font-bold">আব্দুল করিম</h3>
+                        <p class="text-gray-600">ক্লাস: ৮ম</p>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">বিতর্ককারী</span>
+                    <button class="text-green-700 hover:text-green-900" onclick="showStudentDetails('আব্দুল করিম')">
+                        <i class="fas fa-info-circle"></i> বিস্তারিত
+                    </button>
+                </div>
+            </div>
+
+            <!-- আরও শিক্ষার্থী কার্ড যোগ করা যেতে পারে -->
+        </div>
+    </main>
+
+    <!-- শিক্ষার্থীর বিস্তারিত তথ্য পপআপ -->
+    <div id="studentModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold" id="studentName">শিক্ষার্থীর নাম</h3>
+                <button onclick="closeStudentModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-4">
+                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="শিক্ষার্থী"
+                    class="w-32 h-32 rounded-full mx-auto mb-4">
+                <p class="mb-2"><strong>ক্লাস:</strong> <span id="studentClass">১০ম</span></p>
+                <p class="mb-2"><strong>রোল নম্বর:</strong> <span id="studentRoll">১০১</span></p>
+                <p class="mb-2"><strong>ঠিকানা:</strong> <span id="studentAddress">ঢাকা, বাংলাদেশ</span></p>
+                <p class="mb-2"><strong>অভিভাবকের নাম:</strong> <span id="parentName">অভিভাবকের নাম</span></p>
+                <p class="mb-2"><strong>যোগাযোগ:</strong> <span id="studentContact">০১৭১২৩৪৫৬৭৮</span></p>
+            </div>
+            <div class="text-center">
+                <button onclick="closeStudentModal()"
+                    class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">বন্ধ করুন</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showStudentDetails(name) {
+            // এখানে শিক্ষার্থীর নাম অনুযায়ী তথ্য লোড করা যেতে পারে
+            document.getElementById('studentName').textContent = name;
+            document.getElementById('studentModal').classList.remove('hidden');
+        }
+
+        function closeStudentModal() {
+            document.getElementById('studentModal').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
