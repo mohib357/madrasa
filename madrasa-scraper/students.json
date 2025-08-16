@@ -1,0 +1,1662 @@
+{
+  "প্লে": [
+    {
+      "name": "হুমায়রা তাসনীম রুশদা",
+      "studentId": "0123",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138987",
+      "fatherName": "রফিকুল ইসলাম",
+      "address": "তালুক দুলালী, হাজীগঞ্জ, আদিতমারী, লালমনিরহাট",
+      "dob": "2 Dec 2019",
+      "className": "প্লে",
+      "mobile": "01755404914"
+    },
+    {
+      "name": "মেহরাব রুফাইদ মুকসিনুল",
+      "studentId": "0121",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139269",
+      "fatherName": "মিজানুর রহমান",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "27 Aug 2021",
+      "className": "প্লে",
+      "mobile": "01796115238"
+    },
+    {
+      "name": "মাহ্‌দিদ রুযাইফ মোরসালিন",
+      "studentId": "0122",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139273",
+      "fatherName": "মিজানুর রহমান",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "15 Jul 2020",
+      "className": "প্লে",
+      "mobile": "01796115238"
+    },
+    {
+      "name": "আফিয়া খাতুন",
+      "studentId": "0125",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139285",
+      "fatherName": "মোঃ নুর আলম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Apr 2019",
+      "className": "প্লে",
+      "mobile": "01744502149"
+    },
+    {
+      "name": "উমর ফারুক",
+      "studentId": "0126",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139286",
+      "fatherName": "মৃত আব্দুল হাই",
+      "address": "আরাজী দেওডোবা, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "8 Nov 2019",
+      "className": "প্লে",
+      "mobile": "01763132340"
+    },
+    {
+      "name": "শাকিলা তাসমিয়া শান্তা",
+      "studentId": "0129",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139304",
+      "fatherName": "সাইফুল ইসলাম",
+      "address": "আরাজী দেওডোবা , আদিতমারী, লালমনিরহাট",
+      "dob": "5 Apr 2019",
+      "className": "প্লে",
+      "mobile": "01715434533"
+    },
+    {
+      "name": "রাফসান আজওয়াদ রাফি",
+      "studentId": "0131",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139313",
+      "fatherName": "হাফিজুর রহমান",
+      "address": "আদিতমারী, ওয়ার্ড নং- ৩, ভাদাই, লালমনিরহাট",
+      "dob": "16 Jul 2020",
+      "className": "প্লে",
+      "mobile": "01713769944"
+    },
+    {
+      "name": "মিসবাহুল হক মুত্তাকিন",
+      "studentId": "0132",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139322",
+      "fatherName": "মাজেদুল ইসলাম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "13 Sep 2020",
+      "className": "প্লে",
+      "mobile": "01762705659"
+    },
+    {
+      "name": "নুসরাত জান্নাত মারিয়া",
+      "studentId": "0133",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139335",
+      "fatherName": "নূরুজ্জামান",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Nov 2019",
+      "className": "প্লে",
+      "mobile": "01328812943"
+    },
+    {
+      "name": "বুশরা তাসনিম দিমা",
+      "studentId": "0141",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139548",
+      "fatherName": "ওবাইদুল্লাহ",
+      "address": "কৈটারী, চামটা হাট, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "30 Sep 2020",
+      "className": "প্লে",
+      "mobile": "01723707315"
+    },
+    {
+      "name": "হাফিজুর রহমান আবু হুরায়রা",
+      "studentId": "0150",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139926",
+      "fatherName": "আনোয়ার হোসেন",
+      "address": "কিসামত ভেটেশ্বর, ভাদাই , আদিতমারী, লালমনিরহাট",
+      "dob": "17 Nov 2019",
+      "className": "প্লে",
+      "mobile": "01648248006"
+    },
+    {
+      "name": "সাইয়ারা রাইসা সাকি",
+      "studentId": "0095",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=128905",
+      "fatherName": "সাইফুল ইসলাম",
+      "address": "দ: ব: হাজারী, আদিতমারী , লালমনিরহাট",
+      "dob": "9 Jun 2020",
+      "className": "প্লে",
+      "mobile": "01763659206"
+    },
+    {
+      "name": "সানজিদা খাতুন অহনা",
+      "studentId": "0064",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124221",
+      "fatherName": "সাজেদুল ইসলাম",
+      "address": "দঃবঃ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "19 Feb 2020",
+      "className": "প্লে",
+      "mobile": "01792932932"
+    },
+    {
+      "name": "মাহমুদুল হাসান",
+      "studentId": "0146",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140110",
+      "fatherName": "আবু বকর সিদ্দিক",
+      "address": "কিসামত ভেটেশ্বর, আদিতমারী, লালমনিরহাট",
+      "dob": "18 Oct 2027",
+      "className": "প্লে",
+      "mobile": "01957165229"
+    },
+    {
+      "name": "আদিলাহতুল কুবরা সাফা",
+      "studentId": "0147",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140113",
+      "fatherName": "আওলাদ হোসেন",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "7 Jul 2020",
+      "className": "প্লে",
+      "mobile": "01740104790"
+    },
+    {
+      "name": "আফিয়া মুকাররামি",
+      "studentId": "0148",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140115",
+      "fatherName": "আব্দুল আওয়াল",
+      "address": "বড়াইবাড়ী নামুড়িরহাট, পলাশী, আদিতমারী, লালমনিরহাট",
+      "dob": "19 Oct 2019",
+      "className": "প্লে",
+      "mobile": "01304717579"
+    },
+    {
+      "name": "আজিজুল ইসলাম",
+      "studentId": "0149",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140203",
+      "fatherName": "রবিউল ইসলাম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "6 Jun 2019",
+      "className": "প্লে",
+      "mobile": "01982912346"
+    },
+    {
+      "name": "আব্দুল্লাহ",
+      "studentId": "0159",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140393",
+      "fatherName": "ছপিয়ার রহমান",
+      "address": "আরাজী দেওডোবা, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "2 Oct 2019",
+      "className": "প্লে",
+      "mobile": "01715434533"
+    },
+    {
+      "name": "আবু হুরায়রা",
+      "studentId": "0161",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140545",
+      "fatherName": "শফিউল্ল্যাহ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Mar 2019",
+      "className": "প্লে",
+      "mobile": "01734061352"
+    },
+    {
+      "name": "মেহেদী হাসান",
+      "studentId": "0163",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140555",
+      "fatherName": "মোহাম্মদ আলী",
+      "address": "সৈনিকপাড়া , ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Jun 2019",
+      "className": "প্লে",
+      "mobile": "01774365671"
+    },
+    {
+      "name": "লতিফা খাতুন",
+      "studentId": "0164",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140571",
+      "fatherName": "আব্দুল লতিফ",
+      "address": "দঃ বঃ হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "9 Oct 2019",
+      "className": "প্লে",
+      "mobile": "01792236645"
+    },
+    {
+      "name": "মোবাশ্বিরা আক্তার মিমতা",
+      "studentId": "0171",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140898",
+      "fatherName": "মোরশেদুল ইসলাম",
+      "address": "পশ্চিমপাড়া আদিতমারী, লালমনিরহাট",
+      "dob": "12 Sep 2019",
+      "className": "প্লে",
+      "mobile": "01749182267"
+    },
+    {
+      "name": "আবু মুসা",
+      "studentId": "0177",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141943",
+      "fatherName": "আলী আকবর রুবেল",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "13 Sep 2019",
+      "className": "প্লে",
+      "mobile": "01719028090"
+    },
+    {
+      "name": "রেদওয়ান",
+      "studentId": "0183",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142469",
+      "fatherName": "নাজমুল হোসেন",
+      "address": "আরাজি দেওডোবা, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "21 Jul 2020",
+      "className": "প্লে",
+      "mobile": "01750534050"
+    },
+    {
+      "name": "আয়শা",
+      "studentId": "0186",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143046",
+      "fatherName": "সবুজ",
+      "address": "দক্ষিণ কর্মকারপাড়া বেড়া,পাবনা",
+      "dob": "26 Mar 2018",
+      "className": "প্লে",
+      "mobile": "01613965583"
+    },
+    {
+      "name": "উম্মে হাবিবা রোজা",
+      "studentId": "0188",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143341",
+      "fatherName": "হযরত আলী",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "20 May 2019",
+      "className": "প্লে",
+      "mobile": "01971223158"
+    },
+    {
+      "name": "লাবীব হাসান জোনাঈদ",
+      "studentId": "0190",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143995",
+      "fatherName": "নুরনবী",
+      "address": "দঃবঃ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "25 Sep 2018",
+      "className": "প্লে",
+      "mobile": "01755103000"
+    },
+    {
+      "name": "ইয়ামিন আলী",
+      "studentId": "0193",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=144707",
+      "fatherName": "মানিক মিয়া",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "17 Jul 2019",
+      "className": "প্লে",
+      "mobile": "01740227296"
+    },
+    {
+      "name": "খাদিজাতুল কোবরা",
+      "studentId": "0194",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=145964",
+      "fatherName": "আবু বকর সিদ্দিক বকুল",
+      "address": "বারোঘড়িয়া, মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "প্লে",
+      "mobile": "01708729670"
+    },
+    {
+      "name": "মুহাম্মাদুল্লাহ মিসবাহ",
+      "studentId": "0197",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=147552",
+      "fatherName": "মাওলানা আব্দুল হান্নান",
+      "address": "উত্তর ভেড়ভেড়ী, পুটিমাড়ী, কিশোরগঞ্জ, নীলফামারী",
+      "dob": "9 Oct 2019",
+      "className": "প্লে",
+      "mobile": "01308757692"
+    },
+    {
+      "name": "আল আমিন",
+      "studentId": "0199",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=147646",
+      "fatherName": "আব্দুল আউয়াল",
+      "address": "ভাদাই, আদিতমারী।",
+      "dob": "29 May 2019",
+      "className": "প্লে",
+      "mobile": "01300865674"
+    },
+    {
+      "name": "সিয়াম",
+      "studentId": "0206",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153254",
+      "fatherName": "মাহমুদুল হাসান",
+      "address": "খোলাহাটি, লালমনিরহাট।",
+      "dob": "12 May 2020",
+      "className": "প্লে",
+      "mobile": "01811862512"
+    }
+  ],
+  "নার্সারী": [
+    {
+      "name": "শরিফুল ইসলাম শুভ",
+      "studentId": "0117",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138664",
+      "fatherName": "মোশারফ হোসেন",
+      "address": "কিসামত ভেটেশ্বর, আদিতমারী, লালমনিরহাট",
+      "dob": "5 Mar 2018",
+      "className": "নার্সারী",
+      "mobile": "01741132206"
+    },
+    {
+      "name": "আব্দুল্লাহ বিন জোবাইদ",
+      "studentId": "0119",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138783",
+      "fatherName": "আব্দুল জলিল",
+      "address": "ধাইরখাতা , কুলাঘাট, সদর, লালমনিরহাট",
+      "dob": "30 Mar 2018",
+      "className": "নার্সারী",
+      "mobile": "01781038074"
+    },
+    {
+      "name": "মালিহা খাতুন",
+      "studentId": "0120",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138848",
+      "fatherName": "মিজানুর রহমান",
+      "address": "দঃবঃহাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Nov 2017",
+      "className": "নার্সারী",
+      "mobile": "01724563033"
+    },
+    {
+      "name": "রুমানা আক্তার",
+      "studentId": "0077",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125017",
+      "fatherName": "রনি",
+      "address": "দঃ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "13 May 2017",
+      "className": "নার্সারী",
+      "mobile": "01775194270"
+    },
+    {
+      "name": "নাজমুস সাকিব",
+      "studentId": "0127",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139298",
+      "fatherName": "আজিজুল",
+      "address": "কিসামত ভেটেশ্বর, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "26 Dec 2016",
+      "className": "নার্সারী",
+      "mobile": "01773584449"
+    },
+    {
+      "name": "আফিফা মারজানা রুবাইয়া",
+      "studentId": "0128",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139302",
+      "fatherName": "মোয়াজ্জেম হোসেন",
+      "address": "চরিতাবাড়ী, কুমড়ীরহাট, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Dec 2018",
+      "className": "নার্সারী",
+      "mobile": "01779109522"
+    },
+    {
+      "name": "শাহরিয়ার ইসলাম তাওহীদ",
+      "studentId": "0076",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124944",
+      "fatherName": "জাহাঙ্গীর আলম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "5 Mar 2018",
+      "className": "নার্সারী",
+      "mobile": "01755463119"
+    },
+    {
+      "name": "শাহাজান আলী",
+      "studentId": "0097",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=129307",
+      "fatherName": "মারিফুল ইসলাম",
+      "address": "দ: ব: হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "18 Jun 2016",
+      "className": "নার্সারী",
+      "mobile": "01838657177"
+    },
+    {
+      "name": "ফাতিহ মুহাম্মদ হাদী",
+      "studentId": "0057",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123946",
+      "fatherName": "জাহাঙ্গীর আলম",
+      "address": "আরাজী দেওডোবা, আদিতমারী, লালমনিরহাট",
+      "dob": "1 Aug 2019",
+      "className": "নার্সারী",
+      "mobile": "01710750913"
+    },
+    {
+      "name": "তাওসিফ আহ্‌মদ সাইফ",
+      "studentId": "0069",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124345",
+      "fatherName": "আবু তালেব",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "18 Sep 2019",
+      "className": "নার্সারী",
+      "mobile": "01722374484"
+    },
+    {
+      "name": "আজমাঈন আবরার",
+      "studentId": "0098",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=129810",
+      "fatherName": "আসাদুজ্জামান",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "16 Jun 2019",
+      "className": "নার্সারী",
+      "mobile": "01740552799"
+    },
+    {
+      "name": "কাওছার ইসলাম",
+      "studentId": "0134",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139352",
+      "fatherName": "আব্দুল কুদ্দুস",
+      "address": "আরাজী দেওডোবা, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "10 Oct 2015",
+      "className": "নার্সারী",
+      "mobile": "01727815982"
+    },
+    {
+      "name": "আব্দুল্লাহ আল আরাফ",
+      "studentId": "0135",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139397",
+      "fatherName": "মাজেদুল ইসলাম",
+      "address": "দঃ বঃ হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "8 Sep 2018",
+      "className": "নার্সারী",
+      "mobile": "01706774649"
+    },
+    {
+      "name": "মেহেরিন জান্নাত সিনহা",
+      "studentId": "0137",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139504",
+      "fatherName": "মিনহাজুল আবেদীন",
+      "address": "দক্ষিন ,বত্রিশ হাজারী , আদিতমারী, লালমনিরহাট",
+      "dob": "8 Jan 2018",
+      "className": "নার্সারী",
+      "mobile": "01917352058"
+    },
+    {
+      "name": "শাকিরাতুল জান্নাত",
+      "studentId": "0139",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139516",
+      "fatherName": "শরিফুল ইসলাম",
+      "address": "আদিতমারী, ভাদা্ই, লালমনিরহাট",
+      "dob": "6 Jun 2019",
+      "className": "নার্সারী",
+      "mobile": "01762889588"
+    },
+    {
+      "name": "তাবাচ্ছুম ইয়াছমিন",
+      "studentId": "0140",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139517",
+      "fatherName": "তাইজুল ইসলাম",
+      "address": "ভাদাই, আদিতমারী",
+      "dob": "13 Dec 2019",
+      "className": "নার্সারী",
+      "mobile": "01780691897"
+    },
+    {
+      "name": "আব্দুল্লাহ",
+      "studentId": "0115",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=137796",
+      "fatherName": "গোলাম মোসাব্বির আলম",
+      "address": "ভোটমারী, কালিগঞ্জ, লালমনিরহাট",
+      "dob": "18 Jul 2019",
+      "className": "নার্সারী",
+      "mobile": "01723707315"
+    },
+    {
+      "name": "মাসনূন মাহদী",
+      "studentId": "0145",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139939",
+      "fatherName": "মিজানুর রহমান",
+      "address": "নবীনগর, বাউরা, পাটগ্রাম, লালমনিরহাট",
+      "dob": "12 Feb 2019",
+      "className": "নার্সারী",
+      "mobile": "01754175938"
+    },
+    {
+      "name": "মোত্তালিব হোসেন",
+      "studentId": "0152",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140211",
+      "fatherName": "জসমত আলী",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "7 Mar 2019",
+      "className": "নার্সারী",
+      "mobile": "01774085042"
+    },
+    {
+      "name": "আব্দুল্লাহ বিন আউয়াল",
+      "studentId": "0153",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140213",
+      "fatherName": "আব্দুল আউয়াল",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "8 Jun 2019",
+      "className": "নার্সারী",
+      "mobile": "01920377622"
+    },
+    {
+      "name": "আব্দুল্লাহ আল মাহাদী",
+      "studentId": "0154",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140215",
+      "fatherName": "আশরাফুল আলম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Apr 2018",
+      "className": "নার্সারী",
+      "mobile": "01930105715"
+    },
+    {
+      "name": "শাহরিয়া ইসলাম শাওন",
+      "studentId": "0155",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140219",
+      "fatherName": "নুর আমিন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "4 Feb 2019",
+      "className": "নার্সারী",
+      "mobile": "01304839053"
+    },
+    {
+      "name": "যারিফ ইবনে সাঈদ",
+      "studentId": "0093",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=127801",
+      "fatherName": "আবু সাঈদ মুরাদ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "নার্সারী",
+      "mobile": "01750232232"
+    },
+    {
+      "name": "রমজান আলী",
+      "studentId": "0073",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124722",
+      "fatherName": "রফিকুল ইসলাম",
+      "address": "কিসামত ভেটেশ্বর, আদিতমারী, লালমনিরহাট",
+      "dob": "23 Jun 2017",
+      "className": "নার্সারী",
+      "mobile": "01771759414"
+    },
+    {
+      "name": "আব্দুল কাদের শীষ",
+      "studentId": "0106",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133793",
+      "fatherName": "সুমন মিয়া",
+      "address": "দেওডোবা, নামুড়ীর হাট, আদিতমারী, লালমনিরহাট",
+      "dob": "8 May 2017",
+      "className": "নার্সারী",
+      "mobile": "01728570717"
+    },
+    {
+      "name": "সারোয়ার আল সাআদ",
+      "studentId": "0080",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125281",
+      "fatherName": "আরিফুল ইসলাম",
+      "address": "দঃ বত্রিশ হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "9 May 2019",
+      "className": "নার্সারী",
+      "mobile": "01710975707"
+    },
+    {
+      "name": "আসমাউল হুসনা",
+      "studentId": "0049",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117390",
+      "fatherName": "আব্দুল আজিজ",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "নার্সারী",
+      "mobile": "01942529789"
+    },
+    {
+      "name": "ইছহাক আল মুনীম",
+      "studentId": "0085",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126532",
+      "fatherName": "রাকিবুজ্জামান",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "26 May 2020",
+      "className": "নার্সারী",
+      "mobile": "01724914335"
+    },
+    {
+      "name": "আহাদ আলী",
+      "studentId": "0092",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=127701",
+      "fatherName": "বেলাল হোসেন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "12 Mar 2018",
+      "className": "নার্সারী",
+      "mobile": "01813566349"
+    },
+    {
+      "name": "সিদরাতুল মুনতাহা ইয়ামনি",
+      "studentId": "0058",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123947",
+      "fatherName": "আনিচুর রহমান",
+      "address": "দক্ষিন বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Oct 2018",
+      "className": "নার্সারী",
+      "mobile": "01710213109"
+    },
+    {
+      "name": "তাহিরা ছিদ্দিকা",
+      "studentId": "0067",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124281",
+      "fatherName": "আবু বক্কর সিদ্দীক",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "8 Mar 2019",
+      "className": "নার্সারী",
+      "mobile": "01714861039"
+    },
+    {
+      "name": "কাজী রায়হান",
+      "studentId": "0072",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124635",
+      "fatherName": "কাজী মাহফুজার রহমান",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "10 Oct 2018",
+      "className": "নার্সারী",
+      "mobile": "01733826391"
+    },
+    {
+      "name": "মাইশা ফাহমিদা",
+      "studentId": "0023",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110132",
+      "fatherName": "মশিউর রহমান",
+      "address": "ভাদাই ,আদিতমারী, লালমনিরহাট",
+      "dob": "8 Apr 2018",
+      "className": "নার্সারী",
+      "mobile": "01828964912"
+    },
+    {
+      "name": "ইমাম হাসান ফাহিম",
+      "studentId": "0066",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124229",
+      "fatherName": "জাহেদুল ইসলাম",
+      "address": "গোবদ্র্ধন, মহিষখোঁচা, আদিতমারী, লালমনিরহাটা",
+      "dob": "24 Jan 2019",
+      "className": "নার্সারী",
+      "mobile": "01866593940"
+    },
+    {
+      "name": "আছিয়া খাতুন",
+      "studentId": "0055",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=119730",
+      "fatherName": "নূরনবী মিয়া",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "22 Dec 2017",
+      "className": "নার্সারী",
+      "mobile": "01965585835"
+    },
+    {
+      "name": "জুবায়ের রহমান",
+      "studentId": "0144",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139610",
+      "fatherName": "আশরাফুল ইসলাম",
+      "address": "ভাদাই , আদিতমারী, লালমনিরহাট",
+      "dob": "23 Aug 2019",
+      "className": "নার্সারী",
+      "mobile": "01717526953"
+    },
+    {
+      "name": "আব্দুল্লাহ",
+      "studentId": "0160",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140396",
+      "fatherName": "মাসুদ মিয়া",
+      "address": "কিসামত চন্দ্রপুর, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "25 Apr 2017",
+      "className": "নার্সারী",
+      "mobile": "01963371798"
+    },
+    {
+      "name": "উমর ফারুক",
+      "studentId": "0165",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140577",
+      "fatherName": "মহসিন আলম",
+      "address": "দঃ বঃ হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "17 Sep 2019",
+      "className": "নার্সারী",
+      "mobile": "01912606555"
+    },
+    {
+      "name": "ইউসুফ মিয়া",
+      "studentId": "0166",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140587",
+      "fatherName": "মজিবর রহমান",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "3 Oct 2017",
+      "className": "নার্সারী",
+      "mobile": "01313296147"
+    },
+    {
+      "name": "হাবিবুর রহমান",
+      "studentId": "0168",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140631",
+      "fatherName": "আলম হোসেন",
+      "address": "বারোঘড়িয়া, মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "14 Mar 2017",
+      "className": "নার্সারী",
+      "mobile": "01733888646"
+    },
+    {
+      "name": "রিজওয়ান ইসলাম রাহাত",
+      "studentId": "0109",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=135581",
+      "fatherName": "রেজাউল ইসলাম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "30 Jun 2020",
+      "className": "নার্সারী",
+      "mobile": "01737598050"
+    },
+    {
+      "name": "মিফতাহুল জান্নাত",
+      "studentId": "0169",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140811",
+      "fatherName": "মাসুদ রানা",
+      "address": "গোপিনাথপুর, সদর, রংপুর",
+      "dob": "27 Sep 2018",
+      "className": "নার্সারী",
+      "mobile": "01303568976"
+    },
+    {
+      "name": "তাওফিন জান্নাত",
+      "studentId": "0172",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140953",
+      "fatherName": "ওমর ফারুক",
+      "address": "নামুড়ীরহাট, পলাশী, আদিতমারী, লালমনিরহাট",
+      "dob": "23 Dec 2016",
+      "className": "নার্সারী",
+      "mobile": "01767331795"
+    },
+    {
+      "name": "আলী আলিমুন",
+      "studentId": "0101",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=130504",
+      "fatherName": "লুৎফর রহমান",
+      "address": "প্রতাব বিষু, সাতদরগা বাজার, পীরগাছা, রংপুর",
+      "dob": "2 Jan 2019",
+      "className": "নার্সারী",
+      "mobile": "01870809292"
+    },
+    {
+      "name": "জান্নাতুল ফেরদৌসি মিনহা",
+      "studentId": "0174",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141233",
+      "fatherName": "মোকছেদুল হক",
+      "address": "হাটিরপাড়া, কুড়িগ্রাম সদর, কুড়িগ্রাম",
+      "dob": "7 Jan 2020",
+      "className": "নার্সারী",
+      "mobile": "01740807760"
+    },
+    {
+      "name": "তাসকিনুর রহমান",
+      "studentId": "0175",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141472",
+      "fatherName": "মিজানুর রহমান",
+      "address": "কক্সবাজার সদর, কক্সবাজার",
+      "dob": "22 Nov 2018",
+      "className": "নার্সারী",
+      "mobile": "01815517298"
+    },
+    {
+      "name": "ওসমান গণি আদিব",
+      "studentId": "0178",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142231",
+      "fatherName": "রাশেদ মিজান",
+      "address": "বারোঘড়িয়া, মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "6 Jan 2019",
+      "className": "নার্সারী",
+      "mobile": "01725183411"
+    },
+    {
+      "name": "জুমাইরা জান্নাত যুথি",
+      "studentId": "0179",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142239",
+      "fatherName": "জহুরুল ইসলাম",
+      "address": "ডাইলপট্রি, সদর, লালমনিরহাট",
+      "dob": "27 Jun 2016",
+      "className": "নার্সারী",
+      "mobile": "01902580521"
+    },
+    {
+      "name": "উম্মে তাবাসসুম মাইশা",
+      "studentId": "0180",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142242",
+      "fatherName": "আলমগীর হোসেন",
+      "address": "আরাজী দেওডোবা, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "20 May 2019",
+      "className": "নার্সারী",
+      "mobile": "01718837715"
+    },
+    {
+      "name": "সিনহা আক্তার সুরাইয়া",
+      "studentId": "0181",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142297",
+      "fatherName": "সিরাজুল ইসলাম",
+      "address": "দঃবঃহাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "27 May 2019",
+      "className": "নার্সারী",
+      "mobile": "01792933225"
+    },
+    {
+      "name": "মিফতাহুল ইসলাম মাহি",
+      "studentId": "0182",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142452",
+      "fatherName": "নুরুন্নবী",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "নার্সারী",
+      "mobile": "01717604794"
+    },
+    {
+      "name": "শরীফ আব্দুল্লাহ",
+      "studentId": "0191",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=144401",
+      "fatherName": "রেজাউল ইসলাম",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "25 Sep 2019",
+      "className": "নার্সারী",
+      "mobile": "01719546271"
+    },
+    {
+      "name": "আব্দুল ওয়াদুদ",
+      "studentId": "0192",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=144509",
+      "fatherName": "মোহাম্মদ আবদুল হান্নান",
+      "address": "আটমুল,শিবগঞ্জ, বগুড়া",
+      "dob": "19 Apr 2021",
+      "className": "নার্সারী",
+      "mobile": "01608445686"
+    },
+    {
+      "name": "হাবিবা বিনতে হাবিব",
+      "studentId": "0196",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=146599",
+      "fatherName": "হাবিবুর রহমান",
+      "address": "বারঘড়িয়া, মহিষখোচা, আদিতমারী,লালমনিরহাট",
+      "dob": "26 Jan 2018",
+      "className": "নার্সারী",
+      "mobile": "01994197114"
+    }
+  ],
+  "প্রথম শ্রেণী": [
+    {
+      "name": "জাকারিয়া",
+      "studentId": "0034",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=112555",
+      "fatherName": "নুর ইসলাম",
+      "address": "আদিতমারী ,লালমনিরহাট",
+      "dob": "23 Apr 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01991354650"
+    },
+    {
+      "name": "মরিয়ম আক্তার রাইশা",
+      "studentId": "0061",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124026",
+      "fatherName": "রিপন মিয়া",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "6 Sep 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01876378319"
+    },
+    {
+      "name": "জুনাইদ আহম্মেদ জিসান",
+      "studentId": "0082",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126513",
+      "fatherName": "নাজমুল হোসেন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Jan 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01766507564"
+    },
+    {
+      "name": "কুরাইশী আজাদ আফিয়া",
+      "studentId": "0116",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138294",
+      "fatherName": "আবুল কালাম আজাদ",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "10 Aug 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01744415290"
+    },
+    {
+      "name": "সুরাইয়া খাতুন",
+      "studentId": "0096",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=128907",
+      "fatherName": "মোশারফ হোসেন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "23 Jun 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01722238571"
+    },
+    {
+      "name": "ছিফাত উল্লাহ লাবীব",
+      "studentId": "0013",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110113",
+      "fatherName": "জয়নাল আবেদীন",
+      "address": "বারঘড়িয়া ,মহিষখোচা, আদিতমারী ,লালমনিরহাট",
+      "dob": "15 Oct 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01798969195"
+    },
+    {
+      "name": "শারমিন আক্তার",
+      "studentId": "0102",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=131090",
+      "fatherName": "শামীম আহমেদ",
+      "address": "দ: ব: হাজারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "10 Sep 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01302504352"
+    },
+    {
+      "name": "রায়েত ইসলাম রাফি",
+      "studentId": "0032",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110601",
+      "fatherName": "রিমন",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "22 Apr 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01747418960"
+    },
+    {
+      "name": "রুশদী মোবাশ্বিরা তাকী",
+      "studentId": "0136",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139408",
+      "fatherName": "রুবেল মিয়া",
+      "address": "আদিতমারী টি এন টি পাড়া , আদিতমারী, লালমনিরহাট",
+      "dob": "6 Nov 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01723581241"
+    },
+    {
+      "name": "মরিয়ম আক্তার বাবলী",
+      "studentId": "0143",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139612",
+      "fatherName": "মমিনুল ইসলাম",
+      "address": "তাজতালুক, পাওটানাহাট, পীরগাছা, রংপুর",
+      "dob": "28 Jan 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01738038396"
+    },
+    {
+      "name": "ওমর ফারুক",
+      "studentId": "0075",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124831",
+      "fatherName": "জশিদুল ইসলাম",
+      "address": "দঃ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "14 Feb 2020",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01751137824"
+    },
+    {
+      "name": "আফিফ ইসলাম",
+      "studentId": "0038",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=114666",
+      "fatherName": "শাহিদুল ইসলাম",
+      "address": "দঃবঃ হাজারী আদিতমারী ,লালমনিরহাট",
+      "dob": "9 Aug 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01966613171"
+    },
+    {
+      "name": "মাহফুজ আহমেদ",
+      "studentId": "0158",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140388",
+      "fatherName": "হারুন অর রশিদ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "21 Sep 2015",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01701526097"
+    },
+    {
+      "name": "মাহাদ্বিন মারজান",
+      "studentId": "0024",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110136",
+      "fatherName": "মাসুদ রানা",
+      "address": "ছাটকালপানি ,বোনারপাড়া ,সাঘাটা ,গাইবান্ধা",
+      "dob": "9 Nov 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01719980411"
+    },
+    {
+      "name": "উম্মে কুলছুম",
+      "studentId": "0040",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=114801",
+      "fatherName": "মাঃ আবুল হাসান",
+      "address": "কিসামত ভেটেশ্বর ,আদিতমারী,লালমনিরহাট",
+      "dob": "28 Nov 2014",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01767946266"
+    },
+    {
+      "name": "রেজাউল করিম",
+      "studentId": "0060",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124024",
+      "fatherName": "আবু বক্কর সিদ্দিক",
+      "address": "দক্ষিণ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "19 Jun 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01747644959"
+    },
+    {
+      "name": "মুতাস্‌সিম বিল্লাহ",
+      "studentId": "0094",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=128565",
+      "fatherName": "মাও: রফিকুল ইসলাম",
+      "address": "মডেল পাড়া, আদিতমারী, লালমনিরহাট",
+      "dob": "5 Jul 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01722399646"
+    },
+    {
+      "name": "তাসনিয়া তাবাচ্ছুম",
+      "studentId": "0089",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=127350",
+      "fatherName": "সাইফুল্লাহ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "14 May 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01732656641"
+    },
+    {
+      "name": "সাইয়্যেদা আহমেদ মুনিরা",
+      "studentId": "0008",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110900",
+      "fatherName": "বুলবুল আহমেদ",
+      "address": "আদিতমারী ,আর্দশপাড়া ,লালমনিরহাট",
+      "dob": "11 Dec 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01721541060"
+    },
+    {
+      "name": "ইয়াছিন আরাফাত",
+      "studentId": "0063",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124070",
+      "fatherName": "জোবায়ের হোসেন",
+      "address": "কিসামত ভেটেশ্বর, আদিতমারী, লালমনিরহাট",
+      "dob": "25 May 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01755340736"
+    },
+    {
+      "name": "হোসাইন আল মাহমুদ",
+      "studentId": "0100",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=130184",
+      "fatherName": "মাহফুজার রহমান",
+      "address": "বশিনটারী, আদিতমারী, লালমনিরহাট",
+      "dob": "6 Mar 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01713968167"
+    },
+    {
+      "name": "আশরাফিয়া জান্নাত বর্ণা",
+      "studentId": "0062",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124073",
+      "fatherName": "সাজেদুল ইসলাম আলী",
+      "address": "কিসামত ভেটেশ্বর, আদিতমারী, লালমনিরহাট",
+      "dob": "6 Aug 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01751220435"
+    },
+    {
+      "name": "আরাফাত হোসেন",
+      "studentId": "0020",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110127",
+      "fatherName": "আব্দুর রশিদ",
+      "address": "দক্ষিন বত্রিশ হাজারী ৬নং ভাদাই ,আদিতমারী , লালমনিরহাট",
+      "dob": "21 Apr 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01759102433"
+    },
+    {
+      "name": "আবু তারিফ",
+      "studentId": "0056",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123944",
+      "fatherName": "আবু বকর সিদ্দিক বকুল",
+      "address": "বারোঘড়িয়া, মহিষখোঁচা, আদিতমারী, লালমনিরহাট",
+      "dob": "2 Dec 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01764220801"
+    },
+    {
+      "name": "আব্দুর রহমান",
+      "studentId": "0048",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117389",
+      "fatherName": "নজরুল ইসলাম",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "3 Jun 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01320764612"
+    },
+    {
+      "name": "ফারইয়াল মেহজাবিন অর্নি",
+      "studentId": "0071",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124606",
+      "fatherName": "শফিক আহমেদ সুজা",
+      "address": "ভাদাই , আদিতমারী, লালমনিরহাট",
+      "dob": "16 Jul 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01737889942"
+    },
+    {
+      "name": "আব্দুর রাউফ আল রাফি",
+      "studentId": "0070",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124580",
+      "fatherName": "জুলহাস হোসেন",
+      "address": "কিসামত ভেটেশ্বর , ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "4 Jan 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01735408764"
+    },
+    {
+      "name": "ফাহমিদা ফিহা",
+      "studentId": "0103",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=131299",
+      "fatherName": "ফরিদুল ইসলাম",
+      "address": "কিসামত ভেটেশ্বর, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "18 Apr 2012",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01736586994"
+    },
+    {
+      "name": "রাদিয়া আক্তার রাফিয়া",
+      "studentId": "0031",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110473",
+      "fatherName": "আব্দুর রশিদ",
+      "address": "আদিতমারী ,লালমনিরহাট",
+      "dob": "8 Feb 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01329035519"
+    },
+    {
+      "name": "মারযিয়াহ খাতুন মিনহা",
+      "studentId": "0110",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=136046",
+      "fatherName": "মাজেদুল ইসলাম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Mar 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01723111019"
+    },
+    {
+      "name": "নুসরাত জাহান রিমা",
+      "studentId": "0112",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=136135",
+      "fatherName": "নুর মোহাম্মদ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "25 Jan 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01320700998"
+    },
+    {
+      "name": "নুসাইবা জান্নাত তানজিয়া",
+      "studentId": "0043",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117384",
+      "fatherName": "মাওলানা ফরিদ উদ্দিন মাসউদ",
+      "address": "কিসামত চরিতাবাড়ী, কুমড়ীরহাট - ৫৫১০, আদিতমারী, লালমনিরহাট",
+      "dob": "20 Mar 2019",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01763901782"
+    },
+    {
+      "name": "সুজায়দা ইয়াজদান সুহা",
+      "studentId": "0079",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125276",
+      "fatherName": "সামসুদ্দোহা মো: এহসান",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "17 Sep 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01717678699"
+    },
+    {
+      "name": "উম্মে কুলছুম",
+      "studentId": "0162",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140550",
+      "fatherName": "শফিউল্ল্যাহ",
+      "address": "ভাদাই, আদিতমারী , লালমনিরহাট",
+      "dob": "16 Dec 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01734061352"
+    },
+    {
+      "name": "মুনতাহা জাহান মাহি",
+      "studentId": "0167",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140602",
+      "fatherName": "আবু বক্বর মানিক",
+      "address": "রেলবাজার, সদর, লালমনিরহাট",
+      "dob": "30 Dec 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01985385413"
+    },
+    {
+      "name": "রেজাউল করিম",
+      "studentId": "0118",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138736",
+      "fatherName": "আবুল হোসেন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "9 Nov 2015",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01765993850"
+    },
+    {
+      "name": "বায়জিদ বোস্তামী",
+      "studentId": "0170",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140855",
+      "fatherName": "লাভলু মিয়া",
+      "address": "সৈনিকপাড়া, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "14 Aug 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01327996795"
+    },
+    {
+      "name": "ফারিয়া খাতুন",
+      "studentId": "0176",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141498",
+      "fatherName": "মোস্তাফিজুর রহমান লিটু",
+      "address": "বশিনটারী, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "1 Jun 2014",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01737889942"
+    },
+    {
+      "name": "আরাফাত ইসলাম সানি",
+      "studentId": "0187",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143057",
+      "fatherName": "আহাম্ম দ আলী",
+      "address": "কিসামত ভেটেশ্বর, ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "22 Nov 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01744837125"
+    },
+    {
+      "name": "নবিয়ার রহমান",
+      "studentId": "0054",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=119729",
+      "fatherName": "নূরনবী মিয়া",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "2 Feb 2015",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01965585835"
+    },
+    {
+      "name": "রুকাইয়া",
+      "studentId": "0195",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=146001",
+      "fatherName": "আব্দুস সালাম",
+      "address": "সারপুকুর, আদিতমারী, লালমনিরহাট",
+      "dob": "27 Nov 2016",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01732013992"
+    },
+    {
+      "name": "আমেনা খাতুন",
+      "studentId": "0200",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148745",
+      "fatherName": "মোঃ আমজাদ হোসেন",
+      "address": "মিয়াজান পাটওয়ারী বাড়ী, সেফালীপাড়া, কাঞ্চনপুর, রামগন্ঞ্জ, লক্ষ্মীপুর।",
+      "dob": "8 Oct 2014",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01749475423"
+    },
+    {
+      "name": "আঁখি মনি",
+      "studentId": "0202",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151090",
+      "fatherName": "মোঃ আমিনুর ইসলাম",
+      "address": "",
+      "dob": "24 Mar 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01924587069"
+    },
+    {
+      "name": "ইমামুদ্দিন",
+      "studentId": "0203",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151136",
+      "fatherName": "এজে.এম. জর্জিজ আলম",
+      "address": "দঃ বঃ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01726826207"
+    },
+    {
+      "name": "ওয়াসিফ দুহা",
+      "studentId": "0204",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151418",
+      "fatherName": "মোঃ ওয়াহেদুন্নবী",
+      "address": "দঃ বঃ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "16 Aug 2015",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01793975515"
+    },
+    {
+      "name": "মেহেরব রহমান",
+      "studentId": "0205",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151621",
+      "fatherName": "মোঃ জিয়াউর রহমান",
+      "address": "দেওডোবা, নামুড়ীরহাট, পলাশী, আদিতমারী, লালমনিরহাট",
+      "dob": "7 Dec 2017",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01748688997"
+    },
+    {
+      "name": "ফাওজিয়া তাসনিম মরিয়ম",
+      "studentId": "0208",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156157",
+      "fatherName": "ওমর ফারুক",
+      "address": "আদিতমারী",
+      "dob": "9 Dec 2018",
+      "className": "প্রথম শ্রেণী",
+      "mobile": "01715307583"
+    }
+  ],
+  "দ্বিতীয় শ্রেণী": [
+    {
+      "name": "আরিফুল ইসলাম আরিফ",
+      "studentId": "0068",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124344",
+      "fatherName": "আক্তার আলী",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "25 Sep 2014",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01734516278"
+    },
+    {
+      "name": "জান্নাতুল মাওয়া",
+      "studentId": "0014",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110114",
+      "fatherName": "নূরুজ্জামান",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "18 Jul 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01328812943"
+    },
+    {
+      "name": "মিফতাহুল জান্নাত মালিহা",
+      "studentId": "0083",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126518",
+      "fatherName": "মিজানুর রহমান",
+      "address": "নামুড়ী, আদিতমারী, লালমনিরহাট",
+      "dob": "8 Jul 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01936439463"
+    },
+    {
+      "name": "হুসাইন আহম্মেদ",
+      "studentId": "0009",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110924",
+      "fatherName": "হাফিজুর রহমান",
+      "address": "আদশপাড়া ,কোটচাদপুর, খুলনা",
+      "dob": "18 Oct 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01749173612"
+    },
+    {
+      "name": "তাফিউল ইসলাম তাহমিদ",
+      "studentId": "0088",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=127137",
+      "fatherName": "জামাল উদ্দিন",
+      "address": "কিসামত চরিতাবাড়ী, আদিতমারী, লালমনিরহাট",
+      "dob": "24 Aug 2018",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01737450127"
+    },
+    {
+      "name": "ইয়াসিন",
+      "studentId": "0025",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110140",
+      "fatherName": "নুরুজ্জামান",
+      "address": "দক্ষিন বত্রিশ হাজারী আদিতমারী ,লালমনিরহাট",
+      "dob": "24 Jun 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01783816545"
+    },
+    {
+      "name": "হিমেল বাবু",
+      "studentId": "0017",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110123",
+      "fatherName": "মোকলেছুর রহমান",
+      "address": "দক্ষিন বত্রিশ হাজারী, আদিতমারী ,লালমনিরহাট",
+      "dob": "21 Nov 2016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01763290258"
+    },
+    {
+      "name": "তাহিয়া তাবাস্সুম",
+      "studentId": "0036",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=114578",
+      "fatherName": "রেজাউল ইসলাম",
+      "address": "আদিতমারী ,লালমনিরহাট",
+      "dob": "21 Oct 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01714626297"
+    },
+    {
+      "name": "ফারিহা জান্নাত",
+      "studentId": "0104",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=131784",
+      "fatherName": "মাওলানা রাশেদুল ইসলাম",
+      "address": "মাহিগঞ্জ, সদর, রংপুর",
+      "dob": "7 Aug 2016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01722735733"
+    },
+    {
+      "name": "মোবাশ্বিরা জান্নাত",
+      "studentId": "0107",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=134101",
+      "fatherName": "মিজানুর রহমান",
+      "address": "বেলদহ, পাইকের ছড়া, ভূরুঙ্গামারী, কুড়িগ্রাম",
+      "dob": "20 Feb 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01724624443"
+    },
+    {
+      "name": "সালমান ফারসী ঈসা",
+      "studentId": "0021",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110130",
+      "fatherName": "মশিউর রহমান",
+      "address": "ভাদাই , আদিতমারী,লালমনিরহাট",
+      "dob": "17 Jan 2016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01828964912"
+    },
+    {
+      "name": "সুমাইয়া খাতুন",
+      "studentId": "0018",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110124",
+      "fatherName": "শফিকুল ইসলাম",
+      "address": "দক্ষিন বত্রিশ হাজারী ,৬নং ভাদাই আদিতমারী ,লালমনিরহাট",
+      "dob": "13 Dec 2016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01939762990"
+    },
+    {
+      "name": "মাহমুদুল হাসান",
+      "studentId": "0010",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=111544",
+      "fatherName": "মমিনুর রহমান",
+      "address": "আদিতমারী ,লালমনিরহাট",
+      "dob": "26 Dec 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01950441278"
+    },
+    {
+      "name": "ওমর ফারুক",
+      "studentId": "0047",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117388",
+      "fatherName": "নজরুল ইসলাম",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "20 Jun 2013",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01320764612"
+    },
+    {
+      "name": "মিজানুর রহমান",
+      "studentId": "0035",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=112778",
+      "fatherName": "মফিজুল ইসলাম",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "12 Jan 1016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01820746048"
+    },
+    {
+      "name": "মাসুম বিল্লাহ মুসা",
+      "studentId": "0022",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110131",
+      "fatherName": "মশিউর রহমান",
+      "address": "ভাদাই ,আদিতমারী, লালমনিরহাট",
+      "dob": "17 Jan 2016",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01828964912"
+    },
+    {
+      "name": "আব্দুল্লাহ আল ছাদিদ",
+      "studentId": "0037",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=114580",
+      "fatherName": "রাজু ছালিদ",
+      "address": "আদিতমারী .দক্ষিনপাড়া .লালমনিরহাট",
+      "dob": "29 Oct 2014",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01756885666"
+    },
+    {
+      "name": "ইয়াছিন রহমান",
+      "studentId": "0184",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142773",
+      "fatherName": "সফিকুল ইসলাম",
+      "address": "দেওডোবা, পলাশী, আদিতমারী, লালমনিরহাট",
+      "dob": "18 Nov 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01773344738"
+    },
+    {
+      "name": "জাকারিয়া হোসেন",
+      "studentId": "0185",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142786",
+      "fatherName": "কামরুল হাসান আজাদ",
+      "address": "সারপুকুর, আদিতমারী, লালমনিরহাট",
+      "dob": "18 Jan 2017",
+      "className": "দ্বিতীয় শ্রেণী",
+      "mobile": "01921221298"
+    }
+  ],
+  "তৃতীয় শ্রেণী": [
+    {
+      "name": "ফারহান সাদিক বাবু",
+      "studentId": "0027",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110142",
+      "fatherName": "হযরত আলী",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "30 Oct 2015",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01717416128"
+    },
+    {
+      "name": "আয়েশা সিদ্দিকা",
+      "studentId": "0028",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110143",
+      "fatherName": "আলম বাদশা",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "18 Sep 2015",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01322592005"
+    },
+    {
+      "name": "মমতাজ খাতুন",
+      "studentId": "0039",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=114694",
+      "fatherName": "মজিদুল ইসলাম",
+      "address": "বিন্নাগাড়ী ,আদিতমারী ,লালমনিরহাট",
+      "dob": "20 Dec 2016",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01320745273"
+    },
+    {
+      "name": "আবু বকর সিদ্দিক",
+      "studentId": "0052",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=119281",
+      "fatherName": "মোহসিন মিয়া",
+      "address": "বারোঘড়িয়া মহিষখোচা ,আদিতমারী , লালমনিরহাট",
+      "dob": "6 Aug 2016",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01723170750"
+    },
+    {
+      "name": "সুলতানা খাতুন",
+      "studentId": "0026",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110141",
+      "fatherName": "নুরুজ্জামান",
+      "address": "দঃবঃহাজারী আদিতমারী লালমনিরহাট",
+      "dob": "29 Mar 2013",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01783816545"
+    },
+    {
+      "name": "মুবিনা মোবারক আফশারা",
+      "studentId": "0051",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=119059",
+      "fatherName": "মোবারক হোসেন",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "9 Jul 2015",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01992146941"
+    },
+    {
+      "name": "মোস্তাকিম বিল্লাহ",
+      "studentId": "0005",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110789",
+      "fatherName": "স্বাধীন মিয়া",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "14 Sep 2015",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01996523321"
+    },
+    {
+      "name": "সামিরাহ্‌ বিনতে রিদওয়ান",
+      "studentId": "0105",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132702",
+      "fatherName": "রিদওয়ানুল্লাহ",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "7 Feb 2018",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01883910225"
+    },
+    {
+      "name": "আব্দুল্লাহ আল আনছারী",
+      "studentId": "0012",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110111",
+      "fatherName": "আব্দুল আজিজ",
+      "address": "ভাদাই ,আদিতমারী ,লালমনিরহাট",
+      "dob": "12 Jan 2016",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01942529789"
+    },
+    {
+      "name": "নুরে জান্নাত হিয়ামনি",
+      "studentId": "0113",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=137048",
+      "fatherName": "হারুনুর রশিদ",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "12 Apr 2016",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01718844189"
+    },
+    {
+      "name": "খালিদ হাসান সৌরভ",
+      "studentId": "0030",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=110467",
+      "fatherName": "শফিকুল ইসলাম",
+      "address": "আরাজি দেওডুবা, আদিতমারী ,লালমনিরহাট",
+      "dob": "27 Aug 2014",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01763029357"
+    },
+    {
+      "name": "শুভন আল সাদিক",
+      "studentId": "0081",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125283",
+      "fatherName": "আরিফুল ইসলাম",
+      "address": "দঃ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "26 Oct 2016",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01710975707"
+    },
+    {
+      "name": "আব্দুল্লাহ",
+      "studentId": "0114",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=137120",
+      "fatherName": "মোজাম্মেল হক",
+      "address": "ইশোরকোল, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "4 Jun 2015",
+      "className": "তৃতীয় শ্রেণী",
+      "mobile": "01719860171"
+    }
+  ]
+}
