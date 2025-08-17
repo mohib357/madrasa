@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        :root {
+            --color: rgb(85, 85, 85);
+            --primary: #4a6bffb4;
+            --divider: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eaeaea;
+        }
+
+        .container {
+            min-width: 300px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: row-reverse;
+            /* Reverse order to put selector on left */
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
+            box-shadow: 5px 5px 8px rgba(255, 0, 0, 0.700), -5px -5px 8px rgba(0, 255, 0, 0.700);
+            border-radius: 12px;
+            padding: 0.65em;
+            background-color: rgba(255, 255, 255, 0.399);
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .divider {
+            width: 3px;
+            height: 2.8rem;
+            background-color: rgb(0, 0, 0);
+            margin: 0 10px;
+            border-radius: 15px;
+            box-shadow: 1px 1px 1px rgb(0, 255, 0), -1px -1px 1px rgb(255, 0, 0);
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 14px;
+            color: var(--color);
+            padding: 1em 0.5em;
+            border-radius: 8px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.526), -1px -1px 1px rgba(0, 0, 0, 0.526);
+        }
+
+        .dropdown {
+            position: relative;
+            font-size: 1.2rem;
+            color: var(--color);
+            min-width: 120px;
+        }
+
+        .select {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
+            cursor: pointer;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.526), -1px -1px 1px rgba(0, 0, 0, 0.526);
+            padding: .5em;
+            border-radius: 8px;
+            transition: background-color 0.4s;
+        }
+
+        .select:hover {
+            background-color: #f0f0f0;
+            box-shadow: 1px 1px 3px rgba(0, 255, 0, 0.700), -1px -1px 3px rgba(255, 0, 0, 0.700);
+            transition: 0.4s ease;
+        }
+
+        .select:focus-visible {
+            outline: 2px solid var(--primary);
+        }
+
+        .select svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--color);
+            transition: transform 0.3s ease;
+        }
+
+        .options {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            box-shadow: 2px 2px 5px rgba(0, 255, 0, 0.700), -2px -2px 5px rgba(255, 0, 0, 0.700);
+            list-style: none;
+            padding: .5em;
+            background-color: #eaeaea;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65em;
+            border-radius: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            transform-origin: top;
+            transform: scaleY(0);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .options.show {
+            transform: scaleY(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .options li {
+            padding: 0.5em;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .options li:hover,
+        .options li:focus-visible,
+        .options li.keyboard-selected {
+            background-color: var(--primary);
+            color: white;
+            outline: none;
+        }
+
+        .selected {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .active svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-wrapper">
+            <input type="text" placeholder="নাম, পিতার নাম, ঠিকানা বা আইডি দিয়ে খুঁজুন...">
+        </div>
+        <div class="divider"></div>
+        <div class="dropdown">
+            <div class="select" tabindex="0">
+                <span id="selected">CSS</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                        d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z" />
+                </svg>
+            </div>
+            <ul class="options">
+                <li tabindex="0">HTML</li>
+                <li class="selected" tabindex="0">CSS</li>
+                <li tabindex="0">JS</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const select = document.querySelector('.select');
+        const selected = document.querySelector('#selected');
+        const selectIcon = document.querySelector('.select svg');
+        const optionsDiv = document.querySelector('.options');
+        const options = document.querySelectorAll('.options li');
+        const dropdown = document.querySelector('.dropdown');
+        let currentIndex = -1;
+        // টগল ফাংশন
+        const toggleDropdown = () => {
+            optionsDiv.classList.toggle('show');
+            select.classList.toggle('active');
+            if (optionsDiv.classList.contains('show')) {
+                // ড্রপডাউন খুললে প্রথম সিলেক্টেড আইটেমে ফোকাস দিন
+                const selectedItem = optionsDiv.querySelector('.selected');
+                currentIndex = Array.from(options).indexOf(selectedItem);
+                if (currentIndex === -1) currentIndex = 0;
+                options[currentIndex].focus();
+            }
+        }
+        // ক্লিক ইভেন্ট
+        select.addEventListener('click', toggleDropdown);
+        // আইটেম সিলেক্ট হলে
+        const selectItem = (item) => {
+            selected.textContent = item.textContent;
+            options.forEach(opt => opt.classList.remove('selected', 'keyboard-selected'));
+            item.classList.add('selected');
+            toggleDropdown();
+            select.focus();
+        }
+        options.forEach(item => {
+            item.addEventListener('click', (e) => selectItem(e.target));
+        });
+        // কীবোর্ড নেভিগেশন
+        select.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDropdown();
+            } else if (e.key === 'Escape' && optionsDiv.classList.contains('show')) {
+                toggleDropdown();
+            }
+        });
+        // ড্রপডাউন আইটেমগুলির জন্য কীবোর্ড নেভিগেশন
+        options.forEach((item, index) => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectItem(e.target);
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    currentIndex = (index + 1) % options.length;
+                    options[currentIndex].focus();
+                    updateKeyboardSelection();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    currentIndex = (index - 1 + options.length) % options.length;
+                    options[currentIndex].focus();
+                    updateKeyboardSelection();
+                } else if (e.key === 'Escape') {
+                    toggleDropdown();
+                    select.focus();
+                }
+            });
+            // ফোকাস হলে হভার ইফেক্ট যোগ
+            item.addEventListener('focus', () => {
+                currentIndex = index;
+                updateKeyboardSelection();
+            });
+        });
+        function updateKeyboardSelection() {
+            options.forEach(opt => opt.classList.remove('keyboard-selected'));
+            if (currentIndex >= 0) {
+                options[currentIndex].classList.add('keyboard-selected');
+            }
+        }
+        // ডকুমেন্টে ক্লিক করলে ড্রপডাউন বন্ধ করুন
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                if (optionsDiv.classList.contains('show')) {
+                    toggleDropdown();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
