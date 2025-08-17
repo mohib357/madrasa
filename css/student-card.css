@@ -1,4 +1,50 @@
 /* Student ID Card Design */
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.container {
+    padding: 10px;
+    text-align: center; /* কন্টেইনারের লেখা সেন্টারে আনা হলো */
+}
+
+/* নতুন সংযোজন: ছাত্র-ছাত্রীর কাউন্টারের স্টাইল */
+#student-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #008952;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* নতুন কন্ট্রোলস এর স্টাইল */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls select,
+.controls input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+}
+
+.controls input {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+/* বাকি CSS কোড আগের মতোই থাকবে */
 .student-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
@@ -53,8 +99,6 @@
     color: #ffffff;
     margin: 0;
     display: inline-block;
-    /* float: right;
-    clear: right; */
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
@@ -97,6 +141,10 @@
     margin-top: 0;
 }
 
+.info-section {
+    text-align: left; /* কার্ডের ভেতরের লেখা বাম দিকে অ্যালাইন করা হলো */
+}
+
 .info-section h3 {
     white-space: nowrap;
     font-size: 1em;
@@ -111,10 +159,13 @@
     font-size: 14px;
     color: #333;
     line-height: 1.5;
+    /* ঠিকানা অ্যালাইনমেন্ট ঠিক করার জন্য এই পরিবর্তন */
+    display: flex;
 }
 
 .info-section p strong {
     color: #008952;
-    min-width: 4rem;
+    min-width: 4.5rem; /* লেবেলের জন্য একটি নির্দিষ্ট প্রস্থ */
     display: inline-block;
+    flex-shrink: 0; /* লেবেল যেন সংকুচিত না হয় */
 }
