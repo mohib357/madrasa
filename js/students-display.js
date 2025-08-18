@@ -5,14 +5,34 @@ const classSelector = document.getElementById('class-selector'); // এটি �
 const searchBox = document.getElementById('search-box');
 const studentCountElement = document.getElementById('student-count');
 
-// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন (কোনো পরিবর্তন নেই)
+// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন
 function renderStudents(filteredClasses) {
-    container.innerHTML = '';
-    let totalStudents = 0;
+    container.innerHTML = ''; // আগের কনটেন্ট মুছে ফেলা হলো
+
+    // ফিল্টার করা ছাত্র-ছাত্রীর সংখ্যা গণনা
+    let filteredCount = 0;
     for (const className in filteredClasses) {
-        totalStudents += filteredClasses[className].length;
+        filteredCount += filteredClasses[className].length;
     }
-    studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${totalStudents} জন`;
+
+    // মোট ছাত্র-ছাত্রীর সংখ্যা গণনা
+    let absoluteTotal = 0;
+    for (const className in allStudentsData) {
+        absoluteTotal += allStudentsData[className].length;
+    }
+
+    // ফিল্টার করা হয়েছে কিনা তার উপর ভিত্তি করে লেখা পরিবর্তন
+    const selectedClass = classSelector.value;
+    const searchTerm = searchBox.value.trim();
+
+    if (selectedClass !== 'all' || searchTerm !== '') {
+        // যখন কোনো কিছু ফিল্টার করা হবে
+        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন`;
+    } else {
+        // যখন কোনো ফিল্টার থাকবে না
+        studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${absoluteTotal.toLocaleString('bn-BD')} জন`;
+    }
+
 
     if (Object.keys(filteredClasses).length === 0) {
         container.innerHTML = '<p class="no-results">কোনো ছাত্র-ছাত্রী পাওয়া যায়নি।</p>';
@@ -21,16 +41,21 @@ function renderStudents(filteredClasses) {
 
     for (const className in filteredClasses) {
         const students = filteredClasses[className];
-        if (classSelector.value === 'all') {
+
+        // ক্লাস টাইটেল দেখানোর আগে চেক করা হচ্ছে যে ক্লাস সিলেক্ট করা আছে কি না
+        if (classSelector.value === 'all' && searchTerm === '') {
             const classTitle = document.createElement('h2');
             classTitle.textContent = className;
             container.appendChild(classTitle);
         }
+
         const grid = document.createElement('div');
         grid.className = 'student-grid';
+
         if (students.length > 0) {
             students.forEach(student => {
                 const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
+
                 const cardHTML = `
                     <div class="id-card">
                         <div class="card-header">
@@ -42,7 +67,7 @@ function renderStudents(filteredClasses) {
                         </div>
                         <div class="card-body">
                             <div class="photo-section">
-                                <img src="${photo}" alt="ছাত্রের ছবি" class="student-photo">
+                                <img src="${photo}" alt="শিক্ষার্থীর ছবি" class="student-photo">
                                 <p class="id-number">দাখেলা : ${student.studentId}</p>
                             </div>
                             <div class="info-section">
@@ -62,7 +87,7 @@ function renderStudents(filteredClasses) {
     }
 }
 
-// ফিল্টার এবং রেন্ডার করার মূল ফাংশন (কোনো পরিবর্তন নেই)
+// ফিল্টার এবং রেন্ডার করার মূল ফাংশন
 function filterAndRender() {
     const selectedClass = classSelector.value;
     const searchTerm = searchBox.value.toLowerCase().trim();
@@ -110,15 +135,15 @@ async function initializeApp() {
         // ইভেন্ট লিসেনার যোগ করা
         classSelector.addEventListener('change', filterAndRender);
         searchBox.addEventListener('input', filterAndRender);
-        
+
         // প্রথমবার সব ছাত্রছাত্রীদের দেখানো
         filterAndRender();
 
-        // নতুন কাস্টম ড্রপডাউন ইনিশিয়ালাইজ করা
+        // নতুন কাস্টম ড্রপডাউন ইনিশিয়ালাইজ করা
         initializeCustomDropdown();
 
     } catch (error) {
-        container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>';
+        container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি।</p>';
         console.error('Error fetching student data:', error);
     }
 }
@@ -136,7 +161,7 @@ function initializeCustomDropdown() {
     const optionsContainer = dropdown.querySelector('.options');
     const hiddenSelect = document.getElementById('class-selector');
 
-    // লুকানো select থেকে option নিয়ে কাস্টম ড্রপডাউনের li তৈরি করা
+    // লুকানো select থেকে option নিয়ে কাস্টম ড্রপডাউনের li তৈরি করা
     Array.from(hiddenSelect.options).forEach((option, index) => {
         const li = document.createElement('li');
         li.textContent = option.textContent;
