@@ -1,19 +1,38 @@
-/* Student ID Card Design */
+/* ================ Student ID Card Design ================*/
+
 body {
     font-family: 'Hind Siliguri', sans-serif;
+    background-color: #f0f2f5;
 }
 
+/* The main container holding everything */
 .container {
-    padding: 10px;
-    text-align: center; /* কন্টেইনারের লেখা সেন্টারে আনা হলো */
+
+    /* Maximum width of the container */
+    max-width: 1600px;
+
+    /* Centers the container on the page */
+    margin: 0 auto;
+
+    /* Inner padding for the container */
+    padding: 20px;
+
+    /* Centers the text inside */
+    text-align: center;
 }
 
-/* নতুন সংযোজন: ছাত্র-ছাত্রীর কাউন্টারের স্টাইল */
+/* Style for the main heading */
+h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Style for the student counter display */
 #student-count {
     font-size: 1.2rem;
     font-weight: bold;
     color: #008952;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border: 1px solid #ddd;
     display: inline-block;
     padding: 8px 15px;
@@ -21,41 +40,267 @@ body {
     background-color: #f9f9f9;
 }
 
-/* নতুন কন্ট্রোলস এর স্টাইল */
+/* ================ CUSTOM VARIABLES ================*/
+:root {
+    --color: rgb(85, 85, 85);
+    --primary: #4a6bffb4;
+    --divider-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ================ SEARCH & FILTER CONTROLS ================*/
+
+/* The main container for the search box and dropdown */
 .controls {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    gap: 1rem;
+
+    /* Arranges items from right to left */
+    flex-direction: row-reverse;
+
+    /* Vertically aligns items to the center */
+    align-items: center;
+
+    /* Creates equal space between items */
+    justify-content: space-between;
+
+    gap: 0.5em;
+    box-shadow: 5px 5px 8px rgba(255, 0, 0, 0.700), -5px -5px 8px rgba(0, 255, 0, 0.700);
+    border-radius: 12px;
+    padding: 0.65em;
+    background-color: rgba(253, 253, 253, 0.399);
+
+    /* Continuous shadow animation for the control box */
+    animation: rotateShadow 10s linear infinite;
+
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+
+    /* Sets position for animation */
+    position: relative;
+
+    z-index: 0;
 }
 
-.controls select,
-.controls input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Hind Siliguri', sans-serif;
-    font-size: 16px;
+/* Continuous glow effect for the control box */
+.controls::before {
+    content: "";
+    background: linear-gradient(45deg, #ff00003f, #ff73003a, #fffb003b, #48ff003e, #00ffd53b, #002aff2f, #ff00c83c, #ff000035);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    border-radius: 12px;
+
+    /* Glow is always visible */
+    opacity: 1;
 }
 
-.controls input {
+/* Divider between the search box and dropdown */
+.divider {
+    width: 3px;
+    height: 2.8rem;
+    background-color: rgb(0, 0, 0);
+    margin: 0 8px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px rgb(0, 255, 0), -1px -1px 1px rgb(255, 0, 0);
+    z-index: 0;
+}
+
+/* Wrapper for the search box */
+.search-wrapper {
+    position: relative;
     flex-grow: 1;
-    max-width: 400px;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    z-index: 0;
 }
 
-/* বাকি CSS কোড আগের মতোই থাকবে */
+/* Style for the search input box */
+.controls input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--color);
+    padding: 0.8em 0.5em;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.396), -1px -1px 1px rgba(0, 0, 0, 0.396);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #fff;
+    z-index: 0;
+}
+
+/* Style for the search box when focused (clicked) */
+.controls input:focus {
+    box-shadow: 1px 1px 3px rgba(0, 255, 0, 0.700), -1px -1px 3px rgba(255, 0, 0, 0.700);
+    transition: 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.873);
+    padding: 0.85em 0.55em;
+}
+
+/* ================ CUSTOM DROPDOWN ================*/
+
+/* Main container for the dropdown */
+.dropdown {
+    position: relative;
+    font-size: 1rem;
+    color: var(--color);
+    min-width: 150px;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+/* The visible, clickable part of the dropdown */
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.526), -1px -1px 1px rgba(0, 0, 0, 0.526);
+    padding: .5em;
+    border-radius: 8px;
+    transition: background-color 0.4s;
+    z-index: 1;
+    background-color: #fff;
+}
+
+/* Style for the select box on mouse hover */
+.select:hover {
+    background-color: #f0f0f0;
+    box-shadow: 1px 1px 3px rgba(0, 255, 0, 0.700), -1px -1px 3px rgba(255, 0, 0, 0.700);
+    transition: 0.4s ease;
+}
+
+.select:focus-visible {
+    outline: 2px solid var(--primary);
+}
+
+/* Style for the dropdown arrow icon */
+.select svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color);
+    transition: transform 0.3s ease;
+}
+
+/* The list of dropdown options */
+.options {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    box-shadow: 2px 2px 5px rgba(0, 255, 0, 0.700), -2px -2px 5px rgba(255, 0, 0, 0.700);
+    list-style: none;
+    padding: .5em;
+    background-color: #eaeaea;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65em;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    transform-origin: top;
+
+    /* Hides the options initially */
+    transform: scaleY(0);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Style to show the options list when the dropdown is open */
+.options.show {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Style for each dropdown option (li) */
+.options li {
+    padding: 0.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 1;
+    background-color: #eaeaea;
+}
+
+/* Glow effect for options on hover or selection */
+.options li::before {
+    content: "";
+    background: linear-gradient(45deg, #ff00003f, #ff73003a, #fffb003b, #48ff003e, #00ffd53b, #002aff2f, #ff00c83c, #ff000035);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 10s linear infinite;
+    border-radius: 6px;
+
+    /* Hides the glow initially */
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Makes the glow visible on hover, focus, or selection */
+.options li:hover::before,
+.options li:focus-visible::before,
+.options li.keyboard-selected::before,
+.options li.selected::before {
+    opacity: 1;
+}
+
+/* Style for hovered, focused, or selected options */
+.options li:hover,
+.options li:focus-visible,
+.options li.keyboard-selected,
+.options li.selected {
+    background-color: var(--primary);
+    color: white;
+    outline: none;
+}
+
+/* Rotates the arrow icon when the dropdown is open */
+.active svg {
+    transform: rotate(180deg);
+}
+
+/* ================ ID CARD GRID ================*/
+
+/* Container for all ID cards (Grid System) */
 .student-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 10px;
     justify-items: center;
+
+    /* 4 columns by default for large screens */
+    grid-template-columns: repeat(4, 1fr);
 }
 
+/* Style for each student's ID card */
 .id-card {
     width: 370px;
-    height: 230px;
+    height: 240px;
     background: #fff;
     border: 2px solid #ddd;
     border-radius: 15px;
@@ -64,13 +309,17 @@ body {
     font-family: 'Hind Siliguri', sans-serif;
     overflow: hidden;
     border-top: 5px solid #ff062386;
+
+    /* Card background image */
     background-image: url('../images/card.png');
+
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
 }
 
+/* Top section (header) of the card */
 .card-header {
     display: flex;
     align-items: center;
@@ -80,6 +329,7 @@ body {
     flex-shrink: 0;
 }
 
+/* Madrasa logo */
 .card-header .logo {
     width: 60px;
     height: 50px;
@@ -88,12 +338,13 @@ body {
     left: 2rem;
 }
 
+/* Text in the header */
 .card-header .header-text {
     text-align: right;
     line-height: 1.3;
 }
 
-
+/* Color and shadow for header text */
 .card-header .header-text p {
     font-size: 12px;
     color: #ffffff;
@@ -102,6 +353,7 @@ body {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
+/* Color and shadow for header text */
 .card-header .header-text h2 {
     font-size: 16px;
     font-weight: bold;
@@ -114,17 +366,20 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
+/* Main content area of the card (photo and info) */
 .card-body {
     display: flex;
     align-items: flex-start;
 }
 
+/* Student's photo section */
 .photo-section {
     margin-right: 20px;
     flex-shrink: 0;
     justify-content: center;
 }
 
+/* Student's photo */
 .student-photo {
     width: 100px;
     height: 100px;
@@ -134,6 +389,7 @@ body {
     object-position: top center;
 }
 
+/* Student's ID number */
 .id-number {
     font-weight: bold;
     font-size: 1.2em;
@@ -141,10 +397,12 @@ body {
     margin-top: 0;
 }
 
+/* Student's information section */
 .info-section {
-    text-align: left; /* কার্ডের ভেতরের লেখা বাম দিকে অ্যালাইন করা হলো */
+    text-align: left;
 }
 
+/* Student's name */
 .info-section h3 {
     white-space: nowrap;
     font-size: 1em;
@@ -154,18 +412,131 @@ body {
     margin-bottom: 10px;
 }
 
+/* Other student info (father, class, address) */
 .info-section p {
     margin: 2px 0;
     font-size: 14px;
     color: #333;
     line-height: 1.5;
-    /* ঠিকানা অ্যালাইনমেন্ট ঠিক করার জন্য এই পরিবর্তন */
     display: flex;
 }
 
+/* Info labels (e.g., Father, Class) */
 .info-section p strong {
     color: #008952;
-    min-width: 4.5rem; /* লেবেলের জন্য একটি নির্দিষ্ট প্রস্থ */
+    min-width: 4.5rem;
     display: inline-block;
-    flex-shrink: 0; /* লেবেল যেন সংকুচিত না হয় */
+    flex-shrink: 0;
+}
+
+/* ================ ANIMATION KEYFRAMES ================*/
+
+/* Animation for the glow effect */
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Animation for rotating the shadow */
+@keyframes rotateShadow {
+    0% {
+        box-shadow: 5px 5px 8px rgba(255, 0, 0, 0.7), -5px -5px 8px rgba(0, 255, 0, 0.7);
+    }
+
+    25% {
+        box-shadow: -5px 5px 8px rgba(0, 255, 0, 0.7), 5px -5px 8px rgba(255, 0, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: -5px -5px 8px rgba(255, 0, 0, 0.7), 5px 5px 8px rgba(0, 255, 0, 0.7);
+    }
+
+    75% {
+        box-shadow: 5px -5px 8px rgba(0, 255, 0, 0.7), -5px 5px 8px rgba(255, 0, 0, 0.7);
+    }
+
+    100% {
+        box-shadow: 5px 5px 8px rgba(255, 0, 0, 0.7), -5px -5px 8px rgba(0, 255, 0, 0.7);
+    }
+}
+
+/* ================ UTILITY & HELPER CLASSES ================*/
+
+/* Messages for data loading, errors, or no results */
+.loading,
+.error,
+.no-results {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 2rem;
+}
+
+.error {
+    color: red;
+}
+
+/* ================ RESPONSIVE DESIGN (MEDIA QUERIES) ================*/
+
+/*------------- Tablets & Small Desktops (3 columns) -------------*/
+@media (max-width: 1550px) {
+    .student-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*------------- Large Tablets & Small Laptops (2 columns) -------------*/
+@media (max-width: 1180px) {
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*------------- Small Tablets (1 column) -------------*/
+@media (max-width: 780px) {
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .id-card {
+        width: 100%;
+        /* Card width is 100% on small screens */
+        max-width: 370px;
+        /* Maximum width is maintained */
+    }
+}
+
+/*------------- Mobile Devices (Controls & Dropdown) -------------*/
+@media (max-width: 600px) {
+    .controls {
+
+        /* Stacks items vertically */
+        flex-direction: column-reverse;
+
+        gap: 1rem;
+    }
+
+    .options {
+        width: 50%;
+    }
+
+    .divider {
+
+        /* Hides the divider */
+        display: none;
+    }
+
+    .search-wrapper,
+    .dropdown {
+        width: 100%;
+        min-width: unset;
+    }
 }

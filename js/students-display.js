@@ -1,23 +1,18 @@
 // গ্লোবাল ভেরিয়েবল: সব ছাত্রছাত্রীর ডেটা এবং DOM এলিমেন্টস
 let allStudentsData = {};
 const container = document.getElementById('student-container');
-const classSelector = document.getElementById('class-selector');
+const classSelector = document.getElementById('class-selector'); // এটি এখন লুকানো select এলিমেন্ট
 const searchBox = document.getElementById('search-box');
-// নতুন সংযোজন: ছাত্র-ছাত্রীর সংখ্যা দেখানোর এলিমেন্ট
 const studentCountElement = document.getElementById('student-count');
 
-// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন
+// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন (কোনো পরিবর্তন নেই)
 function renderStudents(filteredClasses) {
-    container.innerHTML = ''; // আগের কনটেন্ট মুছে ফেলা হলো
-
-    // নতুন সংযোজন: মোট ছাত্র-ছাত্রী গণনা
+    container.innerHTML = '';
     let totalStudents = 0;
     for (const className in filteredClasses) {
         totalStudents += filteredClasses[className].length;
     }
-    // কাউন্ট প্রদর্শন
     studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${totalStudents} জন`;
-
 
     if (Object.keys(filteredClasses).length === 0) {
         container.innerHTML = '<p class="no-results">কোনো ছাত্র-ছাত্রী পাওয়া যায়নি।</p>';
@@ -26,21 +21,16 @@ function renderStudents(filteredClasses) {
 
     for (const className in filteredClasses) {
         const students = filteredClasses[className];
-
-        // ক্লাস টাইটেল দেখানোর আগে চেক করা হচ্ছে যে ক্লাস সিলেক্ট করা আছে কি না
         if (classSelector.value === 'all') {
             const classTitle = document.createElement('h2');
             classTitle.textContent = className;
             container.appendChild(classTitle);
         }
-
         const grid = document.createElement('div');
         grid.className = 'student-grid';
-
         if (students.length > 0) {
             students.forEach(student => {
                 const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
-
                 const cardHTML = `
                     <div class="id-card">
                         <div class="card-header">
@@ -72,39 +62,30 @@ function renderStudents(filteredClasses) {
     }
 }
 
-// ফিল্টার এবং রেন্ডার করার মূল ফাংশন
+// ফিল্টার এবং রেন্ডার করার মূল ফাংশন (কোনো পরিবর্তন নেই)
 function filterAndRender() {
     const selectedClass = classSelector.value;
     const searchTerm = searchBox.value.toLowerCase().trim();
     const filteredClasses = {};
-
     for (const className in allStudentsData) {
-        // ক্লাস অনুযায়ী ফিল্টার
         if (selectedClass !== 'all' && className !== selectedClass) {
             continue;
         }
-
         const students = allStudentsData[className];
-        
-        // সার্চ টার্ম অনুযায়ী ফিল্টার
         const filteredStudents = students.filter(student => {
             const name = student.name.toLowerCase();
             const fatherName = student.fatherName.toLowerCase();
             const address = student.address.toLowerCase();
             const studentId = student.studentId.toString();
-
             return name.includes(searchTerm) ||
-                   fatherName.includes(searchTerm) ||
-                   address.includes(searchTerm) ||
-                   studentId.includes(searchTerm);
+                fatherName.includes(searchTerm) ||
+                address.includes(searchTerm) ||
+                studentId.includes(searchTerm);
         });
-        
-        // যদি ফিল্টার করার পর ছাত্রছাত্রী থাকে, তাহলে অবজেক্টে যোগ করা হবে
         if (filteredStudents.length > 0) {
             filteredClasses[className] = filteredStudents;
         }
     }
-    
     renderStudents(filteredClasses);
 }
 
@@ -118,7 +99,7 @@ async function initializeApp() {
         }
         allStudentsData = await response.json();
 
-        // ক্লাস সিলেক্টর পপুলেট করা
+        // লুকানো ক্লাস সিলেক্টর পপুলেট করা
         Object.keys(allStudentsData).forEach(className => {
             const option = document.createElement('option');
             option.value = className;
@@ -131,7 +112,10 @@ async function initializeApp() {
         searchBox.addEventListener('input', filterAndRender);
         
         // প্রথমবার সব ছাত্রছাত্রীদের দেখানো
-        filterAndRender(); // এটাকে filterAndRender কল করা হলো যাতে কাউন্ট শুরুতেই দেখায়
+        filterAndRender();
+
+        // নতুন কাস্টম ড্রপডাউন ইনিশিয়ালাইজ করা
+        initializeCustomDropdown();
 
     } catch (error) {
         container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>';
@@ -141,3 +125,82 @@ async function initializeApp() {
 
 // অ্যাপলিকেশন শুরু করুন
 initializeApp();
+
+
+// --- নতুন কাস্টম ড্রপডাউন ফাংশনালিটি ---
+
+function initializeCustomDropdown() {
+    const dropdown = document.querySelector('.dropdown');
+    const select = dropdown.querySelector('.select');
+    const selectedDisplay = dropdown.querySelector('#selected-display');
+    const optionsContainer = dropdown.querySelector('.options');
+    const hiddenSelect = document.getElementById('class-selector');
+
+    // লুকানো select থেকে option নিয়ে কাস্টম ড্রপডাউনের li তৈরি করা
+    Array.from(hiddenSelect.options).forEach((option, index) => {
+        const li = document.createElement('li');
+        li.textContent = option.textContent;
+        li.dataset.value = option.value;
+        li.tabIndex = 0;
+        if (option.selected) {
+            li.classList.add('selected');
+        }
+        optionsContainer.appendChild(li);
+    });
+
+    const options = optionsContainer.querySelectorAll('li');
+
+    const toggleDropdown = () => {
+        optionsContainer.classList.toggle('show');
+        select.classList.toggle('active');
+    };
+
+    select.addEventListener('click', toggleDropdown);
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selectedDisplay.textContent = option.textContent;
+            hiddenSelect.value = option.dataset.value;
+
+            // মূল select এলিমেন্টে change ইভেন্ট ট্রিগার করা
+            hiddenSelect.dispatchEvent(new Event('change'));
+
+            options.forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+
+            toggleDropdown();
+        });
+    });
+
+    // বাইরে ক্লিক করলে ড্রপডাউন বন্ধ হবে
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            optionsContainer.classList.remove('show');
+            select.classList.remove('active');
+        }
+    });
+
+    // কী-বোর্ড নেভিগেশন
+    let currentIndex = -1;
+    dropdown.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            currentIndex = (currentIndex + 1) % options.length;
+            options[currentIndex].focus();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            currentIndex = (currentIndex - 1 + options.length) % options.length;
+            options[currentIndex].focus();
+        } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (document.activeElement.tagName === 'LI') {
+                document.activeElement.click();
+            } else {
+                toggleDropdown();
+            }
+        } else if (e.key === 'Escape') {
+            optionsContainer.classList.remove('show');
+            select.classList.remove('active');
+        }
+    });
+}
