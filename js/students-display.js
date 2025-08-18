@@ -6,84 +6,116 @@ const searchBox = document.getElementById('search-box');
 const studentCountElement = document.getElementById('student-count');
 
 // ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন
-function renderStudents(filteredClasses) {
+function renderStudents(filteredClasses, searchTerm = '') {
     container.innerHTML = ''; // আগের কনটেন্ট মুছে ফেলা হলো
 
-    // ফিল্টার করা ছাত্র-ছাত্রীর সংখ্যা গণনা
+    // --- কাউন্টার এর লজিক ---
     let filteredCount = 0;
     for (const className in filteredClasses) {
         filteredCount += filteredClasses[className].length;
     }
-
-    // মোট ছাত্র-ছাত্রীর সংখ্যা গণনা
     let absoluteTotal = 0;
     for (const className in allStudentsData) {
         absoluteTotal += allStudentsData[className].length;
     }
-
-    // ফিল্টার করা হয়েছে কিনা তার উপর ভিত্তি করে লেখা পরিবর্তন
     const selectedClass = classSelector.value;
-    const searchTerm = searchBox.value.trim();
-
     if (selectedClass !== 'all' || searchTerm !== '') {
-        // যখন কোনো কিছু ফিল্টার করা হবে
-        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন`;
+        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন পাওয়া গেছে`;
     } else {
-        // যখন কোনো ফিল্টার থাকবে না
         studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${absoluteTotal.toLocaleString('bn-BD')} জন`;
     }
 
-
+    // --- ফলাফল না পাওয়া গেলে বার্তা দেখানোর লজিক ---
     if (Object.keys(filteredClasses).length === 0) {
         container.innerHTML = '<p class="no-results">কোনো ছাত্র-ছাত্রী পাওয়া যায়নি।</p>';
         return;
     }
 
-    for (const className in filteredClasses) {
-        const students = filteredClasses[className];
-
-        // ক্লাস টাইটেল দেখানোর আগে চেক করা হচ্ছে যে ক্লাস সিলেক্ট করা আছে কি না
-        if (classSelector.value === 'all' && searchTerm === '') {
-            const classTitle = document.createElement('h2');
-            classTitle.textContent = className;
-            container.appendChild(classTitle);
-        }
-
+    // --- সার্চ করলে এক গ্রিডে এবং ডিফল্ট অবস্থায় ক্লাস অনুযায়ী দেখানোর লজিক ---
+    // যদি সার্চ বক্সে কিছু লেখা থাকে (searchTerm সত্য হয়)
+    if (searchTerm) {
         const grid = document.createElement('div');
         grid.className = 'student-grid';
 
-        if (students.length > 0) {
-            students.forEach(student => {
-                const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
+        // সব ক্লাসের ফলাফলকে একটিমাত্র অ্যারে-তে একত্রিত করা
+        const allFilteredStudents = Object.values(filteredClasses).reduce((acc, val) => acc.concat(val), []);
 
-                const cardHTML = `
-                    <div class="id-card">
-                        <div class="card-header">
-                            <img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo">
-                            <div class="header-text">
-                                <p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p>
-                                <h2>মারকাযুল কুরআন মাদরাসা</h2>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="photo-section">
-                                <img src="${photo}" alt="শিক্ষার্থীর ছবি" class="student-photo">
-                                <p class="id-number">দাখেলা : ${student.studentId}</p>
-                            </div>
-                            <div class="info-section">
-                                <h3>${student.name}</h3>
-                                <p><strong>পিতা:</strong> <span>${student.fatherName}</span></p>
-                                <p><strong>শ্রেণি:</strong> <span>${student.className}</span></p>
-                                <p><strong>ঠিকানা:</strong> <span>${student.address}</span></p>
-                                <p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p>
-                            </div>
+        allFilteredStudents.forEach(student => {
+            const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
+            const cardHTML = `
+                <div class="id-card">
+                    <div class="card-header">
+                        <img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo">
+                        <div class="header-text">
+                            <p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p>
+                            <h2>মারকাযুল কুরআন মাদরাসা</h2>
                         </div>
                     </div>
-                `;
-                grid.innerHTML += cardHTML;
-            });
-        }
+                    <div class="card-body">
+                        <div class="photo-section">
+                            <img src="${photo}" alt="ছাত্রের ছবি" class="student-photo">
+                            <p class="id-number">দাখেলা : ${student.studentId}</p>
+                        </div>
+                        <div class="info-section">
+                            <h3>${student.name}</h3>
+                            <p><strong>পিতা:</strong> <span>${student.fatherName}</span></p>
+                            <p><strong>শ্রেণি:</strong> <span>${student.className}</span></p>
+                            <p><strong>ঠিকানা:</strong> <span>${student.address}</span></p>
+                            <p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += cardHTML;
+        });
         container.appendChild(grid);
+    }
+    // যদি সার্চ বক্স খালি থাকে, তাহলে আগের মতোই ক্লাস অনুযায়ী দেখাও
+    else {
+        for (const className in filteredClasses) {
+            const students = filteredClasses[className];
+
+            if (classSelector.value === 'all') {
+                const classTitle = document.createElement('h2');
+                classTitle.textContent = className;
+                container.appendChild(classTitle);
+            }
+
+            const grid = document.createElement('div');
+            grid.className = 'student-grid';
+
+            if (students.length > 0) {
+                students.forEach(student => {
+                    const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
+                    const cardHTML = `
+                        <div class="id-card">
+                           <div class="card-header">
+                                <img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo">
+                                <div class="header-text">
+                                    <p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p>
+                                    <h2>মারকাযুল কুরআন মাদরাসা</h2>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="photo-section">
+                                    <img src="${photo}" alt="ছাত্রের ছবি" class="student-photo">
+                                    <p class="id-number">দাখেলা : ${student.studentId}</p>
+                                </div>
+                                <div class="info-section">
+                                    <h3>${student.name}</h3>
+                                    <p><strong>পিতা:</strong> <span>${student.fatherName}</span></p>
+                                    <p><strong>শ্রেণি:</strong> <span>${student.className}</span></p>
+                                    <p><strong>ঠিকানা:</strong> <span>${student.address}</span></p>
+                                    <p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    grid.innerHTML += cardHTML;
+                });
+            }
+            container.appendChild(grid);
+        }
     }
 }
 
@@ -111,7 +143,7 @@ function filterAndRender() {
             filteredClasses[className] = filteredStudents;
         }
     }
-    renderStudents(filteredClasses);
+    renderStudents(filteredClasses, searchTerm);
 }
 
 
@@ -143,7 +175,7 @@ async function initializeApp() {
         initializeCustomDropdown();
 
     } catch (error) {
-        container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি।</p>';
+        container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>';
         console.error('Error fetching student data:', error);
     }
 }
@@ -162,7 +194,7 @@ function initializeCustomDropdown() {
     const hiddenSelect = document.getElementById('class-selector');
 
     // লুকানো select থেকে option নিয়ে কাস্টম ড্রপডাউনের li তৈরি করা
-    Array.from(hiddenSelect.options).forEach((option, index) => {
+    Array.from(hiddenSelect.options).forEach((option) => {
         const li = document.createElement('li');
         li.textContent = option.textContent;
         li.dataset.value = option.value;
