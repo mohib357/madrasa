@@ -38,6 +38,14 @@ h1 {
     padding: 8px 15px;
     border-radius: 8px;
     background-color: #f9f9f9;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 8px rgba(21, 0, 255, 0.63);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#student-count:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(21, 0, 255, 0.63);
 }
 
 /* ================ CUSTOM VARIABLES ================*/
@@ -305,7 +313,7 @@ h1 {
     border: 2px solid #ddd;
     border-radius: 15px;
     padding: 0 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px rgb(8, 0, 255);
     font-family: 'Hind Siliguri', sans-serif;
     overflow: hidden;
     border-top: 5px solid #ff062386;
@@ -317,6 +325,14 @@ h1 {
     background-position: center;
     display: flex;
     flex-direction: column;
+    transform: translateZ(0);
+}
+
+.id-card:hover {
+    box-shadow: 0 4px 8px rgb(160, 36, 255);
+    transform: scale(1.02);
+    transition-duration: 200ms;
+
 }
 
 /* Top section (header) of the card */
