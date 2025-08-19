@@ -14,6 +14,29 @@
     <div class="container">
         <h1>ছাত্র-ছাত্রীদের বিস্তারিত তথ্য</h1>
 
+        <div class="stats-card">
+            <div class="stats-info">
+                <div class="stat-item">
+                    <span class="dot boy-dot"></span>
+                    <p>ছাত্র:</p>
+                    <strong id="boy-count-stats">০</strong>
+                </div>
+                <div class="stat-item">
+                    <span class="dot girl-dot"></span>
+                    <p>ছাত্রী:</p>
+                    <strong id="girl-count-stats">০</strong>
+                </div>
+                <hr class="stat-divider">
+                <div class="stat-item total">
+                    <p>মোট:</p>
+                    <strong id="total-count-stats">০</strong>
+                </div>
+            </div>
+            <div class="stats-chart">
+                <canvas id="genderChart"></canvas>
+            </div>
+        </div>
+
         <div class="controls">
             <div class="search-wrapper">
                 <input type="text" id="search-box" placeholder="নাম, পিতার নাম, ঠিকানা বা আইডি দিয়ে খুঁজুন..."
