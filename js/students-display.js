@@ -1,13 +1,24 @@
+// Debounce function to limit how often a function gets called
+function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            func.apply(this, args);
+        }, delay);
+    };
+}
+
 // গ্লোবাল ভেরিয়েবল: সব ছাত্রছাত্রীর ডেটা এবং DOM এলিমেন্টস
 let allStudentsData = {};
 const container = document.getElementById('student-container');
-const classSelector = document.getElementById('class-selector'); // এটি এখন লুকানো select এলিমেন্ট
+const classSelector = document.getElementById('class-selector');
 const searchBox = document.getElementById('search-box');
 const studentCountElement = document.getElementById('student-count');
 
 // ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন
 function renderStudents(filteredClasses, searchTerm = '') {
-    container.innerHTML = ''; // আগের কনটেন্ট মুছে ফেলা হলো
+    container.innerHTML = '';
 
     // --- কাউন্টার এর লজিক ---
     let filteredCount = 0;
@@ -20,7 +31,7 @@ function renderStudents(filteredClasses, searchTerm = '') {
     }
     const selectedClass = classSelector.value;
     if (selectedClass !== 'all' || searchTerm !== '') {
-        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন পাওয়া গেছে`;
+        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন শিক্ষার্থী`;
     } else {
         studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${absoluteTotal.toLocaleString('bn-BD')} জন`;
     }
@@ -31,15 +42,13 @@ function renderStudents(filteredClasses, searchTerm = '') {
         return;
     }
 
-    // --- সার্চ করলে এক গ্রিডে এবং ডিফল্ট অবস্থায় ক্লাস অনুযায়ী দেখানোর লজিক ---
-    // যদি সার্চ বক্সে কিছু লেখা থাকে (searchTerm সত্য হয়)
+    // যদি সার্চ করা হয়ে থাকে, তাহলে সব ফলাফল এক গ্রিডে দেখানো
     if (searchTerm) {
         const grid = document.createElement('div');
         grid.className = 'student-grid';
 
         // সব ক্লাসের ফলাফলকে একটিমাত্র অ্যারে-তে একত্রিত করা
         const allFilteredStudents = Object.values(filteredClasses).reduce((acc, val) => acc.concat(val), []);
-
         allFilteredStudents.forEach(student => {
             const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
             const cardHTML = `
@@ -70,20 +79,18 @@ function renderStudents(filteredClasses, searchTerm = '') {
         });
         container.appendChild(grid);
     }
-    // যদি সার্চ বক্স খালি থাকে, তাহলে আগের মতোই ক্লাস অনুযায়ী দেখাও
+
+    // যদি সার্চ বক্স খালি থাকে, তাহলে আগের মতোই ক্লাস অনুযায়ী দেখানো
     else {
         for (const className in filteredClasses) {
             const students = filteredClasses[className];
-
             if (classSelector.value === 'all') {
                 const classTitle = document.createElement('h2');
                 classTitle.textContent = className;
                 container.appendChild(classTitle);
             }
-
             const grid = document.createElement('div');
             grid.className = 'student-grid';
-
             if (students.length > 0) {
                 students.forEach(student => {
                     const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
@@ -146,7 +153,6 @@ function filterAndRender() {
     renderStudents(filteredClasses, searchTerm);
 }
 
-
 // অ্যাপ্লিকেশন শুরু করার ফাংশন
 async function initializeApp() {
     try {
@@ -164,18 +170,118 @@ async function initializeApp() {
             classSelector.appendChild(option);
         });
 
-        // ইভেন্ট লিসেনার যোগ করা
+        // --- সার্চ সাজেশন যুক্তি ---
+        const suggestionsBox = document.getElementById('suggestions-box');
+        let searchHistory = JSON.parse(localStorage.getItem('studentSearchHistory')) || [];
+        let suggestionIndex = -1; // কীবোর্ড নেভিগেশনের জন্য ইনডেক্স
+
+        // সাজেশন বক্স দেখানোর ফাংশন
+        const showSuggestions = (filter = '') => {
+            let suggestionsToShow = [];
+            if (!filter) {
+                suggestionsToShow = searchHistory.slice(0, 5);  // কতগুলো সাজেষ্ট দেখাবে
+            } else {
+                const matchingHistory = searchHistory.filter(term =>
+                    term.toLowerCase().startsWith(filter.toLowerCase())
+                );
+                suggestionsToShow = [...new Set(matchingHistory)];
+            }
+            if (suggestionsToShow.length === 0) {
+                suggestionsBox.style.display = 'none';
+                return;
+            }
+            suggestionsBox.innerHTML = '';
+            suggestionsToShow.slice(0, 5).forEach(term => {
+                const item = document.createElement('div');
+                item.className = 'suggestion-item';
+                const termText = document.createElement('span');
+                termText.textContent = term;
+                termText.onclick = () => {
+                    searchBox.value = term;
+                    filterAndRender();
+                    suggestionsBox.style.display = 'none';
+                };
+                const deleteBtn = document.createElement('span');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.innerHTML = '&times;';
+                deleteBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    searchHistory = searchHistory.filter(t => t !== term);
+                    localStorage.setItem('studentSearchHistory', JSON.stringify(searchHistory));
+                    showSuggestions(filter);
+                };
+                item.appendChild(termText);
+                item.appendChild(deleteBtn);
+                suggestionsBox.appendChild(item);
+            });
+            suggestionsBox.style.display = 'block';
+            suggestionIndex = -1; // প্রতিবার নতুন তালিকা দেখানোর সময় ইনডেক্স রিসেট করা
+        };
+
+        // সার্চ বক্সে ফোকাস করলে সাজেশন দেখানো
+        searchBox.addEventListener('focus', () => {
+            const currentInput = searchBox.value.trim();
+            showSuggestions(currentInput);
+        });
+
+        // বাইরে ক্লিক করলে সাজেশন বক্স লুকানো
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-wrapper')) {
+                suggestionsBox.style.display = 'none';
+            }
+        });
+        const addSearchTerm = (term) => {
+            if (term) {
+                searchHistory = searchHistory.filter(t => t.toLowerCase() !== term.toLowerCase());
+                searchHistory.unshift(term);
+                localStorage.setItem('studentSearchHistory', JSON.stringify(searchHistory));
+            }
+        };
+
+        // --- কী-বোর্ড নেভিগেশন যুক্তি এখানে যোগ করা হয়েছে ---
+        searchBox.addEventListener('keydown', (e) => {
+            const suggestions = suggestionsBox.querySelectorAll('.suggestion-item');
+            if (suggestions.length === 0) return;
+
+            // ডাউন অ্যারো কী চাপলে
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                suggestionIndex = (suggestionIndex + 1) % suggestions.length;
+                suggestions.forEach((item, index) => {
+                    item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '';
+                });
+            }
+            // আপ অ্যারো কী চাপলে
+            else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                suggestionIndex = (suggestionIndex - 1 + suggestions.length) % suggestions.length;
+                suggestions.forEach((item, index) => {
+                    item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '';
+                });
+            }
+            // Enter কী চাপলে
+            else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (suggestionIndex > -1) {
+                    suggestions[suggestionIndex].querySelector('span').click();
+                }
+                const searchTerm = searchBox.value.trim();
+                addSearchTerm(searchTerm);
+                suggestionsBox.style.display = 'none';
+                searchBox.blur();
+            }
+        });
+        const handleSearchInput = () => {
+            filterAndRender();
+            const currentInput = searchBox.value.trim();
+            showSuggestions(currentInput);
+        };
         classSelector.addEventListener('change', filterAndRender);
-        searchBox.addEventListener('input', filterAndRender);
-
-        // প্রথমবার সব ছাত্রছাত্রীদের দেখানো
+        searchBox.addEventListener('input', debounce(handleSearchInput, 300));
         filterAndRender();
-
-        // নতুন কাস্টম ড্রপডাউন ইনিশিয়ালাইজ করা
         initializeCustomDropdown();
-
     } catch (error) {
-        container.innerHTML = '<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>';
+        container.innerHTML = `<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>`;
         console.error('Error fetching student data:', error);
     }
 }
@@ -183,9 +289,7 @@ async function initializeApp() {
 // অ্যাপলিকেশন শুরু করুন
 initializeApp();
 
-
 // --- নতুন কাস্টম ড্রপডাউন ফাংশনালিটি ---
-
 function initializeCustomDropdown() {
     const dropdown = document.querySelector('.dropdown');
     const select = dropdown.querySelector('.select');
@@ -204,16 +308,12 @@ function initializeCustomDropdown() {
         }
         optionsContainer.appendChild(li);
     });
-
     const options = optionsContainer.querySelectorAll('li');
-
     const toggleDropdown = () => {
         optionsContainer.classList.toggle('show');
         select.classList.toggle('active');
     };
-
     select.addEventListener('click', toggleDropdown);
-
     options.forEach(option => {
         option.addEventListener('click', () => {
             selectedDisplay.textContent = option.textContent;
@@ -221,10 +321,8 @@ function initializeCustomDropdown() {
 
             // মূল select এলিমেন্টে change ইভেন্ট ট্রিগার করা
             hiddenSelect.dispatchEvent(new Event('change'));
-
             options.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
-
             toggleDropdown();
         });
     });

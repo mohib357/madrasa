@@ -16,7 +16,9 @@
 
         <div class="controls">
             <div class="search-wrapper">
-                <input type="text" id="search-box" placeholder="নাম, পিতার নাম, ঠিকানা বা আইডি দিয়ে খুঁজুন...">
+                <input type="text" id="search-box" placeholder="নাম, পিতার নাম, ঠিকানা বা আইডি দিয়ে খুঁজুন..."
+                    autocomplete="off">
+                <div id="suggestions-box" class="suggestions-list"></div>
             </div>
             <div class="divider"></div>
             <div class="dropdown">
@@ -32,7 +34,7 @@
                     </svg>
                 </div>
                 <ul class="options">
-                    </ul>
+                </ul>
             </div>
         </div>
 
