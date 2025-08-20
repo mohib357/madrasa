@@ -12,7 +12,6 @@ function debounce(func, delay) {
 // নতুন: Chart.js এর সাথে Datalabels প্লাগইনটি রেজিস্টার করা হলো
 Chart.register(ChartDataLabels);
 
-
 // গ্লোবাল ভেরিয়েবল
 let allStudentsData = {};
 const container = document.getElementById('student-container');
@@ -47,7 +46,7 @@ function renderStudents(filteredClasses, searchTerm = '') {
         const grid = document.createElement('div');
         grid.className = 'student-grid';
         const allFilteredStudents = Object.values(filteredClasses).reduce((acc, val) => acc.concat(val), []);
-        
+
         // অপটিমাইজেশন: সব কার্ডের HTML একসাথে তৈরি করা
         const cardsHTML = allFilteredStudents.map(student => {
             const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
@@ -56,7 +55,8 @@ function renderStudents(filteredClasses, searchTerm = '') {
 
         grid.innerHTML = cardsHTML; // মাত্র একবার DOM এ যুক্ত করা
         container.appendChild(grid);
-    } 
+    }
+
     // সার্চ করা না হলে ক্লাস অনুযায়ী দেখানো
     else {
         for (const className in filteredClasses) {
@@ -79,7 +79,6 @@ function renderStudents(filteredClasses, searchTerm = '') {
         }
     }
 }
-
 
 // ফিল্টার এবং রেন্ডার করার মূল ফাংশন
 function filterAndRender() {
@@ -123,7 +122,7 @@ async function initializeApp() {
         boyCountEl.textContent = manualBoys.toLocaleString('bn-BD');
         girlCountEl.textContent = manualGirls.toLocaleString('bn-BD');
         totalCountEl.textContent = manualTotal.toLocaleString('bn-BD');
-        
+
         // --- চার্ট তৈরি করা ---
         const ctx = document.getElementById('genderChart').getContext('2d');
         new Chart(ctx, {
@@ -174,8 +173,7 @@ async function initializeApp() {
         // উপরের চার্টের data: [manualBoys, manualGirls] পরিবর্তন করে data: [totalBoys, totalGirls] করে দেবেন।
         */
 
-        // --- বাকি কোড ---
-        
+        // --- ক্লাস সিলেক্টর পপুলেট করা ---
         Object.keys(allStudentsData).forEach(className => {
             const option = document.createElement('option');
             option.value = className;
@@ -183,6 +181,7 @@ async function initializeApp() {
             classSelector.appendChild(option);
         });
 
+        // --- সঠিক সার্চ সাজেশন যুক্তি ---
         const suggestionsBox = document.getElementById('suggestions-box');
         let searchHistory = JSON.parse(localStorage.getItem('studentSearchHistory')) || [];
         let suggestionIndex = -1;
@@ -226,16 +225,7 @@ async function initializeApp() {
             suggestionsBox.style.display = 'block';
             suggestionIndex = -1;
         };
-        
-        searchBox.addEventListener('focus', () => {
-            const currentInput = searchBox.value.trim();
-            showSuggestions(currentInput);
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-wrapper')) {
-                suggestionsBox.style.display = 'none';
-            }
-        });
+
         const addSearchTerm = (term) => {
             if (term) {
                 searchHistory = searchHistory.filter(t => t.toLowerCase() !== term.toLowerCase());
@@ -243,51 +233,60 @@ async function initializeApp() {
                 localStorage.setItem('studentSearchHistory', JSON.stringify(searchHistory));
             }
         };
+
+        searchBox.addEventListener('focus', () => {
+            const currentInput = searchBox.value.trim();
+            showSuggestions(currentInput);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-wrapper')) {
+                suggestionsBox.style.display = 'none';
+            }
+        });
+
         searchBox.addEventListener('keydown', (e) => {
             const suggestions = suggestionsBox.querySelectorAll('.suggestion-item');
             if (suggestionsBox.style.display !== 'none' && suggestions.length > 0) {
                 if (e.key === 'ArrowDown') {
                     e.preventDefault();
                     suggestionIndex = (suggestionIndex + 1) % suggestions.length;
-                    suggestions.forEach((item, index) => {
-                        item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '';
-                    });
+                    suggestions.forEach((item, index) => item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '');
                 } else if (e.key === 'ArrowUp') {
                     e.preventDefault();
                     suggestionIndex = (suggestionIndex - 1 + suggestions.length) % suggestions.length;
-                    suggestions.forEach((item, index) => {
-                        item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '';
-                    });
+                    suggestions.forEach((item, index) => item.style.backgroundColor = index === suggestionIndex ? '#f0f0f0' : '');
                 } else if (e.key === 'Enter') {
                     e.preventDefault();
                     if (suggestionIndex > -1) {
                         suggestions[suggestionIndex].querySelector('span').click();
-                        return;
+                    } else {
+                        suggestionsBox.style.display = 'none';
+                        searchBox.blur();
                     }
                 }
             }
-            if (e.key === 'Enter') {
-                const searchTerm = searchBox.value.trim();
-                addSearchTerm(searchTerm);
-                suggestionsBox.style.display = 'none';
+            else if (e.key === 'Enter') {
                 searchBox.blur();
             }
         });
-        
+
         const handleSearchInput = () => {
             filterAndRender();
             const currentInput = searchBox.value.trim();
+            filterAndRender();
             showSuggestions(currentInput);
+            addSearchTerm(currentInput);
         };
-        
+
         classSelector.addEventListener('change', filterAndRender);
-        searchBox.addEventListener('input', debounce(handleSearchInput, 300));
-        
+        searchBox.addEventListener('input', debounce(handleSearchInput, 4000));
+
         filterAndRender();
         initializeCustomDropdown();
 
     } catch (error) {
-        container.innerHTML = `<p class="error">তথ্য লোড করা সম্ভব হয়নি। ফাইলটি সঠিক জায়গায় আছে কিনা নিশ্চিত করুন।</p>`;
+        container.innerHTML = `<p class="error">তথ্য লোড করা সম্ভব হয়নি। </p>`;
         console.error('Error fetching student data:', error);
     }
 }
