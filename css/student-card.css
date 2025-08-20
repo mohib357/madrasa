@@ -448,20 +448,18 @@ h1 {
 
 /* Style for the suggestions list container */
 .suggestions-list {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: none;
-    /* Initially hidden */
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     width: fit-content;
     background-color: #ffffff;
-    border: 1px solid #ddd;
     border-top: none;
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    box-shadow: 1px 1px 3px rgba(0, 255, 0, 0.700), -1px -1px 3px rgba(255, 0, 0, 0.700);
     max-height: 250px;
     overflow-y: auto;
     text-align: left;
@@ -469,7 +467,7 @@ h1 {
 
 /* Style for each suggestion item */
 .suggestion-item {
-    padding: 10px 15px;
+    padding: 2px 12px;
     cursor: pointer;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
@@ -491,13 +489,13 @@ h1 {
 .suggestion-item .delete-btn {
     color: #ff4d4d;
     font-weight: bold;
-    padding: 5px;
+    padding-left: 10px;
     border-radius: 50%;
     line-height: 1;
 }
 
 .suggestion-item .delete-btn:hover {
-    background-color: #ffeded;
+    background-color: #edffef;
 }
 
 /* ================ STATISTICS CARD ================*/
@@ -508,7 +506,7 @@ h1 {
     flex-direction: row;
     margin: 0 auto 2rem auto;
     width: 100%;
-    max-width: 450px;
+    max-width: 800px;
     height: 150px;
     background: #fff;
     border: 2px solid #ddd;
@@ -548,21 +546,22 @@ h1 {
 }
 
 .stat-item p {
-    margin: 0;
-    color: #fff; /* রঙ সাদা করা হলো */
+    margin: 0 5px;
+    color: #1e6a00; /* রঙ সাদা করা হলো */
     width: 60px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* শ্যাডো গাঢ় করা হলো */
 }
 
 .stat-item strong {
+    margin: 0 5px;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #fff; /* রঙ সাদা করা হলো */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* শ্যাডো গাঢ় করা হলো */
+    color: #00ffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .stat-item.total strong {
-    color: #2e7d32;
+    color: #14a2a2;
     font-weight: 700;
 }
 
