@@ -9,18 +9,20 @@ function debounce(func, delay) {
     };
 }
 
-// গ্লোবাল ভেরিয়েবল: সব ছাত্রছাত্রীর ডেটা এবং DOM এলিমেন্টস
+// নতুন: Chart.js এর সাথে Datalabels প্লাগইনটি রেজিস্টার করা হলো
+Chart.register(ChartDataLabels);
+
+
+// গ্লোবাল ভেরিয়েবল
 let allStudentsData = {};
 const container = document.getElementById('student-container');
 const classSelector = document.getElementById('class-selector');
 const searchBox = document.getElementById('search-box');
 const studentCountElement = document.getElementById('student-count');
 
-// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন
+// ছাত্রছাত্রীদের ডেটা রেন্ডার করার ফাংশন (অপটিমাইজ করা)
 function renderStudents(filteredClasses, searchTerm = '') {
     container.innerHTML = '';
-
-    // --- কাউন্টার এর লজিক ---
     let filteredCount = 0;
     for (const className in filteredClasses) {
         filteredCount += filteredClasses[className].length;
@@ -31,56 +33,31 @@ function renderStudents(filteredClasses, searchTerm = '') {
     }
     const selectedClass = classSelector.value;
     if (selectedClass !== 'all' || searchTerm !== '') {
-        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন শিক্ষার্থী`;
+        studentCountElement.textContent = `মোট ${absoluteTotal.toLocaleString('bn-BD')} জনের মধ্যে ${filteredCount.toLocaleString('bn-BD')} জন পাওয়া গেছে`;
     } else {
         studentCountElement.textContent = `মোট ছাত্র-ছাত্রী: ${absoluteTotal.toLocaleString('bn-BD')} জন`;
     }
-
-    // --- ফলাফল না পাওয়া গেলে বার্তা দেখানোর লজিক ---
     if (Object.keys(filteredClasses).length === 0) {
         container.innerHTML = '<p class="no-results">কোনো ছাত্র-ছাত্রী পাওয়া যায়নি।</p>';
         return;
     }
 
-    // যদি সার্চ করা হয়ে থাকে, তাহলে সব ফলাফল এক গ্রিডে দেখানো
+    // সার্চ করা হলে সব ফলাফল এক গ্রিডে দেখানো
     if (searchTerm) {
         const grid = document.createElement('div');
         grid.className = 'student-grid';
-
-        // সব ক্লাসের ফলাফলকে একটিমাত্র অ্যারে-তে একত্রিত করা
         const allFilteredStudents = Object.values(filteredClasses).reduce((acc, val) => acc.concat(val), []);
-        allFilteredStudents.forEach(student => {
+        
+        // অপটিমাইজেশন: সব কার্ডের HTML একসাথে তৈরি করা
+        const cardsHTML = allFilteredStudents.map(student => {
             const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
-            const cardHTML = `
-                <div class="id-card">
-                    <div class="card-header">
-                        <img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo">
-                        <div class="header-text">
-                            <p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p>
-                            <h2>মারকাযুল কুরআন মাদরাসা</h2>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="photo-section">
-                            <img src="${photo}" alt="ছাত্রের ছবি" class="student-photo">
-                            <p class="id-number">দাখেলা : ${student.studentId}</p>
-                        </div>
-                        <div class="info-section">
-                            <h3>${student.name}</h3>
-                            <p><strong>পিতা:</strong> <span>${student.fatherName}</span></p>
-                            <p><strong>শ্রেণি:</strong> <span>${student.className}</span></p>
-                            <p><strong>ঠিকানা:</strong> <span>${student.address}</span></p>
-                            <p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            grid.innerHTML += cardHTML;
-        });
-        container.appendChild(grid);
-    }
+            return `<div class="id-card"><div class="card-header"><img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo"><div class="header-text"><p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p><h2>মারকাযুল কুরআন মাদরাসা</h2></div></div><div class="card-body"><div class="photo-section"><img src="${photo}" alt="ছাত্রের ছবি" class="student-photo"><p class="id-number">দাখেলা : ${student.studentId}</p></div><div class="info-section"><h3>${student.name}</h3><p><strong>পিতা:</strong> <span>${student.fatherName}</span></p><p><strong>শ্রেণি:</strong> <span>${student.className}</span></p><p><strong>ঠিকানা:</strong> <span>${student.address}</span></p><p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p></div></div></div>`;
+        }).join('');
 
-    // যদি সার্চ বক্স খালি থাকে, তাহলে আগের মতোই ক্লাস অনুযায়ী দেখানো
+        grid.innerHTML = cardsHTML; // মাত্র একবার DOM এ যুক্ত করা
+        container.appendChild(grid);
+    } 
+    // সার্চ করা না হলে ক্লাস অনুযায়ী দেখানো
     else {
         for (const className in filteredClasses) {
             const students = filteredClasses[className];
@@ -91,40 +68,18 @@ function renderStudents(filteredClasses, searchTerm = '') {
             }
             const grid = document.createElement('div');
             grid.className = 'student-grid';
-            if (students.length > 0) {
-                students.forEach(student => {
-                    const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
-                    const cardHTML = `
-                        <div class="id-card">
-                           <div class="card-header">
-                                <img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo">
-                                <div class="header-text">
-                                    <p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p>
-                                    <h2>মারকাযুল কুরআন মাদরাসা</h2>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="photo-section">
-                                    <img src="${photo}" alt="ছাত্রের ছবি" class="student-photo">
-                                    <p class="id-number">দাখেলা : ${student.studentId}</p>
-                                </div>
-                                <div class="info-section">
-                                    <h3>${student.name}</h3>
-                                    <p><strong>পিতা:</strong> <span>${student.fatherName}</span></p>
-                                    <p><strong>শ্রেণি:</strong> <span>${student.className}</span></p>
-                                    <p><strong>ঠিকানা:</strong> <span>${student.address}</span></p>
-                                    <p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    grid.innerHTML += cardHTML;
-                });
-            }
+
+            // অপটিমাইজেশন: সব কার্ডের HTML একসাথে তৈরি করা
+            const cardsHTML = students.map(student => {
+                const photo = student.photoUrl || 'https://i.imgur.com/838s6Ab.png';
+                return `<div class="id-card"><div class="card-header"><img src="../images/markajul quran logo.png" alt="Madrasa Logo" class="logo"><div class="header-text"><p>আলহাজ্ব আবুল কাশেম ও মরহুমা ফাতেমা খাতুন</p><h2>মারকাযুল কুরআন মাদরাসা</h2></div></div><div class="card-body"><div class="photo-section"><img src="${photo}" alt="ছাত্রের ছবি" class="student-photo"><p class="id-number">দাখেলা : ${student.studentId}</p></div><div class="info-section"><h3>${student.name}</h3><p><strong>পিতা:</strong> <span>${student.fatherName}</span></p><p><strong>শ্রেণি:</strong> <span>${student.className}</span></p><p><strong>ঠিকানা:</strong> <span>${student.address}</span></p><p><strong>জন্ম তারিখ:</strong> <span>${student.dob}</span></p></div></div></div>`;
+            }).join('');
+            grid.innerHTML = cardsHTML; // মাত্র একবার DOM এ যুক্ত করা
             container.appendChild(grid);
         }
     }
 }
+
 
 // ফিল্টার এবং রেন্ডার করার মূল ফাংশন
 function filterAndRender() {
@@ -132,19 +87,14 @@ function filterAndRender() {
     const searchTerm = searchBox.value.toLowerCase().trim();
     const filteredClasses = {};
     for (const className in allStudentsData) {
-        if (selectedClass !== 'all' && className !== selectedClass) {
-            continue;
-        }
+        if (selectedClass !== 'all' && className !== selectedClass) continue;
         const students = allStudentsData[className];
         const filteredStudents = students.filter(student => {
             const name = student.name.toLowerCase();
             const fatherName = student.fatherName.toLowerCase();
             const address = student.address.toLowerCase();
             const studentId = student.studentId.toString();
-            return name.includes(searchTerm) ||
-                fatherName.includes(searchTerm) ||
-                address.includes(searchTerm) ||
-                studentId.includes(searchTerm);
+            return name.includes(searchTerm) || fatherName.includes(searchTerm) || address.includes(searchTerm) || studentId.includes(searchTerm);
         });
         if (filteredStudents.length > 0) {
             filteredClasses[className] = filteredStudents;
@@ -157,17 +107,15 @@ function filterAndRender() {
 async function initializeApp() {
     try {
         const response = await fetch('../madrasa-scraper/students.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         allStudentsData = await response.json();
 
-        // --- পরিসংখ্যান গণনা এবং গ্রাফ তৈরির যুক্তি ---
+        // --- পরিসংখ্যান ও গ্রাফ তৈরির যুক্তি ---
         const boyCountEl = document.getElementById('boy-count-stats');
         const girlCountEl = document.getElementById('girl-count-stats');
         const totalCountEl = document.getElementById('total-count-stats');
 
-        // --- আপাতত ম্যানুয়াল সংখ্যা দিয়ে গ্রাফ দেখানো হচ্ছে ---
+        // --- আপাতত ম্যানুয়াল সংখ্যা দিয়ে গ্রাফ দেখানো হচ্ছে ---
         let manualBoys = 498;
         let manualGirls = 812;
         let manualTotal = manualBoys + manualGirls;
@@ -179,77 +127,54 @@ async function initializeApp() {
         // --- চার্ট তৈরি করা ---
         const ctx = document.getElementById('genderChart').getContext('2d');
         new Chart(ctx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['ছাত্র', 'ছাত্রী'],
                 datasets: [{
                     data: [manualBoys, manualGirls],
                     backgroundColor: ['#42a5f5', '#ec407a'],
                     borderColor: '#ffffff',
-                    borderWidth: 2,
-                    hoverOffset: 4
+                    borderWidth: 3,
+                    hoverOffset: 10
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
+                    datalabels: {
+                        formatter: (value) => value.toLocaleString('bn-BD'),
+                        color: '#fff',
+                        font: { weight: 'bold', size: 16 },
+                        textShadow: { stroke: 'rgba(0,0,0,0.8)', blur: 5 }
+                    },
                     legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                cutout: '70%'
+                    tooltip: {
+                        callbacks: {
+                            label: (context) => `${context.label}: ${context.parsed.toLocaleString('bn-BD')} জন`
+                        }
+                    }
+                }
             }
         });
 
         /*
-        // --- ভবিষ্যতের জন্য: students.json থেকে স্বয়ংক্রিয়ভাবে জেন্ডার গণনার কোড ---
-        // আপনি যখন students.json ফাইলে 'gender': 'বালক'/'বালিকা' যোগ করবেন,
-        // তখন উপরের ম্যানুয়াল সেকশনটি ডিলিট করে দিয়ে নিচের এই অংশটি চালু করে দেবেন।
-        
-        let totalBoys = 0;
-        let totalGirls = 0;
+        // --- ভবিষ্যতের জন্য: students.json থেকে স্বয়ংক্রিয়ভাবে জেন্ডার গণনার কোড ---
+        let totalBoys = 0, totalGirls = 0;
         for (const className in allStudentsData) {
             for (const student of allStudentsData[className]) {
-                if (student.gender === 'বালক') {
-                    totalBoys++;
-                } else if (student.gender === 'বালিকা') {
-                    totalGirls++;
-                }
+                if (student.gender === 'বালক') totalBoys++;
+                else if (student.gender === 'বালিকা') totalGirls++;
             }
         }
         const absoluteTotal = totalBoys + totalGirls;
-
         boyCountEl.textContent = totalBoys.toLocaleString('bn-BD');
         girlCountEl.textContent = totalGirls.toLocaleString('bn-BD');
         totalCountEl.textContent = absoluteTotal.toLocaleString('bn-BD');
-
-        const ctx = document.getElementById('genderChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['ছাত্র', 'ছাত্রী'],
-                datasets: [{
-                    data: [totalBoys, totalGirls],
-                    backgroundColor: ['#42a5f5', '#ec407a'],
-                    borderColor: '#ffffff',
-                    borderWidth: 2,
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                cutout: '70%'
-            }
-        });
+        // উপরের চার্টের data: [manualBoys, manualGirls] পরিবর্তন করে data: [totalBoys, totalGirls] করে দেবেন।
         */
 
-
-        // --- বাকি কোড অপরিবর্তিত থাকবে ---
+        // --- বাকি কোড ---
         
         Object.keys(allStudentsData).forEach(className => {
             const option = document.createElement('option');
@@ -267,9 +192,7 @@ async function initializeApp() {
             if (!filter) {
                 suggestionsToShow = searchHistory.slice(0, 5);
             } else {
-                const matchingHistory = searchHistory.filter(term => 
-                    term.toLowerCase().startsWith(filter.toLowerCase())
-                );
+                const matchingHistory = searchHistory.filter(term => term.toLowerCase().startsWith(filter.toLowerCase()));
                 suggestionsToShow = [...new Set(matchingHistory)];
             }
             if (suggestionsToShow.length === 0) {
@@ -372,23 +295,19 @@ async function initializeApp() {
 // অ্যাপলিকেশন শুরু করুন
 initializeApp();
 
-// --- নতুন কাস্টম ড্রপডাউন ফাংশনালিটি ---
+// --- কাস্টম ড্রপডাউন ফাংশনালিটি ---
 function initializeCustomDropdown() {
     const dropdown = document.querySelector('.dropdown');
     const select = dropdown.querySelector('.select');
-    const selectedDisplay = dropdown.querySelector('#selected-display');
-    const optionsContainer = dropdown.querySelector('.options');
+    const selectedDisplay = document.querySelector('#selected-display');
+    const optionsContainer = document.querySelector('.options');
     const hiddenSelect = document.getElementById('class-selector');
-
-    // লুকানো select থেকে option নিয়ে কাস্টম ড্রপডাউনের li তৈরি করা
     Array.from(hiddenSelect.options).forEach((option) => {
         const li = document.createElement('li');
         li.textContent = option.textContent;
         li.dataset.value = option.value;
         li.tabIndex = 0;
-        if (option.selected) {
-            li.classList.add('selected');
-        }
+        if (option.selected) li.classList.add('selected');
         optionsContainer.appendChild(li);
     });
     const options = optionsContainer.querySelectorAll('li');
@@ -401,24 +320,18 @@ function initializeCustomDropdown() {
         option.addEventListener('click', () => {
             selectedDisplay.textContent = option.textContent;
             hiddenSelect.value = option.dataset.value;
-
-            // মূল select এলিমেন্টে change ইভেন্ট ট্রিগার করা
             hiddenSelect.dispatchEvent(new Event('change'));
             options.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
             toggleDropdown();
         });
     });
-
-    // বাইরে ক্লিক করলে ড্রপডাউন বন্ধ হবে
     document.addEventListener('click', (e) => {
         if (!dropdown.contains(e.target)) {
             optionsContainer.classList.remove('show');
             select.classList.remove('active');
         }
     });
-
-    // কী-বোর্ড নেভিগেশন
     let currentIndex = -1;
     dropdown.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowDown') {
@@ -431,11 +344,8 @@ function initializeCustomDropdown() {
             options[currentIndex].focus();
         } else if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            if (document.activeElement.tagName === 'LI') {
-                document.activeElement.click();
-            } else {
-                toggleDropdown();
-            }
+            if (document.activeElement.tagName === 'LI') document.activeElement.click();
+            else toggleDropdown();
         } else if (e.key === 'Escape') {
             optionsContainer.classList.remove('show');
             select.classList.remove('active');
