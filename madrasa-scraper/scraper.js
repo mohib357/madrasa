@@ -8,6 +8,7 @@ const PASSWORD = "Mohib66442";
 // URL সমূহ
 const LOGIN_URL = "https://sikkhaloy.com/Default.aspx";
 const ID_CARD_URL = "https://sikkhaloy.com/ID_Cards/Card.aspx";
+const FIND_STUDENTS_URL = "https://sikkhaloy.com/ID_Cards/Find_Students.aspx";
 
 async function scrapeData() {
     console.log("🚀 ব্রাউজার চালু হচ্ছে...");
@@ -31,7 +32,7 @@ async function scrapeData() {
     ]);
     console.log("✅ লগইন সফল হয়েছে!");
 
-    // --- ধাপ ২: ID Card পেজে গিয়ে ক্লাস তালিকা সংগ্রহ ---
+    // --- ধাপ ২: ID Card পেজে গিয়ে ক্লাস তালিকা সংগ্রহ ---
     console.log("💳 আইডি কার্ড পেজে যাওয়া হচ্ছে...");
     await page.goto(ID_CARD_URL, { waitUntil: 'networkidle2' });
 
@@ -46,9 +47,88 @@ async function scrapeData() {
         });
         return classOptions;
     }, classDropdownSelector);
-    console.log('যেসব ক্লাস পাওয়া গেছে:', classes.map(c => c.name));
+    console.log('যেসব ক্লাস পাওয়া গেছে:', classes.map(c => c.name));
 
-    // --- ধাপ ৩: প্রতিটি ক্লাসের সকল ছাত্রের আইডি কার্ড থেকে তথ্য সংগ্রহ ---
+    // --- ধাপ ৩: Find Students পেজ থেকে সকল ছাত্রের জেন্ডার তথ্য সংগ্রহ ---
+    console.log("👥 Find Students পেজে যাওয়া হচ্ছে...");
+    await page.goto(FIND_STUDENTS_URL, { waitUntil: 'networkidle2' });
+
+    // সকল ছাত্রের জেন্ডার তথ্য সংগ্রহ (সকল পৃষ্ঠা থেকে)
+    const allGenderData = [];
+    let currentPage = 1;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+        console.log(`📄 পৃষ্ঠা ${currentPage} থেকে তথ্য সংগ্রহ করা হচ্ছে...`);
+
+        // বর্তমান পৃষ্ঠার তথ্য সংগ্রহ
+        const pageData = await page.evaluate(() => {
+            const students = [];
+            const table = document.querySelector('#body_StudentGridView');
+
+            if (table) {
+                const rows = table.querySelectorAll('tr:not(.pgr)');
+
+                for (let i = 1; i < rows.length; i++) {
+                    const cells = rows[i].querySelectorAll('td');
+                    if (cells.length >= 7) {
+                        students.push({
+                            studentId: cells[0].textContent.trim(),
+                            name: cells[1].textContent.trim(),
+                            fatherName: cells[2].textContent.trim(),
+                            gender: cells[6].textContent.trim(),
+                            className: cells[9].textContent.trim()
+                        });
+                    }
+                }
+            }
+            return students;
+        });
+
+        allGenderData.push(...pageData);
+        console.log(`✅ পৃষ্ঠা ${currentPage} থেকে ${pageData.length} জন ছাত্রের তথ্য সংগ্রহ করা হয়েছে।`);
+
+        // পরবর্তী পৃষ্ঠা আছে কিনা চেক করা
+        hasNextPage = await page.evaluate(() => {
+            const nextPageLinks = document.querySelectorAll('a[href*="Page$"]');
+            const currentPageSpan = document.querySelector('span');
+            let currentPageNum = 1;
+
+            if (currentPageSpan) {
+                currentPageNum = parseInt(currentPageSpan.textContent);
+            }
+
+            for (const link of nextPageLinks) {
+                const pageNum = parseInt(link.textContent);
+                if (pageNum === currentPageNum + 1) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        if (hasNextPage) {
+            // পরবর্তী পৃষ্ঠায় যাওয়া
+            currentPage++;
+            await page.evaluate((pageNum) => {
+                const nextPageLink = Array.from(document.querySelectorAll('a[href*="Page$"]'))
+                    .find(link => link.textContent === pageNum.toString());
+
+                if (nextPageLink) {
+                    nextPageLink.click();
+                }
+            }, currentPage);
+
+            await page.waitForNetworkIdle({ idleTime: 2000, timeout: 10000 });
+        }
+    }
+
+    console.log(`✅ মোট ${allGenderData.length} জন ছাত্রের জেন্ডার তথ্য সংগ্রহ করা হয়েছে।`);
+
+    // --- ধাপ ৪: ID Card পেজে ফিরে গিয়ে প্রতিটি ক্লাসের সকল ছাত্রের আইডি কার্ড থেকে তথ্য সংগ্রহ ---
+    console.log("\n💳 আইডি কার্ড পেজে ফিরে যাওয়া হচ্ছে...");
+    await page.goto(ID_CARD_URL, { waitUntil: 'networkidle2' });
+
     const allStudentsData = {};
 
     for (const classInfo of classes) {
@@ -60,7 +140,7 @@ async function scrapeData() {
         const studentsInClass = await page.evaluate(() => {
             const students = [];
 
-            // আপনার দেওয়া HTML অনুযায়ী সঠিক কন্টেইনার Selector
+            // আপনার দেওয়া HTML অনুযায়ী সঠিক কন্টেইনার Selector
             const cardContainerSelector = 'div#wrapper > div';
 
             const cardElements = document.querySelectorAll(cardContainerSelector);
@@ -102,20 +182,35 @@ async function scrapeData() {
                         address: address,
                         dob: dob,
                         className: className,
-                        mobile: mobile
+                        mobile: mobile,
+                        gender: '' // পরে যোগ করা হবে
                     });
                 }
             });
             return students;
         });
 
-        allStudentsData[classInfo.name] = studentsInClass;
-        console.log(`✅ "${classInfo.name}" ক্লাসে ${studentsInClass.length} জন ছাত্র-ছাত্রী পাওয়া গেছে।`);
+        // জেন্ডার তথ্য মার্জ করুন
+        const studentsWithGender = studentsInClass.map(student => {
+            // নাম এবং পিতার নাম দিয়ে ম্যাচ করা (যদি Student ID না মেলে)
+            const genderInfo = allGenderData.find(g =>
+                g.studentId === student.studentId ||
+                (g.name.includes(student.name) && g.fatherName.includes(student.fatherName))
+            );
+
+            return {
+                ...student,
+                gender: genderInfo?.gender || 'Unknown'
+            };
+        });
+
+        allStudentsData[classInfo.name] = studentsWithGender;
+        console.log(`✅ "${classInfo.name}" ক্লাসে ${studentsWithGender.length} জন ছাত্র-ছাত্রীর সম্পূর্ণ তথ্য সংগ্রহ করা হয়েছে।`);
     }
 
-    console.log("\n\n--- সকল ক্লাসের সম্পূর্ণ তথ্য ---");
+    console.log("\n\n--- সকল ক্লাসের সম্পূর্ণ তথ্য (জেন্ডার সহ) ---");
     fs.writeFileSync('students.json', JSON.stringify(allStudentsData, null, 2));
-    console.log("💾 তথ্য সফলভাবে students.json ফাইলে সেভ করা হয়েছে!");
+    console.log("💾 তথ্য সফলভাবে students_with_gender.json ফাইলে সেভ করা হয়েছে!");
 
     await browser.close();
     console.log("\n🎉 কাজ সম্পন্ন হয়েছে!");

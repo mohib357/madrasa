@@ -525,8 +525,8 @@ h1 {
 
 .stats-card:hover {
     box-shadow: 0 4px 8px rgb(160, 36, 255);
-    transform: scale(1.02);
-    transition-duration: 200ms;
+    transform: scale(1.009);
+    transition-duration: 300ms;
 }
 
 .stats-info {
@@ -547,9 +547,11 @@ h1 {
 
 .stat-item p {
     margin: 0 5px;
-    color: #1e6a00; /* রঙ সাদা করা হলো */
+    color: #1e6a00;
+    /* রঙ সাদা করা হলো */
     width: 60px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8); /* শ্যাডো গাঢ় করা হলো */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    /* শ্যাডো গাঢ় করা হলো */
 }
 
 .stat-item strong {
@@ -557,7 +559,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #00ffff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .stat-item.total strong {
