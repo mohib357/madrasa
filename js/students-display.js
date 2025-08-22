@@ -114,14 +114,27 @@ async function initializeApp() {
         const girlCountEl = document.getElementById('girl-count-stats');
         const totalCountEl = document.getElementById('total-count-stats');
 
-        // --- আপাতত ম্যানুয়াল সংখ্যা দিয়ে গ্রাফ দেখানো হচ্ছে ---
-        let manualBoys = 498;
-        let manualGirls = 812;
-        let manualTotal = manualBoys + manualGirls;
+        // --- স্বয়ংক্রিয়ভাবে জেন্ডার গণনা শুরু ---
+        let totalBoys = 0;
+        let totalGirls = 0;
 
-        boyCountEl.textContent = manualBoys.toLocaleString('bn-BD');
-        girlCountEl.textContent = manualGirls.toLocaleString('bn-BD');
-        totalCountEl.textContent = manualTotal.toLocaleString('bn-BD');
+        for (const className in allStudentsData) {
+            for (const student of allStudentsData[className]) {
+                // scraped data-তে 'Male' এবং 'Female' থাকে
+                if (student.gender === 'Male') {
+                    totalBoys++;
+                } else if (student.gender === 'Female') {
+                    totalGirls++;
+                }
+            }
+        }
+        const absoluteTotal = totalBoys + totalGirls;
+
+        // গণনাকৃত সংখ্যা দিয়ে পরিসংখ্যান আপডেট করা হচ্ছে
+        boyCountEl.textContent = totalBoys.toLocaleString('bn-BD');
+        girlCountEl.textContent = totalGirls.toLocaleString('bn-BD');
+        totalCountEl.textContent = absoluteTotal.toLocaleString('bn-BD');
+        // --- স্বয়ংক্রিয় গণনা শেষ ---
 
         // --- চার্ট তৈরি করা ---
         const ctx = document.getElementById('genderChart').getContext('2d');
@@ -130,7 +143,8 @@ async function initializeApp() {
             data: {
                 labels: ['ছাত্র', 'ছাত্রী'],
                 datasets: [{
-                    data: [manualBoys, manualGirls],
+                    // চার্টে ম্যানুয়াল সংখ্যার পরিবর্তে স্বয়ংক্রিয় সংখ্যা ব্যবহার করা হচ্ছে
+                    data: [totalBoys, totalGirls],
                     backgroundColor: ['#42a5f5', '#ec407a'],
                     borderColor: '#ffffff',
                     borderWidth: 3,
@@ -156,22 +170,6 @@ async function initializeApp() {
                 }
             }
         });
-
-        /*
-        // --- ভবিষ্যতের জন্য: students.json থেকে স্বয়ংক্রিয়ভাবে জেন্ডার গণনার কোড ---
-        let totalBoys = 0, totalGirls = 0;
-        for (const className in allStudentsData) {
-            for (const student of allStudentsData[className]) {
-                if (student.gender === 'বালক') totalBoys++;
-                else if (student.gender === 'বালিকা') totalGirls++;
-            }
-        }
-        const absoluteTotal = totalBoys + totalGirls;
-        boyCountEl.textContent = totalBoys.toLocaleString('bn-BD');
-        girlCountEl.textContent = totalGirls.toLocaleString('bn-BD');
-        totalCountEl.textContent = absoluteTotal.toLocaleString('bn-BD');
-        // উপরের চার্টের data: [manualBoys, manualGirls] পরিবর্তন করে data: [totalBoys, totalGirls] করে দেবেন।
-        */
 
         // --- ক্লাস সিলেক্টর পপুলেট করা ---
         Object.keys(allStudentsData).forEach(className => {
@@ -274,13 +272,12 @@ async function initializeApp() {
         const handleSearchInput = () => {
             filterAndRender();
             const currentInput = searchBox.value.trim();
-            filterAndRender();
             showSuggestions(currentInput);
             addSearchTerm(currentInput);
         };
 
         classSelector.addEventListener('change', filterAndRender);
-        searchBox.addEventListener('input', debounce(handleSearchInput, 4000));
+        searchBox.addEventListener('input', debounce(handleSearchInput, 400)); // ডিবাউন্স সময় ৪০০ms করা হলো
 
         filterAndRender();
         initializeCustomDropdown();
