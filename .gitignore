@@ -1,2 +1,13 @@
-scraper.js
-.env
+node_modules
+# Node.js নির্ভর ফাইলগুলো উপেক্ষা করার জন্য
+madrasa-scraper/node_modules/
+
+# গোপন তথ্য সম্বলিত .env ফাইলটি উপেক্ষা করার জন্য
+madrasa-scraper/.env
+
+# স্ক্রিপ্ট দ্বারা তৈরি করা আউটপুট ফাইল
+madrasa-scraper/students.json
+
+# অন্যান্য লগ বা ডিবাগ ফাইল (যদি তৈরি হয়)
+*.log
+npm-debug.log*

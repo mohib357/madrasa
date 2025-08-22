@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 // আপনার sikkhaloy.com এর লগইন তথ্য
-const USERNAME = "mqmm_mohib_sub-admin";
-const PASSWORD = "Mohib66442#357";
+const USERNAME = process.env.SIKKHALOY_USERNAME;
+const PASSWORD = process.env.SIKKHALOY_PASSWORD;
 
 // URL সমূহ
 const LOGIN_URL = "https://sikkhaloy.com/Default.aspx";
