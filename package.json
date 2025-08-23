@@ -1,5 +1,15 @@
 {
+  "name": "madrasa-scraper",
+  "version": "1.0.0",
+  "description": "A web scraper for collecting student data from sikkhaloy.com",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
   "dependencies": {
-    "dotenv": "^17.2.1"
+    "dotenv": "^16.4.5",
+    "puppeteer": "^22.10.0"
   }
 }

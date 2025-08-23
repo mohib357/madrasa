@@ -9686,9 +9686,20 @@
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156338",
       "fatherName": "মানিক মিয়া",
       "address": "চিনিপাড়া, মহেন্দ্রনগর, লালমনিরহাট",
-      "dob": "",
+      "dob": "9 Aug 2016",
       "className": "কায়দা (বালক)",
       "mobile": "01770715214",
+      "gender": "Male"
+    },
+    {
+      "name": "শোয়াহিব আহম্মেদ সিফাত",
+      "studentId": "181318",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156438",
+      "fatherName": "শাহ আলম",
+      "address": "পূর্ব সারডুবী মিলনবাজার , বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "12 Sep 2011",
+      "className": "কায়দা (বালক)",
+      "mobile": "01729503056",
       "gender": "Male"
     }
   ],
@@ -10649,6 +10660,17 @@
       "className": "নাজেরা (বালক)",
       "mobile": "01713723894",
       "gender": "Male"
+    },
+    {
+      "name": "রিদওয়ান ইসলাম শাকিব",
+      "studentId": "181317",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156430",
+      "fatherName": "আবুল কাশেম",
+      "address": "দক্ষিণ গোপালরায়, কাকিনা , কালীগঞ্জ, লালমনিরহাট",
+      "dob": "18 Mar 2011",
+      "className": "নাজেরা (বালক)",
+      "mobile": "01737646390",
+      "gender": "Female"
     }
   ],
   "হিফজুল কুরআন": [
