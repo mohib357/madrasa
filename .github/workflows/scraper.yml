@@ -1,0 +1,34 @@
+name: Auto Scraper
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # প্রতি ঘন্টায় রান করবে (UTC টাইম)
+  workflow_dispatch:       # চাইলে ম্যানুয়ালি চালাতে পারবে
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run scraper
+        env:
+          SIKKHALOY_USERNAME: ${{ secrets.SIKKHALOY_USERNAME }}
+          SIKKHALOY_PASSWORD: ${{ secrets.SIKKHALOY_PASSWORD }}
+        run: node scraper.js
+
+      - name: Upload students.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: students-data
+          path: students.json
