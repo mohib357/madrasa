@@ -33,6 +33,11 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add students.json
-          git commit -m "Auto update students.json"
-          git push
-        working-directory: ./madrasa-scraper  # <-- এই লাইনটি যোগ করুন
+          # নিচের লাইনটি চেক করবে কোনো পরিবর্তন আছে কিনা
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto update students.json"
+            git push
+          fi
+        working-directory: ./madrasa-scraper
