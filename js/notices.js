@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
 
     // Google Sheets লিংক
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/1vuo0-vLccUsEYl2dKU38b26luUnxor-k7zi9uRevOdE/gviz/tq?tqx=out:csv&sheet=sheet1';
     console.log("Fetching notices from:", sheetURL);
     fetch(sheetURL)
       .then(response => {
@@ -380,7 +380,7 @@ document.getElementById('view-all-notices').addEventListener('click', function (
     document.body.removeChild(loadingPopup);
     document.body.style.overflow = 'auto';
   } else {
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/1vuo0-vLccUsEYl2dKU38b26luUnxor-k7zi9uRevOdE/gviz/tq?tqx=out:csv&sheet=sheet1';
     fetch(sheetURL)
       .then(response => {
         if (!response.ok) throw new Error('Network response was not ok');

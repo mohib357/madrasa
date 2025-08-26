@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- Configuration & DOM Elements ---
     const noticeContainer = document.getElementById('notice-container');
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/1vuo0-vLccUsEYl2dKU38b26luUnxor-k7zi9uRevOdE/gviz/tq?tqx=out:csv&sheet=sheet1';
 
     /**
      * Parses raw CSV text into an array of rows.

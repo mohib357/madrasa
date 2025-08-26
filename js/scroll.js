@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ### নতুন কোড শেষ ###
 
     // Your Google Sheet URL
-    const googleSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRFpVqdRkkAhEvrJeTmioOx987QpCAeQlCjwRKZD_D_SjwdYZLBptKPxSpNsAPP5e-_DimfaYYUR0CK/pub?output=csv';
+    const googleSheetURL = 'https://docs.google.com/spreadsheets/d/1vuo0-vLccUsEYl2dKU38b26luUnxor-k7zi9uRevOdE/gviz/tq?tqx=out:csv&sheet=sheet1';
 
     // HTML element selection
     const scrollingContainer = document.getElementById('scrolling-notice-container');
