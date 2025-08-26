@@ -21,11 +21,11 @@ jobs:
         run: npm install
         working-directory: ./madrasa-scraper
 
-      # --- এই নতুন ধাপটি এখানে যোগ করুন ---
       - name: Install Puppeteer's Chrome
-        run: npx puppeteer browsers install chrome
+        run: |
+          chmod +x node_modules/.bin/puppeteer
+          npx puppeteer browsers install chrome
         working-directory: ./madrasa-scraper
-      # ------------------------------------
 
       - name: Run scraper
         run: node scraper.js
