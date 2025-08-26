@@ -26,7 +26,7 @@ jobs:
         env:
           SIKKHALOY_USERNAME: ${{ secrets.SIKKHALOY_USERNAME }}
           SIKKHALOY_PASSWORD: ${{ secrets.SIKKHALOY_PASSWORD }}
-
+          
       - name: Commit and push results
         run: |
           git config --global user.name "github-actions"
