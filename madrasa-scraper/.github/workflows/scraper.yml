@@ -1,0 +1,36 @@
+name: Auto Scraper
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # প্রতি ঘন্টায় একবার করে চলবে
+  workflow_dispatch:       # চাইলে ম্যানুয়ালি চালানো যাবে
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run scraper
+        run: node scraper.js
+
+        env:
+          SIKKHALOY_USERNAME: ${{ secrets.SIKKHALOY_USERNAME }}
+          SIKKHALOY_PASSWORD: ${{ secrets.SIKKHALOY_PASSWORD }}
+
+      - name: Commit and push results
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add students.json
+          git commit -m "Auto update students.json"
+          git push
