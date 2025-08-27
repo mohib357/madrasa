@@ -14,7 +14,13 @@ const FIND_STUDENTS_URL = "https://sikkhaloy.com/ID_Cards/Find_Students.aspx";
 
 async function scrapeData() {
     console.log("🚀 ব্রাউজার চালু হচ্ছে...");
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ],
+    });
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
     await page.setDefaultNavigationTimeout(60000);
