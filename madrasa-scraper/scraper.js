@@ -149,7 +149,7 @@ async function scrapeData() {
             const cardElements = document.querySelectorAll(cardContainerSelector);
 
             cardElements.forEach(card => {
-                const nameElement = card.querySelector('p[style*="font-weight:800"]');
+                const nameElement = card.querySelector('p[style*="font-weight:800"]');  // Note: This selector is based on inline style and might break
                 const idElement = card.querySelector('strong.d-block');
                 const photoElement = card.querySelector('#user-info img');
 
