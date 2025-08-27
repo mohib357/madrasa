@@ -19,11 +19,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./madrasa-scraper  # <-- এই লাইনটি যোগ করুন
+        working-directory: ./madrasa-scraper
+
+      - name: Install Puppeteer's Chrome
+        run: |
+          chmod +x node_modules/.bin/puppeteer
+          npx puppeteer browsers install chrome
+        working-directory: ./madrasa-scraper
 
       - name: Run scraper
         run: node scraper.js
-        working-directory: ./madrasa-scraper  # <-- এই লাইনটি যোগ করুন
+        working-directory: ./madrasa-scraper
         env:
           SIKKHALOY_USERNAME: ${{ secrets.SIKKHALOY_USERNAME }}
           SIKKHALOY_PASSWORD: ${{ secrets.SIKKHALOY_PASSWORD }}
@@ -33,7 +39,6 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add students.json
-          # নিচের লাইনটি চেক করবে কোনো পরিবর্তন আছে কিনা
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
