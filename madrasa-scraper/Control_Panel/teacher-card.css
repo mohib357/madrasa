@@ -1,0 +1,236 @@
+/* ================ ID CARD GRID ================*/
+
+.teacher-grid {
+    display: grid;
+    gap: 1.5rem;
+    padding: 10px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+/* Style for each teacher's ID card */
+.id-card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background-image: url('../../images/teacher-card.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    color: #f90b0b;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 7px solid transparent;
+}
+
+.id-card:not(.pending) {
+    border-top-color: #28a745;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+.id-card.pending {
+    border-top-color: #dc3545;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.id-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    z-index: 2;
+}
+
+.card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: white;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+    flex-shrink: 0;
+}
+
+.header-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1.9);
+    line-height: 1.3;
+}
+
+.header-line-1 {
+    font-size: 0.7em;
+    font-weight: normal;
+    display: block;
+}
+
+.header-line-2 {
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: block;
+}
+
+/* Main Info Section */
+.info-area {
+    position: absolute;
+    top: 4.2rem;
+    left: 1.3rem;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.info-area h3 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.info-item strong {
+    width: 110px;
+    min-width: 110px;
+    font-weight: 500;
+    color: #00a6ff;
+    text-shadow: 1px 1px 1px rgba(5, 91, 124, 0.441);
+}
+
+.info-separator {
+    color: #999;
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+.info-item span {
+    color: #1d7753;
+    text-shadow: 1px 1px 1px rgba(189, 202, 207, 0.452);
+    font-weight: bold;
+}
+
+/* Teacher Photo */
+.photo-area {
+    position: absolute;
+    top: 4.3rem;
+    right: 1.1em;
+    width: 120px;
+    height: 130px;
+    border-radius: 20px 8px;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.641);
+    background-color: #eee;
+}
+
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Action Menu */
+.card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    z-index: 10;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    left: 0;
+    top: 35px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.card-actions:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-actions .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    right: 0;
+    top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-actions .dropdown-content a {
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.card-actions .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .teacher-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .id-card {
+        width: 95%;
+        max-width: 400px;
+        height: 250px;
+    }
+}

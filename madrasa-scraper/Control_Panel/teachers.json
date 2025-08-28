@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1756314335715.2815,
+    "name": "Md. Abu Sufian",
+    "designation": "Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=8719",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "Md. Idris Ali",
+    "mobile": "01743068063",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.1213,
+    "name": "Md. Azizul Islam",
+    "designation": "Assistant Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=9099",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "Abu Sufian",
+    "mobile": "01738592766",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.974,
+    "name": "Aminul Islam",
+    "designation": "Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=9380",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "",
+    "mobile": "010000000000",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.2249,
+    "name": "Amdad Ullah",
+    "designation": "Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=9381",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "",
+    "mobile": "010000000000",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.975,
+    "name": "MD HASAN ALI",
+    "designation": "Assistant Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=9968",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "MD ALOM MIA",
+    "mobile": "01810383438",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.6848,
+    "name": "Masum Billah",
+    "designation": "Accountant & Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=10147",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "Idris Ali",
+    "mobile": "01750827760",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  },
+  {
+    "id": 1756314335715.2148,
+    "name": "MD. Mosfikur Rahman Naeem",
+    "designation": "Teacher",
+    "photoUrl": "https://sikkhaloy.com/Handeler/Employee_Image.ashx?Img=10179",
+    "status": "pending",
+    "joiningDate": "",
+    "subjects": [],
+    "sections": [],
+    "fatherName": "Saiful Islam",
+    "mobile": "017310113107",
+    "presentAddress": "",
+    "permanentAddress": "",
+    "socials": {
+      "facebook": "",
+      "gmail": "",
+      "instagram": null
+    }
+  }
+]
