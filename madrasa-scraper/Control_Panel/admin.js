@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const teacherGridContainer = document.getElementById('teacher-grid-container');
     const teacherDetailsModal = document.getElementById('teacher-details-modal');
-    const closeModalBtn = document.getElementById('close-modal');
+    const closeDetailsModalBtn = document.getElementById('close-details-modal');
     const modalTeacherName = document.getElementById('modal-teacher-name');
     const modalTeacherDetails = document.getElementById('modal-teacher-details');
+    const editTeacherModal = document.getElementById('edit-teacher-modal');
+    const closeEditModalBtn = document.getElementById('close-edit-modal');
+    const editTeacherForm = document.getElementById('edit-teacher-form');
     let teachersData = [];
 
     // === Functions ===
+
+    function saveDataToLocalStorage() {
+        localStorage.setItem('teachersData', JSON.stringify(teachersData));
+    }
+
     function renderTeachers() {
         teacherGridContainer.innerHTML = '';
         if (teachersData.length === 0) {
@@ -96,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelector('.edit-btn').addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                openEditModal(index);
                 console.log(`Edit teacher at index: ${index}`);
                 dropdownContent.style.display = 'none';
                 // এখানে এডিট পপ-আপ খোলার কোড আসবে
@@ -124,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const teacher = teachersData[index];
         if (teacher) {
             teacher.status = teacher.status === 'approved' ? 'pending' : 'approved';
+            saveDataToLocalStorage();
             renderTeachers();
             alert(`"${teacher.name}" এর স্ট্যাটাস পরিবর্তন করে "${teacher.status}" করা হয়েছে।`);
         }
@@ -136,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const teacherName = teachersData[index]?.name || "এই শিক্ষক";
         if (confirm(`আপনি কি "${teacherName}" কে মুছে ফেলতে চান?`)) {
             teachersData.splice(index, 1);
+            saveDataToLocalStorage();
             renderTeachers();
             alert(`"${teacherName}" কে সফলভাবে মুছে ফেলা হয়েছে।`);
         }
@@ -161,19 +172,67 @@ document.addEventListener('DOMContentLoaded', () => {
         teacherDetailsModal.classList.remove('hidden');
     }
 
+    // ✅ অনুপস্থিত ফাংশনটি এখানে যোগ করা হলো
+    function openEditModal(index) {
+        const teacher = teachersData[index];
+        if (!teacher) return;
+        editTeacherForm.innerHTML = `
+            <input type="hidden" name="index" value="${index}">
+            <div><label class="block mb-1 font-medium">নাম</label><input type="text" name="name" value="${teacher.name || ''}" class="w-full p-2 border rounded"></div>
+            <div><label class="block mb-1 font-medium">পদবী</label><input type="text" name="designation" value="${teacher.designation || ''}" class="w-full p-2 border rounded"></div>
+            <div class="md:col-span-2"><label class="block mb-1 font-medium">ছবির URL</label><input type="text" name="photoUrl" value="${teacher.photoUrl || ''}" class="w-full p-2 border rounded"></div>
+            <div><label class="block mb-1 font-medium">পিতার নাম</label><input type="text" name="fatherName" value="${teacher.fatherName || ''}" class="w-full p-2 border rounded"></div>
+            <div><label class="block mb-1 font-medium">জন্ম তারিখ</label><input type="text" name="dob" value="${teacher.dob || ''}" class="w-full p-2 border rounded"></div>
+            <div><label class="block mb-1 font-medium">মোবাইল নং</label><input type="text" name="mobile" value="${teacher.mobile || ''}" class="w-full p-2 border rounded"></div>
+            <div><label class="block mb-1 font-medium">যোগদানের তারিখ</label><input type="text" name="joiningDate" value="${teacher.joiningDate || ''}" class="w-full p-2 border rounded"></div>
+            <div class="md:col-span-2"><label class="block mb-1 font-medium">ফেসবুক URL</label><input type="text" name="facebook" value="${teacher.socials?.facebook || ''}" class="w-full p-2 border rounded"></div>
+            <div class="md:col-span-2"><label class="block mb-1 font-medium">ইমেইল</label><input type="email" name="gmail" value="${teacher.socials?.gmail || ''}" class="w-full p-2 border rounded"></div>
+            <div class="md:col-span-2 text-right"><button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">সংরক্ষণ করুন</button></div>
+        `;
+        editTeacherModal.classList.remove('hidden');
+    }
+
+
+    // ✅ নতুন: এডিট ফর্ম সাবমিট হ্যান্ডেল করার ফাংশন
+    function handleUpdateTeacher(e) {
+        e.preventDefault();
+        const formData = new FormData(editTeacherForm);
+        const index = parseInt(formData.get('index'), 10);
+        const teacher = teachersData[index];
+
+        if (teacher) {
+            teacher.name = formData.get('name');
+            teacher.designation = formData.get('designation');
+            teacher.photoUrl = formData.get('photoUrl');
+            teacher.fatherName = formData.get('fatherName');
+            teacher.dob = formData.get('dob');
+            teacher.mobile = formData.get('mobile');
+            teacher.joiningDate = formData.get('joiningDate');
+            teacher.socials.facebook = formData.get('facebook');
+            teacher.socials.gmail = formData.get('gmail');
+
+            saveDataToLocalStorage();
+            renderTeachers();
+            editTeacherModal.classList.add('hidden');
+            alert('তথ্য সফলভাবে আপডেট করা হয়েছে!');
+        }
+    }
+
     /**
      * অ্যাপ্লিকেশন শুরু করার জন্য মূল ফাংশন
      */
     async function initializeApp() {
-        try {
-            const response = await fetch('teachers.json');
-            if (response.ok) {
-                teachersData = await response.json();
-            } else {
-                console.log("teachers.json not found. Starting with an empty list.");
-            }
-        } catch (error) {
-            console.error("Error loading teachers.json:", error);
+        const savedData = localStorage.getItem('teachersData');
+        if (savedData) {
+            teachersData = JSON.parse(savedData);
+        } else {
+            try {
+                const response = await fetch('teachers.json');
+                if (response.ok) {
+                    teachersData = await response.json();
+                    saveDataToLocalStorage();
+                } else { console.log("teachers.json not found."); }
+            } catch (error) { console.error("Error loading teachers.json:", error); }
         }
         renderTeachers();
     }
@@ -181,14 +240,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Event Listeners (Global) ===
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.card-actions')) {
-            document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = 'none');
+            document.querySelectorAll('.dropdown-content').forEach(d => {
+                d.style.display = 'none';
+            });
         }
     });
 
-    closeModalBtn.addEventListener('click', () => {
-        teacherDetailsModal.classList.add('hidden');
-    });
+    closeDetailsModalBtn.addEventListener('click', () => teacherDetailsModal.classList.add('hidden'));
+    closeEditModalBtn.addEventListener('click', () => editTeacherModal.classList.add('hidden'));
+    editTeacherForm.addEventListener('submit', handleUpdateTeacher);
 
-    // --- অ্যাপ্লিকেশন শুরু করা হলো ---
     initializeApp();
 });
