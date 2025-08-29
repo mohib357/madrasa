@@ -1,4 +1,12 @@
-/* ================ ID CARD GRID ================*/
+/* ================ Teachers ID Card Design ================*/
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #f0f2f5;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 .teacher-grid {
     display: grid;
@@ -13,17 +21,20 @@
     position: relative;
     width: 400px;
     height: 250px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgb(8, 0, 255);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    border-top: 7px solid transparent;
     background-image: url('../../images/teacher-card.png');
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Arial', sans-serif;
-    color: #f90b0b;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-top: 7px solid transparent;
+    transform: translateZ(0);
 }
 
 .id-card:not(.pending) {
@@ -37,8 +48,9 @@
 }
 
 .id-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgb(160, 36, 255);
+    transform: scale(1.01);
+    transition-duration: 200ms;
 }
 
 .card-content {
@@ -77,6 +89,7 @@
     font-size: 0.7em;
     font-weight: normal;
     display: block;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
 .header-line-2 {
@@ -84,6 +97,7 @@
     letter-spacing: 2px;
     font-weight: bold;
     display: block;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 /* Main Info Section */
@@ -149,6 +163,8 @@
     object-fit: cover;
     object-position: center;
     display: block;
+    margin-bottom: 0;
+    object-position: top center;
 }
 
 /* Action Menu */
@@ -217,19 +233,25 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1550px) {
+    .teacher-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1180px) {
     .teacher-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .teacher-grid {
         grid-template-columns: 1fr;
     }
 
     .id-card {
-        width: 95%;
+        width: 100%;
         max-width: 400px;
         height: 250px;
     }
