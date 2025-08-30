@@ -33,7 +33,12 @@ body {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transform: translateZ(0);
+    /* transform: translateZ(0); */
+    transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.id-card.active {
+    z-index: 30;
 }
 
 .id-card:not(.pending) {
@@ -48,8 +53,8 @@ body {
 
 .id-card:hover {
     box-shadow: 0 4px 8px rgb(160, 36, 255);
-    transform: scale(1.01);
-    transition-duration: 200ms;
+    transform: scale(1.002);
+
 }
 
 .card-content {
@@ -107,7 +112,7 @@ body {
     color: #333;
     font-size: 0.85em;
     width: 61%;
-    border: 2px solid red;
+    background: transparent;
 }
 
 .info-area h3 {
@@ -121,7 +126,7 @@ body {
 .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .info-item strong {
@@ -130,11 +135,12 @@ body {
     font-weight: normal;
     color: #00a6ff;
     line-height: 1;
+    text-align: end;
 }
 
 .info-separator {
     color: #999;
-    margin: 0 8px;
+    margin: 0 12px;
     font-weight: bold;
 }
 
@@ -191,13 +197,13 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #f9f9f9;
     min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
-    z-index: 20;
-    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    right: 0;
     top: 35px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #eee;
     overflow: hidden;
 }
@@ -213,7 +219,7 @@ body {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 140px;
+    min-width: fit-content;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 10;
     right: 0;
@@ -229,10 +235,20 @@ body {
     display: block;
     font-size: 0.95em;
     white-space: nowrap;
+    box-shadow: 0px 8px 8px 0px rgba(23, 78, 17, 0.485);
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 .card-actions .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #c3e6d0;
+    box-shadow: 0px 8px 8px 0px rgba(5, 13, 255, 0.633);
+}
+
+.dropdown-content.show-left {
+    right: auto;
+    left: 0;
 }
 
 /* Responsive adjustments */

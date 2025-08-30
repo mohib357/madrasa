@@ -90,12 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
             const actionButton = card.querySelector('.action-btn');
             const dropdownContent = card.querySelector('.dropdown-content');
 
+            // আপনার addCardEventListeners ফাংশনের ভেতরের এই অংশটুকু পরিবর্তন করুন
+
             actionButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                document.querySelectorAll('.dropdown-content').forEach(d => {
-                    if (d !== dropdownContent) d.style.display = 'none';
+
+                // অন্য সব ড্রপডাউন এবং active ক্লাস বন্ধ করুন
+                document.querySelectorAll('.id-card').forEach(c => {
+                    if (c !== card) {
+                        c.classList.remove('active');
+                        c.querySelector('.dropdown-content').style.display = 'none';
+                        c.querySelector('.dropdown-content').classList.remove('show-left');
+                    }
                 });
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+
+                const isVisible = dropdownContent.style.display === 'block';
+
+                if (isVisible) {
+                    dropdownContent.style.display = 'none';
+                    card.classList.remove('active');
+                } else {
+                    dropdownContent.style.display = 'block';
+                    card.classList.add('active');
+
+                    // স্ক্রিনের বাইরে চলে যাচ্ছে কিনা তা পরীক্ষা করুন
+                    const rect = dropdownContent.getBoundingClientRect();
+                    const viewportWidth = window.innerWidth;
+
+                    if (rect.right > viewportWidth) {
+                        dropdownContent.classList.add('show-left');
+                    } else {
+                        dropdownContent.classList.remove('show-left');
+                    }
+                }
             });
 
             card.querySelector('.edit-btn').addEventListener('click', (e) => {
