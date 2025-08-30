@@ -6545,17 +6545,6 @@
       "gender": "Female"
     },
     {
-      "name": "তাসলিমা আক্তার তামিম",
-      "studentId": "0667",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=102015",
-      "fatherName": "নূরুল",
-      "address": "পাটগ্রাম, লালমনিরহাট",
-      "dob": "7 Feb 2007",
-      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
-      "mobile": "01879297318",
-      "gender": "Female"
-    },
-    {
       "name": "জান্নাতুল ফেরদাউস মিম",
       "studentId": "0584",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=94435",
@@ -7756,17 +7745,6 @@
       "dob": "5 Oct 2007",
       "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
       "mobile": "01820272819",
-      "gender": "Female"
-    },
-    {
-      "name": "কহিনুর আক্তার",
-      "studentId": "0320",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=92817",
-      "fatherName": "আঃ রশিদ",
-      "address": "বড়খাতা , হাতীবান্ধা , লালমনিরহাট",
-      "dob": "12 Dec 2008",
-      "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
-      "mobile": "01797998286",
       "gender": "Female"
     },
     {
@@ -9689,6 +9667,28 @@
       "dob": "28 Feb 2013",
       "className": "কায়দা (বালক)",
       "mobile": "01636622290",
+      "gender": "Male"
+    },
+    {
+      "name": "লা্ব্বাইক",
+      "studentId": "181321",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156511",
+      "fatherName": "তাহেরুল হক",
+      "address": "জোংড়া সরকারেরহাট, পাটগ্রাম, লালমনিরহাট",
+      "dob": "8 Oct 2014",
+      "className": "কায়দা (বালক)",
+      "mobile": "01723257118",
+      "gender": "Male"
+    },
+    {
+      "name": "ইফতেখার সিদ্দিকী",
+      "studentId": "181322",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156513",
+      "fatherName": "ইকবাল সিদ্দিকী",
+      "address": "চরিতাবাড়ী, আদিতমারী, লালমনিরহাট",
+      "dob": "31 Oct 2013",
+      "className": "কায়দা (বালক)",
+      "mobile": "01740014190",
       "gender": "Male"
     }
   ],
