@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h2 class="header-line-2">${madrasaNameLine2}</h2>
                     </div>
                 </div>
-                
                 <div class="info-area">
                     <h3>${teacher.name}</h3>
                     <div class="info-item">
@@ -48,16 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="info-item">
                         <strong>যোগদানের তারিখ</strong><span class="info-separator">::</span><span>${teacher.joiningDate || 'N/A'}</span>
                     </div>
-                    
                     <div class="info-item">
                         <strong>মোবাইল নং</strong><span class="info-separator">::</span><span>${teacher.mobile || 'N/A'}</span>
                     </div>
 
                     <div class="info-item">
                         <strong>জন্ম তারিখ</strong><span class="info-separator">::</span><span>${teacher.dob || 'N/A'}</span>
-                    </div>   
-                </div>
-                
+                 </div>  
+             </div>          
                 <div class="photo-area">
                     <img src="${photo}" alt="${teacher.name}" class="teacher-photo">
                 </div>
