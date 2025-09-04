@@ -1719,17 +1719,6 @@
       "gender": "Female"
     },
     {
-      "name": "সুমাইয়া আক্তার মিনু",
-      "studentId": "01749",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153364",
-      "fatherName": "মহিম উদ্দিন",
-      "address": "ভাটিবাড়ী, মোগলহাট, লালমনিরহাট",
-      "dob": "13 Jan 2013",
-      "className": "নাজেরা (বালিকা)",
-      "mobile": "01771998160",
-      "gender": "Female"
-    },
-    {
       "name": "রোকসানা আক্তার সুমাইয়া",
       "studentId": "01751",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153384",
@@ -1749,17 +1738,6 @@
       "dob": "28 Nov 2009",
       "className": "নাজেরা (বালিকা)",
       "mobile": "01770380171",
-      "gender": "Female"
-    },
-    {
-      "name": "ইসরাত জাহান তুবা",
-      "studentId": "01732",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=152710",
-      "fatherName": "এনতাজুল ইসলাম",
-      "address": "ঢাকনাই, মহেন্দ্রনগর , লালমনিরহাট",
-      "dob": "8 Aug 2008",
-      "className": "নাজেরা (বালিকা)",
-      "mobile": "01770540642",
       "gender": "Female"
     },
     {
@@ -2070,6 +2048,28 @@
       "dob": "5 Jan 2014",
       "className": "হিফজুল কুরআন (বালিকা)",
       "mobile": "01780535530",
+      "gender": "Female"
+    },
+    {
+      "name": "সুমাইয়া আক্তার মিনু",
+      "studentId": "01749",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153364",
+      "fatherName": "মহিম উদ্দিন",
+      "address": "ভাটিবাড়ী, মোগলহাট, লালমনিরহাট",
+      "dob": "13 Jan 2013",
+      "className": "হিফজুল কুরআন (বালিকা)",
+      "mobile": "01771998160",
+      "gender": "Female"
+    },
+    {
+      "name": "ইসরাত জাহান তুবা",
+      "studentId": "01732",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=152710",
+      "fatherName": "এনতাজুল ইসলাম",
+      "address": "ঢাকনাই, মহেন্দ্রনগর , লালমনিরহাট",
+      "dob": "8 Aug 2008",
+      "className": "হিফজুল কুরআন (বালিকা)",
+      "mobile": "01770540642",
       "gender": "Female"
     }
   ],
