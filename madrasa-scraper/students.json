@@ -3076,17 +3076,6 @@
       "gender": "Female"
     },
     {
-      "name": "সুমাইয়া আক্তার",
-      "studentId": "01591",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148763",
-      "fatherName": "বদিউজ্জামান",
-      "address": "পানবাড়ী, ললিতারহাট, পাটগ্রাম, লালমনিরহাট",
-      "dob": "8 Sep 2012",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01863066676",
-      "gender": "Female"
-    },
-    {
       "name": "নাদিয়া আক্তার লিমা",
       "studentId": "01606",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148896",
@@ -3626,17 +3615,6 @@
       "gender": "Female"
     },
     {
-      "name": "জাকিয়া সুলতানা",
-      "studentId": "01151",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=121452",
-      "fatherName": "আরিফুর ইসলাম",
-      "address": "চলবলা মদনপুর, সোনারহাট, কালীগঞ্জ, লালমনিরহাট",
-      "dob": "14 Dec 2011",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01751369532",
-      "gender": "Female"
-    },
-    {
       "name": "কাকোলী আক্তার দিশা মনি",
       "studentId": "01271",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126159",
@@ -3824,17 +3802,6 @@
       "gender": "Female"
     },
     {
-      "name": "ফারজানা আক্তার রুবা",
-      "studentId": "01290",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132957",
-      "fatherName": "ফজলেনুর রহমান",
-      "address": "হাড়িবাঙ্গা , লালমনিরহাট ,লালমনিরহাট",
-      "dob": "14 Nov 2011",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01718410163",
-      "gender": "Female"
-    },
-    {
       "name": "রুবাইয়া তাবাচ্ছুম",
       "studentId": "01206",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123758",
@@ -3877,17 +3844,6 @@
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01752667823",
       "gender": "Female"
-    },
-    {
-      "name": "যয়নব সিদ্দিকি জিম",
-      "studentId": "01575",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=144611",
-      "fatherName": "বাবুল মিয়া",
-      "address": "কালমাটি খুনিয়াগাছ, লালমনিরহাট সদর, লালমনিরহাট",
-      "dob": "1 Feb 2011",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01723660563",
-      "gender": "Male"
     },
     {
       "name": "মিম খাতুন",
@@ -3975,17 +3931,6 @@
       "dob": "9 Oct 2007",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01763193270",
-      "gender": "Female"
-    },
-    {
-      "name": "সুরাইয়া আক্তার",
-      "studentId": "01646",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149100",
-      "fatherName": "জালাল হোসেন",
-      "address": "বড়ভিটা, ফুলবাড়ী,কুড়িগ্রাম",
-      "dob": "",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01706552921",
       "gender": "Female"
     },
     {
@@ -4107,17 +4052,6 @@
       "dob": "17 Nov 2011",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01937500173",
-      "gender": "Female"
-    },
-    {
-      "name": "আয়শা সিদ্দিকা",
-      "studentId": "01681",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149349",
-      "fatherName": "আনারুল ইসলাম",
-      "address": "কেতকীবাড়ী, নওদাবাস, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "20 Nov 2010",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01723597375",
       "gender": "Female"
     },
     {
@@ -6696,17 +6630,6 @@
       "dob": "11 Aug 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01717067745",
-      "gender": "Female"
-    },
-    {
-      "name": "সিদরাতুল মনিরা",
-      "studentId": "01750",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153376",
-      "fatherName": "মশিউর রহমান",
-      "address": "বাউড়া, জমগ্রাম, পাটগ্রাম, লালমনিরহাট",
-      "dob": "1 Jan 2012",
-      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
-      "mobile": "01325030625",
       "gender": "Female"
     },
     {
