@@ -2438,17 +2438,6 @@
       "gender": "Female"
     },
     {
-      "name": "জুই আক্তার",
-      "studentId": "0962",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118229",
-      "fatherName": "দুলাল মিয়া",
-      "address": "কাজীরহাট বানীনগর, মেহেরনগর, কালীগঞ্জ, লালমনিরহাট",
-      "dob": "30 Aug 2010",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01788012122",
-      "gender": "Female"
-    },
-    {
       "name": "মানজুরা জাহান মনিরা",
       "studentId": "0810",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=109065",
@@ -2468,28 +2457,6 @@
       "dob": "4 May 2012",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01789326420",
-      "gender": "Female"
-    },
-    {
-      "name": "আশিকা আক্তার ইসা",
-      "studentId": "01259",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124665",
-      "fatherName": "আসাদুজ্জামান নয়ন",
-      "address": "কদমতলা, দলদলিয়া, উলিপুর, কুড়িগ্রাম",
-      "dob": "12 Feb 2015",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01725546879",
-      "gender": "Female"
-    },
-    {
-      "name": "আশফাক জাহান আখি",
-      "studentId": "01153",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=121543",
-      "fatherName": "অহিদুল ইসলাম",
-      "address": "সিংগীমারী, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "23 Dec 2009",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01776289777",
       "gender": "Female"
     },
     {
