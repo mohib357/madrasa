@@ -9804,17 +9804,6 @@
       "gender": "Male"
     },
     {
-      "name": "মাহমুদুল হাসান মামুন",
-      "studentId": "181160",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148440",
-      "fatherName": "মিজানুর রহমান",
-      "address": "দূর্গাপুর, আদিতমারী,লালমনিরহাট",
-      "dob": "19 Jul 2013",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01719687645",
-      "gender": "Male"
-    },
-    {
       "name": "সাজিদুল ইসলাম",
       "studentId": "18864",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125093",
@@ -9911,17 +9900,6 @@
       "dob": "23 Aug 2015",
       "className": "নাজেরা (বালক)",
       "mobile": "01744508389",
-      "gender": "Male"
-    },
-    {
-      "name": "তাসবির ইসলাম",
-      "studentId": "18563",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=108856",
-      "fatherName": "হাফিজুল ইসলাম",
-      "address": "ভান্ডারদহ ৫৫৪০, পাটগ্রাম, লালমনিরহাট",
-      "dob": "20 Jan 2015",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01745673535",
       "gender": "Male"
     },
     {
@@ -11552,6 +11530,28 @@
       "dob": "",
       "className": "হিফজুল কুরআন",
       "mobile": "01722648085",
+      "gender": "Male"
+    },
+    {
+      "name": "তাসবির ইসলাম",
+      "studentId": "18563",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=108856",
+      "fatherName": "হাফিজুল ইসলাম",
+      "address": "ভান্ডারদহ ৫৫৪০, পাটগ্রাম, লালমনিরহাট",
+      "dob": "20 Jan 2015",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01745673535",
+      "gender": "Male"
+    },
+    {
+      "name": "মাহমুদুল হাসান মামুন",
+      "studentId": "181160",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148440",
+      "fatherName": "মিজানুর রহমান",
+      "address": "দূর্গাপুর, আদিতমারী,লালমনিরহাট",
+      "dob": "19 Jul 2013",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01719687645",
       "gender": "Male"
     }
   ],
