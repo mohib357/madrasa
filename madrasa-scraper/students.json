@@ -9760,17 +9760,6 @@
       "gender": "Male"
     },
     {
-      "name": "আব্দুল্লাহ আল মাসুদ",
-      "studentId": "18873",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126966",
-      "fatherName": "আঃ মান্নান",
-      "address": "ফুলগাছ, মোগলহাট, লালমনিরহাট",
-      "dob": "5 Dec 2014",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01774640097",
-      "gender": "Male"
-    },
-    {
       "name": "হোসাইন",
       "studentId": "18645",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117629",
@@ -9881,17 +9870,6 @@
       "gender": "Male"
     },
     {
-      "name": "রায়হান হোসেন",
-      "studentId": "181060",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=135989",
-      "fatherName": "আমিনুর ইসলাম",
-      "address": "নবীনগর,বাউরা,পাটগ্রাম,লালমনিরহাট",
-      "dob": "28 Jan 2015",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01722950746",
-      "gender": "Male"
-    },
-    {
       "name": "মুশফিকুজ্জামান মুশফিক",
       "studentId": "18636",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117185",
@@ -9900,17 +9878,6 @@
       "dob": "23 Aug 2015",
       "className": "নাজেরা (বালক)",
       "mobile": "01744508389",
-      "gender": "Male"
-    },
-    {
-      "name": "মোস্তাকিম ইসলাম",
-      "studentId": "181190",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148551",
-      "fatherName": "আশরাফুল আলম",
-      "address": "শ্রীরামপুর, ইসলামপুর, পাটগ্রাম",
-      "dob": "10 Jan 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01755470863",
       "gender": "Male"
     },
     {
@@ -10002,17 +9969,6 @@
       "gender": "Male"
     },
     {
-      "name": "আবু সায়েম সিফাত",
-      "studentId": "18865",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125239",
-      "fatherName": "আহাদ হোসেন",
-      "address": "উফারমারা, বড়িমারী, পাটগ্রাম, লালমনিরহাট",
-      "dob": "25 Nov 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01763242836",
-      "gender": "Male"
-    },
-    {
       "name": "লিয়াকত হোসেন",
       "studentId": "18975",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133452",
@@ -10090,17 +10046,6 @@
       "gender": "Male"
     },
     {
-      "name": "নাহিন মুনকার নাফি",
-      "studentId": "18700",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117830",
-      "fatherName": "আব্দুর রহমান",
-      "address": "মহিষখোচা ,আদিতমারী ,লালমনিরহাট",
-      "dob": "25 Aug 2013",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01755506130",
-      "gender": "Male"
-    },
-    {
       "name": "আব্দুল্লাহ বিন জামান",
       "studentId": "181074",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=136799",
@@ -10109,17 +10054,6 @@
       "dob": "7 Jun 2015",
       "className": "নাজেরা (বালক)",
       "mobile": "01785365767",
-      "gender": "Male"
-    },
-    {
-      "name": "শাকিল মিয়া",
-      "studentId": "181115",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142633",
-      "fatherName": "নুর মোহাম্মদ",
-      "address": "চরিতাবাড়ী, কুমড়ীরহাট আদিতমারী, লালমনিরহাট।",
-      "dob": "12 Jun 2011",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01703579628",
       "gender": "Male"
     },
     {
@@ -11552,6 +11486,83 @@
       "dob": "19 Jul 2013",
       "className": "হিফজুল কুরআন",
       "mobile": "01719687645",
+      "gender": "Male"
+    },
+    {
+      "name": "রায়হান হোসেন",
+      "studentId": "181060",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=135989",
+      "fatherName": "আমিনুর ইসলাম",
+      "address": "নবীনগর,বাউরা,পাটগ্রাম,লালমনিরহাট",
+      "dob": "28 Jan 2015",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01722950746",
+      "gender": "Male"
+    },
+    {
+      "name": "মোস্তাকিম ইসলাম",
+      "studentId": "181190",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148551",
+      "fatherName": "আশরাফুল আলম",
+      "address": "শ্রীরামপুর, ইসলামপুর, পাটগ্রাম",
+      "dob": "10 Jan 2012",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01755470863",
+      "gender": "Male"
+    },
+    {
+      "name": "নাহিন মুনকার নাফি",
+      "studentId": "18700",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117830",
+      "fatherName": "আব্দুর রহমান",
+      "address": "মহিষখোচা ,আদিতমারী ,লালমনিরহাট",
+      "dob": "25 Aug 2013",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01755506130",
+      "gender": "Male"
+    },
+    {
+      "name": "নাহিন মুনকার নাফি",
+      "studentId": "18700",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117830",
+      "fatherName": "আব্দুর রহমান",
+      "address": "মহিষখোচা ,আদিতমারী ,লালমনিরহাট",
+      "dob": "25 Aug 2013",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01755506130",
+      "gender": "Male"
+    },
+    {
+      "name": "আবু সায়েম সিফাত",
+      "studentId": "18865",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125239",
+      "fatherName": "আহাদ হোসেন",
+      "address": "উফারমারা, বড়িমারী, পাটগ্রাম, লালমনিরহাট",
+      "dob": "25 Nov 2012",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01763242836",
+      "gender": "Male"
+    },
+    {
+      "name": "শাকিল মিয়া",
+      "studentId": "181115",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142633",
+      "fatherName": "নুর মোহাম্মদ",
+      "address": "চরিতাবাড়ী, কুমড়ীরহাট আদিতমারী, লালমনিরহাট।",
+      "dob": "12 Jun 2011",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01703579628",
+      "gender": "Male"
+    },
+    {
+      "name": "আব্দুল্লাহ আল মাসুদ",
+      "studentId": "18873",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=126966",
+      "fatherName": "আঃ মান্নান",
+      "address": "ফুলগাছ, মোগলহাট, লালমনিরহাট",
+      "dob": "5 Dec 2014",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01774640097",
       "gender": "Male"
     }
   ],
