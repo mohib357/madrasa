@@ -6631,6 +6631,17 @@
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01918545419",
       "gender": "Female"
+    },
+    {
+      "name": "মিম আক্তার দোলা",
+      "studentId": "01761",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156778",
+      "fatherName": "আনছারুল আলম",
+      "address": "পূর্বসারডুবী, মিলনবাজার, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "3 Nov 2009",
+      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
+      "mobile": "01782657458",
+      "gender": "Female"
     }
   ],
   "৪র্থ বর্ষ (কুদূরী জামাত)": [
@@ -11741,17 +11752,6 @@
       "dob": "4 Feb 2011",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01774577872",
-      "gender": "Male"
-    },
-    {
-      "name": "আব্দুর রাজ্জাক",
-      "studentId": "181164",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148450",
-      "fatherName": "এন্তাজ আলী",
-      "address": "রাজপুর, লালমনিরহা্ট",
-      "dob": "30 Jun 2011",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01717564379",
       "gender": "Male"
     },
     {
