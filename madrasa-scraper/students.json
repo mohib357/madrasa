@@ -1154,6 +1154,17 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01706745677",
       "gender": "Female"
+    },
+    {
+      "name": "জান্নাতি খাতুন",
+      "studentId": "01764",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156838",
+      "fatherName": "জাহাঙ্গীর আলম লfভলু",
+      "address": "উত্তর বত্রিশ হাজারী, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "19 May 2015",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01721894612",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -9661,7 +9672,7 @@
       "gender": "Male"
     },
     {
-      "name": "আলী আহমাদ",
+      "name": "আলী আহমেদ",
       "studentId": "18440",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=101796",
       "fatherName": "সিরাজুল ইসলাম",
