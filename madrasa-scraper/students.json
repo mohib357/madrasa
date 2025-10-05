@@ -3175,17 +3175,6 @@
       "gender": "Female"
     },
     {
-      "name": "রাফিয়া আক্তার",
-      "studentId": "01244",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124153",
-      "fatherName": "রফিকুল ইসলাম",
-      "address": "আদিতমারী, লালমনিরহাট",
-      "dob": "29 Apr 2012",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01761734914",
-      "gender": "Female"
-    },
-    {
       "name": "মেহজাবিন আক্তার জান্নাত",
       "studentId": "01433",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=134178",
@@ -8933,17 +8922,6 @@
       "gender": "Male"
     },
     {
-      "name": "আবির হাসান সামি",
-      "studentId": "181101",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140408",
-      "fatherName": "নজরুল ইসলাম",
-      "address": "শালমাড়া, ভেলাবাড়ী, আদিতমারী, লালমনিরহাট।",
-      "dob": "1 Feb 2015",
-      "className": "কায়দা (বালক)",
-      "mobile": "01748064348",
-      "gender": "Male"
-    },
-    {
       "name": "মঞ্জরুল ইসলাম",
       "studentId": "181109",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=142005",
@@ -9051,17 +9029,6 @@
       "dob": "3 Jul 2012",
       "className": "কায়দা (বালক)",
       "mobile": "01791070087",
-      "gender": "Male"
-    },
-    {
-      "name": "আবু সাইদ সৌরভ",
-      "studentId": "18898",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132703",
-      "fatherName": "মহসীন",
-      "address": "সোহাগপুর,পাটগ্রাম,লালমনিরহাট",
-      "dob": "28 Nov 2014",
-      "className": "কায়দা (বালক)",
-      "mobile": "01797056592",
       "gender": "Male"
     },
     {
@@ -9480,17 +9447,6 @@
       "dob": "10 Dec 2011",
       "className": "কায়দা (বালক)",
       "mobile": "01773998143",
-      "gender": "Male"
-    },
-    {
-      "name": "জুনাইদ আল হাবিব",
-      "studentId": "181301",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153296",
-      "fatherName": "আব্দুল হালিম",
-      "address": "ছোটপাড়া, আরাজী, দেওডোবা, আদিতমারী,লালমনিরহাট",
-      "dob": "1 Jan 2014",
-      "className": "কায়দা (বালক)",
-      "mobile": "01751153121",
       "gender": "Male"
     },
     {
@@ -10076,17 +10032,6 @@
       "dob": "1 Mar 2009",
       "className": "নাজেরা (বালক)",
       "mobile": "01324312598",
-      "gender": "Male"
-    },
-    {
-      "name": "বারিউল ইসলাম বিপ্লব",
-      "studentId": "18571",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=109200",
-      "fatherName": "আব্দুল মালেক",
-      "address": "পাটগ্রাম মেছির পাড়,ধবলসতী,পাটগ্রাম,লালমনিরহাট",
-      "dob": "6 Jul 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01744458503",
       "gender": "Male"
     },
     {
