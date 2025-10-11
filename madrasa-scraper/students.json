@@ -9837,17 +9837,6 @@
       "gender": "Male"
     },
     {
-      "name": "লাবীদ ইয়াসিন লুত",
-      "studentId": "18862",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124927",
-      "fatherName": "কাজী শফিকুল ইসলাম",
-      "address": "বারোঘড়িয়া ,মহিষখোচা, আদিতমারী, লালমনিরহাট",
-      "dob": "30 Sep 2011",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01716487394",
-      "gender": "Male"
-    },
-    {
       "name": "মুশফিকুজ্জামান মুশফিক",
       "studentId": "18636",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117185",
@@ -11497,6 +11486,17 @@
       "dob": "24 Aug 2010",
       "className": "হিফজুল কুরআন",
       "mobile": "01740563243",
+      "gender": "Male"
+    },
+    {
+      "name": "লাবীদ ইয়াসিন লুত",
+      "studentId": "18862",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124927",
+      "fatherName": "কাজী শফিকুল ইসলাম",
+      "address": "বারোঘড়িয়া ,মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "30 Sep 2011",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01716487394",
       "gender": "Male"
     }
   ],
