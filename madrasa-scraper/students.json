@@ -1,94 +1,6 @@
 {
   "কায়দা (বালিকা)": [
     {
-      "name": "নাবিলাহ্ আক্তার নিথুন",
-      "studentId": "01512",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138714",
-      "fatherName": "নুরুল হুদা",
-      "address": "সাপটানা, উচাটারী, লালমনিরহাট",
-      "dob": "19 Mar 2012",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01936114217",
-      "gender": "Female"
-    },
-    {
-      "name": "সুমা আক্তার",
-      "studentId": "01500",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138637",
-      "fatherName": "শাহিদুল ইসলাম",
-      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
-      "dob": "29 Jan 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01952924150",
-      "gender": "Female"
-    },
-    {
-      "name": "সুমাইয়া আক্তার রহিমা",
-      "studentId": "01501",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138639",
-      "fatherName": "রবিউল ইসলাম",
-      "address": "আটবিল দর্পনস্কর, মহেন্দ্রনগর, হারাটি , সদর লালমনিরহাট",
-      "dob": "27 Apr 2012",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01770737707",
-      "gender": "Female"
-    },
-    {
-      "name": "মেফতাহুল জান্নাত",
-      "studentId": "01519",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138896",
-      "fatherName": "আহসান হাবীব",
-      "address": "উফারমারা, বুড়িমারী, পাটগ্রাম , লালমনিরহাট",
-      "dob": "1 Aug 2014",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01946317560",
-      "gender": "Female"
-    },
-    {
-      "name": "ইশরাত জাহান আলফি",
-      "studentId": "01558",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141947",
-      "fatherName": "আলী হোসেন",
-      "address": "বাগপুর উত্তর পানাপুকুর, গংগাচড়া, রংপুর",
-      "dob": "2 Aug 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01788861600",
-      "gender": "Female"
-    },
-    {
-      "name": "কারিমা বেগম",
-      "studentId": "01548",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140044",
-      "fatherName": "কপিল উদ্দিন",
-      "address": "কাশীরাম , করিমপুর , কালীগঞ্জ, লালমনিরহাট",
-      "dob": "16 Jan 2011",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01774010899",
-      "gender": "Female"
-    },
-    {
-      "name": "মারিয়া আক্তার",
-      "studentId": "01573",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143779",
-      "fatherName": "বুলবুল আহমেদ",
-      "address": "বুড়াসারডুবি, বড়খাতা, হাতীবান্ধা,লালমনিরহাট",
-      "dob": "12 Feb 2015",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01746224765",
-      "gender": "Female"
-    },
-    {
-      "name": "ইসরাত জাহান ইরামনি",
-      "studentId": "01551",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140378",
-      "fatherName": "ইয়াকুব আলী",
-      "address": "কাকেয়া , লালমনিরহাট , মোগলহাট, লালমনিরহাট",
-      "dob": "16 Jun 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01787997978",
-      "gender": "Female"
-    },
-    {
       "name": "শাহারা আক্তার",
       "studentId": "01581",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148710",
@@ -155,17 +67,6 @@
       "gender": "Female"
     },
     {
-      "name": "হুমায়রা আক্তার তাবাস্ছুম",
-      "studentId": "01505",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138651",
-      "fatherName": "হাফেজ মোহাম্মদ মোজাম্মেল হক",
-      "address": "সবদল সারপুকুর, আদিতমারী, লালমনিরহাট",
-      "dob": "20 May 2016",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01772509906",
-      "gender": "Female"
-    },
-    {
       "name": "নূরজাহান আক্তার",
       "studentId": "01602",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148869",
@@ -177,17 +78,6 @@
       "gender": "Male"
     },
     {
-      "name": "খাদিজা আক্তার",
-      "studentId": "01520",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138978",
-      "fatherName": "ফজল হক",
-      "address": "পূর্ব খড়িবাড়ী , টেপাখড়িবাড়ী, ডিমলা, রংপুর",
-      "dob": "15 Nov 2011",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01728560971",
-      "gender": "Female"
-    },
-    {
       "name": "সুমাইয়া খাতুন",
       "studentId": "01603",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148878",
@@ -196,17 +86,6 @@
       "dob": "12 Nov 2011",
       "className": "কায়দা (বালিকা)",
       "mobile": "01785338617",
-      "gender": "Female"
-    },
-    {
-      "name": "জান্নাতুল ফেরদৌসী জিনিয়া",
-      "studentId": "01514",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138722",
-      "fatherName": "জাহাঙ্গীর আলম",
-      "address": "পশ্চিম সারাডুবী, বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "25 Dec 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01320828430",
       "gender": "Female"
     },
     {
@@ -262,17 +141,6 @@
       "dob": "20 Aug 2013",
       "className": "কায়দা (বালিকা)",
       "mobile": "01767563275",
-      "gender": "Female"
-    },
-    {
-      "name": "তামান্না খাতুন",
-      "studentId": "01543",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139429",
-      "fatherName": "শফিউল্লাহ",
-      "address": "আদিতমারী, আদিতমারী, লালমনিরহাট",
-      "dob": "9 Jun 2012",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01734061352",
       "gender": "Female"
     },
     {
@@ -408,17 +276,6 @@
       "gender": "Female"
     },
     {
-      "name": "আফিয়া আদিবা",
-      "studentId": "01568",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143069",
-      "fatherName": "আলমগীর হোসেন",
-      "address": "রুদ্রেশ্বর, কাকিনা, কালীগঞ্জ, লালমনিরহাট",
-      "dob": "28 Jan 2017",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01717458548",
-      "gender": "Female"
-    },
-    {
       "name": "ছিদ্রাতুল মুনতাহা",
       "studentId": "01650",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149126",
@@ -540,28 +397,6 @@
       "gender": "Female"
     },
     {
-      "name": "জামিলা বেগম",
-      "studentId": "01536",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139293",
-      "fatherName": "আমিনুল ইসলাম",
-      "address": "রাবদে , নামুড়ীরহাট , পলাশী, আদিতমারী, লালমনিরহাট",
-      "dob": "20 Jan 2015",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01751619249",
-      "gender": "Female"
-    },
-    {
-      "name": "আমিনা বেগম",
-      "studentId": "01537",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139294",
-      "fatherName": "আমিনুল ইসলাম",
-      "address": "রামদে,নামুড়ীরহাট, পলাশী, লালমনিরহাট",
-      "dob": "17 Aug 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01751619249",
-      "gender": "Female"
-    },
-    {
       "name": "উমাইয়া জাহান ঐশী",
       "studentId": "01675",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149201",
@@ -584,28 +419,6 @@
       "gender": "Female"
     },
     {
-      "name": "সামিয়া আক্তার সোমা",
-      "studentId": "01540",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139354",
-      "fatherName": "সাদিকুল ইসলাম",
-      "address": "উত্তর বিছনদই, দক্ষিন পারুলিয়া, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "21 Oct 2014",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01307334032",
-      "gender": "Female"
-    },
-    {
-      "name": "লামিয়া খাতুন",
-      "studentId": "01531",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139268",
-      "fatherName": "মনজু মিয়া",
-      "address": "চলবলা মধনপুর সোনারহাট,কালীগঞ্জ,লালমনিরহাট",
-      "dob": "23 Nov 2013",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01737976071",
-      "gender": "Female"
-    },
-    {
       "name": "আয়শা সিদ্দিকা",
       "studentId": "01685",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149438",
@@ -625,17 +438,6 @@
       "dob": "21 Jan 2012",
       "className": "কায়দা (বালিকা)",
       "mobile": "01796169625",
-      "gender": "Female"
-    },
-    {
-      "name": "উম্মে তাবাচ্ছুম ইপসা",
-      "studentId": "01553",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140471",
-      "fatherName": "ইব্রাহীম আলী",
-      "address": "পানিমাছকুটি, ফুলবাড়ী, কুড়িগ্রাম",
-      "dob": "16 Dec 2012",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01721541785",
       "gender": "Female"
     },
     {
@@ -760,17 +562,6 @@
       "gender": "Female"
     },
     {
-      "name": "সুমাইয় আক্তার",
-      "studentId": "01432",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=134141",
-      "fatherName": "রশিকুল ইসলাম",
-      "address": "দক্ষিণ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
-      "dob": "2 Feb 2014",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01739517613",
-      "gender": "Female"
-    },
-    {
       "name": "নয়ন তারা",
       "studentId": "01529",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139263",
@@ -812,17 +603,6 @@
       "dob": "10 Oct 2010",
       "className": "কায়দা (বালিকা)",
       "mobile": "01796844406",
-      "gender": "Female"
-    },
-    {
-      "name": "রেমি খাতুন",
-      "studentId": "01725",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151427",
-      "fatherName": "মতিয়ার রহমান",
-      "address": "বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "25 Mar 2007",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01922067253",
       "gender": "Female"
     },
     {
@@ -936,17 +716,6 @@
       "gender": "Female"
     },
     {
-      "name": "আরজিনা আক্তার রিম্পা",
-      "studentId": "01498",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138632",
-      "fatherName": "আজিজুল ইসলাম",
-      "address": "বি ডি আর হাটখোলা , খোচাবাড়ী, সদর লালমনিরহাট ,লালমনিরহাট",
-      "dob": "24 Jun 2003",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01760494189",
-      "gender": "Female"
-    },
-    {
       "name": "রুনা মনি",
       "studentId": "01753",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=153578",
@@ -1010,17 +779,6 @@
       "dob": "11 May 2010",
       "className": "কায়দা (বালিকা)",
       "mobile": "01781025418",
-      "gender": "Female"
-    },
-    {
-      "name": "নওরীন আলম",
-      "studentId": "01762",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156797",
-      "fatherName": "নুর আলম",
-      "address": "কুলারঘাট, লালমনিরহাট সদর, লালমনিরহাট",
-      "dob": "22 Dec 2016",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01720538531",
       "gender": "Female"
     },
     {
@@ -1761,6 +1519,237 @@
       "className": "নাজেরা (বালিকা)",
       "mobile": "01797966160",
       "gender": "Female"
+    },
+    {
+      "name": "নাবিলাহ্ আক্তার নিথুন",
+      "studentId": "01512",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138714",
+      "fatherName": "নুরুল হুদা",
+      "address": "সাপটানা, উচাটারী, লালমনিরহাট",
+      "dob": "19 Mar 2012",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01936114217",
+      "gender": "Female"
+    },
+    {
+      "name": "সুমা আক্তার",
+      "studentId": "01500",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138637",
+      "fatherName": "শাহিদুল ইসলাম",
+      "address": "ভাদাই, আদিতমারী, লালমনিরহাট",
+      "dob": "29 Jan 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01952924150",
+      "gender": "Female"
+    },
+    {
+      "name": "সুমাইয়া আক্তার রহিমা",
+      "studentId": "01501",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138639",
+      "fatherName": "রবিউল ইসলাম",
+      "address": "আটবিল দর্পনস্কর, মহেন্দ্রনগর, হারাটি , সদর লালমনিরহাট",
+      "dob": "27 Apr 2012",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01770737707",
+      "gender": "Female"
+    },
+    {
+      "name": "মেফতাহুল জান্নাত",
+      "studentId": "01519",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138896",
+      "fatherName": "আহসান হাবীব",
+      "address": "উফারমারা, বুড়িমারী, পাটগ্রাম , লালমনিরহাট",
+      "dob": "1 Aug 2014",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01946317560",
+      "gender": "Female"
+    },
+    {
+      "name": "ইশরাত জাহান আলফি",
+      "studentId": "01558",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=141947",
+      "fatherName": "আলী হোসেন",
+      "address": "বাগপুর উত্তর পানাপুকুর, গংগাচড়া, রংপুর",
+      "dob": "2 Aug 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01788861600",
+      "gender": "Female"
+    },
+    {
+      "name": "কারিমা বেগম",
+      "studentId": "01548",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140044",
+      "fatherName": "কপিল উদ্দিন",
+      "address": "কাশীরাম , করিমপুর , কালীগঞ্জ, লালমনিরহাট",
+      "dob": "16 Jan 2011",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01774010899",
+      "gender": "Female"
+    },
+    {
+      "name": "মারিয়া আক্তার",
+      "studentId": "01573",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143779",
+      "fatherName": "বুলবুল আহমেদ",
+      "address": "বুড়াসারডুবি, বড়খাতা, হাতীবান্ধা,লালমনিরহাট",
+      "dob": "12 Feb 2015",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01746224765",
+      "gender": "Female"
+    },
+    {
+      "name": "ইসরাত জাহান ইরামনি",
+      "studentId": "01551",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140378",
+      "fatherName": "ইয়াকুব আলী",
+      "address": "কাকেয়া , লালমনিরহাট , মোগলহাট, লালমনিরহাট",
+      "dob": "16 Jun 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01787997978",
+      "gender": "Female"
+    },
+    {
+      "name": "হুমায়রা আক্তার তাবাস্ছুম",
+      "studentId": "01505",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138651",
+      "fatherName": "হাফেজ মোহাম্মদ মোজাম্মেল হক",
+      "address": "সবদল সারপুকুর, আদিতমারী, লালমনিরহাট",
+      "dob": "20 May 2016",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01772509906",
+      "gender": "Female"
+    },
+    {
+      "name": "খাদিজা আক্তার",
+      "studentId": "01520",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138978",
+      "fatherName": "ফজল হক",
+      "address": "পূর্ব খড়িবাড়ী , টেপাখড়িবাড়ী, ডিমলা, রংপুর",
+      "dob": "15 Nov 2011",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01728560971",
+      "gender": "Female"
+    },
+    {
+      "name": "জান্নাতুল ফেরদৌসী জিনিয়া",
+      "studentId": "01514",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138722",
+      "fatherName": "জাহাঙ্গীর আলম",
+      "address": "পশ্চিম সারাডুবী, বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "25 Dec 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01320828430",
+      "gender": "Female"
+    },
+    {
+      "name": "তামান্না খাতুন",
+      "studentId": "01543",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139429",
+      "fatherName": "শফিউল্লাহ",
+      "address": "আদিতমারী, আদিতমারী, লালমনিরহাট",
+      "dob": "9 Jun 2012",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01734061352",
+      "gender": "Female"
+    },
+    {
+      "name": "আফিয়া আদিবা",
+      "studentId": "01568",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=143069",
+      "fatherName": "আলমগীর হোসেন",
+      "address": "রুদ্রেশ্বর, কাকিনা, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "28 Jan 2017",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01717458548",
+      "gender": "Female"
+    },
+    {
+      "name": "জামিলা বেগম",
+      "studentId": "01536",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139293",
+      "fatherName": "আমিনুল ইসলাম",
+      "address": "রাবদে , নামুড়ীরহাট , পলাশী, আদিতমারী, লালমনিরহাট",
+      "dob": "20 Jan 2015",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01751619249",
+      "gender": "Female"
+    },
+    {
+      "name": "আমিনা বেগম",
+      "studentId": "01537",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139294",
+      "fatherName": "আমিনুল ইসলাম",
+      "address": "রামদে,নামুড়ীরহাট, পলাশী, লালমনিরহাট",
+      "dob": "17 Aug 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01751619249",
+      "gender": "Female"
+    },
+    {
+      "name": "সামিয়া আক্তার সোমা",
+      "studentId": "01540",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139354",
+      "fatherName": "সাদিকুল ইসলাম",
+      "address": "উত্তর বিছনদই, দক্ষিন পারুলিয়া, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "21 Oct 2014",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01307334032",
+      "gender": "Female"
+    },
+    {
+      "name": "লামিয়া খাতুন",
+      "studentId": "01531",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=139268",
+      "fatherName": "মনজু মিয়া",
+      "address": "চলবলা মধনপুর সোনারহাট,কালীগঞ্জ,লালমনিরহাট",
+      "dob": "23 Nov 2013",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01737976071",
+      "gender": "Female"
+    },
+    {
+      "name": "উম্মে তাবাচ্ছুম ইপসা",
+      "studentId": "01553",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=140471",
+      "fatherName": "ইব্রাহীম আলী",
+      "address": "পানিমাছকুটি, ফুলবাড়ী, কুড়িগ্রাম",
+      "dob": "16 Dec 2012",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01721541785",
+      "gender": "Female"
+    },
+    {
+      "name": "সুমাইয় আক্তার",
+      "studentId": "01432",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=134141",
+      "fatherName": "রশিকুল ইসলাম",
+      "address": "দক্ষিণ বত্রিশ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "2 Feb 2014",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01739517613",
+      "gender": "Female"
+    },
+    {
+      "name": "রেমি খাতুন",
+      "studentId": "01725",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151427",
+      "fatherName": "মতিয়ার রহমান",
+      "address": "বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "25 Mar 2007",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01922067253",
+      "gender": "Female"
+    },
+    {
+      "name": "আরজিনা আক্তার রিম্পা",
+      "studentId": "01498",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=138632",
+      "fatherName": "আজিজুল ইসলাম",
+      "address": "বি ডি আর হাটখোলা , খোচাবাড়ী, সদর লালমনিরহাট ,লালমনিরহাট",
+      "dob": "24 Jun 2003",
+      "className": "নাজেরা (বালিকা)",
+      "mobile": "01760494189",
+      "gender": "Female"
     }
   ],
   "হিফজুল কুরআন (বালিকা)": [
@@ -1982,6 +1971,17 @@
       "dob": "8 Aug 2008",
       "className": "হিফজুল কুরআন (বালিকা)",
       "mobile": "01770540642",
+      "gender": "Female"
+    },
+    {
+      "name": "নওরীন আলম",
+      "studentId": "01762",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=156797",
+      "fatherName": "নুর আলম",
+      "address": "কুলারঘাট, লালমনিরহাট সদর, লালমনিরহাট",
+      "dob": "22 Dec 2016",
+      "className": "হিফজুল কুরআন (বালিকা)",
+      "mobile": "01720538531",
       "gender": "Female"
     }
   ],
