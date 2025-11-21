@@ -9107,6 +9107,28 @@
       "className": "কায়দা (বালক)",
       "mobile": "01783054586",
       "gender": "Male"
+    },
+    {
+      "name": "ফরিদুল ইসলাম",
+      "studentId": "181339",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=158280",
+      "fatherName": "মজমুল হক",
+      "address": "গোবর্দ্ধন মহিষখোচা,, আদিতমারী, লালমনিরহাট",
+      "dob": "14 Jun 2016",
+      "className": "কায়দা (বালক)",
+      "mobile": "01877083270",
+      "gender": "Male"
+    },
+    {
+      "name": "আল আমিন",
+      "studentId": "181340",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=158281",
+      "fatherName": "নজরুল ইসলাম",
+      "address": "দক্ষিণ বারাপাড়া, মহিষখোচা আদিতমারী, লালমনিরহাট",
+      "dob": "28 Nov 2011",
+      "className": "কায়দা (বালক)",
+      "mobile": "01877083270",
+      "gender": "Male"
     }
   ],
   "নাজেরা (বালক)": [
