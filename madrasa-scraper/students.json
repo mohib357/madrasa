@@ -2988,6 +2988,17 @@
       "gender": "Female"
     },
     {
+      "name": "রুমাইয়া আক্তার",
+      "studentId": "01161",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123668",
+      "fatherName": "রবিউল ইসলাম",
+      "address": "বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "12 Jun 2012",
+      "className": "১ম বর্ষ (খুসূসী জামাত)",
+      "mobile": "01958469377",
+      "gender": "Female"
+    },
+    {
       "name": "সিরাতুন জান্নাত লিসা",
       "studentId": "01191",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123719",
@@ -3722,6 +3733,17 @@
       "dob": "17 Nov 2007",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01946635389",
+      "gender": "Female"
+    },
+    {
+      "name": "রুমাইয়া আক্তার",
+      "studentId": "01161",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123668",
+      "fatherName": "রবিউল ইসলাম",
+      "address": "বড়খাতা, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "12 Jun 2012",
+      "className": "১ম বর্ষ (খুসূসী জামাত)",
+      "mobile": "01958469377",
       "gender": "Female"
     }
   ],
