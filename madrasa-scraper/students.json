@@ -845,7 +845,7 @@
       "dob": "4 Dec 2013",
       "className": "কায়দা (বালিকা)",
       "mobile": "01761177736",
-      "gender": "Unknown"
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -2908,7 +2908,7 @@
       "dob": "14 Jan 2013",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01746456181",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মেহজাবিন আক্তার জান্নাত",
@@ -5211,7 +5211,7 @@
       "dob": "3 Feb 2012",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01774954849",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "হুমায়রা আক্তার রহিমা",
@@ -5222,7 +5222,7 @@
       "dob": "24 Jul 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01774385258",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "উম্মে হাবিবা আক্তার দিনা",
@@ -5233,7 +5233,7 @@
       "dob": "13 Feb 2012",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01722537274",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আসফিয়া আক্তার অহনা",
@@ -5244,7 +5244,7 @@
       "dob": "4 Feb 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01785426670",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "উম্মে হাবিবা",
@@ -5255,7 +5255,7 @@
       "dob": "24 Sep 2008",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01305113193",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জোবেদা খাতুন",
@@ -5266,7 +5266,7 @@
       "dob": "3 Jul 2009",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01744973308",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রহিমা আক্তার মিম",
@@ -5277,7 +5277,7 @@
       "dob": "6 Dec 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01751468503",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "শরিফা খাতুন",
@@ -5288,7 +5288,7 @@
       "dob": "1 Oct 2008",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01791714857",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "হালিমা খাতুন",
@@ -5299,7 +5299,7 @@
       "dob": "3 May 2008",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01762808258",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আফিফা আজমাইন",
@@ -5310,7 +5310,7 @@
       "dob": "6 Sep 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01793858352",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুমাইয়া আক্তার এশা",
@@ -5321,7 +5321,7 @@
       "dob": "8 Apr 2010",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01770351431",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জাকিয়া সুলতানা জিমু",
@@ -7495,17 +7495,6 @@
       "gender": "Female"
     },
     {
-      "name": "তাকিয়া আক্তার",
-      "studentId": "01020",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118352",
-      "fatherName": "জিকরুল হক",
-      "address": "দ: খলেয়া, রংপুর সদর",
-      "dob": "4 May 2007",
-      "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
-      "mobile": "01720847705",
-      "gender": "Female"
-    },
-    {
       "name": "মায়মোনা মার্জিয়া মিতু",
       "studentId": "01035",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118371",
@@ -7648,7 +7637,7 @@
       "dob": "8 Nov 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01723207538",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মোমেনা খাতুন",
@@ -7659,7 +7648,7 @@
       "dob": "4 Mar 2008",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01754309537",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "শাফিয়া খাতুন",
@@ -7670,7 +7659,7 @@
       "dob": "31 Aug 2006",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01740977600",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মাহফুজা আক্তার মীম",
@@ -7681,7 +7670,7 @@
       "dob": "22 Aug 2006",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01765911435",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুমাইয়া আক্তার",
@@ -7692,7 +7681,7 @@
       "dob": "1 Nov 2008",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01920735751",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "ইনছানা খাতুন",
@@ -7703,7 +7692,7 @@
       "dob": "3 Nov 2006",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01722416440",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুমি আক্তার",
@@ -7714,7 +7703,7 @@
       "dob": "1 Nov 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01863161704",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রেশমা খাতুন",
@@ -7725,7 +7714,7 @@
       "dob": "2 Jul 2010",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01580565818",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আরফীন সুলতানা",
@@ -7736,7 +7725,7 @@
       "dob": "18 Mar 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01962186288",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মাসুমা খাতুন",
@@ -7747,7 +7736,7 @@
       "dob": "8 Oct 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01740101854",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুলতানা আক্তার",
@@ -7758,7 +7747,7 @@
       "dob": "29 Oct 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01794988193",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "তানজিনা খাতুন",
@@ -7769,7 +7758,7 @@
       "dob": "18 Jan 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01970176052",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রুমা্ইয়া খানম",
@@ -7780,7 +7769,7 @@
       "dob": "19 Nov 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01797793379",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সিদরাতুল মানতাশা",
@@ -7791,7 +7780,7 @@
       "dob": "22 Oct 2008",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01718627067",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রিফাহ তাসনিয়া",
@@ -7802,7 +7791,7 @@
       "dob": "27 Dec 2006",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01722614710",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মাহমুদা খাতুন",
@@ -7813,7 +7802,7 @@
       "dob": "17 Oct 2008",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01719687645",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মুবাশ্বিরা মাহিম",
@@ -7824,7 +7813,7 @@
       "dob": "9 Oct 2007",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01755370475",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "উমামা বিনতে রেজা",
@@ -7835,7 +7824,7 @@
       "dob": "28 Apr 2008",
       "className": "৬ষ্ঠ বর্ষ (হেদায়া জামাত)",
       "mobile": "01728680660",
-      "gender": "Unknown"
+      "gender": "Female"
     }
   ],
   "৭ম বর্ষ (মেশকাত জামাত)": [
@@ -7848,7 +7837,7 @@
       "dob": "26 Mar 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01925719214",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সাদিয়া আক্তার লুবা",
@@ -7859,7 +7848,7 @@
       "dob": "11 Dec 2009",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01750749915",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সিরাতুল জান্নাত রায়শা",
@@ -7870,7 +7859,7 @@
       "dob": "30 Dec 2009",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01742412050",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "ফাতেমা খাতুন",
@@ -7881,7 +7870,7 @@
       "dob": "23 Aug 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01762960206",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রিফাত আরা জাননাত মীম",
@@ -7892,7 +7881,7 @@
       "dob": "7 Nov 2004",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01718865035",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "খাদিজা খাতুন",
@@ -7903,7 +7892,7 @@
       "dob": "12 Sep 2006",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01948885542",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "তাশরিফা খাতুন চৌধুরী",
@@ -7914,7 +7903,7 @@
       "dob": "",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01722677078",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জান্নাতি খাতুন",
@@ -7925,7 +7914,7 @@
       "dob": "12 Dec 2006",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01796045675",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জান্নাতুল ফেরদেীসি",
@@ -7936,7 +7925,7 @@
       "dob": "28 Apr 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01831905845",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "খাদিজা খাতুন",
@@ -7947,7 +7936,7 @@
       "dob": "4 Aug 2004",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01723997616",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মায়মুনা আক্তার",
@@ -7958,7 +7947,7 @@
       "dob": "13 Aug 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01797998551",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মাজেদা খাতুন",
@@ -7969,7 +7958,7 @@
       "dob": "16 Dec 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01755314709",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মনিশা খাতুন",
@@ -7980,7 +7969,7 @@
       "dob": "5 Jun 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01723822410",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "হাবিবা আক্তার সুমনা",
@@ -7991,7 +7980,7 @@
       "dob": "26 Apr 2006",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01774174354",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সাহেলা আক্তার জুমা",
@@ -8002,7 +7991,7 @@
       "dob": "18 Nov 2008",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01797966160",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মারুফা আক্তার",
@@ -8013,7 +8002,7 @@
       "dob": "1 Jan 2005",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01729988614",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মারিয়া সিদ্দিকা",
@@ -8024,7 +8013,7 @@
       "dob": "25 Jul 2005",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01595591553",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জাকিয়া সুলতানা",
@@ -8035,7 +8024,7 @@
       "dob": "13 Apr 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01770512665",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুমাইয়া আক্তার",
@@ -8046,7 +8035,7 @@
       "dob": "11 Oct 2008",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01774272270",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জাকিয়া খাতুন",
@@ -8057,7 +8046,7 @@
       "dob": "17 Jan 2005",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01721658803",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "নার্জিনা খাতুন",
@@ -8068,7 +8057,7 @@
       "dob": "15 Jan 2004",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01324132690",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "নুরছানা খাতুন",
@@ -8079,7 +8068,7 @@
       "dob": "",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01788978711",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রঞ্জনা খাতুন",
@@ -8090,7 +8079,7 @@
       "dob": "1 Dec 2006",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01737882145",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "খাদিজা আক্তার মীম",
@@ -8101,7 +8090,7 @@
       "dob": "14 Sep 2005",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01921176158",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আয়েশা সিদ্দীকা",
@@ -8112,7 +8101,7 @@
       "dob": "6 Jun 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01752667823",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "হুমায়রা আক্তার",
@@ -8123,7 +8112,7 @@
       "dob": "1 Jan 2007",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01867870483",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আয়শা সিদ্দিকা",
@@ -8134,7 +8123,7 @@
       "dob": "",
       "className": "৭ম বর্ষ (মেশকাত জামাত)",
       "mobile": "01724510827",
-      "gender": "Unknown"
+      "gender": "Female"
     }
   ],
   "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)": [
@@ -8147,7 +8136,7 @@
       "dob": "8 Jul 2004",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01722740062",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "সুমাইয়া আক্তার",
@@ -8158,7 +8147,7 @@
       "dob": "30 Jul 2006",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01568129087",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আফরোজা খাতুন",
@@ -8169,7 +8158,7 @@
       "dob": "27 Dec 2005",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01755470585",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আরিফা আক্তার",
@@ -8180,7 +8169,7 @@
       "dob": "12 Jul 2005",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01741799485",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মেহরুবা আক্তার মিম",
@@ -8191,7 +8180,7 @@
       "dob": "29 Jul 2007",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01751118282",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মারিয়া আক্তার",
@@ -8202,7 +8191,7 @@
       "dob": "22 Jun 2006",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01761309003",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আফসানা আক্তার",
@@ -8213,7 +8202,7 @@
       "dob": "14 Mar 2006",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01318947062",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "রাবেয়া খাতুন",
@@ -8224,7 +8213,7 @@
       "dob": "8 May 2004",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01738668658",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "তাহমিনা বেগম",
@@ -8235,7 +8224,7 @@
       "dob": "21 May 2004",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01838729487",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মারজিয়া মহিমা",
@@ -8246,7 +8235,7 @@
       "dob": "7 Mar 2005",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01831966922",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "লতিফা আক্তার লিজা",
@@ -8257,7 +8246,7 @@
       "dob": "15 Nov 2006",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01740134937",
-      "gender": "Unknown"
+      "gender": "Female"
     }
   ],
   "কায়দা (বালক)": [
@@ -9196,7 +9185,7 @@
       "dob": "6 Aug 2016",
       "className": "নাজেরা (বালক)",
       "mobile": "01319292468",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আবু বক্কর সিদ্দিক",
