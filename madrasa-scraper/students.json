@@ -989,6 +989,17 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01780613663",
       "gender": "Female"
+    },
+    {
+      "name": "মোছা: মাকছুদা আক্তার মিম",
+      "studentId": "01786",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=163197",
+      "fatherName": "মোমিনুল ইসলাম",
+      "address": "পূর্ব ঢাকনাই, মহেন্দ্রনগড়, লালমনিরহাট",
+      "dob": "20 Oct 2015",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01996980313",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -9559,17 +9570,6 @@
       "dob": "12 Jun 2011",
       "className": "নাজেরা (বালক)",
       "mobile": "01737598044",
-      "gender": "Male"
-    },
-    {
-      "name": "মোত্তাকিন আহমেদ মুসা",
-      "studentId": "18572",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=109204",
-      "fatherName": "মোকলেছুর রহমান",
-      "address": "সারপুকুর,আদিতমারী,লালমনিরহাট",
-      "dob": "31 Jan 2014",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01925777537",
       "gender": "Male"
     },
     {
