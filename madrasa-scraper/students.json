@@ -991,12 +991,12 @@
       "gender": "Female"
     },
     {
-      "name": "মোছা: মাকছুদা আক্তার মিম",
+      "name": "মোছা: মাকসুদা খাতুন",
       "studentId": "01786",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=163197",
-      "fatherName": "মোমিনুল ইসলাম",
+      "fatherName": "মমিনুল হক",
       "address": "পূর্ব ঢাকনাই, মহেন্দ্রনগড়, লালমনিরহাট",
-      "dob": "20 Oct 2015",
+      "dob": "23 Aug 2013",
       "className": "কায়দা (বালিকা)",
       "mobile": "01996980313",
       "gender": "Female"
@@ -9293,6 +9293,17 @@
       "dob": "22 Nov 2014",
       "className": "কায়দা (বালক)",
       "mobile": "01914959902",
+      "gender": "Male"
+    },
+    {
+      "name": "আফিফ আলী",
+      "studentId": "181356",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=163383",
+      "fatherName": "শাহ আলম",
+      "address": "দক্ষিন পারুলিয়া, হাতিবান্ধা, লালমনিরহাট",
+      "dob": "19 Jun 2017",
+      "className": "কায়দা (বালক)",
+      "mobile": "01721187834",
       "gender": "Male"
     }
   ],
