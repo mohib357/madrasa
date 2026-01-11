@@ -9405,7 +9405,7 @@
       "dob": "26 Jun 2013",
       "className": "নাজেরা (বালক)",
       "mobile": "01318950983",
-      "gender": "Male"
+      "gender": "Unknown"
     },
     {
       "name": "ফাহিম আল হোজায়ফা",
@@ -12959,17 +12959,6 @@
       "dob": "6 Feb 2008",
       "className": "সানাবিয়্যাহ ২য় বর্ষ (কাফিয়া)",
       "mobile": "01701598544",
-      "gender": "Male"
-    },
-    {
-      "name": "সালমান ফারসী",
-      "studentId": "181183",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148487",
-      "fatherName": "সাইফুল ইসলাম",
-      "address": "বানভাসারমোর,লালমনিরহাট",
-      "dob": "9 Mar 2007",
-      "className": "সানাবিয়্যাহ ২য় বর্ষ (কাফিয়া)",
-      "mobile": "01711000276",
       "gender": "Male"
     },
     {
