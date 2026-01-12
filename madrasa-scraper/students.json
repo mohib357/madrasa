@@ -980,17 +980,6 @@
       "gender": "Female"
     },
     {
-      "name": "মোছা: জীম মনি",
-      "studentId": "01785",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=162976",
-      "fatherName": "মতিন মিয়া",
-      "address": "মটুকপুর, কোলকোন্দ, গংগাচড়া, রংপুর",
-      "dob": "28 May 2015",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01780613663",
-      "gender": "Female"
-    },
-    {
       "name": "মোছা: মাকসুদা খাতুন",
       "studentId": "01786",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=163197",
@@ -11068,7 +11057,7 @@
       "dob": "25 Jan 2011",
       "className": "হিফজুল কুরআন",
       "mobile": "01783123425",
-      "gender": "Unknown"
+      "gender": "Male"
     }
   ],
   "ইবতিদাইয়্যাহ (খুসুসী)": [
