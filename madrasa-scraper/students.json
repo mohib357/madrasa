@@ -9496,28 +9496,6 @@
       "gender": "Male"
     },
     {
-      "name": "আবু রায়হান সিদ্দিক",
-      "studentId": "18105",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93321",
-      "fatherName": "নাজমুল হক",
-      "address": "আদিতমারী, লালমনিরহাট",
-      "dob": "11 Jul 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01744251390",
-      "gender": "Male"
-    },
-    {
-      "name": "মারুফ সরকার",
-      "studentId": "18694",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117807",
-      "fatherName": "সাইফুল্লাহ",
-      "address": "লক্ষনপুর, সৈয়দপুর, নীলফামারী",
-      "dob": "20 Mar 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01795018485",
-      "gender": "Male"
-    },
-    {
       "name": "সাজিদুল ইসলাম",
       "studentId": "18864",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=125093",
@@ -9900,17 +9878,6 @@
       "dob": "17 Apr 2017",
       "className": "নাজেরা (বালক)",
       "mobile": "01767471713",
-      "gender": "Male"
-    },
-    {
-      "name": "রহমতুল্লাহ",
-      "studentId": "181075",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=136800",
-      "fatherName": "সাজু মিয়া",
-      "address": "ড্রাইভার পাড়া, নরসিংদী বস্ত্রালয় সংলগ্ন, লালমনিরহাটসদর, লালমনিরহাট",
-      "dob": "19 Jan 2012",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01713327202",
       "gender": "Male"
     },
     {
