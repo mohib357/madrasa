@@ -9393,6 +9393,17 @@
       "className": "কায়দা (বালক)",
       "mobile": "01763096378",
       "gender": "Male"
+    },
+    {
+      "name": "বায়জিদ বোস্তামী",
+      "studentId": "181365",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=164405",
+      "fatherName": "হানিফ মিয়া",
+      "address": "রসূলপাড়া, মহিষখোচা, আদিতমারী , লালমনিরহাট",
+      "dob": "",
+      "className": "কায়দা (বালক)",
+      "mobile": "01734998344",
+      "gender": "Male"
     }
   ],
   "নাজেরা (বালক)": [
@@ -10153,6 +10164,17 @@
       "dob": "20 Oct 2015",
       "className": "নাজেরা (বালক)",
       "mobile": "01774710531",
+      "gender": "Male"
+    },
+    {
+      "name": "রায়হান বাবু",
+      "studentId": "18699",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117829",
+      "fatherName": "একরামুল মিয়া",
+      "address": "মহিষখোচা ,আদিতমারী ,লালমনিরহাট",
+      "dob": "9 Mar 2014",
+      "className": "নাজেরা (বালক)",
+      "mobile": "01791282883",
       "gender": "Male"
     }
   ],
@@ -11150,17 +11172,6 @@
       "gender": "Male"
     },
     {
-      "name": "সাজিদ সরকার",
-      "studentId": "18837",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123561",
-      "fatherName": "দবির উদ্দিন",
-      "address": "হরিরদেব, পঞ্চগ্রাম, লালমনিরহাট",
-      "dob": "27 Mar 2012",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01751086884",
-      "gender": "Male"
-    },
-    {
       "name": "আল আমিন ইসলাম",
       "studentId": "181141",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148197",
@@ -11414,17 +11425,6 @@
       "gender": "Male"
     },
     {
-      "name": "আবু হুরায়রা জামান রোহান",
-      "studentId": "18613",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=112746",
-      "fatherName": "আসাদুজ্জামান",
-      "address": "চন্দনপাট, কুমড়ীরহাট, কমলাবাড়ী, আদিতমারী, লালামনিরহাট",
-      "dob": "6 Oct 2010",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01717591653",
-      "gender": "Male"
-    },
-    {
       "name": "ওলিউল্লাহ",
       "studentId": "18855",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=124587",
@@ -11488,17 +11488,6 @@
       "dob": "24 Jul 2007",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01798962925",
-      "gender": "Male"
-    },
-    {
-      "name": "ইসমাইল হোসেন",
-      "studentId": "181201",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148604",
-      "fatherName": "রবিউল ইসলাম",
-      "address": "চিনি পাড়া, মহেন্দ্রনগড়, লালমনিরহাট।",
-      "dob": "23 Nov 2008",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01987229828",
       "gender": "Male"
     },
     {
@@ -11708,17 +11697,6 @@
       "dob": "7 Aug 2008",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01764711568",
-      "gender": "Male"
-    },
-    {
-      "name": "আবু হোরায়রা",
-      "studentId": "181267",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=151392",
-      "fatherName": "আব্দুল ওহাব",
-      "address": "দহগ্রাম, পাটগ্রাম, লালমনিরহাট",
-      "dob": "3 Jul 2008",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01315104273",
       "gender": "Male"
     },
     {
