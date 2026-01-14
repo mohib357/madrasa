@@ -1022,6 +1022,28 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01731170502",
       "gender": "Female"
+    },
+    {
+      "name": "মোছা: মেঘলা আক্তার মিম",
+      "studentId": "01790",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=164355",
+      "fatherName": "মাহেদুর ইসলাম",
+      "address": "উত্তর বিছনদই, দক্ষিন পারুলিয়া , হাতীবান্ধা, লালমনিরহাট",
+      "dob": "27 Nov 2015",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01760593442",
+      "gender": "Female"
+    },
+    {
+      "name": "মোছা: আশিকা খাতুন",
+      "studentId": "01791",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=164357",
+      "fatherName": "আতিকুল ইসলাম",
+      "address": "কেতকীবাড়ী, নওদাবাস, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "14 Jan 2017",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01763044147",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
