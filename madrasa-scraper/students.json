@@ -1044,6 +1044,17 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01717238488",
       "gender": "Male"
+    },
+    {
+      "name": "মোছা: স্নেহালিয়া উরফাত",
+      "studentId": "01794",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=165094",
+      "fatherName": "শহিদুল ইসলাম",
+      "address": "পানিমাছকুটি , ফুলবাড়ী, কুড়িগ্রাম",
+      "dob": "28 Oct 2015",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01710357533",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -11988,17 +11999,6 @@
       "gender": "Male"
     },
     {
-      "name": "সৌরভ ইসলাম",
-      "studentId": "18303",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93301",
-      "fatherName": "তাহিরুল ইসলাম",
-      "address": "পাটগ্রাম, লালমনিরহাট",
-      "dob": "10 Oct 2010",
-      "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
-      "mobile": "01797604293",
-      "gender": "Male"
-    },
-    {
       "name": "আবু বকর সিদ্দিক",
       "studentId": "18965",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133283",
@@ -12139,28 +12139,6 @@
       "dob": "11 Jan 2012",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01951434264",
-      "gender": "Male"
-    },
-    {
-      "name": "জহুরুল ইসলাম",
-      "studentId": "18957",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133123",
-      "fatherName": "সাজু মিয়া",
-      "address": "তালুক দুলালী,আদিতমারী,লালমনিরহাট",
-      "dob": "21 Aug 2005",
-      "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
-      "mobile": "01738514796",
-      "gender": "Male"
-    },
-    {
-      "name": "নুর আলম",
-      "studentId": "18976",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133475",
-      "fatherName": "আবু তালেব",
-      "address": "মিলনবাজার,আদিতমারী ,লালমনিরহাট",
-      "dob": "25 Jul 2004",
-      "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
-      "mobile": "01571241498",
       "gender": "Male"
     },
     {
