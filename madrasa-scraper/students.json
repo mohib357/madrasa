@@ -49,6 +49,17 @@
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01750805578",
       "gender": "Female"
+    },
+    {
+      "name": "শাকিলা জান্নাত মিম",
+      "studentId": "01283",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132930",
+      "fatherName": "আশরাফুল ইসলাম",
+      "address": "চরিতাবাড়ী, কুমড়ীরহাট, আদিতমারী, লালমনিরহাট",
+      "dob": "9 Sep 2012",
+      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
+      "mobile": "01538185905",
+      "gender": "Female"
     }
   ],
   "৪র্থ বর্ষ (কুদূরী জামাত)": [
@@ -104,7 +115,19 @@
   "কায়দা (বালক)": [],
   "নাজেরা (বালক)": [],
   "হিফজুল কুরআন": [],
-  "ইবতিদাইয়্যাহ (খুসুসী)": [],
+  "ইবতিদাইয়্যাহ (খুসুসী)": [
+    {
+      "name": "সাকিব হাসান",
+      "studentId": "181383",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=169312",
+      "fatherName": "রফিকুল ইসলাম",
+      "address": "ভেলাবাড়ী, আদিতমারী, লালমনিরহাট",
+      "dob": "17 Jul 2011",
+      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
+      "mobile": "01601365464",
+      "gender": "Male"
+    }
+  ],
   "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)": [
     {
       "name": "নাজমুল ইসলাম",
@@ -141,12 +164,35 @@
       "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
       "mobile": "01773154597",
       "gender": "Male"
+    },
+    {
+      "name": "আশরাফুল আলম",
+      "studentId": "18667",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=117715",
+      "fatherName": "আলমগীর হোসেন",
+      "address": "দুলালী, লোহাকুচি, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "28 Oct 2004",
+      "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
+      "mobile": "01761183261",
+      "gender": "Male"
     }
   ],
   "সানাবিয়্যাহ ২য় বর্ষ (কাফিয়া)": [],
   "সানাবিয়্যাহ উলইয়া ২য় বর্ষ (শরহে বেকায়া)": [],
   "ফযীলত ১ম বর্ষ (জালালাইন)": [],
-  "ফযীলত ২য় বর্ষ (মেশকাত)": [],
+  "ফযীলত ২য় বর্ষ (মেশকাত)": [
+    {
+      "name": "আল মুফিদ",
+      "studentId": "18721",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118041",
+      "fatherName": "আব্দু মোন্নাফ",
+      "address": "ভেলাবাড়ী ,আদিতমারী, লালমনিরহাট",
+      "dob": "7 Jun 2005",
+      "className": "ফযীলত ২য় বর্ষ (মেশকাত)",
+      "mobile": "01793176174",
+      "gender": "Male"
+    }
+  ],
   "তাকমীল (দাওরায়ে হাদীস)": [
     {
       "name": "জাহাঙ্গীর আলম",
