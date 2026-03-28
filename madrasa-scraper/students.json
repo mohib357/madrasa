@@ -1,11 +1,102 @@
 {
-  "কায়দা (বালিকা)": [],
+  "কায়দা (বালিকা)": [
+    {
+      "name": "আয়শা সিদ্দিকা",
+      "studentId": "01585",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148751",
+      "fatherName": "রফিকুল ইসলাম",
+      "address": "ভাদাই , আদিতমারী , লালমনিরহাট",
+      "dob": "10 Apr 2015",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01740619520",
+      "gender": "Female"
+    },
+    {
+      "name": "ফাতেমা আক্তার নুহামনি",
+      "studentId": "01701",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149856",
+      "fatherName": "রফিকুল ইসলাম",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "25 Sep 2017",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01740619520",
+      "gender": "Female"
+    },
+    {
+      "name": "মুশফিকা আনাম সাকুরা",
+      "studentId": "01592",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148776",
+      "fatherName": "মনসুর আলী",
+      "address": "কিসামত চরিতাবারী, আদিতমারী , লালমনিরহাট",
+      "dob": "27 Mar 2014",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01710142896",
+      "gender": "Female"
+    }
+  ],
   "নাজেরা (বালিকা)": [],
   "হিফজুল কুরআন (বালিকা)": [],
   "১ম বর্ষ (খুসূসী জামাত)": [],
   "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)": [],
-  "৩য় বর্ষ (নাহবেমীর জামাত)": [],
-  "৪র্থ বর্ষ (কুদূরী জামাত)": [],
+  "৩য় বর্ষ (নাহবেমীর জামাত)": [
+    {
+      "name": "আয়শা সিদ্দিকা",
+      "studentId": "01313",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133116",
+      "fatherName": "মৃত: রবিউল আলম",
+      "address": "কাঞ্চনশ্বর, মেহেরনগর, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "7 Jul 2013",
+      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
+      "mobile": "01750805578",
+      "gender": "Female"
+    }
+  ],
+  "৪র্থ বর্ষ (কুদূরী জামাত)": [
+    {
+      "name": "রোমানা আক্তার",
+      "studentId": "01735",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=152797",
+      "fatherName": "হাফেজ রবিউল ইসলাম",
+      "address": "তালুক দুলালী, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Aug 2011",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01717067745",
+      "gender": "Female"
+    },
+    {
+      "name": "জিসা মনি",
+      "studentId": "0982",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118261",
+      "fatherName": "জনি মিয়া",
+      "address": "ধওলাই, নওদাবাস, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "1 May 2010",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01781022149",
+      "gender": "Female"
+    },
+    {
+      "name": "মরিয়ম খাতুন",
+      "studentId": "0983",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118262",
+      "fatherName": "আশাদুল মিয়া",
+      "address": "ধওলাই, নওদাবাস, হাতীবান্ধা, লালমনিরহাট",
+      "dob": "11 Jan 2012",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01728648398",
+      "gender": "Female"
+    },
+    {
+      "name": "নাছরিন নাহার",
+      "studentId": "0984",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118263",
+      "fatherName": "আসাদুল ইসলাম",
+      "address": "ধওলাই নওদাবাস, হাতিবান্ধা",
+      "dob": "4 Apr 2009",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01728648398",
+      "gender": "Female"
+    }
+  ],
   "৫ম বর্ষ (শরহে বেকায়া জামাত)": [],
   "৬ষ্ঠ বর্ষ (হেদায়া জামাত)": [],
   "৭ম বর্ষ (মেশকাত জামাত)": [],
@@ -14,14 +105,61 @@
   "নাজেরা (বালক)": [],
   "হিফজুল কুরআন": [],
   "ইবতিদাইয়্যাহ (খুসুসী)": [],
-  "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)": [],
+  "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)": [
+    {
+      "name": "নাজমুল ইসলাম",
+      "studentId": "181134",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148147",
+      "fatherName": "খাইরৈুল ইসলাম",
+      "address": "উত্তর পাড়া, সুইচগেট, আতিমারী, লালমনিরহাট",
+      "dob": "30 Aug 2006",
+      "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
+      "mobile": "01992781525",
+      "gender": "Male"
+    }
+  ],
   "মুতাওয়াসসিতাহ ২য় বর্ষ (নাহবেমীর)": [],
-  "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)": [],
+  "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)": [
+    {
+      "name": "আব্দুল্লাহ পারভেজ",
+      "studentId": "18893",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132676",
+      "fatherName": "মৃত্য গিয়াস উদ্দীন",
+      "address": "চরিতাবাড়ী, আদিতমারী, লালামনিরহাট",
+      "dob": "23 Oct 2007",
+      "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
+      "mobile": "01300247380",
+      "gender": "Male"
+    },
+    {
+      "name": "আল নাহিয়ান মুবিন",
+      "studentId": "18421",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=101721",
+      "fatherName": "আবুল কালাম আজাদ",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "20 Mar 2012",
+      "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
+      "mobile": "01773154597",
+      "gender": "Male"
+    }
+  ],
   "সানাবিয়্যাহ ২য় বর্ষ (কাফিয়া)": [],
   "সানাবিয়্যাহ উলইয়া ২য় বর্ষ (শরহে বেকায়া)": [],
   "ফযীলত ১ম বর্ষ (জালালাইন)": [],
   "ফযীলত ২য় বর্ষ (মেশকাত)": [],
-  "তাকমীল (দাওরায়ে হাদীস)": [],
+  "তাকমীল (দাওরায়ে হাদীস)": [
+    {
+      "name": "জাহাঙ্গীর আলম",
+      "studentId": "1810",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93353",
+      "fatherName": "আব্দুর রশিদ",
+      "address": "বনচুকি, আদিতমারী, লালমনিরহাট",
+      "dob": "2 Mar 2004",
+      "className": "তাকমীল (দাওরায়ে হাদীস)",
+      "mobile": "01751194287",
+      "gender": "Male"
+    }
+  ],
   "১": [],
   "২": [],
   "৩": [],
