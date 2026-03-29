@@ -99,7 +99,7 @@
       "dob": "15 Jul 2013",
       "className": "নাজেরা (বালিকা)",
       "mobile": "01767571903",
-      "gender": "Female"
+      "gender": "Unknown"
     },
     {
       "name": "আন্না আক্তার",
@@ -205,6 +205,17 @@
       "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
       "mobile": "01722666677",
       "gender": "Female"
+    },
+    {
+      "name": "সুমাইয়া আক্তার",
+      "studentId": "01328",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133234",
+      "fatherName": "ইব্রাহিম খলিল",
+      "address": "ফুলবাড়ী, কুড়িগ্রাম",
+      "dob": "17 Oct 2013",
+      "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
+      "mobile": "01716621412",
+      "gender": "Female"
     }
   ],
   "৩য় বর্ষ (নাহবেমীর জামাত)": [
@@ -217,7 +228,7 @@
       "dob": "7 Jul 2013",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01750805578",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "শাকিলা জান্নাত মিম",
@@ -228,7 +239,7 @@
       "dob": "9 Sep 2012",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01538185905",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আজমিরা আক্তার",
@@ -239,7 +250,7 @@
       "dob": "6 Apr 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01736167536",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "জেসমিন আক্তার মুন্নি",
@@ -250,7 +261,7 @@
       "dob": "26 Dec 2009",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01739834831",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মোছাঃ ইয়াছমীন জান্নাত নুর",
@@ -261,7 +272,7 @@
       "dob": "20 Aug 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01739834831",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মিষ্টি আক্তার",
@@ -272,7 +283,7 @@
       "dob": "12 Mar 2012",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01743248539",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আঞ্জয়ারা খাতুন",
@@ -294,7 +305,7 @@
       "dob": "8 Sep 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01797496844",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আইরিন আক্তার",
@@ -305,7 +316,7 @@
       "dob": "2 Jan 2007",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01796770828",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "মিফতাহুল জান্নাত",
@@ -316,7 +327,7 @@
       "dob": "25 Nov 2008",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01706893395",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "উম্মে হাফছা",
@@ -327,7 +338,7 @@
       "dob": "2 Feb 2014",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01739283848",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "আফিফা আক্তার",
@@ -338,7 +349,7 @@
       "dob": "2 Feb 2014",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01739283848",
-      "gender": "Unknown"
+      "gender": "Female"
     },
     {
       "name": "তাসনিয়া মনি",
@@ -371,6 +382,17 @@
       "dob": "14 Aug 2011",
       "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
       "mobile": "01761734800",
+      "gender": "Female"
+    },
+    {
+      "name": "দিলসাদ জাহান সাদিয়া",
+      "studentId": "0791",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=109025",
+      "fatherName": "দেলোয়ার হোসেন",
+      "address": "চন্দনপাট, আদিতমারী, লালমিনরহাট",
+      "dob": "18 Dec 2011",
+      "className": "৩য় বর্ষ (নাহবেমীর জামাত)",
+      "mobile": "01728753982",
       "gender": "Female"
     }
   ],
@@ -473,6 +495,50 @@
       "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
       "mobile": "01774491140",
       "gender": "Female"
+    },
+    {
+      "name": "হাবিবা তাহসিন বুশরা",
+      "studentId": "0593",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=94413",
+      "fatherName": "ওসমান গনি",
+      "address": "চরিতাবাড়ী ,কুমড়ীরহাট, আদিতমারী ,লালমনিরহাট",
+      "dob": "17 Oct 2011",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01726966676",
+      "gender": "Female"
+    },
+    {
+      "name": "সিন্তিয়া আক্তার",
+      "studentId": "0643",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=101992",
+      "fatherName": "সাব্বির হোসেন",
+      "address": "দঃ বঃ হাজারী, আদিতমারী, লালমনিরহাট",
+      "dob": "11 Feb 2016",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01728047651",
+      "gender": "Female"
+    },
+    {
+      "name": "শাহাজাদী জাহান শারা",
+      "studentId": "01281",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132923",
+      "fatherName": "শফিকুল ইসলাম",
+      "address": "পশ্চিম আমবারী, হারাটী, লালমনিরহাট সদর , লালমনিরহাট",
+      "dob": "4 Aug 2011",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01737516705",
+      "gender": "Female"
+    },
+    {
+      "name": "সাহিদা আক্তার সুরভী",
+      "studentId": "01282",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=132925",
+      "fatherName": "শফিকুল ইসলাম",
+      "address": "পশ্চিম আমবাড়ী, হারাটী ,লালমনিরহাট সদর, লালমনিরহাট",
+      "dob": "4 Jul 2010",
+      "className": "৪র্থ বর্ষ (কুদূরী জামাত)",
+      "mobile": "01737516705",
+      "gender": "Female"
     }
   ],
   "৫ম বর্ষ (শরহে বেকায়া জামাত)": [
@@ -485,6 +551,17 @@
       "dob": "1 Jun 2010",
       "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
       "mobile": "01780534802",
+      "gender": "Female"
+    },
+    {
+      "name": "আয়শা সিদ্দীকা",
+      "studentId": "0515",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=92801",
+      "fatherName": "ইব্রাহিম খলিল",
+      "address": "ফুলবাড়ী ,কুড়িগ্রাম",
+      "dob": "31 Jan 2011",
+      "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
+      "mobile": "01716621412",
       "gender": "Female"
     }
   ],
@@ -525,7 +602,19 @@
       "gender": "Female"
     }
   ],
-  "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)": [],
+  "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)": [
+    {
+      "name": "রিফাত আরা জাননাত মীম",
+      "studentId": "0170",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=92539",
+      "fatherName": "আবদুর রশিদ",
+      "address": "আদিতমারী, লালমনিরহাট",
+      "dob": "7 Nov 2004",
+      "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
+      "mobile": "01718865035",
+      "gender": "Unknown"
+    }
+  ],
   "কায়দা (বালক)": [
     {
       "name": "তানভীর ইসলাম",
@@ -547,7 +636,7 @@
       "dob": "9 Jul 2020",
       "className": "কায়দা (বালক)",
       "mobile": "01780689979",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "মনির হোসেন",
@@ -893,6 +982,17 @@
       "className": "হিফজুল কুরআন",
       "mobile": "01915715663",
       "gender": "Male"
+    },
+    {
+      "name": "ইসমাইল হোসেন রোমান",
+      "studentId": "18841",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123619",
+      "fatherName": "লিটন মিয়া",
+      "address": "সারপুকুর, আদিতমারী, লালমনিরহাট",
+      "dob": "5 Mar 2013",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01780854654",
+      "gender": "Male"
     }
   ],
   "ইবতিদাইয়্যাহ (খুসুসী)": [
@@ -905,7 +1005,7 @@
       "dob": "17 Jul 2011",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01601365464",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "নাজির হোসেন",
@@ -916,7 +1016,7 @@
       "dob": "10 Dec 2006",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01939982052",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "বিপুল মিয়া",
@@ -927,7 +1027,7 @@
       "dob": "1 Dec 2007",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01954121842",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "রাকিব হাসান",
@@ -938,7 +1038,7 @@
       "dob": "20 Oct 2011",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01706767999",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "নাঈমুল ইসলাম",
@@ -1026,7 +1126,7 @@
       "dob": "7 Aug 2009",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01717015114",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আরিফুল ইসলাম",
@@ -1037,7 +1137,7 @@
       "dob": "1 May 2008",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01872255188",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আব্দুল আওয়াল",
@@ -1048,7 +1148,7 @@
       "dob": "28 Sep 2009",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01732680439",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আবু সোহান পারভেজ",
@@ -1059,7 +1159,7 @@
       "dob": "2 Jul 2012",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01799924681",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "শাহিনুর রহমান",
@@ -1083,7 +1183,7 @@
       "dob": "30 Aug 2006",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01992781525",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "ওমর ফারুক",
@@ -1094,7 +1194,7 @@
       "dob": "1 Jan 2009",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01705905397",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "মাহমুদুল হাসান",
@@ -1105,7 +1205,7 @@
       "dob": "13 Oct 2010",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01761316792",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "শরিফুল ইসলাম",
@@ -1116,7 +1216,7 @@
       "dob": "9 Sep 2009",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01723273042",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "রাজু ইসলাম",
@@ -1127,7 +1227,7 @@
       "dob": "1 Feb 2014",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01789662959",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "বেলাল হোসেন",
@@ -1138,7 +1238,7 @@
       "dob": "16 Feb 2011",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01780749215",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "ইয়ামিন ইসলাম শান্ত",
@@ -1149,7 +1249,7 @@
       "dob": "16 Nov 2005",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01782263368",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আব্দুল্লাহ আল মুয়াজ",
@@ -1160,7 +1260,7 @@
       "dob": "24 Dec 2010",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01762689852",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আল আমিন ইসলাম",
@@ -1171,7 +1271,7 @@
       "dob": "15 Jan 2008",
       "className": "মুতাওয়াসসিতাহ ১ম বর্ষ (মিজান)",
       "mobile": "01763119312",
-      "gender": "Unknown"
+      "gender": "Male"
     }
   ],
   "মুতাওয়াসসিতাহ ২য় বর্ষ (নাহবেমীর)": [
@@ -1184,7 +1284,7 @@
       "dob": "16 Jun 2005",
       "className": "মুতাওয়াসসিতাহ ২য় বর্ষ (নাহবেমীর)",
       "mobile": "01888560572",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "সামিউল ইসলাম সিয়াম",
@@ -1195,7 +1295,7 @@
       "dob": "5 Aug 2011",
       "className": "মুতাওয়াসসিতাহ ২য় বর্ষ (নাহবেমীর)",
       "mobile": "01796766487",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "সাদিকুল ইসলাম",
@@ -1206,7 +1306,7 @@
       "dob": "13 Dec 2007",
       "className": "মুতাওয়াসসিতাহ ২য় বর্ষ (নাহবেমীর)",
       "mobile": "01320793154",
-      "gender": "Unknown"
+      "gender": "Male"
     }
   ],
   "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)": [
@@ -1219,7 +1319,7 @@
       "dob": "23 Oct 2007",
       "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
       "mobile": "01300247380",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আল নাহিয়ান মুবিন",
@@ -1230,7 +1330,7 @@
       "dob": "20 Mar 2012",
       "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
       "mobile": "01773154597",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আশরাফুল আলম",
@@ -1241,7 +1341,7 @@
       "dob": "28 Oct 2004",
       "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
       "mobile": "01761183261",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "আল হাসান",
@@ -1252,7 +1352,7 @@
       "dob": "2 Feb 2010",
       "className": "সানাবিয়্যাহ ১ম বর্ষ (হেদায়াতুন্নাহু)",
       "mobile": "01737029976",
-      "gender": "Unknown"
+      "gender": "Male"
     }
   ],
   "সানাবিয়্যাহ ২য় বর্ষ (কাফিয়া)": [
@@ -1300,10 +1400,22 @@
       "dob": "9 Mar 2007",
       "className": "সানাবিয়্যাহ উলইয়া ২য় বর্ষ (শরহে বেকায়া)",
       "mobile": "01711000276",
+      "gender": "Unknown"
+    }
+  ],
+  "ফযীলত ১ম বর্ষ (জালালাইন)": [
+    {
+      "name": "আরিফুল ইসলাম",
+      "studentId": "18246",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93118",
+      "fatherName": "জাহাঙ্গীর আলম",
+      "address": "চন্দ্রপুর, কালিগঞ্জ, লালমনির হাট।",
+      "dob": "20 Nov 2007",
+      "className": "ফযীলত ১ম বর্ষ (জালালাইন)",
+      "mobile": "01768869131",
       "gender": "Male"
     }
   ],
-  "ফযীলত ১ম বর্ষ (জালালাইন)": [],
   "ফযীলত ২য় বর্ষ (মেশকাত)": [
     {
       "name": "আল মুফিদ",
@@ -1314,7 +1426,7 @@
       "dob": "7 Jun 2005",
       "className": "ফযীলত ২য় বর্ষ (মেশকাত)",
       "mobile": "01793176174",
-      "gender": "Male"
+      "gender": "Unknown"
     }
   ],
   "তাকমীল (দাওরায়ে হাদীস)": [
@@ -1327,7 +1439,7 @@
       "dob": "2 Mar 2004",
       "className": "তাকমীল (দাওরায়ে হাদীস)",
       "mobile": "01751194287",
-      "gender": "Male"
+      "gender": "Unknown"
     },
     {
       "name": "আব্দুল ওয়াদুদ",
@@ -1338,7 +1450,7 @@
       "dob": "1 Nov 2004",
       "className": "তাকমীল (দাওরায়ে হাদীস)",
       "mobile": "01735113513",
-      "gender": "Male"
+      "gender": "Unknown"
     },
     {
       "name": "তমিজ উদ্দিন",
@@ -1349,7 +1461,18 @@
       "dob": "11 Sep 2005",
       "className": "তাকমীল (দাওরায়ে হাদীস)",
       "mobile": "01786861884",
-      "gender": "Male"
+      "gender": "Unknown"
+    },
+    {
+      "name": "ওমর ফারুক",
+      "studentId": "18278",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93351",
+      "fatherName": "বোরহানুদ্দিন",
+      "address": "চলবলা, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "11 Feb 2002",
+      "className": "তাকমীল (দাওরায়ে হাদীস)",
+      "mobile": "01787907553",
+      "gender": "Unknown"
     }
   ],
   "১": [],
