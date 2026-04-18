@@ -8986,6 +8986,17 @@
       "className": "কায়দা (বালক)",
       "mobile": "01734180859",
       "gender": "Male"
+    },
+    {
+      "name": "মো: মোস্তাকিম বিল্লাহ",
+      "studentId": "181505",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=171920",
+      "fatherName": "আব্দুর সাত্তার",
+      "address": "উত্তর বত্রিশ হাজারী, কুটিরপাড়, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "",
+      "className": "কায়দা (বালক)",
+      "mobile": "01745080265",
+      "gender": "Male"
     }
   ],
   "নাজেরা (বালক)": [
@@ -9977,6 +9988,17 @@
       "dob": "21 Apr 2014",
       "className": "নাজেরা (বালক)",
       "mobile": "01745702344",
+      "gender": "Male"
+    },
+    {
+      "name": "মো: জাকারিয়া ইসলাম",
+      "studentId": "181504",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=171919",
+      "fatherName": "রেজাইল করিম",
+      "address": "মুন্সিরহাট, পাটগ্রাম, লালমনিরহাট",
+      "dob": "",
+      "className": "নাজেরা (বালক)",
+      "mobile": "01719178159",
       "gender": "Male"
     }
   ],
