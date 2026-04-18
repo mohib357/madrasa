@@ -1609,6 +1609,17 @@
       "className": "হিফজুল কুরআন (বালিকা)",
       "mobile": "01716134969",
       "gender": "Female"
+    },
+    {
+      "name": "সুমাইয়া খাতুন",
+      "studentId": "01579",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148697",
+      "fatherName": "নুর হক মিয়া",
+      "address": "ভাদাই , আদিতমারী, লালমনিরহাট",
+      "dob": "7 Nov 2012",
+      "className": "হিফজুল কুরআন (বালিকা)",
+      "mobile": "01823031985",
+      "gender": "Female"
     }
   ],
   "১ম বর্ষ (খুসূসী জামাত)": [
@@ -1698,17 +1709,6 @@
       "dob": "3 Aug 2011",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01744657051",
-      "gender": "Female"
-    },
-    {
-      "name": "সুমাইয়া খাতুন",
-      "studentId": "01579",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148697",
-      "fatherName": "নুর হক মিয়া",
-      "address": "ভাদাই , আদিতমারী, লালমনিরহাট",
-      "dob": "7 Nov 2012",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01823031985",
       "gender": "Female"
     },
     {
@@ -10937,6 +10937,17 @@
       "className": "হিফজুল কুরআন",
       "mobile": "01740337558",
       "gender": "Male"
+    },
+    {
+      "name": "মুসা মিয়া সাগর",
+      "studentId": "181214",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148727",
+      "fatherName": "লিপু মিয়া",
+      "address": "আরাজী চোঙ্গাদারা,লালমনিরহাট",
+      "dob": "7 Dec 2013",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01902194678",
+      "gender": "Male"
     }
   ],
   "ইবতিদাইয়্যাহ (খুসুসী)": [
@@ -12093,17 +12104,6 @@
       "dob": "",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01774010262",
-      "gender": "Male"
-    },
-    {
-      "name": "মুসা মিয়া সাগর",
-      "studentId": "181214",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148727",
-      "fatherName": "লিপু মিয়া",
-      "address": "আরাজী চোঙ্গাদারা,লালমনিরহাট",
-      "dob": "7 Dec 2013",
-      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
-      "mobile": "01902194678",
       "gender": "Male"
     }
   ],
