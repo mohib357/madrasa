@@ -9008,6 +9008,17 @@
       "className": "কায়দা (বালক)",
       "mobile": "01790625735",
       "gender": "Male"
+    },
+    {
+      "name": "মো: মাহিদ রানা",
+      "studentId": "181508",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=171980",
+      "fatherName": "মফিজুল ইসলাম",
+      "address": "বারঘরিয়া, মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "6 Sep 2015",
+      "className": "কায়দা (বালক)",
+      "mobile": "01761911683",
+      "gender": "Male"
     }
   ],
   "নাজেরা (বালক)": [
@@ -10958,6 +10969,17 @@
       "dob": "7 Dec 2013",
       "className": "হিফজুল কুরআন",
       "mobile": "01902194678",
+      "gender": "Male"
+    },
+    {
+      "name": "গোলাম রাব্বি",
+      "studentId": "181507",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=171978",
+      "fatherName": "রেজাউল করিম",
+      "address": "মগপাড়া, বুড়াবুড়ি, উলিপুর, কুড়িগ্রাম",
+      "dob": "",
+      "className": "হিফজুল কুরআন",
+      "mobile": "01320953113",
       "gender": "Male"
     }
   ],
