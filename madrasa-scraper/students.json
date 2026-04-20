@@ -903,17 +903,6 @@
       "gender": "Female"
     },
     {
-      "name": "হালিমা আক্তার",
-      "studentId": "01656",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149157",
-      "fatherName": "নবিউল ইসলাম",
-      "address": "রহমানপুর, ধবলসূতী, পাটগ্রাম, লালমনিরহাট",
-      "dob": "21 Nov 2007",
-      "className": "কায়দা (বালিকা)",
-      "mobile": "01950685221",
-      "gender": "Female"
-    },
-    {
       "name": "মোছা: মারুফা আক্তার",
       "studentId": "01922",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=171841",
@@ -2765,6 +2754,17 @@
       "dob": "28 Oct 2010",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01787469136",
+      "gender": "Female"
+    },
+    {
+      "name": "হালিমা আক্তার",
+      "studentId": "01656",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149157",
+      "fatherName": "নবিউল ইসলাম",
+      "address": "রহমানপুর, ধবলসূতী, পাটগ্রাম, লালমনিরহাট",
+      "dob": "21 Nov 2007",
+      "className": "১ম বর্ষ (খুসূসী জামাত)",
+      "mobile": "01950685221",
       "gender": "Female"
     }
   ],
