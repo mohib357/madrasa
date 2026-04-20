@@ -934,6 +934,17 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01846418122",
       "gender": "Male"
+    },
+    {
+      "name": "মোছা: মাহমুদা আক্তার মিম",
+      "studentId": "01927",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=172064",
+      "fatherName": "মাইদুল ইসলাম",
+      "address": "আরাজী দেওডোবা, আদিতমারী, লালমনিরহাট",
+      "dob": "14 Aug 2011",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01723242750",
+      "gender": "Male"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -2757,17 +2768,6 @@
       "gender": "Female"
     },
     {
-      "name": "আফছানা খাতুন",
-      "studentId": "01629",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149027",
-      "fatherName": "আমিনুল ইসলাম",
-      "address": "ঘোড়াবান্দ, সনকা, বীরগঞ্জ, দিনাজপুর",
-      "dob": "28 Oct 2010",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01787469136",
-      "gender": "Female"
-    },
-    {
       "name": "হালিমা আক্তার",
       "studentId": "01656",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149157",
@@ -2789,17 +2789,6 @@
       "dob": "7 Nov 2012",
       "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
       "mobile": "01764861102",
-      "gender": "Female"
-    },
-    {
-      "name": "মোহনা আক্তার মনি",
-      "studentId": "01178",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=123702",
-      "fatherName": "মমিনুর ইসলাম",
-      "address": "আদিতমারী, লালমনিরহাট",
-      "dob": "12 Mar 2012",
-      "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
-      "mobile": "01747591558",
       "gender": "Female"
     },
     {
@@ -4208,6 +4197,28 @@
       "dob": "14 Jan 2015",
       "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
       "mobile": "01946951194",
+      "gender": "Female"
+    },
+    {
+      "name": "নুশরাত জাহান নিশি",
+      "studentId": "01594",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148795",
+      "fatherName": "নুরনবী",
+      "address": "কালির পাঠ ,রতিরাম পাঠান, রাজারহাট, কুড়িগ্রাম",
+      "dob": "21 Aug 2011",
+      "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
+      "mobile": "01760978869",
+      "gender": "Female"
+    },
+    {
+      "name": "আফছানা খাতুন",
+      "studentId": "01629",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149027",
+      "fatherName": "আমিনুল ইসলাম",
+      "address": "ঘোড়াবান্দ, সনকা, বীরগঞ্জ, দিনাজপুর",
+      "dob": "28 Oct 2010",
+      "className": "২য় বর্ষ (ইবতিদাইয়্যাহ জামাত)",
+      "mobile": "01787469136",
       "gender": "Female"
     }
   ],
