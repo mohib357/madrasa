@@ -1103,17 +1103,6 @@
       "gender": "Female"
     },
     {
-      "name": "নুরে জান্নাত ফাতেমা",
-      "studentId": "01583",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148732",
-      "fatherName": "জুয়েল ইসলাম",
-      "address": "তালুক শাখাতী, চামটাহাট, মদাতী, কালীগঞ্জ, লালমনিরহাট",
-      "dob": "11 Dec 2014",
-      "className": "নাজেরা (বালিকা)",
-      "mobile": "01797966160",
-      "gender": "Female"
-    },
-    {
       "name": "সাহেরা আফরিন সুবামনি",
       "studentId": "01596",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148852",
@@ -2625,17 +2614,6 @@
       "gender": "Female"
     },
     {
-      "name": "ইসমিতা আক্তার",
-      "studentId": "01069",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=118514",
-      "fatherName": "ইসমাঈল হোসেন",
-      "address": "রসুলগঞ্জ, পাটগ্রাম, লালমনিরহাট",
-      "dob": "8 May 2013",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01728910688",
-      "gender": "Female"
-    },
-    {
       "name": "ছিদ্রাতুল মুনতাহা",
       "studentId": "01650",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149126",
@@ -2798,6 +2776,17 @@
       "dob": "21 Nov 2007",
       "className": "১ম বর্ষ (খুসূসী জামাত)",
       "mobile": "01950685221",
+      "gender": "Female"
+    },
+    {
+      "name": "নুরে জান্নাত ফাতেমা",
+      "studentId": "01583",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=148732",
+      "fatherName": "জুয়েল ইসলাম",
+      "address": "তালুক শাখাতী, চামটাহাট, মদাতী, কালীগঞ্জ, লালমনিরহাট",
+      "dob": "11 Dec 2014",
+      "className": "১ম বর্ষ (খুসূসী জামাত)",
+      "mobile": "01797966160",
       "gender": "Female"
     }
   ],
@@ -8378,17 +8367,6 @@
       "dob": "1 Jan 2005",
       "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
       "mobile": "01729988614",
-      "gender": "Female"
-    },
-    {
-      "name": "সাহেলা আক্তার জুমা",
-      "studentId": "0057",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=92301",
-      "fatherName": "আসাদুজ্জামান জুয়েল",
-      "address": "চামটাহাট, কালীগঞ্জ, লালমনিরহাট",
-      "dob": "18 Nov 2008",
-      "className": "৮ম বর্ষ (তাকমীল/দাওরায়ে হাদীস)",
-      "mobile": "01797966160",
       "gender": "Female"
     },
     {
