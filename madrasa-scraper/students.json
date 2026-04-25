@@ -9052,6 +9052,17 @@
       "className": "কায়দা (বালক)",
       "mobile": "01761911683",
       "gender": "Male"
+    },
+    {
+      "name": "নুর মোহাম্মাদ",
+      "studentId": "181366",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=164593",
+      "fatherName": "সাইদুল ইসলাম",
+      "address": "বারোঘরিয়া, মহিষখোচা, আদিতমারী, লালমনিরহাট",
+      "dob": "1 Dec 2014",
+      "className": "কায়দা (বালক)",
+      "mobile": "01970857020",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালক)": [
@@ -12170,6 +12181,17 @@
       "dob": "",
       "className": "ইবতিদাইয়্যাহ (খুসুসী)",
       "mobile": "01774010262",
+      "gender": "Male"
+    },
+    {
+      "name": "মুহা: আবির হোসেন",
+      "studentId": "181509",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=172163",
+      "fatherName": "উসমান গণী",
+      "address": "আবদাল পাড়া, ঠাকুরগাঁও",
+      "dob": "",
+      "className": "ইবতিদাইয়্যাহ (খুসুসী)",
+      "mobile": "01773918180",
       "gender": "Male"
     }
   ],
