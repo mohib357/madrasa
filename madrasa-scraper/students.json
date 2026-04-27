@@ -934,6 +934,17 @@
       "className": "কায়দা (বালিকা)",
       "mobile": "01721229232",
       "gender": "Male"
+    },
+    {
+      "name": "মরিয়ম আক্তার জান্নাতি",
+      "studentId": "01930",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=172223",
+      "fatherName": "আশরাফুল ইসলাম মুরাদ",
+      "address": "বালাটারী, লালমনিরহাট",
+      "dob": "",
+      "className": "কায়দা (বালিকা)",
+      "mobile": "01759706863",
+      "gender": "Female"
     }
   ],
   "নাজেরা (বালিকা)": [
@@ -14408,6 +14419,17 @@
       "dob": "2 Jan 2002",
       "className": "তাকমীল (দাওরায়ে হাদীস)",
       "mobile": "01781356063",
+      "gender": "Male"
+    },
+    {
+      "name": "সাদিকুল ইসলাম",
+      "studentId": "1833",
+      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=93376",
+      "fatherName": "আলাল উদ্দিন",
+      "address": "কুমড়িরহাট,আদিতমারী, লালমনিরহাট",
+      "dob": "",
+      "className": "তাকমীল (দাওরায়ে হাদীস)",
+      "mobile": "01793978737",
       "gender": "Male"
     }
   ],
