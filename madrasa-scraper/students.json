@@ -1646,17 +1646,6 @@
       "gender": "Female"
     },
     {
-      "name": "উম্মে হালিমা",
-      "studentId": "01473",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=137088",
-      "fatherName": "বাছেদ আলী",
-      "address": "ধওলাই, নওদাবাস, হাতীবান্ধা, লালমনিরহাট",
-      "dob": "23 Nov 2012",
-      "className": "১ম বর্ষ (খুসূসী জামাত)",
-      "mobile": "01773920507",
-      "gender": "Female"
-    },
-    {
       "name": "আর্নিকা আক্তার",
       "studentId": "01367",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=133468",
@@ -6934,10 +6923,10 @@
       "gender": "Female"
     },
     {
-      "name": "বিথি খাতুন",
+      "name": "বুশরা আক্তার বিথী",
       "studentId": "01674",
       "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=149194",
-      "fatherName": "বাবুল মিয়া",
+      "fatherName": "বাবলু মিয়া",
       "address": "কিসামতবান, বালাবাড়ীহাট, চিলমারী, কুড়িগ্রাম",
       "dob": "14 Jan 2010",
       "className": "৫ম বর্ষ (শরহে বেকায়া জামাত)",
@@ -9394,17 +9383,6 @@
       "dob": "7 Jun 2015",
       "className": "নাজেরা (বালক)",
       "mobile": "01785365767",
-      "gender": "Male"
-    },
-    {
-      "name": "ইসমাঈল",
-      "studentId": "181055",
-      "photoUrl": "https://sikkhaloy.com/Handeler/Student_Id_Based_Photo.ashx?StudentID=135961",
-      "fatherName": "ইকরামুল",
-      "address": "লক্ষনপুর ,বাড়ইশাল পাড়া,সৈয়দপুর,নীলফামারী",
-      "dob": "3 Jun 2014",
-      "className": "নাজেরা (বালক)",
-      "mobile": "01773119584",
       "gender": "Male"
     },
     {
