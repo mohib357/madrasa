@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শিক্ষকের তথ্য এডিট করুন</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        secondary: '#2980b9',
+                        success: '#2ecc71',
+                        danger: '#e74c3c',
+                        light: '#f8f9fa',
+                        dark: '#343a40',
+                        gray: '#6c757d',
+                    },
+                    fontFamily: {
+                        'sans': ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for elements not covered by Tailwind -->
+    <style>
+        /* Custom styles for phone input */
+        .phone-input {
+            width: 100%;
+        }
+
+        .social-input-group i {
+            font-size: 2rem;
+        }
+
+        .image-preview {
+            margin-top: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .iti {
+            width: 100%;
+        }
+
+        /* Social media platform colors */
+        .social-facebook i {
+            color: #1877f2;
+        }
+
+        .social-whatsapp i {
+            color: #2ecc71;
+        }
+
+        .social-telegram i {
+            color: #0088CC;
+        }
+
+        .social-tiktok i {
+            color: #000;
+            text-shadow:
+                -.9px -.9px 0 rgb(0, 242, 234),
+                .9px .9px 0 rgb(255, 0, 80);
+        }
+
+        .social-twitter i {
+            color: #1da1f2;
+        }
+
+        .social-instagram i {
+            color: #e1306c;
+        }
+
+        .social-linkedin i {
+            color: #0077b5;
+        }
+
+        .social-youtube i {
+            color: #ff0000;
+        }
+
+        .social-other i {
+            color: #6c757d;
+        }
+
+        /* Custom grid layouts */
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .education-fields {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        /* Social media dropdown fix */
+        .select-options {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .phone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .education-fields {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .phone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 leading-relaxed p-5 font-sans">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <div class="text-center mb-8 text-primary border-b-2 border-gray-200 pb-4">
+            <h2 class="text-2xl font-bold">শিক্ষকের তথ্য এডিট করুন</h2>
+        </div>
+
+        <!-- Notification Area -->
+        <div id="notification" class="hidden p-4 mb-5 rounded-lg"></div>
+
+        <form id="registrationForm">
+            <!-- Personal Information Section -->
+            <fieldset class="border border-gray-300 rounded-lg p-4 mb-5">
+                <legend class="px-2 font-semibold text-primary text-lg">ব্যক্তিগত তথ্য | Personal Information</legend>
+
+                <div class="flex flex-wrap -mx-2.5">
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="firstNameBn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                নামের প্রথম অংশ (বাংলা)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="firstNameBn" name="firstNameBn" placeholder="নামের প্রথম অংশ লিখুন"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="firstNameBn-error" class="text-danger text-sm mt-1 hidden">অনুগ্রহ করে শুধু বাংলা
+                                অক্ষর ব্যবহার করুন</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="firstNameEn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                First Name (English)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="firstNameEn" name="firstNameEn" placeholder="Enter first name"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="firstNameEn-error" class="text-danger text-sm mt-1 hidden">Please use only English
+                                characters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap -mx-2.5">
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="lastNameBn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                নামের শেষের অংশ (বাংলা)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="lastNameBn" name="lastNameBn" placeholder="নামের শেষের অংশ লিখুন"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="lastNameBn-error" class="text-danger text-sm mt-1 hidden">অনুগ্রহ করে শুধু বাংলা
+                                অক্ষর ব্যবহার করুন</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="lastNameEn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                Last Name (English)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="lastNameEn" name="lastNameEn" placeholder="Enter last name"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="lastNameEn-error" class="text-danger text-sm mt-1 hidden">Please use only English
+                                characters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap -mx-2.5">
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="fatherNameBn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                পিতার নাম (বাংলা)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="fatherNameBn" name="fatherNameBn" placeholder="পিতার নাম লিখুন"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="fatherNameBn-error" class="text-danger text-sm mt-1 hidden">অনুগ্রহ করে শুধু বাংলা
+                                অক্ষর ব্যবহার করুন</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="fatherNameEn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-user mr-2 text-primary"></i>
+                                Father's Name (English)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="fatherNameEn" name="fatherNameEn" placeholder="Enter father's name"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="fatherNameEn-error" class="text-danger text-sm mt-1 hidden">Please use only English
+                                characters</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap -mx-2.5">
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="titleBn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-id-badge mr-2 text-primary"></i>
+                                পদবী (বাংলা)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="titleBn" name="titleBn" placeholder="চাকরীর পদবী লিখুন"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="titleBn-error" class="text-danger text-sm mt-1 hidden">অনুগ্রহ করে শুধু বাংলা অক্ষর
+                                ব্যবহার করুন</div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 px-2.5">
+                        <div class="mb-5">
+                            <label for="titleEn" class="flex items-center mb-2 font-semibold text-dark">
+                                <i class="fas fa-id-badge mr-2 text-primary"></i>
+                                Designation (English)
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                            <input type="text" id="titleEn" name="titleEn" placeholder="Enter job Designation"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="titleEn-error" class="text-danger text-sm mt-1 hidden">Please use only English
+                                characters</div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Gender, Birth Date & Join Date Section -->
+            <div class="flex flex-wrap -mx-2.5 mb-5">
+                <div class="w-full md:w-1/3 px-2.5">
+                    <fieldset class="border border-gray-300 rounded-lg p-4 h-full">
+                        <legend class="px-2 font-semibold text-primary text-lg">Gender</legend>
+                        <div class="flex items-center">
+                            <i class="fas fa-venus-mars mr-2 text-primary"></i>
+                            <select id="gender" name="gender"
+                                class="flex-1 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                                <option value="">-- Select --</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="w-full md:w-1/3 px-2.5">
+                    <fieldset class="border border-gray-300 rounded-lg p-4 h-full">
+                        <legend class="px-2 font-semibold text-primary text-lg">
+                            <label for="birthDate" class="flex items-center">
+                                <i class="fas fa-birthday-cake mr-2 text-primary"></i>
+                                Date of Birth
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                        </legend>
+                        <div class="mb-5">
+                            <input type="date" id="birthDate" name="birthDate"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="ageCalculation" class="text-gray text-sm mt-2 hidden">-- বছর -- মাস -- দিন</div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="w-full md:w-1/3 px-2.5">
+                    <fieldset class="border border-gray-300 rounded-lg p-4 h-full">
+                        <legend class="px-2 font-semibold text-primary text-lg">
+                            <label for="joinDate" class="flex items-center">
+                                <i class="fas fa-calendar-alt mr-2 text-primary"></i>
+                                Join Date
+                                <span class="text-danger ml-1">*</span>
+                            </label>
+                        </legend>
+                        <div class="mb-5">
+                            <input type="date" id="joinDate" name="joinDate"
+                                class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required>
+                            <div id="durationCalculation" class="text-gray text-sm mt-2 hidden">-- বছর -- মাস -- দিন
+                            </div>
+                            <div id="joinDate-error" class="text-danger text-sm mt-1 hidden">জয়েন তারিখে আপনার বয়স
+                                কমপক্ষে ১৮ বছর হতে হবে</div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <!-- Contact Information Section -->
+            <fieldset class="border border-gray-300 rounded-lg p-4 mb-5">
+                <legend class="px-2 font-semibold text-primary text-lg">Contact Information</legend>
+
+                <div class="mb-5">
+                    <label class="flex items-center mb-2 font-semibold text-dark">
+                        <i class="fas fa-phone mr-2 text-primary"></i>
+                        Mobile Number
+                        <span class="text-danger ml-1">*</span>
+                    </label>
+                    <div id="phoneNumbers" class="phone-grid">
+                        <div class="phone-input-group first-phone relative mb-4">
+                            <input type="tel"
+                                class="phone-input p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                required />
+                            <button type="button"
+                                class="remove-btn absolute top-[-10px] right-[-5px] bg-none border-none text-danger cursor-pointer text-base z-10 hidden"
+                                onclick="removePhone(this)">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="add-btn inline-flex items-center gap-1 mt-2.5 text-primary cursor-pointer font-semibold"
+                        id="addPhone">
+                        <i class="fas fa-plus-circle"></i> Add another number
+                    </div>
+                    <div id="phone-error" class="text-danger text-sm mt-1 hidden">Please enter a valid phone number
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <div class="flex items-center">
+                        <label for="email"
+                            class="flex items-center mb-2 font-semibold text-dark whitespace-nowrap mr-2.5">
+                            <i class="fas fa-envelope mr-2 text-primary"></i>
+                            Email
+                            <span class="text-danger ml-1">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                            class="flex-1 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                            required>
+                    </div>
+                    <div id="email-error" class="text-danger text-sm mt-1 hidden">Please enter a valid email address
+                    </div>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="mb-5">
+                    <label class="flex items-center mb-2 font-semibold text-dark">
+                        <i class="fas fa-share-alt mr-2 text-primary"></i>
+                        Social Media
+                    </label>
+
+                    <!-- Social Media Dropdown -->
+                    <div class="relative w-full mb-2.5" id="socialMediaSelect">
+                        <div class="select-trigger flex items-center p-3 bg-white border border-gray-300 rounded-lg cursor-pointer justify-between hover:border-primary"
+                            onclick="toggleSocialDropdown()">
+                            <span id="selectedSocialMedia">-- Select Social Media --</span>
+                            <i class="fas fa-chevron-down ml-2.5 text-gray transition-transform" id="dropdownIcon"></i>
+                        </div>
+                        <div class="select-options absolute top-full left-0 right-0 bg-white border border-gray-300 border-t-0 rounded-b-lg max-h-[200px] overflow-y-auto z-10 hidden shadow-lg"
+                            id="socialDropdown">
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="facebook"
+                                onclick="addSocialMedia('facebook', 'Facebook', 'fab fa-facebook', '#1877f2')">
+                                <i class="fab fa-facebook mr-2.5 text-lg" style="color: #1877f2"></i>
+                                <span>Facebook</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="whatsapp"
+                                onclick="addSocialMedia('whatsapp', 'WhatsApp', 'fa-brands fa-whatsapp', '#2ecc71')">
+                                <i class="fa-brands fa-whatsapp mr-2.5 text-lg" style="color: #2ecc71"></i>
+                                <span>WhatsApp</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="instagram"
+                                onclick="addSocialMedia('instagram', 'Instagram', 'fab fa-instagram', '#e1306c')">
+                                <i class="fab fa-instagram mr-2.5 text-lg" style="color: #e1306c"></i>
+                                <span>Instagram</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="telegram"
+                                onclick="addSocialMedia('telegram', 'Telegram', 'fa-brands fa-telegram', '#0088CC')">
+                                <i class="fa-brands fa-telegram mr-2.5 text-lg" style="color: #0088CC"></i>
+                                <span>Telegram</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="tiktok"
+                                onclick="addSocialMedia('tiktok', 'TikTok', 'fa-brands fa-tiktok', '#000')">
+                                <i class="fa-brands fa-tiktok mr-2.5 text-lg"
+                                    style="color: #000; text-shadow: -.9px -.9px 0 rgb(0, 242, 234), .9px .9px 0 rgb(255, 0, 80);"></i>
+                                <span>TikTok</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="twitter"
+                                onclick="addSocialMedia('twitter', 'Twitter', 'fab fa-twitter', '#1da1f2')">
+                                <i class="fab fa-twitter mr-2.5 text-lg" style="color: #1da1f2"></i>
+                                <span>Twitter</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="youtube"
+                                onclick="addSocialMedia('youtube', 'YouTube', 'fab fa-youtube', '#ff0000')">
+                                <i class="fab fa-youtube mr-2.5 text-lg" style="color: #ff0000"></i>
+                                <span>YouTube</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="linkedin"
+                                onclick="addSocialMedia('linkedin', 'LinkedIn', 'fab fa-linkedin', '#0077b5')">
+                                <i class="fab fa-linkedin mr-2.5 text-lg" style="color: #0077b5"></i>
+                                <span>LinkedIn</span>
+                            </div>
+                            <div class="select-option flex items-center p-3 cursor-pointer hover:bg-gray-100"
+                                data-value="other"
+                                onclick="addSocialMedia('other', 'Others', 'fas fa-globe', '#6c757d')">
+                                <i class="fas fa-globe mr-2.5 text-lg" style="color: #6c757d"></i>
+                                <span>Others</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Inputs Container -->
+                    <div id="socialMediaInputs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+                    <!-- Add More Social Media Button -->
+                    <div class="add-btn inline-flex items-center gap-1 mt-2.5 text-primary cursor-pointer font-semibold hidden"
+                        id="addOtherSocial" onclick="addOtherSocialMedia()">
+                        <i class="fas fa-plus-circle"></i> Add More Other Social Media
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Photo Upload Section -->
+            <fieldset class="border border-gray-300 rounded-lg p-4 mb-5">
+                <legend class="px-2 font-semibold text-primary text-lg">
+                    <label>Upload Teacher's Photo</label>
+                </legend>
+                <div class="mb-5">
+                    <div class="flex gap-4 mt-2.5">
+                        <div class="image-option flex-1 p-4 border border-gray-300 rounded-lg text-center cursor-pointer transition-all active border-primary bg-[rgba(52,152,219,0.1)]"
+                            id="deviceOption">
+                            <i class="fas fa-mobile-alt text-2xl mb-2 text-primary"></i>
+                            <div>Load from Device</div>
+                        </div>
+                        <div class="image-option flex-1 p-4 border border-gray-300 rounded-lg text-center cursor-pointer transition-all"
+                            id="urlOption">
+                            <i class="fas fa-link text-2xl mb-2 text-primary"></i>
+                            <div>Load from URL</div>
+                        </div>
+                    </div>
+                    <div id="deviceUpload" class="mb-5">
+                        <input type="file" id="photoFile" accept="image/*"
+                            class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                    </div>
+                    <div id="urlUpload" class="mb-5 hidden">
+                        <input type="url" id="photoUrl" placeholder="Enter image URL"
+                            class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                    </div>
+                    <div class="image-preview text-center mt-4" id="imagePreview"></div>
+                </div>
+            </fieldset>
+
+            <!-- Educational Qualification Section -->
+            <fieldset class="border border-gray-300 rounded-lg p-4 mb-5">
+                <legend class="px-2 font-semibold text-primary text-lg">Educational Qualification</legend>
+                <div id="educationQualifications">
+                    <div class="dynamic-field bg-gray-50 p-4 rounded-lg mb-4 relative">
+                        <button type="button"
+                            class="remove-btn absolute top-[-10px] right-[-5px] bg-none border-none text-danger cursor-pointer text-base z-10"
+                            onclick="removeEducation(this)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="education-fields">
+                            <div class="mb-5">
+                                <label>Exam Name</label>
+                                <input type="text" name="examName" placeholder="Enter Exam Name"
+                                    class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                            </div>
+                            <div class="mb-5">
+                                <label>Institution Name</label>
+                                <input type="text" name="institutionName" placeholder="Enter School/Madrasa Name"
+                                    class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                            </div>
+                            <div class="mb-5">
+                                <label>Passing Year</label>
+                                <select name="passingYear" id="initialPassingYear"
+                                    class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                                    <option value="">-- Select --</option>
+                                </select>
+                            </div>
+                            <div class="mb-5">
+                                <label>Subject/Degree</label>
+                                <input type="text" name="subject" placeholder="Enter Subject/Degree"
+                                    class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                            </div>
+                            <div class="mb-5">
+                                <label>Result</label>
+                                <div class="flex items-center">
+                                    <select name="result"
+                                        class="result-select flex-1 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                        onchange="toggleGpaInput(this)">
+                                        <option value="">-- Select --</option>
+                                        <option value="first">1st Division</option>
+                                        <option value="second">2nd Division</option>
+                                        <option value="third">3rd Division</option>
+                                        <option value="pass">Pass</option>
+                                        <option value="gpa">GPA</option>
+                                    </select>
+                                    <input type="number"
+                                        class="gpa-input flex-1 ml-2.5 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors hidden"
+                                        name="gpaValue" placeholder="GPA" min="0" max="5" step="0.01">
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label>Board</label>
+                                <select name="board"
+                                    class="board-select w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors"
+                                    onchange="toggleOtherBoardInput(this)">
+                                    <option value="">-- Select --</option>
+                                    <option value="dhaka">Dhaka</option>
+                                    <option value="rajshahi">Rajshahi</option>
+                                    <option value="chittagong">Chittagong</option>
+                                    <option value="jessore">Jashore</option>
+                                    <option value="comilla">Cumilla</option>
+                                    <option value="barisal">Barisal</option>
+                                    <option value="sylhet">Sylhet</option>
+                                    <option value="dinajpur">Dinajpur</option>
+                                    <option value="madrasah">Madrasah</option>
+                                    <option value="mymensingh">Mymensingh</option>
+                                    <option value="technical">Technical</option>
+                                    <option value="open_university">Open University</option>
+                                    <option value="edexcel">Edexcel International</option>
+                                    <option value="igce">IGCE</option>
+                                    <option value="al_haiatul">Al-Haiatul Ulya</option>
+                                    <option value="befaq">Befaq</option>
+                                    <option value="tanzeim">Tanzeim</option>
+                                    <option value="other">Others</option>
+                                </select>
+                                <div class="other-board-input mt-2.5 hidden">
+                                    <input type="text" name="otherBoard" placeholder="Enter board name"
+                                        class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-btn inline-flex items-center gap-1 mt-2.5 text-primary cursor-pointer font-semibold"
+                    id="addEducation">
+                    <i class="fas fa-plus-circle"></i> Add More Education
+                </div>
+            </fieldset>
+
+            <!-- Terms and Conditions -->
+            <div class="mb-5">
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" name="terms" class="w-auto mr-2" required>
+                    <label for="terms">Accept the terms and conditions</label>
+                </div>
+            </div>
+
+            <!-- Form Buttons -->
+            <div class="flex gap-2.5 mt-5">
+                <button type="submit"
+                    class="flex-1 py-3 px-6 bg-primary text-white border-none rounded-lg cursor-pointer text-base font-semibold transition-colors hover:bg-secondary">Save</button>
+                <button type="button"
+                    class="flex-1 py-3 px-6 bg-danger text-white border-none rounded-lg cursor-pointer text-base font-semibold transition-colors hover:bg-[#c0392b]"
+                    onclick="customResetForm()">Reset Form</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the first phone input
+            const firstPhoneInput = document.querySelector('#phoneNumbers .phone-input');
+            window.intlTelInput(firstPhoneInput, {
+                initialCountry: "bd",
+                preferredCountries: ["bd", "pk", "sa", "af"],
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"
+            });
+
+            // Generate year options for initial education qualification
+            const initialPassingYear = document.getElementById('initialPassingYear');
+            initialPassingYear.innerHTML = generateYearOptions();
+
+            // Bengali character validation
+            const bengaliInputs = ['firstNameBn', 'lastNameBn', 'fatherNameBn', 'titleBn'];
+            bengaliInputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                const errorMsg = document.getElementById(inputId + '-error');
+                input.addEventListener('input', function () {
+                    const bengaliRegex = /^[\u0980-\u09FF\s.-]+$/;
+                    if (this.value && !bengaliRegex.test(this.value)) {
+                        this.classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                        errorMsg.classList.remove('hidden');
+                    } else {
+                        this.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                        errorMsg.classList.add('hidden');
+                    }
+                });
+            });
+
+            // English character validation
+            const englishInputs = ['firstNameEn', 'lastNameEn', 'fatherNameEn', 'titleEn'];
+            englishInputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                const errorMsg = document.getElementById(inputId + '-error');
+                input.addEventListener('input', function () {
+                    const englishRegex = /^[A-Za-z\s.-]+$/;
+                    if (this.value && !englishRegex.test(this.value)) {
+                        this.classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                        errorMsg.classList.remove('hidden');
+                    } else {
+                        this.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                        errorMsg.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            emailInput.addEventListener('input', function () {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value && !emailRegex.test(this.value)) {
+                    this.classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                    emailError.classList.remove('hidden');
+                } else {
+                    this.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                    emailError.classList.add('hidden');
+                }
+            });
+
+            // Birth date age calculation
+            const birthDateInput = document.getElementById('birthDate');
+            const ageCalculation = document.getElementById('ageCalculation');
+            birthDateInput.addEventListener('change', function () {
+                if (this.value) {
+                    calculateAge(this.value, ageCalculation);
+                    ageCalculation.classList.remove('hidden');
+                    validateJoinDate();
+                } else {
+                    ageCalculation.classList.add('hidden');
+                }
+            });
+
+            // Join date duration calculation and validation
+            const joinDateInput = document.getElementById('joinDate');
+            const durationCalculation = document.getElementById('durationCalculation');
+            const joinDateError = document.getElementById('joinDate-error');
+            joinDateInput.addEventListener('change', function () {
+                if (this.value) {
+                    calculateDuration(this.value, durationCalculation);
+                    durationCalculation.classList.remove('hidden');
+                    validateJoinDate();
+                } else {
+                    durationCalculation.classList.add('hidden');
+                    joinDateError.classList.add('hidden');
+                    this.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                }
+            });
+
+            // Phone number addition
+            document.getElementById('addPhone').addEventListener('click', function () {
+                const phoneNumbersDiv = document.getElementById('phoneNumbers');
+                const newPhoneGroup = document.createElement('div');
+                newPhoneGroup.className = 'phone-input-group relative mb-4';
+                const newPhoneInput = document.createElement('input');
+                newPhoneInput.type = 'tel';
+                newPhoneInput.className = 'phone-input p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors';
+                // New phones are not required
+                // newPhoneInput.required = true; 
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.className = 'remove-btn absolute top-[-10px] right-[-5px] bg-none border-none text-danger cursor-pointer text-base z-10';
+                removeBtn.setAttribute('onclick', 'removePhone(this)');
+                removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                newPhoneGroup.appendChild(newPhoneInput);
+                newPhoneGroup.appendChild(removeBtn);
+                phoneNumbersDiv.appendChild(newPhoneGroup);
+
+                // Initialize the new phone input
+                window.intlTelInput(newPhoneInput, {
+                    initialCountry: "bd",
+                    preferredCountries: ["bd", "pk", "sa", "af"],
+                    separateDialCode: true,
+                    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.js"
+                });
+            });
+
+            // Image upload options
+            const deviceOption = document.getElementById('deviceOption');
+            const urlOption = document.getElementById('urlOption');
+            const deviceUpload = document.getElementById('deviceUpload');
+            const urlUpload = document.getElementById('urlUpload');
+            const photoFile = document.getElementById('photoFile');
+            const photoUrl = document.getElementById('photoUrl');
+            const imagePreview = document.getElementById('imagePreview');
+
+            deviceOption.addEventListener('click', function () {
+                deviceOption.classList.add('active', 'border-primary', 'bg-[rgba(52,152,219,0.1)]');
+                urlOption.classList.remove('active', 'border-primary', 'bg-[rgba(52,152,219,0.1)]');
+                deviceUpload.classList.remove('hidden');
+                urlUpload.classList.add('hidden');
+                photoUrl.value = '';
+                imagePreview.innerHTML = '';
+            });
+
+            urlOption.addEventListener('click', function () {
+                urlOption.classList.add('active', 'border-primary', 'bg-[rgba(52,152,219,0.1)]');
+                deviceOption.classList.remove('active', 'border-primary', 'bg-[rgba(52,152,219,0.1)]');
+                urlUpload.classList.remove('hidden');
+                deviceUpload.classList.add('hidden');
+                photoFile.value = '';
+                imagePreview.innerHTML = '';
+            });
+
+            photoFile.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        imagePreview.innerHTML = `<img src="${e.target.result}" alt="Preview" class="max-w-[100px] max-h-[100px] rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.3)]">`;
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+
+            photoUrl.addEventListener('input', function () {
+                if (this.value) {
+                    imagePreview.innerHTML = `<img src="${this.value}" alt="Preview" class="max-w-[100px] max-h-[100px] rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.3)]" onerror="this.onerror=null; this.src='https://picsum.photos/seed/error/200/200.jpg';">`;
+                } else {
+                    imagePreview.innerHTML = '';
+                }
+            });
+
+            // Add education qualification
+            document.getElementById('addEducation').addEventListener('click', function () {
+                const educationQualifications = document.getElementById('educationQualifications');
+                const newEducation = document.createElement('div');
+                newEducation.className = 'dynamic-field bg-gray-50 p-4 rounded-lg mb-4 relative';
+                newEducation.innerHTML = `
+                    <button type="button" class="remove-btn absolute top-[-10px] right-[-5px] bg-none border-none text-danger cursor-pointer text-base z-10" onclick="removeEducation(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="education-fields">
+                        <div class="mb-5">
+                            <label>Exam Name</label>
+                            <input type="text" name="examName" placeholder="Exam Name" class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                        </div>
+                        <div class="mb-5">
+                            <label>Institution Name</label>
+                            <input type="text" name="institutionName" placeholder="School/Madrasa Name" class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                        </div>
+                        <div class="mb-5">
+                            <label>Passing Year</label>
+                            <select name="passingYear" class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                                ${generateYearOptions()}
+                            </select>
+                        </div>
+                        <div class="mb-5">
+                            <label>Subject/Degree</label>
+                            <input type="text" name="subject" placeholder="Subject/Degree" class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                        </div>
+                        <div class="mb-5">
+                            <label>Result</label>
+                            <div class="flex items-center">
+                                <select name="result" class="result-select flex-1 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors" onchange="toggleGpaInput(this)">
+                                    <option value="">-- Select --</option>
+                                    <option value="first">1st Division</option>
+                                    <option value="second">2nd Division</option>
+                                    <option value="third">3rd Division</option>
+                                    <option value="pass">Pass</option>
+                                    <option value="gpa">GPA</option>
+                                </select>
+                                <input type="number" class="gpa-input flex-1 ml-2.5 p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors hidden" name="gpaValue" placeholder="GPA" min="0" max="5" step="0.01">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label>Board</label>
+                            <select name="board" class="board-select w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors" onchange="toggleOtherBoardInput(this)">
+                                <option value="">-- Select --</option>
+                                <option value="dhaka">Dhaka</option>
+                                <option value="rajshahi">Rajshahi</option>
+                                <option value="chittagong">Chittagong</option>
+                                <option value="jessore">Jashore</option>
+                                <option value="comilla">Cumilla</option>
+                                <option value="barisal">Barisal</option>
+                                <option value="sylhet">Sylhet</option>
+                                <option value="dinajpur">Dinajpur</option>
+                                <option value="madrasah">Madrasah</option>
+                                <option value="mymensingh">Mymensingh</option>
+                                <option value="technical">Technical</option>
+                                <option value="open_university">Open University</option>
+                                <option value="edexcel">Edexcel International</option>
+                                <option value="igce">IGCE</option>
+                                <option value="al_haiatul">Al-Haiatul Ulya</option>
+                                <option value="befaq">Befaq</option>
+                                <option value="tanzeim">Tanzeim</option>
+                                <option value="other">Others</option>
+                            </select>
+                            <div class="other-board-input mt-2.5 hidden">
+                                <input type="text" name="otherBoard" placeholder="Enter board name" class="w-full p-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:border-primary focus:shadow-[0_0_0_2px_rgba(52,152,219,0.2)] transition-colors">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                educationQualifications.appendChild(newEducation);
+            });
+
+            // Form submission
+            document.getElementById('registrationForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Validate form
+                if (!validateForm()) {
+                    showNotification('Please fill in all required fields correctly.', 'error');
+                    return;
+                }
+                showNotification('Form submitted successfully!', 'success');
+                console.log('Form submitted with data:', getFormData());
+            });
+        });
+
+        // Toggle Social Media Dropdown
+        function toggleSocialDropdown() {
+            const dropdown = document.getElementById('socialDropdown');
+            const icon = document.getElementById('dropdownIcon');
+
+            dropdown.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Add Social Media Input
+        function addSocialMedia(platform, platformName, iconClass, iconColor) {
+            const socialMediaInputs = document.getElementById('socialMediaInputs');
+            const addOtherSocialBtn = document.getElementById('addOtherSocial');
+            const selectedSocialMedia = document.getElementById('selectedSocialMedia');
+            const dropdown = document.getElementById('socialDropdown');
+            const icon = document.getElementById('dropdownIcon');
+
+            // Check if already exists
+            const existingInput = document.querySelector(`.social-input-group[data-platform="${platform}"]`);
+            if (existingInput && platform !== 'other') {
+                dropdown.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                return;
+            }
+
+            // Update selected text
+            selectedSocialMedia.textContent = platformName;
+
+            // Create social input group
+            const socialInputGroup = document.createElement('div');
+            socialInputGroup.className = 'social-input-group flex items-center p-3 bg-gray-50 rounded-lg relative';
+            socialInputGroup.setAttribute('data-platform', platform);
+
+            if (platform === 'other') {
+                socialInputGroup.innerHTML = `
+                    <i class="${iconClass} mr-3 text-xl" style="color: ${iconColor}"></i>
+                    <div class="flex-1 flex flex-col md:flex-row gap-2">
+                        <input type="text" placeholder="Platform name" class="p-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-primary">
+                        <input type="text" placeholder="Enter username or link" class="p-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-primary">
+                    </div>
+                    <button type="button" class="ml-2 text-danger hover:text-red-700" onclick="removeSocialMedia(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                addOtherSocialBtn.classList.remove('hidden');
+            } else {
+                socialInputGroup.innerHTML = `
+                    <i class="${iconClass} mr-3 text-xl" style="color: ${iconColor}"></i>
+                    <input type="text" placeholder="Enter ${platformName} username" class="flex-1 p-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-primary">
+                    <button type="button" class="ml-2 text-danger hover:text-red-700" onclick="removeSocialMedia(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+            }
+
+            socialMediaInputs.appendChild(socialInputGroup);
+            dropdown.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+        }
+
+        // Add Other Social Media
+        function addOtherSocialMedia() {
+            const socialMediaInputs = document.getElementById('socialMediaInputs');
+
+            const socialInputGroup = document.createElement('div');
+            socialInputGroup.className = 'social-input-group flex items-center p-3 bg-gray-50 rounded-lg relative';
+            socialInputGroup.setAttribute('data-platform', 'other');
+
+            socialInputGroup.innerHTML = `
+                <i class="fas fa-globe mr-3 text-xl" style="color: #6c757d"></i>
+                <div class="flex-1 flex flex-col md:flex-row gap-2">
+                    <input type="text" placeholder="Platform name" class="p-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-primary">
+                    <input type="text" placeholder="Enter username or link" class="p-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-primary">
+                </div>
+                <button type="button" class="ml-2 text-danger hover:text-red-700" onclick="removeSocialMedia(this)">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            socialMediaInputs.appendChild(socialInputGroup);
+        }
+
+        // Remove Social Media
+        function removeSocialMedia(button) {
+            button.parentElement.remove();
+
+            // Hide "Add More Other Social Media" button if no "other" platforms exist
+            const otherPlatforms = document.querySelectorAll('.social-input-group[data-platform="other"]');
+            if (otherPlatforms.length === 0) {
+                document.getElementById('addOtherSocial').classList.add('hidden');
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            const socialMediaSelect = document.getElementById('socialMediaSelect');
+            const dropdown = document.getElementById('socialDropdown');
+            const icon = document.getElementById('dropdownIcon');
+
+            if (!socialMediaSelect.contains(e.target)) {
+                dropdown.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        });
+
+        // Generate year options
+        function generateYearOptions() {
+            let options = '';
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear; year >= 1970; year--) {
+                options += `<option value="${year}">${year}</option>`;
+            }
+            return options;
+        }
+
+        // Calculate age/duration
+        function calculateAge(dateString, element) {
+            const startDate = new Date(dateString);
+            const endDate = new Date();
+            let years = endDate.getFullYear() - startDate.getFullYear();
+            let months = endDate.getMonth() - startDate.getMonth();
+            let days = endDate.getDate() - startDate.getDate();
+
+            if (days < 0) {
+                months--;
+                const lastMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0);
+                days += lastMonth.getDate();
+            }
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const bn = new Intl.NumberFormat('bn');
+            element.textContent = `${bn.format(years)} বছর ${bn.format(months)} মাস ${bn.format(days)} দিন`;
+        }
+
+        function calculateDuration(joinDate, element) {
+            calculateAge(joinDate, element);
+        }
+
+        // Validate join date for minimum age
+        function validateJoinDate() {
+            const birthDateInput = document.getElementById('birthDate');
+            const joinDateInput = document.getElementById('joinDate');
+            const joinDateError = document.getElementById('joinDate-error');
+
+            if (birthDateInput.value && joinDateInput.value) {
+                const birthDate = new Date(birthDateInput.value);
+                const joinDate = new Date(joinDateInput.value);
+
+                // Calculate age at join date
+                let age = joinDate.getFullYear() - birthDate.getFullYear();
+                const monthDiff = joinDate.getMonth() - birthDate.getMonth();
+
+                if (monthDiff < 0 || (monthDiff === 0 && joinDate.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+
+                if (age < 18) {
+                    joinDateInput.classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                    joinDateError.classList.remove('hidden');
+                    return false;
+                } else {
+                    joinDateInput.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                    joinDateError.classList.add('hidden');
+                    return true;
+                }
+            }
+            return true;
+        }
+
+        // Toggle inputs
+        function toggleGpaInput(select) {
+            const gpaInput = select.nextElementSibling;
+            if (select.value === 'gpa') {
+                gpaInput.classList.remove('hidden');
+            } else {
+                gpaInput.classList.add('hidden');
+            }
+        }
+
+        function toggleOtherBoardInput(select) {
+            const otherBoardInput = select.nextElementSibling;
+            if (select.value === 'other') {
+                otherBoardInput.classList.remove('hidden');
+            } else {
+                otherBoardInput.classList.add('hidden');
+            }
+        }
+
+        // Remove functions
+        function removePhone(button) {
+            // Don't remove the first phone number
+            if (button.parentElement.classList.contains('first-phone')) {
+                return;
+            }
+            button.parentElement.remove();
+        }
+
+        function removeEducation(button) {
+            button.parentElement.remove();
+        }
+
+        // Enhanced customResetForm function
+        function customResetForm() {
+            document.getElementById('registrationForm').reset();
+
+            // Reset phone numbers to just one
+            const phoneNumbersDiv = document.getElementById('phoneNumbers');
+            while (phoneNumbersDiv.children.length > 1) {
+                phoneNumbersDiv.removeChild(phoneNumbersDiv.lastChild);
+            }
+
+            // Reset education qualifications to just one
+            const educationDiv = document.getElementById('educationQualifications');
+            while (educationDiv.children.length > 1) {
+                educationDiv.removeChild(educationDiv.lastChild);
+            }
+
+            // Clear social media inputs
+            document.getElementById('socialMediaInputs').innerHTML = '';
+            document.getElementById('addOtherSocial').classList.add('hidden');
+            document.getElementById('selectedSocialMedia').textContent = '-- Select Social Media --';
+
+            // Reset image preview
+            document.getElementById('imagePreview').innerHTML = '';
+
+            // Hide calculations
+            document.getElementById('ageCalculation').classList.add('hidden');
+            document.getElementById('durationCalculation').classList.add('hidden');
+
+            // Remove error states
+            document.querySelectorAll('.border-danger').forEach(el => {
+                el.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+            });
+            document.querySelectorAll('.text-danger').forEach(el => {
+                if (el.classList.contains('error-message')) {
+                    el.classList.add('hidden');
+                }
+            });
+
+            showNotification('Form has been reset.', 'success');
+        }
+
+        // Enhanced validateForm function
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.border-danger').forEach(el => {
+                el.classList.remove('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+            });
+            document.querySelectorAll('.text-danger').forEach(el => {
+                if (el.classList.contains('error-message')) {
+                    el.classList.add('hidden');
+                }
+            });
+
+            const requiredFields = document.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if ((field.type === 'checkbox' && !field.checked) ||
+                    (field.type !== 'checkbox' && !field.value.trim())) {
+                    field.classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                    isValid = false;
+                }
+            });
+
+            const phoneInputs = document.querySelectorAll('#phoneNumbers .phone-input');
+            const hasAtLeastOnePhone = Array.from(phoneInputs).some(input => input.value.trim() !== '');
+            if (!hasAtLeastOnePhone) {
+                phoneInputs[0].classList.add('border-danger', '!shadow-[0_0_0_2px_rgba(231,76,60,0.2)]');
+                document.getElementById('phone-error').textContent = 'At least one phone number is required.';
+                document.getElementById('phone-error').classList.remove('hidden');
+                isValid = false;
+            }
+
+            // Validate join date for minimum age
+            if (!validateJoinDate()) {
+                isValid = false;
+            }
+
+            // Scroll to the first error
+            if (!isValid) {
+                const firstErrorField = document.querySelector('.border-danger, [required]:invalid');
+                if (firstErrorField) {
+                    firstErrorField.focus();
+                    firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            return isValid;
+        }
+
+        function getFormData() {
+            // This function remains the same as before
+            const formData = {};
+            formData.firstNameBn = document.getElementById('firstNameBn').value;
+            formData.firstNameEn = document.getElementById('firstNameEn').value;
+            // ... and so on for all other fields
+            return formData;
+        }
+
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+
+            if (type === 'success') {
+                notification.className = 'p-4 mb-5 rounded-lg bg-[rgba(46,204,113,0.2)] text-success border-l-4 border-success';
+            } else if (type === 'error') {
+                notification.className = 'p-4 mb-5 rounded-lg bg-[rgba(231,76,60,0.2)] text-danger border-l-4 border-danger';
+            }
+
+            notification.classList.remove('hidden');
+
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>

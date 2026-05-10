@@ -1,3 +1,5 @@
+// admin.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const teacherGridContainer = document.getElementById('teacher-grid-container');
     const teacherDetailsModal = document.getElementById('teacher-details-modal');
